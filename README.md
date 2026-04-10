@@ -10,6 +10,6 @@
 **Known Issues**
 
 <sup><i>* Only visible Pets are duplicated<br>
-* Occasional Pet Clones lose walking animation due to original out of render distance (only Maya animations due to using Snapshots)</i></sup>
+<sup><i>* Occasional Pet Clones lose walking animation due to original out of render distance (only Maya animations due to using Snapshots)</i></sup>
 
 </div>
