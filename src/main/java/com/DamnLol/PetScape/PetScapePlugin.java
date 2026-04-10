@@ -45,7 +45,7 @@ import java.util.*;
 @PluginDescriptor(
         name = "PetScape",
         description = "Visually multiplies all boss pets in your Player Owned House",
-        tags = {"pet", "poh", "house", "boss", "double", "clone"}
+        tags = {"pet", "poh", "pvm", "boss", "skilling"}
 )
 public class PetScapePlugin extends Plugin
 {
