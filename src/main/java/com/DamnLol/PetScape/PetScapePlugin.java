@@ -44,7 +44,7 @@ import java.util.*;
 @Slf4j
 @PluginDescriptor(
         name = "PetScape",
-        description = "Visually multiplies all boss pets in your Player Owned House",
+        description = "Visually multiplies all pets in your Player Owned House",
         tags = {"pet", "poh", "pvm", "boss", "skilling"}
 )
 public class PetScapePlugin extends Plugin
