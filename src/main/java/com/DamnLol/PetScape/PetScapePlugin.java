@@ -55,7 +55,7 @@ public class PetScapePlugin extends Plugin
 
     static final Set<Integer> PET_NPC_IDS = new HashSet<>(Arrays.asList(
             // God Wars Dungeon
-            NpcID.NEXLING,
+            NpcID.NEXLING, //unconfirmed
             NpcID.GENERAL_GRAARDOR_JR,
             NpcID.KREEARRA_JR,
             NpcID.ZILYANA_JR,
@@ -69,9 +69,9 @@ public class PetScapePlugin extends Plugin
             NpcID.HELLPUPPY,
             NpcID.NOON,
             NpcID.MIDNIGHT,
-            NpcID.GULL,
-            NpcID.GULL_14931,
-            NpcID.GULL_15059,
+            NpcID.GULL, //unconfirmed
+            NpcID.GULL_14931, //unconfirmed
+            NpcID.GULL_15059, //unconfirmed
             NpcID.IKKLE_HYDRA,
             NpcID.IKKLE_HYDRA_8493,
             NpcID.IKKLE_HYDRA_8494,
@@ -83,13 +83,13 @@ public class PetScapePlugin extends Plugin
             NpcID.RAX_13684,
 
             // Retro bosses
-            NpcID.CORPOREAL_CRITTER,
+            NpcID.CORPOREAL_CRITTER, //unconfirmed
             NpcID.PRINCE_BLACK_DRAGON,
             NpcID.KALPHITE_PRINCESS,
             NpcID.KALPHITE_PRINCESS_6638,
-            NpcID.DAGANNOTH_PRIME_JR,
-            NpcID.DAGANNOTH_REX_JR,
-            NpcID.DAGANNOTH_SUPREME_JR,
+            NpcID.DAGANNOTH_PRIME_JR, //unconfirmed
+            NpcID.DAGANNOTH_REX_JR, //unconfirmed
+            NpcID.DAGANNOTH_SUPREME_JR, //unconfirmed
             NpcID.BABY_MOLE,
             NpcID.BABY_MOLERAT,
             NpcID.CHAOS_ELEMENTAL_JR,
@@ -98,13 +98,16 @@ public class PetScapePlugin extends Plugin
             NpcID.VORKI,
             NpcID.BUTCH,
             NpcID.BARON,
-            NpcID.WISP,
-            NpcID.LILVIATHAN,
-            NpcID.DOM,
+            NpcID.WISP, //unconfirmed
+            NpcID.LILVIATHAN, //unconfirmed
+            NpcID.DOM, //unconfirmed
             NpcID.MOXI,
             NpcID.MUPHIN,
             NpcID.MUPHIN_12006,
             NpcID.MUPHIN_12007,
+            NpcID.MUPHIN_12014,
+            NpcID.MUPHIN_12015,
+            NpcID.MUPHIN_12016,
             NpcID.YOUNGLLEF,
             NpcID.CORRUPTED_YOUNGLLEF,
 
@@ -123,32 +126,32 @@ public class PetScapePlugin extends Plugin
             NpcID.VETION_JR_5559,
 
             // ToB Pets
-            NpcID.LIL_ZIK,
-            NpcID.LIL_MAIDEN,
-            NpcID.LIL_BLOAT,
-            NpcID.LIL_NYLO,
-            NpcID.LIL_SOT,
-            NpcID.LIL_XARP,
+            NpcID.LIL_ZIK, //unconfirmed
+            NpcID.LIL_MAIDEN, //unconfirmed
+            NpcID.LIL_BLOAT, //unconfirmed
+            NpcID.LIL_NYLO, //unconfirmed
+            NpcID.LIL_SOT, //unconfirmed
+            NpcID.LIL_XARP, //unconfirmed
 
             // CoX Pets
             NpcID.OLMLET,
-            NpcID.PUPPADILE,
-            NpcID.TEKTINY,
-            NpcID.VANGUARD_8198,
-            NpcID.VASA_MINIRIO,
-            NpcID.VESPINA,
-            NpcID.FLYING_VESPINA,
+            NpcID.PUPPADILE, //unconfirmed
+            NpcID.TEKTINY, //unconfirmed
+            NpcID.VANGUARD_8198, //unconfirmed
+            NpcID.VASA_MINIRIO, //unconfirmed
+            NpcID.VESPINA, //unconfirmed
+            NpcID.FLYING_VESPINA, //unconfirmed
 
             // ToA Pets
-            NpcID.TUMEKENS_GUARDIAN,
-            NpcID.TUMEKENS_GUARDIAN_11812,
-            NpcID.TUMEKENS_DAMAGED_GUARDIAN,
-            NpcID.ELIDINIS_GUARDIAN,
-            NpcID.ELIDINIS_DAMAGED_GUARDIAN,
-            NpcID.AKKHITO,
-            NpcID.KEPHRITI,
-            NpcID.BABI,
-            NpcID.ZEBO,
+            NpcID.TUMEKENS_GUARDIAN, //unconfirmed
+            NpcID.TUMEKENS_GUARDIAN_11812, //unconfirmed
+            NpcID.TUMEKENS_DAMAGED_GUARDIAN, //unconfirmed
+            NpcID.ELIDINIS_GUARDIAN, //unconfirmed
+            NpcID.ELIDINIS_DAMAGED_GUARDIAN, //unconfirmed
+            NpcID.AKKHITO, //unconfirmed
+            NpcID.KEPHRITI, //unconfirmed
+            NpcID.BABI, //unconfirmed
+            NpcID.ZEBO, //unconfirmed
 
             // Misc / other pets
             NpcID.BRAN,
@@ -159,11 +162,11 @@ public class PetScapePlugin extends Plugin
             NpcID.WILY_HELLCAT,
             NpcID.CAT_6665,
             NpcID.MAYOR_OF_CATHERBY,
-            NpcID.HUBERTE,
-            NpcID.JALNIBREK,
-            NpcID.TZREKZUK,
-            NpcID.LITTLE_NIGHTMARE,
-            NpcID.LITTLE_PARASITE,
+            NpcID.HUBERTE, //unconfirmed
+            NpcID.JALNIBREK, //unconfirmed
+            NpcID.TZREKZUK, //unconfirmed
+            NpcID.LITTLE_NIGHTMARE, //unconfirmed
+            NpcID.LITTLE_PARASITE, //unconfirmed
             NpcID.SRARACHA,
             NpcID.SRARACHA_11157,
             NpcID.SRARACHA_11158,
@@ -173,10 +176,10 @@ public class PetScapePlugin extends Plugin
             NpcID.SCURRY,
             NpcID.SKOTOS,
             NpcID.SKOTOS_7671,
-            NpcID.SMOL_HEREDIT,
+            NpcID.SMOL_HEREDIT, //unconfirmed
             NpcID.TZREKJAD,
-            NpcID.JALREKJAD,
-            NpcID.YAMI,
+            NpcID.JALREKJAD, //unconfirmed
+            NpcID.YAMI, //unconfirmed
 
             // Skilling Pets
             NpcID.PHOENIX,
@@ -237,9 +240,9 @@ public class PetScapePlugin extends Plugin
             NpcID.ABYSSAL_PROTECTOR,
             NpcID.CHOMPY_CHICK,
             NpcID.HERBI,
-            NpcID.LIL_CREATOR,
-            NpcID.LIL_DESTRUCTOR,
-            NpcID.PENANCE_PET,
+            NpcID.LIL_CREATOR, //unconfirmed
+            NpcID.LIL_DESTRUCTOR, //unconfirmed
+            NpcID.PENANCE_PET, //unconfirmed
             NpcID.QUETZIN
     ));
 

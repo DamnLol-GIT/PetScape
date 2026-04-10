@@ -53,12 +53,12 @@ public class PetScapeGhost
     private static final int BASE_Z_OFFSET = 0;
 
     // Z correction applied on top of tile height.
-    // Note to self = 128 scene units = 1 game tile. Positive = model moves UP, negative = DOWN.
+    // Note to self - 128 scene units = 1 game tile. Positive = model moves UP, negative = DOWN.
     private static final java.util.Map<Integer, Integer> Z_OVERRIDES = new java.util.HashMap<>();
     static
     {
 
-    // Fliers — push DOWN
+        // Fliers — push DOWN
         Z_OVERRIDES.put(NpcID.KREEARRA_JR, -200);
         Z_OVERRIDES.put(NpcID.VESPINA, -150);
         Z_OVERRIDES.put(NpcID.FLYING_VESPINA, -150);
@@ -69,7 +69,7 @@ public class PetScapeGhost
         Z_OVERRIDES.put(NpcID.PHOENIX_7368, -180);
         Z_OVERRIDES.put(NpcID.KALPHITE_PRINCESS_6638, -150);
 
-    // Ground NPCs that sink — push UP
+        // Ground NPCs that sink — push UP
         Z_OVERRIDES.put(NpcID.VORKI, 15);
         Z_OVERRIDES.put(NpcID.SKOTOS, 50);
         Z_OVERRIDES.put(NpcID.SKOTOS_7671, 50);
@@ -125,7 +125,15 @@ public class PetScapeGhost
             NpcID.HUBERTE,
             NpcID.MOXI,
 
-    // Wilderness pets that exploded mesh
+            // Muphin
+            NpcID.MUPHIN,
+            NpcID.MUPHIN_12006,
+            NpcID.MUPHIN_12007,
+            NpcID.MUPHIN_12014,
+            NpcID.MUPHIN_12015,
+            NpcID.MUPHIN_12016,
+
+            // Wilderness pets that exploded mesh
             NpcID.CALLISTO_CUB,
             NpcID.CALLISTO_CUB_11982,
             NpcID.CALLISTO_CUB_5558,
@@ -167,11 +175,11 @@ public class PetScapeGhost
             NpcID.VESPINA,
             NpcID.FLYING_VESPINA,
 
-            // Smolcano — snapshot gives no animation in other POHs
+            // Smolcano
             NpcID.SMOLCANO,
             NpcID.SMOLCANO_8739
 
-            ));
+    ));
 
     private static boolean isMayaRig(NPC npc)
     {
@@ -616,9 +624,7 @@ public class PetScapeGhost
         if (cFrom != null && cTo != null && cFrom.length > 0)
         {
             for (int i = 0; i < cFrom.length; i++)
-            {
                 merged.recolor(cFrom[i], cTo[i]);
-            }
         }
 
         int ws = def.getWidthScale();
