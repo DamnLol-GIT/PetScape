@@ -249,7 +249,7 @@ public class PetScapePlugin extends Plugin
     @Inject private PetScapeOverlay overlay;
     @Inject private PetScapeConfig config;
 
-    // Key: "npcIndex:slot"
+    // Key: npcIndex:slot
     final Map<String, PetScapeGhost> ghosts = new HashMap<>();
 
     private boolean wasInPoh = false;
@@ -597,8 +597,8 @@ public class PetScapePlugin extends Plugin
         client.setMenuEntries(entries);
     }
 
-        // Max Ghost Cap - tested with 350 on mid/upper ranged gpu, had 56~fps with 350 cap + camera plugin extra zoom out + 117HD plugin max settings
-        // Tested higher limits, 580 caused 12fps with above settings
+    // Max Ghost Cap - tested with 350 on mid/upper ranged gpu, had 56~fps with 350 cap + camera plugin extra zoom out + 117HD plugin max settings
+    // Tested higher limits, 580 caused 12fps with above settings
     private static final int MAX_GHOST_CAP = 350;
 
     private void spawnGhostsForNpc(NPC npc, int slots)
