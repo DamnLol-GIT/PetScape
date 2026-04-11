@@ -240,8 +240,8 @@ public class PetScapePlugin extends Plugin
             NpcID.ABYSSAL_PROTECTOR,
             NpcID.CHOMPY_CHICK,
             NpcID.HERBI,
-            NpcID.LIL_CREATOR, //unconfirmed
-            NpcID.LIL_DESTRUCTOR, //unconfirmed
+            NpcID.LIL_CREATOR,
+            NpcID.LIL_DESTRUCTOR,
             NpcID.PENANCE_PET, //unconfirmed
             NpcID.QUETZIN
     ));
@@ -610,7 +610,7 @@ public class PetScapePlugin extends Plugin
         {
             String key = npc.getIndex() + ":" + slot;
             if (ghosts.containsKey(key)) continue;
-            ghosts.put(key, new PetScapeGhost(npc, client, clientThread, ghosts.values(), slots, pohFloor));
+            ghosts.put(key, new PetScapeGhost(npc, client, clientThread, ghosts.values(), slots, pohFloor, config));
         }
     }
 

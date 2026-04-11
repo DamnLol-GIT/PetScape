@@ -53,12 +53,11 @@ public class PetScapeGhost
     private static final int BASE_Z_OFFSET = 0;
 
     // Z correction applied on top of tile height.
-    // Note to self - 128 scene units = 1 game tile. Positive = model moves UP, negative = DOWN.
+    // Note to self - 128 scene units = 1 game tile. Positive = UP, negative = DOWN.
     private static final java.util.Map<Integer, Integer> Z_OVERRIDES = new java.util.HashMap<>();
     static
     {
-
-        // Fliers — push DOWN
+        // Fliers - push DOWN
         Z_OVERRIDES.put(NpcID.KREEARRA_JR, -200);
         Z_OVERRIDES.put(NpcID.VESPINA, -150);
         Z_OVERRIDES.put(NpcID.FLYING_VESPINA, -150);
@@ -69,7 +68,7 @@ public class PetScapeGhost
         Z_OVERRIDES.put(NpcID.PHOENIX_7368, -180);
         Z_OVERRIDES.put(NpcID.KALPHITE_PRINCESS_6638, -150);
 
-        // Ground NPCs that sink — push UP
+        // Ground NPCs that sink - push UP
         Z_OVERRIDES.put(NpcID.VORKI, 15);
         Z_OVERRIDES.put(NpcID.SKOTOS, 50);
         Z_OVERRIDES.put(NpcID.SKOTOS_7671, 50);
@@ -108,54 +107,15 @@ public class PetScapeGhost
             NpcID.FISHBOWL_6660
     ));
 
-    // Pets that must use snapshot model path (vertex-deformed / Maya)
-    private static final Set<Integer> KNOWN_MAYA_IDS = new HashSet<>(Arrays.asList(
-            NpcID.BUTCH,
-            NpcID.BARON,
-            NpcID.WISP,
-            NpcID.WISP_12157,
-            NpcID.LILVIATHAN,
-            NpcID.YAMI,
-            NpcID.DOM,
-            NpcID.SCURRY,
-            NpcID.GULL,
-            NpcID.GULL_14931,
-            NpcID.GULL_15059,
-            NpcID.SMOL_HEREDIT,
-            NpcID.HUBERTE,
-            NpcID.MOXI,
-
-            // Muphin
-            NpcID.MUPHIN,
-            NpcID.MUPHIN_12006,
-            NpcID.MUPHIN_12007,
-            NpcID.MUPHIN_12014,
-            NpcID.MUPHIN_12015,
-            NpcID.MUPHIN_12016,
-
-            // Wilderness pets that exploded mesh
-            NpcID.CALLISTO_CUB,
-            NpcID.CALLISTO_CUB_11982,
-            NpcID.CALLISTO_CUB_5558,
-            NpcID.CALLISTO_CUB_11986,
-            NpcID.VETION_JR,
-            NpcID.VETION_JR_5537,
-            NpcID.VETION_JR_11983,
-            NpcID.VETION_JR_11984,
-            NpcID.VETION_JR_5559
-    ));
-
-    // Pets forced idle regardless of Maya detection
+    // Pets forced idle-only
     private static final Set<Integer> FORCED_IDLE_ONLY_IDS = new HashSet<>();
 
-    // Pets that must stay on standard loadModelData even if widthScale=0
+    // Pets that stay on standard loadModelData even if isMayaAnim() returns true
     private static final Set<Integer> FORCE_STANDARD_IDS = new HashSet<>(Arrays.asList(
             NpcID.YOUNGLLEF,
             NpcID.YOUNGLLEF_8737,
             NpcID.CORRUPTED_YOUNGLLEF,
             NpcID.CORRUPTED_YOUNGLLEF_8738,
-
-            // Tumeken's Guardian + Variants
             NpcID.TUMEKENS_GUARDIAN,
             NpcID.TUMEKENS_GUARDIAN_11812,
             NpcID.TUMEKENS_DAMAGED_GUARDIAN,
@@ -165,8 +125,6 @@ public class PetScapeGhost
             NpcID.KEPHRITI,
             NpcID.BABI,
             NpcID.ZEBO,
-
-            // Olmlet + Variants
             NpcID.OLMLET,
             NpcID.PUPPADILE,
             NpcID.TEKTINY,
@@ -174,20 +132,27 @@ public class PetScapeGhost
             NpcID.VASA_MINIRIO,
             NpcID.VESPINA,
             NpcID.FLYING_VESPINA,
-
-            // Smolcano
             NpcID.SMOLCANO,
             NpcID.SMOLCANO_8739
-
     ));
 
-    private static boolean isMayaRig(NPC npc)
+    private static final java.util.concurrent.ConcurrentHashMap<Integer, Boolean> MAYA_ANIM_CACHE
+            = new java.util.concurrent.ConcurrentHashMap<>();
+
+    public static void clearCaches()
+    {
+        MAYA_ANIM_CACHE.clear();
+    }
+
+    private boolean isMayaRig(NPC npc)
     {
         if (FORCE_STANDARD_IDS.contains(npc.getId())) return false;
-        if (KNOWN_MAYA_IDS.contains(npc.getId())) return true;
-        NPCComposition def = npc.getTransformedComposition();
-        if (def == null) def = npc.getComposition();
-        return def.getWidthScale() == 0 && def.getHeightScale() == 0;
+        int idlePose = npc.getIdlePoseAnimation();
+        if (idlePose <= 0) return false;
+        return MAYA_ANIM_CACHE.computeIfAbsent(idlePose, id -> {
+            Animation anim = client.loadAnimation(id);
+            return anim != null && anim.isMayaAnim();
+        });
     }
 
     private static final Random RNG = new Random();
@@ -199,12 +164,9 @@ public class PetScapeGhost
     private final ClientThread clientThread;
     private final Collection<PetScapeGhost> allGhosts;
     private final WorldPoint anchor;
-
-    // All walkable POH floor tiles — set lookup for isInSceneBounds
     private final Set<WorldPoint> pohFloor;
-
-    // Each ghost has its own wander anchor to spread across the POH
     private final WorldPoint wanderAnchor;
+    private final PetScapeConfig config;
 
     @Getter private WorldPoint ghostWorld;
 
@@ -218,30 +180,19 @@ public class PetScapeGhost
     private boolean snapshotModel;
     private final boolean stationary;
     private final int sameNpcClearance;
-
-    // Per-ghost wander radius — scales with clone count so they spread out
     private final int maxWander;
 
     private int zOffset;
     private int gameTick;
     private boolean modelSet = false;
-
-    // True when real NPC left render distance but hasn't actually despawned
     private boolean detached = false;
 
     private int cachedNpcId;
     private WorldPoint lastKnownNpcWorld;
-
-    // Tracks last anim sent — avoids redundant setAnimation calls
     private int currentAnimId = -1;
-
     private int stuckTicks = 0;
     private WorldPoint lastWorldTile = null;
-
-    //Counts ticks with no target — triggers anchor re-roll when too high
     private int idleTicks = 0;
-
-    // Randomised per ghost so pets don't all move on the same tick
     private int nextWanderTick = 0;
 
     @Getter private String overheadText;
@@ -250,13 +201,14 @@ public class PetScapeGhost
 
     public PetScapeGhost(NPC realNpc, Client client, ClientThread clientThread,
                          Collection<PetScapeGhost> allGhosts, int totalClones,
-                         Set<WorldPoint> pohFloor)
+                         Set<WorldPoint> pohFloor, PetScapeConfig config)
     {
         this.realNpc = realNpc;
         this.client = client;
         this.clientThread = clientThread;
         this.allGhosts = allGhosts;
         this.pohFloor = pohFloor;
+        this.config = config;
         this.anchor = realNpc.getWorldLocation();
         this.lastKnownNpcWorld = realNpc.getWorldLocation();
         this.wanderAnchor = pickWanderAnchor(realNpc.getWorldLocation());
@@ -267,13 +219,7 @@ public class PetScapeGhost
         this.snapshotModel = isMayaRig(realNpc);
         this.stationary = STATIONARY_PET_IDS.contains(realNpc.getId());
 
-        // Patrol radius scales with clone count — fewer clones roam wider
-        //   x2  -> 20 tiles
-        //   x3 -> 16 tiles
-        //   x5 -> 12 tiles
-        //   x10 -> 8 tiles
         this.maxWander = Math.min(20, Math.max(8, (int)(22 - totalClones * 1.5)));
-
         int area = (2 * maxWander + 1) * (2 * maxWander + 1);
         int budget = Math.max(1, area / Math.max(1, totalClones));
         this.sameNpcClearance = Math.min(4, Math.max(1, (int) Math.sqrt(budget)));
@@ -287,10 +233,7 @@ public class PetScapeGhost
         initModel();
         placeObject();
         runeLiteObject.setActive(true);
-        tryPickNewTarget();
-
-        log.info("[PetScape] Ghost ready: {} id={} modelSet={} idle={} walk={} idleOnly={} snapshot={} zOffset={}",
-                realNpc.getName(), realNpc.getId(), modelSet, idleAnimId, walkAnimId, idleOnly, snapshotModel, zOffset);
+        if (!stationary) tryPickNewTarget();
     }
 
 
@@ -298,10 +241,11 @@ public class PetScapeGhost
     {
         gameTick++;
 
-        // While detached keep wandering with the last known model
         if (detached)
         {
-            if (targetWorld == null && gameTick >= nextWanderTick)
+            // Detached Pets ON -> clone is hidden
+            // Detached Pets OFF -> clone wanders with snapshot
+            if (!config.detachedPets() && targetWorld == null && gameTick >= nextWanderTick)
             {
                 if (!stationary)
                 {
@@ -315,7 +259,6 @@ public class PetScapeGhost
         WorldPoint npcPos = realNpc.getWorldLocation();
         if (npcPos != null) lastKnownNpcWorld = npcPos;
 
-        // Detect NPC form change (KQ/GG/etc)
         NPCComposition comp = realNpc.getComposition();
         if (comp == null) return;
         int compId = comp.getId();
@@ -325,6 +268,7 @@ public class PetScapeGhost
             cacheAnimIds();
             zOffset = resolveZOffset();
             idleOnly = FORCED_IDLE_ONLY_IDS.contains(realNpc.getId());
+            MAYA_ANIM_CACHE.remove(idleAnimId);
             snapshotModel = isMayaRig(realNpc);
             currentAnimId = -1;
             modelSet = false;
@@ -351,24 +295,14 @@ public class PetScapeGhost
                             applyZOffset(rescueLp);
                         }
                     }
-                    else
-                    {
-                        ghostWorld = cur;
-                    }
+                    else ghostWorld = cur;
                     abandonTarget();
                     tryPickNewTarget();
                 }
             }
-            else
-            {
-                stuckTicks = 0;
-                lastWorldTile = cur;
-            }
+            else { stuckTicks = 0; lastWorldTile = cur; }
         }
-        else
-        {
-            stuckTicks = 0;
-        }
+        else stuckTicks = 0;
 
         if (targetWorld == null && gameTick >= nextWanderTick)
         {
@@ -384,7 +318,6 @@ public class PetScapeGhost
                 {
                     idleTicks++;
                     nextWanderTick = gameTick + 1 + RNG.nextInt(2);
-                    // After repeated failures, BFS to nearest open tile
                     if (idleTicks >= 4)
                     {
                         WorldPoint rescue = bfsNearestOpen(ghostWorld);
@@ -405,10 +338,7 @@ public class PetScapeGhost
                 }
             }
         }
-        else if (targetWorld != null)
-        {
-            idleTicks = 0;
-        }
+        else if (targetWorld != null) idleTicks = 0;
 
         if (overheadTicksLeft > 0)
         {
@@ -427,10 +357,9 @@ public class PetScapeGhost
     {
         if (!runeLiteObject.isActive()) return;
 
-        // Snapshot pets: refresh geometry every client tick to mirror the real pet - Skip while detached
         if (snapshotModel && modelSet && !detached)
         {
-            // Noon/Midnight: walk anim plays boss-scale lightning — hold idle pose instead
+            // Noon/Midnight: walk anim plays boss-scale lightning - hold idle pose instead
             boolean skipSnapshot = false;
             int npcId = realNpc.getId();
             if ((npcId == NpcID.NOON || npcId == NpcID.MIDNIGHT) && walkAnimId > 0)
@@ -455,8 +384,7 @@ public class PetScapeGhost
         int dy = targetLocal.getY() - current.getY();
 
         WorldPoint currentTile = WorldPoint.fromLocal(client, current);
-        if (!currentTile.equals(ghostWorld))
-            ghostWorld = currentTile;
+        if (!currentTile.equals(ghostWorld)) ghostWorld = currentTile;
 
         if (dx == 0 && dy == 0)
         {
@@ -470,9 +398,7 @@ public class PetScapeGhost
         }
 
         if (!snapshotModel && !idleOnly && walkAnimId > 0 && currentAnimId != walkAnimId)
-        {
             setAnimation(walkAnimId);
-        }
 
         double angle = Math.atan2(-dx, -dy);
         int targetJau = (int) (angle / (2 * Math.PI) * 2048 + 2048) % 2048;
@@ -498,18 +424,24 @@ public class PetScapeGhost
         applyZOffset(newLp);
     }
 
-    // Called when real NPC leaves render distance — ghost keeps wandering
+    // Called when the original Pet leaves render distance
     public void detach()
     {
         detached = true;
+        if (config.detachedPets())
+        {
+            runeLiteObject.setActive(false);
+            abandonTarget();
+        }
     }
 
-    // Called when real NPC re-enters render distance
+    // Called when the original Pet re-enters render distance
     public void reattach(NPC npc)
     {
         this.realNpc = npc;
         detached = false;
         cachedNpcId = npc.getId();
+        runeLiteObject.setActive(true);
 
         NPCComposition comp = npc.getComposition();
         if (comp != null)
@@ -527,18 +459,11 @@ public class PetScapeGhost
             }
         }
 
-        if (snapshotModel)
-            modelSet = false;
-        else
-            currentAnimId = -1;
-
-        log.debug("[PetScape] Reattached ghost for npcId={}", cachedNpcId);
+        if (snapshotModel) modelSet = false;
+        else currentAnimId = -1;
     }
 
-    public void despawn()
-    {
-        runeLiteObject.setActive(false);
-    }
+    public void despawn() { runeLiteObject.setActive(false); }
 
 
     private void tryPickNewTarget()
@@ -576,7 +501,7 @@ public class PetScapeGhost
     {
         int idle = realNpc.getIdlePoseAnimation();
         int walk = realNpc.getWalkAnimation();
-        idleAnimId = idle > 0 ? idle : (Math.max(walk, 0));
+        idleAnimId = idle > 0 ? idle : Math.max(walk, 0);
         walkAnimId = idleOnly ? idleAnimId : (walk > 0 ? walk : idleAnimId);
     }
 
@@ -601,19 +526,13 @@ public class PetScapeGhost
         if (def == null) def = realNpc.getComposition();
 
         int[] modelIds = def.getModels();
-        if (modelIds == null || modelIds.length == 0)
-        {
-            return;
-        }
+        if (modelIds == null || modelIds.length == 0) return;
 
         ModelData[] parts = new ModelData[modelIds.length];
         for (int i = 0; i < modelIds.length; i++)
         {
             parts[i] = client.loadModelData(modelIds[i]);
-            if (parts[i] == null)
-            {
-                return;
-            }
+            if (parts[i] == null) return;
         }
 
         ModelData merged = client.mergeModels(parts);
@@ -622,10 +541,8 @@ public class PetScapeGhost
         short[] cFrom = def.getColorToReplace();
         short[] cTo = def.getColorToReplaceWith();
         if (cFrom != null && cTo != null && cFrom.length > 0)
-        {
             for (int i = 0; i < cFrom.length; i++)
                 merged.recolor(cFrom[i], cTo[i]);
-        }
 
         int ws = def.getWidthScale();
         int hs = def.getHeightScale();
@@ -643,22 +560,17 @@ public class PetScapeGhost
         runeLiteObject.setModel(lit);
         runeLiteObject.setShouldLoop(true);
         if (idleAnimId > 0) setAnimation(idleAnimId);
-
         modelSet = true;
     }
 
     // Copies the live NPC model each frame for Maya pets
-    // NEVER call setAnimation() on snapshot pets
     private void refreshSnapshot()
     {
         Model live = realNpc.getModel();
         if (live == null) return;
-
         Model snapshot = client.mergeModels(live);
         if (snapshot == null) return;
-
         runeLiteObject.setModel(snapshot);
-
         if (!modelSet)
         {
             runeLiteObject.setShouldLoop(true);
@@ -707,10 +619,7 @@ public class PetScapeGhost
                 && (f & CollisionDataFlag.BLOCK_MOVEMENT_OBJECT) == 0;
     }
 
-    private boolean isInSceneBounds(WorldPoint pos)
-    {
-        return pohFloor.contains(pos);
-    }
+    private boolean isInSceneBounds(WorldPoint pos) { return pohFloor.contains(pos); }
 
     private boolean isAcceptablePosition(WorldPoint pos)
     {
@@ -747,7 +656,6 @@ public class PetScapeGhost
         int dy = Integer.signum(pos.getY() - ghostWorld.getY());
         if (dx != 0 || dy != 0)
             return new WorldArea(ghostWorld, 1, 1).canTravelInDirection(client.getTopLevelWorldView(), dx, dy);
-
         return true;
     }
 
@@ -770,9 +678,7 @@ public class PetScapeGhost
         {
             int dx = RNG.nextInt(7) - 3, dy = RNG.nextInt(7) - 3;
             WorldPoint c = new WorldPoint(wanderAnchor.getX() + dx, wanderAnchor.getY() + dy, wanderAnchor.getPlane());
-
             if (!isInSceneBounds(c)) continue;
-
             CollisionData[] maps = client.getTopLevelWorldView().getCollisionMaps();
             if (maps != null)
             {
@@ -790,7 +696,6 @@ public class PetScapeGhost
                     }
                 }
             }
-
             boolean clear = true;
             for (PetScapeGhost other : allGhosts)
                 if (other.ghostWorld != null && chebyshev(c, other.ghostWorld) < GHOST_CLEARANCE)
@@ -801,7 +706,6 @@ public class PetScapeGhost
         return lastKnownNpcWorld;
     }
 
-    // Spreads ghosts across the full POH by assigning random anchors
     private WorldPoint pickWanderAnchor(WorldPoint origin)
     {
         final int ANCHOR_SPREAD = POH_HALF_SIZE;
@@ -814,9 +718,7 @@ public class PetScapeGhost
             int dy = RNG.nextInt(ANCHOR_SPREAD * 2 + 1) - ANCHOR_SPREAD;
             if (Math.abs(dx) + Math.abs(dy) < MIN_ORIGIN_DIST) continue;
             WorldPoint c = new WorldPoint(origin.getX() + dx, origin.getY() + dy, origin.getPlane());
-
             if (!isInSceneBounds(c)) continue;
-
             CollisionData[] maps = client.getTopLevelWorldView().getCollisionMaps();
             if (maps != null)
             {
@@ -834,26 +736,17 @@ public class PetScapeGhost
                     }
                 }
             }
-
             boolean tooClose = false;
             for (PetScapeGhost other : allGhosts)
             {
                 if (other.wanderAnchor == null) continue;
-                int clearance = (other.realNpc.getId() == realNpc.getId())
-                        ? MIN_ANCHOR_SEP : GHOST_CLEARANCE;
-                if (chebyshev(c, other.wanderAnchor) < clearance)
-                {
-                    tooClose = true;
-                    break;
-                }
+                int clearance = (other.realNpc.getId() == realNpc.getId()) ? MIN_ANCHOR_SEP : GHOST_CLEARANCE;
+                if (chebyshev(c, other.wanderAnchor) < clearance) { tooClose = true; break; }
             }
             if (tooClose) continue;
-
             return c;
         }
-        // Fallback - progressively tighter spread
         for (int spread = 6; spread >= 1; spread--)
-        {
             for (int attempt = 0; attempt < 30; attempt++)
             {
                 int dx = RNG.nextInt(spread * 2 + 1) - spread;
@@ -862,11 +755,9 @@ public class PetScapeGhost
                 WorldPoint c = new WorldPoint(origin.getX() + dx, origin.getY() + dy, origin.getPlane());
                 if (isInSceneBounds(c) && isWalkable(c)) return c;
             }
-        }
         return origin;
     }
 
-    // BFS to nearest open tile — last resort when tryPickNewTarget fails repeatedly
     private WorldPoint bfsNearestOpen(WorldPoint from)
     {
         if (from == null) return null;
@@ -875,8 +766,6 @@ public class PetScapeGhost
         Queue<WorldPoint> queue = new ArrayDeque<>();
         queue.add(from);
         seen.add(from);
-
-        // Keep pets in scene
         while (!queue.isEmpty())
         {
             WorldPoint cur = queue.poll();
@@ -886,20 +775,12 @@ public class PetScapeGhost
                 if (seen.contains(next)) continue;
                 seen.add(next);
                 if (seen.size() > 512) return null;
-
                 if (!isInSceneBounds(next)) continue;
-
-                if (!new WorldArea(cur, 1, 1).canTravelInDirection(
-                        client.getTopLevelWorldView(), d[0], d[1])) continue;
-
+                if (!new WorldArea(cur, 1, 1).canTravelInDirection(client.getTopLevelWorldView(), d[0], d[1])) continue;
                 boolean occupied = false;
                 for (PetScapeGhost other : allGhosts)
-                {
-                    if (other == this || other.ghostWorld == null) continue;
-                    if (next.equals(other.ghostWorld)) { occupied = true; break; }
-                }
+                    if (other != this && next.equals(other.ghostWorld)) { occupied = true; break; }
                 if (occupied) { queue.add(next); continue; }
-
                 return next;
             }
         }
@@ -910,7 +791,6 @@ public class PetScapeGhost
     {
         int[] deltas = {-1, 0, 1};
         for (int dx : deltas)
-        {
             for (int dy : deltas)
             {
                 if (dx == 0 && dy == 0) continue;
@@ -937,7 +817,6 @@ public class PetScapeGhost
                 if (new WorldArea(from, 1, 1).canTravelInDirection(client.getTopLevelWorldView(), dx, dy))
                     return candidate;
             }
-        }
         return null;
     }
 

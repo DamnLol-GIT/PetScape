@@ -84,4 +84,15 @@ public interface PetScapeConfig extends Config
             position = 2
     )
     default boolean allowOtherPoh() { return true; }
+
+    @ConfigItem(
+            keyName = "detachedPets",
+            name = "Detached Pets",
+            description = "Hides cloned pets when original is not rendered",
+            position = 2
+    )
+    default boolean detachedPets()
+    {
+        return false;
+    }
 }
