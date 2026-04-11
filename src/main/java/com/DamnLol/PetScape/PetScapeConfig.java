@@ -85,14 +85,31 @@ public interface PetScapeConfig extends Config
     )
     default boolean allowOtherPoh() { return true; }
 
+    @ConfigSection(
+            name = "Misc Settings",
+            description = "Misc Settings",
+            position = 1
+    )
+    String miscSection = "misc";
+
     @ConfigItem(
             keyName = "detachedPets",
-            name = "Detached Pets",
+            name = "Hide Detached Pets",
             description = "Hides cloned pets when original is not rendered",
-            position = 2
+            section = miscSection,
+            position = 0
     )
     default boolean detachedPets()
     {
         return false;
     }
+
+    @ConfigItem(
+            keyName = "disablePetLimit",
+            name = "Disable Pet Limit",
+            description = "WARNING: Removing the limit can potentially crash low-end computers with 60+ pets in a PoH.",
+            section = miscSection,
+            position = 1
+    )
+    default boolean disablePetLimit() { return false; }
 }
