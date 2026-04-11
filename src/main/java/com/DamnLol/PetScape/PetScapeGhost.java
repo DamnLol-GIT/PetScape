@@ -164,8 +164,10 @@ public class PetScapeGhost
     private final ClientThread clientThread;
     private final Collection<PetScapeGhost> allGhosts;
     private final WorldPoint anchor;
-    private final Set<WorldPoint> pohFloor;
-    private final WorldPoint wanderAnchor;
+
+    private Set<WorldPoint> pohFloor;
+    private WorldPoint wanderAnchor;
+
     private final PetScapeConfig config;
 
     @Getter private WorldPoint ghostWorld;
@@ -463,6 +465,17 @@ public class PetScapeGhost
         else currentAnimId = -1;
     }
 
+    public void updateFloor(Set<WorldPoint> newFloor)
+    {
+        this.pohFloor = newFloor;
+        if (wanderAnchor != null && !newFloor.contains(wanderAnchor))
+        {
+            WorldPoint origin = (lastKnownNpcWorld != null) ? lastKnownNpcWorld : anchor;
+            this.wanderAnchor = pickWanderAnchor(origin);
+            abandonTarget();
+        }
+    }
+
     public void despawn() { runeLiteObject.setActive(false); }
 
 
@@ -746,6 +759,7 @@ public class PetScapeGhost
             if (tooClose) continue;
             return c;
         }
+        // Fallback - tighten the spread progressively until find valid tile
         for (int spread = 6; spread >= 1; spread--)
             for (int attempt = 0; attempt < 30; attempt++)
             {
@@ -755,7 +769,7 @@ public class PetScapeGhost
                 WorldPoint c = new WorldPoint(origin.getX() + dx, origin.getY() + dy, origin.getPlane());
                 if (isInSceneBounds(c) && isWalkable(c)) return c;
             }
-        return origin;
+        return isInSceneBounds(origin) ? origin : lastKnownNpcWorld;
     }
 
     private WorldPoint bfsNearestOpen(WorldPoint from)

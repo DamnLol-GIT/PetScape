@@ -28,6 +28,8 @@ package com.DamnLol.PetScape;
 import com.google.inject.Provides;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.*;
+import net.runelite.api.coords.LocalPoint;
+import net.runelite.api.coords.WorldArea;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.*;
 import net.runelite.client.callback.ClientThread;
@@ -49,7 +51,17 @@ import java.util.*;
 )
 public class PetScapePlugin extends Plugin
 {
-    private static final Set<Integer> POH_TEMPLATE_REGIONS = Set.of(7790, 7791);
+
+    private static final Set<Integer> POH_TEMPLATE_REGIONS = Set.of(
+            7790, 7791, 8046, 8047, 8302, 8303,
+            8558, 8559, 8814, 8815, 9070, 9071
+    );
+
+    private static boolean isPohTemplateRegion(int region)
+    {
+        int regionY = region & 0xFF;
+        return regionY == 110 || regionY == 111;
+    }
 
     static final String[] WANDER_LINES = {};
 
@@ -233,7 +245,6 @@ public class PetScapePlugin extends Plugin
             NpcID.ROCK_GOLEM_7737, NpcID.ROCK_GOLEM_7740,
             NpcID.ROCK_GOLEM_7738, NpcID.ROCK_GOLEM_7741,
 
-
             // Minigame/Clog
             NpcID.BLOODHOUND,
             NpcID.BLOODHOUND_7232,
@@ -263,7 +274,6 @@ public class PetScapePlugin extends Plugin
     // All walkable POH tiles — flood-filled on entry, shared with all ghosts
     Set<WorldPoint> pohFloor = Collections.emptySet();
 
-    // Flood-fills walkable tiles from player position for walkable pet tiles
     private Set<WorldPoint> buildPohFloor()
     {
         Player local = client.getLocalPlayer();
@@ -290,6 +300,7 @@ public class PetScapePlugin extends Plugin
             }
         }
 
+        // Collect instance chunks that belong to POH template regions
         Set<Long> validChunks = new HashSet<>();
         int[][][] templateChunks = client.getInstanceTemplateChunks();
         int baseX = client.getTopLevelWorldView().getBaseX();
@@ -297,21 +308,27 @@ public class PetScapePlugin extends Plugin
 
         int sumCx = 0, sumCy = 0, chunkCount = 0;
         int minCx = Integer.MAX_VALUE, maxCx = 0, minCy = Integer.MAX_VALUE, maxCy = 0;
+        Set<Integer> debugRegions = new java.util.TreeSet<>();
         if (templateChunks != null)
         {
-            for (int[][] plane : templateChunks) {
+            for (int[][] plane : templateChunks)
+            {
                 if (plane == null) continue;
-                for (int cx = 0; cx < plane.length; cx++) {
+                for (int cx = 0; cx < plane.length; cx++)
+                {
                     if (plane[cx] == null) continue;
-                    for (int cy = 0; cy < plane[cx].length; cy++) {
+                    for (int cy = 0; cy < plane[cx].length; cy++)
+                    {
                         int chunk = plane[cx][cy];
                         if (chunk == 0) continue;
                         int chunkX = (chunk >> 14) & 0x3FF;
                         int chunkY = (chunk >> 3) & 0x7FF;
                         int region = ((chunkX / 8) << 8) | (chunkY / 8);
-                        if (!POH_TEMPLATE_REGIONS.contains(region)) continue;
+                        debugRegions.add(region);
+                        if (!isPohTemplateRegion(region)) continue;
                         Long key = ((long) cx << 32) | cy;
-                        if (validChunks.add(key)) {
+                        if (validChunks.add(key))
+                        {
                             sumCx += cx;
                             sumCy += cy;
                             chunkCount++;
@@ -324,18 +341,14 @@ public class PetScapePlugin extends Plugin
                 }
             }
         }
-        log.info("[PetScape] validChunks={} cx=[{},{}] cy=[{},{}] baseX={} baseY={}",
-                validChunks.size(), minCx, maxCx, minCy, maxCy, baseX, baseY);
-        if (validChunks.isEmpty()) pendingFloorRebuild = true;
 
-        // Seed BFS from chunk centroid — center of house regardless of entry portal location
+        log.info("[PetScape] validChunks={} cx=[{},{}] cy=[{},{}] baseX={} baseY={} | allRegions={}",
+                validChunks.size(), minCx, maxCx, minCy, maxCy, baseX, baseY, debugRegions);
+
+        final int POH_MAX_FALLBACK_RADIUS = 45;
+        final boolean usingFallback = validChunks.isEmpty();
+
         WorldPoint seed;
-        WorldPoint fallbackCenter = null;
-        if (chunkCount == 0)
-        {
-            fallbackCenter = new WorldPoint(baseX + 52, baseY + 52, start.getPlane());
-        }
-
         if (chunkCount > 0)
         {
             int centerChunkX = sumCx / chunkCount;
@@ -344,13 +357,14 @@ public class PetScapePlugin extends Plugin
                     baseX + centerChunkX * 8 + 4,
                     baseY + centerChunkY * 8 + 4,
                     start.getPlane());
-            if (net.runelite.api.coords.LocalPoint.fromWorld(
-                    client.getTopLevelWorldView(), seed) == null)
+            if (LocalPoint.fromWorld(client.getTopLevelWorldView(), seed) == null)
+            {
                 seed = start;
+            }
         }
         else
         {
-            seed = fallbackCenter != null ? fallbackCenter : start;
+            seed = start;
         }
 
         Set<WorldPoint> visited = new HashSet<>();
@@ -374,7 +388,7 @@ public class PetScapePlugin extends Plugin
                 for (int dy : dirs)
                 {
                     if (dx == 0 && dy == 0) continue;
-                    if (dx != 0 && dy != 0) continue;
+                    if (dx != 0 && dy != 0) continue; // cardinal only
 
                     WorldPoint next = new WorldPoint(cur.getX() + dx, cur.getY() + dy, cur.getPlane());
                     if (visited.contains(next)) continue;
@@ -387,19 +401,20 @@ public class PetScapePlugin extends Plugin
                         int cy = ly / 8;
                         if (!validChunks.contains(((long) cx << 32) | (long) cy)) continue;
                     }
-                    else if (fallbackCenter != null)
+                    else if (usingFallback)
                     {
-                        // No chunk data — cap at 28 tiles from centroid
-                        if (Math.abs(next.getX() - fallbackCenter.getX()) > 28
-                                || Math.abs(next.getY() - fallbackCenter.getY()) > 28) continue;
+                        if (Math.abs(next.getX() - seed.getX()) > POH_MAX_FALLBACK_RADIUS
+                                || Math.abs(next.getY() - seed.getY()) > POH_MAX_FALLBACK_RADIUS) continue;
                     }
 
-                    if (net.runelite.api.coords.LocalPoint.fromWorld(
-                            client.getTopLevelWorldView(), next) == null) continue;
+                    // Must be within the renderable scene
+                    if (LocalPoint.fromWorld(client.getTopLevelWorldView(), next) == null) continue;
 
-                    if (!new net.runelite.api.coords.WorldArea(cur, 1, 1)
+                    // Collision check
+                    if (!new WorldArea(cur, 1, 1)
                             .canTravelInDirection(client.getTopLevelWorldView(), dx, dy)) continue;
 
+                    // Bridge/elevated tile filter
                     if (useTileSettings)
                     {
                         int plane = next.getPlane();
@@ -419,8 +434,8 @@ public class PetScapePlugin extends Plugin
             }
         }
 
-        log.info("[PetScape] POH floor mapped: {} tiles from {} (tileSettings={})",
-                visited.size(), start, useTileSettings);
+        log.info("[PetScape] POH floor mapped: {} tiles from seed {} (tileSettings={})",
+                visited.size(), seed, useTileSettings);
         return visited;
     }
 
@@ -481,8 +496,8 @@ public class PetScapePlugin extends Plugin
         long petCount = client.getNpcs().stream()
                 .filter(n -> PET_NPC_IDS.contains(n.getId()) && !isOnPlayerTile(n))
                 .count();
-        int slots = (petCount > 0 && petCount * desired > MAX_GHOST_CAP)
-                ? (int)(MAX_GHOST_CAP / petCount)
+        int slots = (petCount > 0 && petCount * desired > getEffectiveGhostCap())
+                ? (int)(getEffectiveGhostCap() / petCount)
                 : desired;
         if (slots > 0) spawnGhostsForNpc(npc, slots);
     }
@@ -530,22 +545,19 @@ public class PetScapePlugin extends Plugin
         {
             pendingFloorRebuild = false;
             floorRebuildAttempts++;
+
             if (pohFloor.isEmpty())
             {
+                // No floor yet — attempt a full scan/build
                 scanExistingNpcs();
             }
             else
             {
-                int[][][] tc = client.getInstanceTemplateChunks();
-                boolean ready = false;
-                if (tc != null) { outer: for (int[][] p : tc) { if (p==null) continue; for (int[] r : p) { if (r==null) continue; for (int c : r) { if (c!=0){ready=true;break outer;} } } } }
-                if (ready)
+                // Rebuild floor and propagate corrected bounds to all ghosts
+                pohFloor = buildPohFloor();
+                if (!pohFloor.isEmpty())
                 {
-                    pohFloor = buildPohFloor();
-                }
-                else
-                {
-                    pendingFloorRebuild = true;
+                    ghosts.values().forEach(g -> g.updateFloor(pohFloor));
                 }
             }
         }
@@ -564,7 +576,7 @@ public class PetScapePlugin extends Plugin
         ghosts.values().forEach(PetScapeGhost::clientTick);
     }
 
-    // Swaps original pet menus so "Walk here" is the left-click default (instead of using menu entry swap for them individually)
+    // Swaps original pet menus so "Walk here" is the left-click default
     @Subscribe
     public void onMenuEntryAdded(MenuEntryAdded event)
     {
@@ -604,6 +616,12 @@ public class PetScapePlugin extends Plugin
     // Tested higher limits, 580 caused 12fps with above settings
     private static final int MAX_GHOST_CAP = 350;
 
+    // Naturally we need an uncap option for real gamers
+    private int getEffectiveGhostCap()
+    {
+        return config.disablePetLimit() ? Integer.MAX_VALUE : MAX_GHOST_CAP;
+    }
+
     private void spawnGhostsForNpc(NPC npc, int slots)
     {
         for (int slot = 0; slot < slots; slot++)
@@ -634,15 +652,20 @@ public class PetScapePlugin extends Plugin
         floorRebuildAttempts = 0;
         pohFloor = buildPohFloor();
 
+        if (pohFloor.isEmpty())
+        {
+            return;
+        }
+
         int desired = config.cloneCount().getExtraClones();
         int petCount = eligible.size();
 
         // Distribute evenly if total clones would exceed cap
         int floor, remainder;
-        if ((long) petCount * desired > MAX_GHOST_CAP)
+        if ((long) petCount * desired > getEffectiveGhostCap())
         {
-            floor = MAX_GHOST_CAP / petCount;
-            remainder = MAX_GHOST_CAP % petCount;
+            floor = getEffectiveGhostCap() / petCount;
+            remainder = getEffectiveGhostCap() % petCount;
         }
         else
         {
@@ -685,7 +708,7 @@ public class PetScapePlugin extends Plugin
             for (int[] row : plane) { if (row == null) continue;
                 for (int chunk : row) { if (chunk == 0) continue;
                     int chunkX = (chunk >> 14) & 0x3FF, chunkY = (chunk >> 3) & 0x7FF;
-                    if (POH_TEMPLATE_REGIONS.contains(((chunkX / 8) << 8) | (chunkY / 8))) return true;
+                    if (isPohTemplateRegion(((chunkX / 8) << 8) | (chunkY / 8))) return true;
                 }}}
         return false;
     }
