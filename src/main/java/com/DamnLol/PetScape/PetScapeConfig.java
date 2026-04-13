@@ -85,6 +85,15 @@ public interface PetScapeConfig extends Config
     )
     default boolean allowOtherPoh() { return true; }
 
+    @ConfigItem(
+            keyName = "petFamily",
+            name = "Pet Family",
+            description = "Spawn little pet followers",
+            section = generalSection,
+            position = 3
+    )
+    default PetFamilyFollower.FamilySize petFamily() { return PetFamilyFollower.FamilySize.NONE; }
+
     @ConfigSection(
             name = "Misc Settings",
             description = "Misc Settings",

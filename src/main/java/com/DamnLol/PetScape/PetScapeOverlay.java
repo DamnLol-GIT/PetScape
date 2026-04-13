@@ -25,7 +25,10 @@
 
 package com.DamnLol.PetScape;
 
-import net.runelite.client.ui.overlay.*;
+import net.runelite.client.ui.overlay.Overlay;
+import net.runelite.client.ui.overlay.OverlayLayer;
+import net.runelite.client.ui.overlay.OverlayPosition;
+
 import javax.inject.Inject;
 import java.awt.*;
 

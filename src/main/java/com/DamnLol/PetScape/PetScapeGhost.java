@@ -54,7 +54,7 @@ public class PetScapeGhost
 
     // Z correction applied on top of tile height.
     // Note to self - 128 scene units = 1 game tile. Positive = UP, negative = DOWN.
-    private static final java.util.Map<Integer, Integer> Z_OVERRIDES = new java.util.HashMap<>();
+    static final java.util.Map<Integer, Integer> Z_OVERRIDES = new java.util.HashMap<>();
     static
     {
         // Fliers - push DOWN
@@ -111,7 +111,7 @@ public class PetScapeGhost
     private static final Set<Integer> FORCED_IDLE_ONLY_IDS = new HashSet<>();
 
     // Pets that stay on standard loadModelData even if isMayaAnim() returns true
-    private static final Set<Integer> FORCE_STANDARD_IDS = new HashSet<>(Arrays.asList(
+    static final Set<Integer> FORCE_STANDARD_IDS = new HashSet<>(Arrays.asList(
             NpcID.YOUNGLLEF,
             NpcID.YOUNGLLEF_8737,
             NpcID.CORRUPTED_YOUNGLLEF,

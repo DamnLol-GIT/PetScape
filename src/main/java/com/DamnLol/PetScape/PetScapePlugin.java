@@ -266,6 +266,8 @@ public class PetScapePlugin extends Plugin
     // Key: npcIndex:slot
     final Map<String, PetScapeGhost> ghosts = new HashMap<>();
 
+    private PetFamilyFollower petFamilyFollower = null;
+
     private boolean wasInPoh = false;
     private boolean pendingFloorRebuild = false;
     private int floorRebuildAttempts = 0;
@@ -456,19 +458,41 @@ public class PetScapePlugin extends Plugin
     protected void shutDown()
     {
         overlayManager.remove(overlay);
-        clientThread.invoke(() -> { ghosts.values().forEach(PetScapeGhost::despawn); ghosts.clear(); });
+        clientThread.invoke(() ->
+        {
+            if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
+            ghosts.values().forEach(PetScapeGhost::despawn);
+            ghosts.clear();
+        });
     }
 
     @Subscribe
     public void onConfigChanged(ConfigChanged event)
     {
-        if (!"petscape".equals(event.getGroup()) || !"cloneCount".equals(event.getKey())) return;
-        log.info("[PetScape] Clone count changed, respawning");
-        clientThread.invoke(() -> {
-            ghosts.values().forEach(PetScapeGhost::despawn);
-            ghosts.clear();
-            scanExistingNpcs();
-        });
+        if (!"petscape".equals(event.getGroup())) return;
+        if ("cloneCount".equals(event.getKey()))
+        {
+            log.info("[PetScape] Clone count changed, respawning");
+            clientThread.invoke(() -> {
+                ghosts.values().forEach(PetScapeGhost::despawn);
+                ghosts.clear();
+                scanExistingNpcs();
+            });
+        }
+        else if ("petFamily".equals(event.getKey()))
+        {
+            clientThread.invoke(() ->
+            {
+                if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
+                PetFamilyFollower.FamilySize size = config.petFamily();
+                if (size != PetFamilyFollower.FamilySize.NONE)
+                {
+                    NPC follower = client.getFollower();
+                    if (follower != null)
+                        petFamilyFollower = new PetFamilyFollower(follower, client, clientThread, size.getCount());
+                }
+            });
+        }
     }
 
     @Subscribe
@@ -514,6 +538,10 @@ public class PetScapePlugin extends Plugin
     @Subscribe
     public void onGameTick(GameTick event)
     {
+        // Pet Family — works anywhere, runs before PoH logic
+        if (config.petFamily() != PetFamilyFollower.FamilySize.NONE) handlePetFamily();
+        else if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
+
         boolean inPoh = inPoh();
 
         if (client.getTickCount() % 20 == 0)
@@ -572,6 +600,7 @@ public class PetScapePlugin extends Plugin
     @Subscribe
     public void onClientTick(ClientTick event)
     {
+        if (config.petFamily() != PetFamilyFollower.FamilySize.NONE && petFamilyFollower != null) petFamilyFollower.clientTick();
         if (!inPoh()) return;
         ghosts.values().forEach(PetScapeGhost::clientTick);
     }
@@ -610,6 +639,27 @@ public class PetScapePlugin extends Plugin
         System.arraycopy(entries, walkIdx + 1, entries, walkIdx, entries.length - 1 - walkIdx);
         entries[entries.length - 1] = walk;
         client.setMenuEntries(entries);
+    }
+
+    private void handlePetFamily()
+    {
+        NPC follower = client.getFollower();
+        if (follower == null)
+        {
+            if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
+            return;
+        }
+        // Recreate if the pet/chain changed
+        int desiredChain = config.petFamily().getCount();
+        if (petFamilyFollower != null && (petFamilyFollower.getRealNpc() != follower
+                || petFamilyFollower.getChainLength() != desiredChain))
+        {
+            petFamilyFollower.despawn();
+            petFamilyFollower = null;
+        }
+        if (petFamilyFollower == null)
+            petFamilyFollower = new PetFamilyFollower(follower, client, clientThread, desiredChain);
+        petFamilyFollower.gameTick();
     }
 
     // Max Ghost Cap - tested with 350 on mid/upper ranged gpu, had 56~fps with 350 cap + camera plugin extra zoom out + 117HD plugin max settings
