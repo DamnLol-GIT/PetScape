@@ -81,9 +81,10 @@ public class PetScapePlugin extends Plugin
             NpcID.HELLPUPPY,
             NpcID.NOON,
             NpcID.MIDNIGHT,
-            NpcID.GULL, //unconfirmed
-            NpcID.GULL_14931, //unconfirmed
-            NpcID.GULL_15059, //unconfirmed
+            NpcID.GULL,
+            NpcID.GULL_14931,
+            NpcID.GULL_15059,
+            NpcID.GULLIVER_15060,
             NpcID.IKKLE_HYDRA,
             NpcID.IKKLE_HYDRA_8493,
             NpcID.IKKLE_HYDRA_8494,
