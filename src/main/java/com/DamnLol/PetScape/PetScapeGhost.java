@@ -57,34 +57,10 @@ public class PetScapeGhost
     static final java.util.Map<Integer, Integer> Z_OVERRIDES = new java.util.HashMap<>();
     static
     {
-        // Fliers - push DOWN
-        Z_OVERRIDES.put(NpcID.KREEARRA_JR, -200);
-        Z_OVERRIDES.put(NpcID.VESPINA, -150);
-        Z_OVERRIDES.put(NpcID.FLYING_VESPINA, -150);
-        Z_OVERRIDES.put(NpcID.PHOENIX, -180);
-        Z_OVERRIDES.put(NpcID.PHOENIX_3078, -180);
-        Z_OVERRIDES.put(NpcID.PHOENIX_3079, -180);
-        Z_OVERRIDES.put(NpcID.PHOENIX_3080, -180);
-        Z_OVERRIDES.put(NpcID.PHOENIX_7368, -180);
-        Z_OVERRIDES.put(NpcID.KALPHITE_PRINCESS_6638, -150);
-
-        // Ground NPCs that sink - push UP
-        Z_OVERRIDES.put(NpcID.VORKI, 15);
-        Z_OVERRIDES.put(NpcID.SKOTOS, 50);
-        Z_OVERRIDES.put(NpcID.SKOTOS_7671, 50);
-        Z_OVERRIDES.put(NpcID.VETION_JR, 8);
-        Z_OVERRIDES.put(NpcID.VETION_JR_5537, 8);
-        Z_OVERRIDES.put(NpcID.VETION_JR_11983, 8);
-        Z_OVERRIDES.put(NpcID.VETION_JR_11984, 8);
-        Z_OVERRIDES.put(NpcID.VETION_JR_5559, 8);
-        Z_OVERRIDES.put(NpcID.YOUNGLLEF, 18);
-        Z_OVERRIDES.put(NpcID.YOUNGLLEF_8737, 18);
+        Z_OVERRIDES.put(NpcID.CORPOREAL_CRITTER, 25);
         Z_OVERRIDES.put(NpcID.CORRUPTED_YOUNGLLEF, 18);
         Z_OVERRIDES.put(NpcID.CORRUPTED_YOUNGLLEF_8738, 18);
-        Z_OVERRIDES.put(NpcID.KRIL_TSUTSAROTH_JR, 50);
-        Z_OVERRIDES.put(NpcID.PRINCE_BLACK_DRAGON, 25);
-        Z_OVERRIDES.put(NpcID.CORPOREAL_CRITTER, 25);
-        Z_OVERRIDES.put(NpcID.KALPHITE_PRINCESS, 25);
+        Z_OVERRIDES.put(NpcID.FLYING_VESPINA, -150);
         Z_OVERRIDES.put(NpcID.IKKLE_HYDRA, 20);
         Z_OVERRIDES.put(NpcID.IKKLE_HYDRA_8493, 20);
         Z_OVERRIDES.put(NpcID.IKKLE_HYDRA_8494, 20);
@@ -93,9 +69,30 @@ public class PetScapeGhost
         Z_OVERRIDES.put(NpcID.IKKLE_HYDRA_8518, 20);
         Z_OVERRIDES.put(NpcID.IKKLE_HYDRA_8519, 20);
         Z_OVERRIDES.put(NpcID.IKKLE_HYDRA_8520, 20);
-        Z_OVERRIDES.put(NpcID.VANGUARD_8198, 30);
+        Z_OVERRIDES.put(NpcID.KALPHITE_PRINCESS, 25);
+        Z_OVERRIDES.put(NpcID.KALPHITE_PRINCESS_6638, -150);
+        Z_OVERRIDES.put(NpcID.KREEARRA_JR, -200);
+        Z_OVERRIDES.put(NpcID.KRIL_TSUTSAROTH_JR, 50);
+        Z_OVERRIDES.put(NpcID.PHOENIX, -180);
+        Z_OVERRIDES.put(NpcID.PHOENIX_3078, -180);
+        Z_OVERRIDES.put(NpcID.PHOENIX_3079, -180);
+        Z_OVERRIDES.put(NpcID.PHOENIX_3080, -180);
+        Z_OVERRIDES.put(NpcID.PHOENIX_7368, -180);
+        Z_OVERRIDES.put(NpcID.PRINCE_BLACK_DRAGON, 25);
+        Z_OVERRIDES.put(NpcID.SKOTOS, 50);
+        Z_OVERRIDES.put(NpcID.SKOTOS_7671, 50);
         Z_OVERRIDES.put(NpcID.TUMEKENS_GUARDIAN, 20);
         Z_OVERRIDES.put(NpcID.TUMEKENS_GUARDIAN_11812, 20);
+        Z_OVERRIDES.put(NpcID.VANGUARD_8198, 30);
+        Z_OVERRIDES.put(NpcID.VESPINA, -150);
+        Z_OVERRIDES.put(NpcID.VETION_JR, 8);
+        Z_OVERRIDES.put(NpcID.VETION_JR_11983, 8);
+        Z_OVERRIDES.put(NpcID.VETION_JR_11984, 8);
+        Z_OVERRIDES.put(NpcID.VETION_JR_5537, 8);
+        Z_OVERRIDES.put(NpcID.VETION_JR_5559, 8);
+        Z_OVERRIDES.put(NpcID.VORKI, 15);
+        Z_OVERRIDES.put(NpcID.YOUNGLLEF, 18);
+        Z_OVERRIDES.put(NpcID.YOUNGLLEF_8737, 18);
     }
 
     // Pets that never wander
@@ -110,51 +107,6 @@ public class PetScapeGhost
     // Pets forced idle-only
     private static final Set<Integer> FORCED_IDLE_ONLY_IDS = new HashSet<>();
 
-    // Pets that stay on standard loadModelData even if isMayaAnim() returns true
-    static final Set<Integer> FORCE_STANDARD_IDS = new HashSet<>(Arrays.asList(
-            NpcID.YOUNGLLEF,
-            NpcID.YOUNGLLEF_8737,
-            NpcID.CORRUPTED_YOUNGLLEF,
-            NpcID.CORRUPTED_YOUNGLLEF_8738,
-            NpcID.TUMEKENS_GUARDIAN,
-            NpcID.TUMEKENS_GUARDIAN_11812,
-            NpcID.TUMEKENS_DAMAGED_GUARDIAN,
-            NpcID.ELIDINIS_GUARDIAN,
-            NpcID.ELIDINIS_DAMAGED_GUARDIAN,
-            NpcID.AKKHITO,
-            NpcID.KEPHRITI,
-            NpcID.BABI,
-            NpcID.ZEBO,
-            NpcID.OLMLET,
-            NpcID.PUPPADILE,
-            NpcID.TEKTINY,
-            NpcID.VANGUARD_8198,
-            NpcID.VASA_MINIRIO,
-            NpcID.VESPINA,
-            NpcID.FLYING_VESPINA,
-            NpcID.SMOLCANO,
-            NpcID.SMOLCANO_8739
-    ));
-
-    private static final java.util.concurrent.ConcurrentHashMap<Integer, Boolean> MAYA_ANIM_CACHE
-            = new java.util.concurrent.ConcurrentHashMap<>();
-
-    public static void clearCaches()
-    {
-        MAYA_ANIM_CACHE.clear();
-    }
-
-    private boolean isMayaRig(NPC npc)
-    {
-        if (FORCE_STANDARD_IDS.contains(npc.getId())) return false;
-        int idlePose = npc.getIdlePoseAnimation();
-        if (idlePose <= 0) return false;
-        return MAYA_ANIM_CACHE.computeIfAbsent(idlePose, id -> {
-            Animation anim = client.loadAnimation(id);
-            return anim != null && anim.isMayaAnim();
-        });
-    }
-
     private static final Random RNG = new Random();
 
     @Getter private NPC realNpc;
@@ -168,7 +120,6 @@ public class PetScapeGhost
     private Set<WorldPoint> pohFloor;
     private WorldPoint wanderAnchor;
 
-    private final PetScapeConfig config;
 
     @Getter private WorldPoint ghostWorld;
 
@@ -179,7 +130,6 @@ public class PetScapeGhost
     private int idleAnimId;
     private int walkAnimId;
     private boolean idleOnly;
-    private boolean snapshotModel;
     private final boolean stationary;
     private final int sameNpcClearance;
     private final int maxWander;
@@ -203,14 +153,13 @@ public class PetScapeGhost
 
     public PetScapeGhost(NPC realNpc, Client client, ClientThread clientThread,
                          Collection<PetScapeGhost> allGhosts, int totalClones,
-                         Set<WorldPoint> pohFloor, PetScapeConfig config)
+                         Set<WorldPoint> pohFloor)
     {
         this.realNpc = realNpc;
         this.client = client;
         this.clientThread = clientThread;
         this.allGhosts = allGhosts;
         this.pohFloor = pohFloor;
-        this.config = config;
         this.anchor = realNpc.getWorldLocation();
         this.lastKnownNpcWorld = realNpc.getWorldLocation();
         this.wanderAnchor = pickWanderAnchor(realNpc.getWorldLocation());
@@ -218,7 +167,6 @@ public class PetScapeGhost
         this.gameTick = RNG.nextInt(WANDER_TICKS);
         this.nextWanderTick = RNG.nextInt(6);
         this.idleOnly = FORCED_IDLE_ONLY_IDS.contains(realNpc.getId());
-        this.snapshotModel = isMayaRig(realNpc);
         this.stationary = STATIONARY_PET_IDS.contains(realNpc.getId());
 
         this.maxWander = Math.min(20, Math.max(8, (int)(22 - totalClones * 1.5)));
@@ -231,7 +179,21 @@ public class PetScapeGhost
         this.lastCompositionId = realNpc.getComposition().getId();
         cacheAnimIds();
 
-        this.runeLiteObject = client.createRuneLiteObject();
+        PetGhostData.Entry _ghostData = PetGhostData.LOOKUP.get(realNpc.getId());
+        final int _capturedScale = (_ghostData != null && _ghostData.scale > 0 && _ghostData.scale != 128)
+                ? _ghostData.scale : -1;
+        this.runeLiteObject = new RuneLiteObject(client)
+        {
+            @Override
+            public Model getModel()
+            {
+                Model _m = super.getModel();
+                if (_capturedScale > 0 && _m != null)
+                    return _m.scale(_capturedScale, _capturedScale, _capturedScale);
+                return _m;
+            }
+        };
+        this.runeLiteObject.setWorldView(-1);
         initModel();
         placeObject();
         runeLiteObject.setActive(true);
@@ -245,9 +207,7 @@ public class PetScapeGhost
 
         if (detached)
         {
-            // Detached Pets ON -> clone is hidden
-            // Detached Pets OFF -> clone wanders with snapshot
-            if (!config.detachedPets() && targetWorld == null && gameTick >= nextWanderTick)
+            if (targetWorld == null && gameTick >= nextWanderTick)
             {
                 if (!stationary)
                 {
@@ -270,8 +230,6 @@ public class PetScapeGhost
             cacheAnimIds();
             zOffset = resolveZOffset();
             idleOnly = FORCED_IDLE_ONLY_IDS.contains(realNpc.getId());
-            MAYA_ANIM_CACHE.remove(idleAnimId);
-            snapshotModel = isMayaRig(realNpc);
             currentAnimId = -1;
             modelSet = false;
         }
@@ -359,23 +317,6 @@ public class PetScapeGhost
     {
         if (!runeLiteObject.isActive()) return;
 
-        if (snapshotModel && modelSet && !detached)
-        {
-            // Noon/Midnight: walk anim plays boss-scale lightning - hold idle pose instead
-            boolean skipSnapshot = false;
-            int npcId = realNpc.getId();
-            if ((npcId == NpcID.NOON || npcId == NpcID.MIDNIGHT) && walkAnimId > 0)
-            {
-                int currentAnim = realNpc.getAnimation();
-                skipSnapshot = (currentAnim == walkAnimId);
-            }
-            if (!skipSnapshot) refreshSnapshot();
-            if (zOffset != 0)
-            {
-                LocalPoint lp = runeLiteObject.getLocation();
-                if (lp != null) applyZOffset(lp);
-            }
-        }
 
         if (targetLocal == null) return;
 
@@ -395,11 +336,11 @@ public class PetScapeGhost
             targetLocal = null;
             stuckTicks = 0;
             lastWorldTile = null;
-            if (!snapshotModel && idleAnimId > 0 && currentAnimId != idleAnimId) setAnimation(idleAnimId);
+            if (idleAnimId > 0 && currentAnimId != idleAnimId) setAnimation(idleAnimId);
             return;
         }
 
-        if (!snapshotModel && !idleOnly && walkAnimId > 0 && currentAnimId != walkAnimId)
+        if (!idleOnly && walkAnimId > 0 && currentAnimId != walkAnimId)
             setAnimation(walkAnimId);
 
         double angle = Math.atan2(-dx, -dy);
@@ -430,11 +371,6 @@ public class PetScapeGhost
     public void detach()
     {
         detached = true;
-        if (config.detachedPets())
-        {
-            runeLiteObject.setActive(false);
-            abandonTarget();
-        }
     }
 
     // Called when the original Pet re-enters render distance
@@ -443,7 +379,6 @@ public class PetScapeGhost
         this.realNpc = npc;
         detached = false;
         cachedNpcId = npc.getId();
-        runeLiteObject.setActive(true);
 
         NPCComposition comp = npc.getComposition();
         if (comp != null)
@@ -455,14 +390,10 @@ public class PetScapeGhost
                 cacheAnimIds();
                 zOffset = resolveZOffset();
                 idleOnly = FORCED_IDLE_ONLY_IDS.contains(npc.getId());
-                snapshotModel = isMayaRig(npc);
-                currentAnimId = -1;
                 modelSet = false;
             }
         }
-
-        if (snapshotModel) modelSet = false;
-        else currentAnimId = -1;
+        currentAnimId = -1;
     }
 
     public void updateFloor(Set<WorldPoint> newFloor)
@@ -512,10 +443,19 @@ public class PetScapeGhost
 
     private void cacheAnimIds()
     {
-        int idle = realNpc.getIdlePoseAnimation();
-        int walk = realNpc.getWalkAnimation();
-        idleAnimId = idle > 0 ? idle : Math.max(walk, 0);
-        walkAnimId = idleOnly ? idleAnimId : (walk > 0 ? walk : idleAnimId);
+        PetGhostData.Entry _d = PetGhostData.LOOKUP.get(realNpc.getId());
+        if (_d != null && _d.idleAnim > 0)
+        {
+            idleAnimId = _d.idleAnim;
+            walkAnimId = idleOnly ? idleAnimId : (_d.walkAnim > 0 ? _d.walkAnim : idleAnimId);
+        }
+        else
+        {
+            int idle = realNpc.getIdlePoseAnimation();
+            int walk = realNpc.getWalkAnimation();
+            idleAnimId = idle > 0 ? idle : Math.max(walk, 0);
+            walkAnimId = idleOnly ? idleAnimId : (walk > 0 ? walk : idleAnimId);
+        }
     }
 
     private void abandonTarget()
@@ -524,69 +464,96 @@ public class PetScapeGhost
         targetLocal = null;
         stuckTicks = 0;
         lastWorldTile = null;
-        if (!snapshotModel && idleAnimId > 0 && currentAnimId != idleAnimId) setAnimation(idleAnimId);
+        if (idleAnimId > 0 && currentAnimId != idleAnimId) setAnimation(idleAnimId);
     }
 
     private void initModel()
     {
-        if (snapshotModel)
-        {
-            refreshSnapshot();
-            return;
-        }
-
         NPCComposition def = realNpc.getTransformedComposition();
         if (def == null) def = realNpc.getComposition();
+        if (def == null) return;
 
-        int[] modelIds = def.getModels();
-        if (modelIds == null || modelIds.length == 0) return;
+        PetGhostData.Entry data = PetGhostData.LOOKUP.get(realNpc.getId());
+        if (data == null)
+            log.info("[PetScape] No PetGhostData entry: {} (NPC {})", realNpc.getName(), realNpc.getId());
 
-        ModelData[] parts = new ModelData[modelIds.length];
-        for (int i = 0; i < modelIds.length; i++)
+
+        if (data != null)
         {
-            parts[i] = client.loadModelData(modelIds[i]);
-            if (parts[i] == null) return;
-        }
+            // PetGhostData path - scale-sensitive pets
+            int[] modelIds = data.modelIds;
+            if (modelIds == null || modelIds.length == 0) return;
 
-        ModelData merged = client.mergeModels(parts);
-        if (merged == null) return;
+            ModelData modelData;
+            if (modelIds.length == 1)
+            {
+                modelData = client.loadModelData(modelIds[0]);
+                if (modelData == null) return;
+            }
+            else
+            {
+                ModelData[] parts = new ModelData[modelIds.length];
+                for (int i = 0; i < modelIds.length; i++)
+                {
+                    parts[i] = client.loadModelData(modelIds[i]);
+                    if (parts[i] == null) return;
+                }
+                modelData = client.mergeModels(parts);
+                if (modelData == null) return;
+            }
+            modelData.cloneVertices();
 
-        short[] cFrom = def.getColorToReplace();
-        short[] cTo = def.getColorToReplaceWith();
-        if (cFrom != null && cTo != null && cFrom.length > 0)
-            for (int i = 0; i < cFrom.length; i++)
-                merged.recolor(cFrom[i], cTo[i]);
+            if (data.recolors != null && data.recolors.length >= 2)
+            {
+                modelData.cloneColors();
+                int mid = data.recolors.length / 2;
+                for (int i = 0; i < mid; i++)
+                    modelData.recolor(data.recolors[i], data.recolors[mid + i]);
+            }
 
-        int ws = def.getWidthScale();
-        int hs = def.getHeightScale();
-        ws = (ws > 0) ? ws : 128;
-        hs = (hs > 0) ? hs : 128;
-        if (ws != 128 || hs != 128)
-        {
-            merged.cloneVertices();
-            merged.scale(ws, hs, ws);
-        }
+            Model lit = modelData.light(64, 850, -30, -50, -30);
+            if (lit == null) return;
 
-        Model lit = merged.light(64, 850, -30, -50, -30);
-        if (lit == null) return;
-
-        runeLiteObject.setModel(lit);
-        runeLiteObject.setShouldLoop(true);
-        if (idleAnimId > 0) setAnimation(idleAnimId);
-        modelSet = true;
-    }
-
-    // Copies the live NPC model each frame for Maya pets
-    private void refreshSnapshot()
-    {
-        Model live = realNpc.getModel();
-        if (live == null) return;
-        Model snapshot = client.mergeModels(live);
-        if (snapshot == null) return;
-        runeLiteObject.setModel(snapshot);
-        if (!modelSet)
-        {
+            if (idleAnimId > 0)
+            {
+                Animation anim = client.loadAnimation(idleAnimId);
+                if (anim != null) { runeLiteObject.setAnimation(anim); currentAnimId = idleAnimId; }
+            }
+            runeLiteObject.setModel(lit);
             runeLiteObject.setShouldLoop(true);
+            modelSet = true;
+        }
+        else
+        {
+            // Fallback path
+            int[] modelIds = def.getModels();
+            if (modelIds == null || modelIds.length == 0) return;
+
+            ModelData[] parts = new ModelData[modelIds.length];
+            for (int i = 0; i < modelIds.length; i++)
+            {
+                parts[i] = client.loadModelData(modelIds[i]);
+                if (parts[i] == null) return;
+            }
+            ModelData merged = client.mergeModels(parts);
+            if (merged == null) return;
+
+            short[] cFrom = def.getColorToReplace();
+            short[] cTo = def.getColorToReplaceWith();
+            if (cFrom != null && cTo != null && cFrom.length > 0)
+                for (int i = 0; i < cFrom.length; i++)
+                    merged.recolor(cFrom[i], cTo[i]);
+
+            int ws = def.getWidthScale(); ws = (ws > 0) ? ws : 128;
+            int hs = def.getHeightScale(); hs = (hs > 0) ? hs : 128;
+            if (ws != 128 || hs != 128) { merged.cloneVertices(); merged.scale(ws, hs, ws); }
+
+            Model lit = merged.light(64, 850, -30, -50, -30);
+            if (lit == null) return;
+
+            runeLiteObject.setModel(lit);
+            runeLiteObject.setShouldLoop(true);
+            if (idleAnimId > 0) setAnimation(idleAnimId);
             modelSet = true;
         }
     }

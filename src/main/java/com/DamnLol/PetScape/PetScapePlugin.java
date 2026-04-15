@@ -47,7 +47,7 @@ import java.util.*;
 @PluginDescriptor(
         name = "PetScape",
         description = "Visually multiplies all pets in your Player Owned House",
-        tags = {"pet", "poh", "pvm", "boss", "skilling"}
+        tags = {"pet","poh","pvm","boss","skilling","follower"}
 )
 public class PetScapePlugin extends Plugin
 {
@@ -66,55 +66,94 @@ public class PetScapePlugin extends Plugin
     static final String[] WANDER_LINES = {};
 
     static final Set<Integer> PET_NPC_IDS = new HashSet<>(Arrays.asList(
-            // God Wars Dungeon
-            NpcID.NEXLING, //unconfirmed
-            NpcID.GENERAL_GRAARDOR_JR,
-            NpcID.KREEARRA_JR,
-            NpcID.ZILYANA_JR,
-            NpcID.KRIL_TSUTSAROTH_JR,
-
-            // Slayer bosses
             NpcID.ABYSSAL_ORPHAN,
-            NpcID.SMOKE_DEVIL_6655,
-            NpcID.SMOKE_DEVIL_8482,
-            NpcID.KRAKEN_6640,
-            NpcID.HELLPUPPY,
-            NpcID.NOON,
-            NpcID.MIDNIGHT,
+            NpcID.ABYSSAL_PROTECTOR,
+            NpcID.AKKHITO,
+            NpcID.ARCHIBALD,
+            NpcID.ARCHIBALD_15586,
+            NpcID.ARCHIBALD_15588,
+            NpcID.ARCHIBALD_15591,
+            NpcID.ARCHIBALD_15593,
+            NpcID.ARCHIBALD_15595,
+            NpcID.ARCHIBALD_15597,
+            NpcID.ARCHIBALD_15599,
+            NpcID.BABI,
+            NpcID.BABY_CHINCHOMPA,
+            NpcID.BABY_MOLE,
+            NpcID.BABY_MOLERAT,
+            NpcID.BABY_MOLE_6651,
+            NpcID.BARON,
+            NpcID.BEAVER,
+            NpcID.BEEF,
+            NpcID.BEEF_15633,
+            NpcID.BLOODHOUND,
+            NpcID.BLOODHOUND_7232,
+            NpcID.BRAN,
+            NpcID.BROAV,
+            NpcID.BROAV_13665,
+            NpcID.BUTCH,
+            NpcID.CALLISTO_CUB,
+            NpcID.CALLISTO_CUB_11982,
+            NpcID.CALLISTO_CUB_11986,
+            NpcID.CALLISTO_CUB_5558,
+            NpcID.CAT_6665,
+            NpcID.CHAOS_ELEMENTAL_JR,
+            NpcID.CHAOS_ELEMENTAL_JR_5907,
+            NpcID.CHOMPY_CHICK,
+            NpcID.CORPOREAL_CRITTER,
+            NpcID.CORPOREAL_CRITTER_8010,
+            NpcID.CORRUPTED_YOUNGLLEF,
+            NpcID.DAGANNOTH_PRIME_JR,
+            NpcID.DAGANNOTH_REX_JR,
+            NpcID.DAGANNOTH_SUPREME_JR,
+            NpcID.DOM,
+            NpcID.DOM_14785,
+            NpcID.ELIDINIS_DAMAGED_GUARDIAN,
+            NpcID.ELIDINIS_GUARDIAN,
+            NpcID.FISHBOWL_6659,
+            NpcID.FISHBOWL_6660,
+            NpcID.FLYING_VESPINA,
+            NpcID.GENERAL_GRAARDOR_JR,
+            NpcID.GIANT_SQUIRREL,
             NpcID.GULL,
+            NpcID.GULLIVER_15060,
             NpcID.GULL_14931,
             NpcID.GULL_15059,
-            NpcID.GULLIVER_15060,
+            NpcID.HELLPUPPY,
+            NpcID.HERBI,
+            NpcID.HERON,
+            NpcID.HUBERTE,
             NpcID.IKKLE_HYDRA,
             NpcID.IKKLE_HYDRA_8493,
             NpcID.IKKLE_HYDRA_8494,
             NpcID.IKKLE_HYDRA_8495,
             NpcID.IKKLE_HYDRA_8520,
-            NpcID.NID,
-            NpcID.NID_13683,
-            NpcID.RAX,
-            NpcID.RAX_13684,
-
-            // Retro bosses
-            NpcID.CORPOREAL_CRITTER, //unconfirmed
-            NpcID.CORPOREAL_CRITTER_8010, //unconfirmed
-            NpcID.PRINCE_BLACK_DRAGON,
+            NpcID.JALNIBREK,
+            NpcID.JALREKJAD,
             NpcID.KALPHITE_PRINCESS,
             NpcID.KALPHITE_PRINCESS_6638,
-            NpcID.DAGANNOTH_PRIME_JR, //unconfirmed
-            NpcID.DAGANNOTH_REX_JR, //unconfirmed
-            NpcID.DAGANNOTH_SUPREME_JR, //unconfirmed
-            NpcID.BABY_MOLE,
-            NpcID.BABY_MOLERAT,
-            NpcID.CHAOS_ELEMENTAL_JR,
-
-            // Post-quest pets
-            NpcID.VORKI,
-            NpcID.BUTCH,
-            NpcID.BARON,
-            NpcID.WISP, //unconfirmed
-            NpcID.LILVIATHAN, //unconfirmed
-            NpcID.DOM, //unconfirmed
+            NpcID.KALPHITE_PRINCESS_6653,
+            NpcID.KALPHITE_PRINCESS_6654,
+            NpcID.KEPHRITI,
+            NpcID.KRAKEN_6640,
+            NpcID.KRAKEN_6656,
+            NpcID.KREEARRA_JR,
+            NpcID.KREEARRA_JR_6643,
+            NpcID.KRIL_TSUTSAROTH_JR,
+            NpcID.KRIL_TSUTSAROTH_JR_6647,
+            NpcID.LILVIATHAN,
+            NpcID.LIL_BLOAT,
+            NpcID.LIL_CREATOR,
+            NpcID.LIL_DESTRUCTOR,
+            NpcID.LIL_MAIDEN,
+            NpcID.LIL_NYLO,
+            NpcID.LIL_SOT,
+            NpcID.LIL_XARP,
+            NpcID.LIL_ZIK,
+            NpcID.LITTLE_NIGHTMARE,
+            NpcID.LITTLE_PARASITE,
+            NpcID.MAYOR_OF_CATHERBY,
+            NpcID.MIDNIGHT,
             NpcID.MOXI,
             NpcID.MUPHIN,
             NpcID.MUPHIN_12006,
@@ -122,141 +161,119 @@ public class PetScapePlugin extends Plugin
             NpcID.MUPHIN_12014,
             NpcID.MUPHIN_12015,
             NpcID.MUPHIN_12016,
-            NpcID.YOUNGLLEF,
-            NpcID.CORRUPTED_YOUNGLLEF,
-
-            // Wilderness
-            NpcID.CALLISTO_CUB,
-            NpcID.CALLISTO_CUB_11982,
-            NpcID.CALLISTO_CUB_5558,
-            NpcID.CALLISTO_CUB_11986,
-            NpcID.SCORPIAS_OFFSPRING,
-            NpcID.VENENATIS_SPIDERLING,
-            NpcID.VENENATIS_SPIDERLING_11981,
-            NpcID.VETION_JR,
-            NpcID.VETION_JR_5537,
-            NpcID.VETION_JR_11983,
-            NpcID.VETION_JR_11984,
-            NpcID.VETION_JR_5559,
-
-            // ToB Pets
-            NpcID.LIL_ZIK, //unconfirmed
-            NpcID.LIL_MAIDEN, //unconfirmed
-            NpcID.LIL_BLOAT, //unconfirmed
-            NpcID.LIL_NYLO, //unconfirmed
-            NpcID.LIL_SOT, //unconfirmed
-            NpcID.LIL_XARP, //unconfirmed
-
-            // CoX Pets
+            NpcID.NEXLING,
+            NpcID.NID,
+            NpcID.NID_13683,
+            NpcID.NOON,
             NpcID.OLMLET,
-            NpcID.PUPPADILE, //unconfirmed
-            NpcID.TEKTINY, //unconfirmed
-            NpcID.VANGUARD_8198, //unconfirmed
-            NpcID.VASA_MINIRIO, //unconfirmed
-            NpcID.VESPINA, //unconfirmed
-            NpcID.FLYING_VESPINA, //unconfirmed
-
-            // ToA Pets
-            NpcID.TUMEKENS_GUARDIAN, //unconfirmed
-            NpcID.TUMEKENS_GUARDIAN_11812, //unconfirmed
-            NpcID.TUMEKENS_DAMAGED_GUARDIAN, //unconfirmed
-            NpcID.ELIDINIS_GUARDIAN, //unconfirmed
-            NpcID.ELIDINIS_DAMAGED_GUARDIAN, //unconfirmed
-            NpcID.AKKHITO, //unconfirmed
-            NpcID.KEPHRITI, //unconfirmed
-            NpcID.BABI, //unconfirmed
-            NpcID.ZEBO, //unconfirmed
-
-            // Misc / other pets
-            NpcID.BRAN,
+            NpcID.OVERGROWN_HELLCAT_6682,
+            NpcID.PENANCE_PET,
+            NpcID.PET_ROCK_6657,
+            NpcID.PHOENIX,
+            NpcID.PHOENIX_3078,
+            NpcID.PHOENIX_3079,
+            NpcID.PHOENIX_3080,
+            NpcID.PHOENIX_3081,
+            NpcID.PHOENIX_3082,
+            NpcID.PHOENIX_3083,
+            NpcID.PHOENIX_3084,
+            NpcID.PHOENIX_7368,
+            NpcID.PHOENIX_7370,
+            NpcID.PRINCE_BLACK_DRAGON,
+            NpcID.PRINCE_BLACK_DRAGON_6652,
+            NpcID.PUPPADILE,
+            NpcID.QUETZIN,
+            NpcID.RAX,
+            NpcID.RAX_13684,
             NpcID.RIC,
-            NpcID.BEEF,
-            NpcID.BEEF_15633,
-            NpcID.BROAV,
-            NpcID.WILY_HELLCAT,
-            NpcID.CAT_6665,
-            NpcID.MAYOR_OF_CATHERBY,
-            NpcID.HUBERTE, //unconfirmed
-            NpcID.JALNIBREK, //unconfirmed
-            NpcID.TZREKZUK, //unconfirmed
-            NpcID.LITTLE_NIGHTMARE, //unconfirmed
-            NpcID.LITTLE_PARASITE, //unconfirmed
-            NpcID.SRARACHA,
-            NpcID.SRARACHA_11157,
-            NpcID.SRARACHA_11158,
-            NpcID.SNAKELING_2128,
-            NpcID.SNAKELING_2127,
-            NpcID.SNAKELING_2129,
+            NpcID.RIFT_GUARDIAN,
+            NpcID.ROCKY,
+            NpcID.ROCK_GOLEM,
+            NpcID.ROCK_GOLEM_7439,
+            NpcID.ROCK_GOLEM_7440,
+            NpcID.ROCK_GOLEM_7441,
+            NpcID.ROCK_GOLEM_7442,
+            NpcID.ROCK_GOLEM_7443,
+            NpcID.ROCK_GOLEM_7444,
+            NpcID.ROCK_GOLEM_7445,
+            NpcID.ROCK_GOLEM_7446,
+            NpcID.ROCK_GOLEM_7447,
+            NpcID.ROCK_GOLEM_7448,
+            NpcID.ROCK_GOLEM_7449,
+            NpcID.ROCK_GOLEM_7450,
+            NpcID.ROCK_GOLEM_7451,
+            NpcID.ROCK_GOLEM_7452,
+            NpcID.ROCK_GOLEM_7453,
+            NpcID.ROCK_GOLEM_7454,
+            NpcID.ROCK_GOLEM_7455,
+            NpcID.ROCK_GOLEM_7642,
+            NpcID.ROCK_GOLEM_7643,
+            NpcID.ROCK_GOLEM_7644,
+            NpcID.ROCK_GOLEM_7645,
+            NpcID.ROCK_GOLEM_7646,
+            NpcID.ROCK_GOLEM_7647,
+            NpcID.ROCK_GOLEM_7648,
+            NpcID.ROCK_GOLEM_7737,
+            NpcID.ROCK_GOLEM_7738,
+            NpcID.ROCK_GOLEM_7740,
+            NpcID.ROCK_GOLEM_7741,
+            NpcID.SCORPIAS_OFFSPRING,
             NpcID.SCURRY,
             NpcID.SKOTOS,
             NpcID.SKOTOS_7671,
-            NpcID.SMOL_HEREDIT, //unconfirmed
-            NpcID.TZREKJAD,
-            NpcID.JALREKJAD, //unconfirmed
-            NpcID.YAMI, //unconfirmed
-
-            // Skilling Pets
-            NpcID.PHOENIX,
-            NpcID.PHOENIX_7368,
-            NpcID.PHOENIX_7370,
-            NpcID.PHOENIX_3078,
-            NpcID.PHOENIX_3082,
-            NpcID.PHOENIX_3079,
-            NpcID.PHOENIX_3083,
-            NpcID.PHOENIX_3080,
-            NpcID.PHOENIX_3084,
-            NpcID.PHOENIX_3081,
+            NpcID.SMOKE_DEVIL_6655,
+            NpcID.SMOKE_DEVIL_8482,
             NpcID.SMOLCANO,
             NpcID.SMOLCANO_8739,
-            NpcID.TINY_TEMPOR,
-            NpcID.BABY_CHINCHOMPA,
-            NpcID.BEAVER,
-            NpcID.GIANT_SQUIRREL,
-            NpcID.HERON,
-            NpcID.RIFT_GUARDIAN,
-            NpcID.ROCKY,
+            NpcID.SMOL_HEREDIT,
+            NpcID.SNAKELING_2127,
+            NpcID.SNAKELING_2128,
+            NpcID.SNAKELING_2129,
             NpcID.SOUP,
             NpcID.SOUP_15058,
+            NpcID.SPOOKY_CHAIR,
+            NpcID.SRARACHA,
+            NpcID.SRARACHA_11157,
+            NpcID.SRARACHA_11158,
             NpcID.TANGLEROOT,
             NpcID.TANGLEROOT_7352,
             NpcID.TANGLEROOT_9492,
-            NpcID.TANGLEROOT_9497,
             NpcID.TANGLEROOT_9493,
-            NpcID.TANGLEROOT_9498,
             NpcID.TANGLEROOT_9494,
-            NpcID.TANGLEROOT_9499,
             NpcID.TANGLEROOT_9495,
-            NpcID.TANGLEROOT_9500,
             NpcID.TANGLEROOT_9496,
+            NpcID.TANGLEROOT_9497,
+            NpcID.TANGLEROOT_9498,
+            NpcID.TANGLEROOT_9499,
+            NpcID.TANGLEROOT_9500,
             NpcID.TANGLEROOT_9501,
+            NpcID.TEKTINY,
+            NpcID.TINY_TEMPOR,
+            NpcID.TUMEKENS_DAMAGED_GUARDIAN,
+            NpcID.TUMEKENS_GUARDIAN,
+            NpcID.TUMEKENS_GUARDIAN_11812,
+            NpcID.TZREKJAD,
+            NpcID.TZREKZUK,
+            NpcID.VANGUARD_8198,
+            NpcID.VASA_MINIRIO,
+            NpcID.VENENATIS_SPIDERLING,
+            NpcID.VENENATIS_SPIDERLING_11981,
+            NpcID.VESPINA,
+            NpcID.VETION_JR,
+            NpcID.VETION_JR_11983,
+            NpcID.VETION_JR_11984,
+            NpcID.VETION_JR_5537,
+            NpcID.VETION_JR_5559,
+            NpcID.VORKI,
+            NpcID.WILY_HELLCAT,
+            NpcID.WILY_HELLCAT_6696,
+            NpcID.WISP,
+            NpcID.YAMI,
+            NpcID.YOUNGLLEF,
+            NpcID.ZEBO,
+            NpcID.ZILYANA_JR,
+            NpcID.ZILYANA_JR_6646
 
-            // Rock Golems million different variations
-            NpcID.ROCK_GOLEM,
-            NpcID.ROCK_GOLEM_7439, NpcID.ROCK_GOLEM_7451,
-            NpcID.ROCK_GOLEM_7440, NpcID.ROCK_GOLEM_7452,
-            NpcID.ROCK_GOLEM_7441, NpcID.ROCK_GOLEM_7453,
-            NpcID.ROCK_GOLEM_7442, NpcID.ROCK_GOLEM_7454,
-            NpcID.ROCK_GOLEM_7443, NpcID.ROCK_GOLEM_7455,
-            NpcID.ROCK_GOLEM_7444, NpcID.ROCK_GOLEM_7642,
-            NpcID.ROCK_GOLEM_7445, NpcID.ROCK_GOLEM_7643,
-            NpcID.ROCK_GOLEM_7446, NpcID.ROCK_GOLEM_7644,
-            NpcID.ROCK_GOLEM_7447, NpcID.ROCK_GOLEM_7645,
-            NpcID.ROCK_GOLEM_7448, NpcID.ROCK_GOLEM_7646,
-            NpcID.ROCK_GOLEM_7449, NpcID.ROCK_GOLEM_7647,
-            NpcID.ROCK_GOLEM_7450, NpcID.ROCK_GOLEM_7648,
-            NpcID.ROCK_GOLEM_7737, NpcID.ROCK_GOLEM_7740,
-            NpcID.ROCK_GOLEM_7738, NpcID.ROCK_GOLEM_7741,
-
-            // Minigame/Clog
-            NpcID.BLOODHOUND,
-            NpcID.BLOODHOUND_7232,
-            NpcID.ABYSSAL_PROTECTOR,
-            NpcID.CHOMPY_CHICK,
-            NpcID.HERBI,
-            NpcID.LIL_CREATOR,
-            NpcID.LIL_DESTRUCTOR,
-            NpcID.PENANCE_PET, //unconfirmed
-            NpcID.QUETZIN
     ));
 
     @Inject private Client client;
@@ -267,6 +284,9 @@ public class PetScapePlugin extends Plugin
 
     // Key: npcIndex:slot
     final Map<String, PetScapeGhost> ghosts = new HashMap<>();
+
+    // Tracks untracked debug log - once per session
+    private final Set<Integer> loggedUntrackedIds = new HashSet<>();
 
     private PetFamilyFollower petFamilyFollower = null;
 
@@ -501,6 +521,12 @@ public class PetScapePlugin extends Plugin
     public void onNpcSpawned(NpcSpawned event)
     {
         NPC npc = event.getNpc();
+
+        // PoH UNTRACKED scan - any PoH to grab missing pet info
+        if (inPoh() && !PET_NPC_IDS.contains(npc.getId()) && !isOnPlayerTile(npc)
+                && loggedUntrackedIds.add(npc.getId()))
+            log.info("[PetScape UNTRACKED] {} (ID: {})", npc.getName(), npc.getId());
+
         if (!inPoh() || !PET_NPC_IDS.contains(npc.getId()) || isOnPlayerTile(npc)) return;
 
         // Reattach existing detached ghosts from NPC index if present
@@ -680,7 +706,7 @@ public class PetScapePlugin extends Plugin
         {
             String key = npc.getIndex() + ":" + slot;
             if (ghosts.containsKey(key)) continue;
-            ghosts.put(key, new PetScapeGhost(npc, client, clientThread, ghosts.values(), slots, pohFloor, config));
+            ghosts.put(key, new PetScapeGhost(npc, client, clientThread, ghosts.values(), slots, pohFloor));
         }
     }
 
