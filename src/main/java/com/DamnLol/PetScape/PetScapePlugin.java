@@ -97,6 +97,7 @@ public class PetScapePlugin extends Plugin
 
             // Retro bosses
             NpcID.CORPOREAL_CRITTER, //unconfirmed
+            NpcID.CORPOREAL_CRITTER_8010, //unconfirmed
             NpcID.PRINCE_BLACK_DRAGON,
             NpcID.KALPHITE_PRINCESS,
             NpcID.KALPHITE_PRINCESS_6638,
