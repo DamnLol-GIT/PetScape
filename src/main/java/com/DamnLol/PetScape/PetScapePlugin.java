@@ -281,6 +281,7 @@ public class PetScapePlugin extends Plugin
     @Inject private OverlayManager overlayManager;
     @Inject private PetScapeOverlay overlay;
     @Inject private PetScapeConfig config;
+    @Inject private RoamingPetManager roamingPetManager;
 
     // Key: npcIndex:slot
     final Map<String, PetScapeGhost> ghosts = new HashMap<>();
@@ -332,7 +333,7 @@ public class PetScapePlugin extends Plugin
 
         int sumCx = 0, sumCy = 0, chunkCount = 0;
         int minCx = Integer.MAX_VALUE, maxCx = 0, minCy = Integer.MAX_VALUE, maxCy = 0;
-        Set<Integer> debugRegions = new java.util.TreeSet<>();
+        Set<Integer> debugRegions = new TreeSet<>();
         if (templateChunks != null)
         {
             for (int[][] plane : templateChunks)
@@ -473,6 +474,7 @@ public class PetScapePlugin extends Plugin
     protected void startUp()
     {
         overlayManager.add(overlay);
+        roamingPetManager.startUp();
         clientThread.invoke(this::scanExistingNpcs);
     }
 
@@ -480,6 +482,7 @@ public class PetScapePlugin extends Plugin
     protected void shutDown()
     {
         overlayManager.remove(overlay);
+        roamingPetManager.shutDown();
         clientThread.invoke(() ->
         {
             if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
@@ -564,8 +567,17 @@ public class PetScapePlugin extends Plugin
     }
 
     @Subscribe
+    public void onGameStateChanged(GameStateChanged event)
+    {
+        if (event.getGameState() == GameState.LOADING)
+            roamingPetManager.onSceneChange();
+    }
+
+    @Subscribe
     public void onGameTick(GameTick event)
     {
+        roamingPetManager.gameTick();
+
         // Pet Family — works anywhere, runs before PoH logic
         if (config.petFamily() != PetFamilyFollower.FamilySize.NONE) handlePetFamily();
         else if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
@@ -628,12 +640,72 @@ public class PetScapePlugin extends Plugin
     @Subscribe
     public void onClientTick(ClientTick event)
     {
+        roamingPetManager.clientTick();
+
         if (config.petFamily() != PetFamilyFollower.FamilySize.NONE && petFamilyFollower != null) petFamilyFollower.clientTick();
         if (!inPoh()) return;
         ghosts.values().forEach(PetScapeGhost::clientTick);
     }
 
-    // Swaps original pet menus so "Walk here" is the left-click default
+    @Subscribe
+    public void onMenuOpened(MenuOpened event)
+    {
+        if (!config.truePetScape()) return;
+
+        boolean isWorldMenu = false;
+        for (MenuEntry e : event.getMenuEntries())
+        {
+            if ("Walk here".equals(e.getOption())) { isWorldMenu = true; break; }
+        }
+        if (!isWorldMenu) return;
+
+        net.runelite.api.Point mouse = client.getMouseCanvasPosition();
+        if (mouse == null) return;
+
+        // Find the closest rendered spawn to the click position, within that spawn's radius
+        RoamingPetSpawn closest = null;
+        double closestDist = Double.MAX_VALUE;
+
+        for (RoamingPetSpawn spawn : roamingPetManager.getRenderedSpawns())
+        {
+            WorldPoint wp = spawn.getCurrentWorld();
+            if (wp == null) continue;
+            LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), wp);
+            if (lp == null) continue;
+
+            // Clicking body of models works at any camera angle for menu
+            double dist = Double.MAX_VALUE;
+            for (int zOff : new int[]{0, 200})
+            {
+                net.runelite.api.Point screen = Perspective.localToCanvas(
+                        client, lp, client.getPlane(), zOff);
+                if (screen == null) continue;
+                double d = Math.hypot(mouse.getX() - screen.getX(),
+                        mouse.getY() - screen.getY());
+                if (d < dist) dist = d;
+            }
+            if (dist <= spawn.getMenuClickRadius() && dist < closestDist)
+            {
+                closestDist = dist;
+                closest = spawn;
+            }
+        }
+
+        if (closest == null) return;
+        final String examineText = closest.getExamineText();
+        if (examineText == null || examineText.isEmpty()) return;
+        final String menuTarget = closest.getMenuTarget();
+        if (menuTarget == null || menuTarget.isEmpty()) return;
+
+        client.createMenuEntry(1)
+                .setOption("Examine")
+                .setTarget(menuTarget)
+                .setType(MenuAction.RUNELITE)
+                .onClick(e -> client.addChatMessage(
+                        ChatMessageType.GAMEMESSAGE, "", examineText, ""));
+    }
+
+    // PoH: swaps original pet menus so "Walk here" is the left-click default
     @Subscribe
     public void onMenuEntryAdded(MenuEntryAdded event)
     {
@@ -758,7 +830,7 @@ public class PetScapePlugin extends Plugin
 
         // Shuffle so remainder extra clones are assigned randomly
         List<NPC> shuffled = new ArrayList<>(eligible);
-        java.util.Collections.shuffle(shuffled);
+        Collections.shuffle(shuffled);
 
         for (int i = 0; i < shuffled.size(); i++)
         {

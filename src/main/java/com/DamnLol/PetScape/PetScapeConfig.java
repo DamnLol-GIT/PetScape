@@ -94,6 +94,18 @@ public interface PetScapeConfig extends Config
     )
     default PetFamilyFollower.FamilySize petFamily() { return PetFamilyFollower.FamilySize.NONE; }
 
+
+    @ConfigItem(
+            keyName = "truePetScape",
+            name = "True PetScape",
+            description = "Unleash the pets",
+            section = generalSection,
+            position = 4
+    )
+    default boolean truePetScape() { return true; }
+
+    // ─────────────────────────────────────────────────────────────────────
+
     @ConfigSection(
             name = "Misc Settings",
             description = "Misc Settings",
