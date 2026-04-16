@@ -82,13 +82,13 @@ public class KaruulmHydraArea extends RoamingArea
     {
         return new int[][][]{
 
-                // Zone 1
+                // Zone 1 - Slayer Master Area
                 {
                         { 1305, 3793 }, { 1305, 3780 }, { 1315, 3780 },
                         { 1314, 3793 }, { 1309, 3795 }
                 },
 
-                // Zone 2
+                // Zone 2 - Bank Area
                 {
                         { 1321, 3826 }, { 1321, 3822 }, { 1328, 3822 },
                         { 1328, 3827 }, { 1321, 3827 }
