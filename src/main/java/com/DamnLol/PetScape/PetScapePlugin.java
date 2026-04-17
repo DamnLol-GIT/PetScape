@@ -47,7 +47,7 @@ import java.util.*;
 @PluginDescriptor(
         name = "PetScape",
         description = "Visually multiplies all pets in your Player Owned House",
-        tags = {"pet","poh","pvm","boss","skilling","follower"}
+        tags = {"pet","poh","pvm","boss","skilling","follower","populate","wildlife","spawn"}
 )
 public class PetScapePlugin extends Plugin
 {
@@ -652,6 +652,7 @@ public class PetScapePlugin extends Plugin
     {
         if (!config.truePetScape()) return;
 
+        // Hide right-click menu when in bank/ui
         boolean isWorldMenu = false;
         for (MenuEntry e : event.getMenuEntries())
         {
@@ -664,7 +665,6 @@ public class PetScapePlugin extends Plugin
 
         // Find the closest rendered spawn to the click position, within that spawn's radius
         RoamingPetSpawn closest = null;
-        double closestDist = Double.MAX_VALUE;
 
         for (RoamingPetSpawn spawn : roamingPetManager.getRenderedSpawns())
         {
@@ -673,21 +673,31 @@ public class PetScapePlugin extends Plugin
             LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), wp);
             if (lp == null) continue;
 
-            // Clicking body of models works at any camera angle for menu
-            double dist = Double.MAX_VALUE;
-            for (int zOff : new int[]{0, 200})
+            // Clicking body of models/padding area works at any camera angle for menu
+            net.runelite.api.Model model = spawn.getRuneLiteObject().getModel();
+            if (model == null) continue;
+
+            int tileZ = Perspective.getTileHeight(client, lp, client.getPlane());
+            int z     = spawn.getZOffset() == 0 ? tileZ : tileZ - spawn.getZOffset();
+            int orientation = spawn.getRuneLiteObject().getOrientation();
+
+            java.awt.Shape hull = Perspective.getClickbox(client, client.getTopLevelWorldView(), model, orientation,
+                    lp.getX(), lp.getY(), z);
+            final int pad = 8;
+            boolean hit = hull != null && hull.intersects(mouse.getX() - pad, mouse.getY() - pad, pad * 2, pad * 2);
+
+            // Fallback click box
+            if (!hit)
             {
-                net.runelite.api.Point screen = Perspective.localToCanvas(
-                        client, lp, client.getPlane(), zOff);
-                if (screen == null) continue;
-                double d = Math.hypot(mouse.getX() - screen.getX(),
-                        mouse.getY() - screen.getY());
-                if (d < dist) dist = d;
+                net.runelite.api.Point centre = Perspective.localToCanvas(client, lp, client.getPlane(), 80);
+                if (centre != null)
+                    hit = Math.hypot(mouse.getX() - centre.getX(), mouse.getY() - centre.getY()) <= 24;
             }
-            if (dist <= spawn.getMenuClickRadius() && dist < closestDist)
+
+            if (hit)
             {
-                closestDist = dist;
                 closest = spawn;
+                break;
             }
         }
 

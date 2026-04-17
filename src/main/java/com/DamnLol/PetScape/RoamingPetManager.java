@@ -27,6 +27,9 @@ package com.DamnLol.PetScape;
 
 import com.DamnLol.PetScape.Locations.AlchemicalMonarchArea;
 import com.DamnLol.PetScape.Locations.KaruulmHydraArea;
+import com.DamnLol.PetScape.Locations.MorytaniaMiscArea;
+import com.DamnLol.PetScape.Locations.SlepeArea;
+import com.DamnLol.PetScape.Locations.VampireArea;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.CollisionData;
@@ -70,6 +73,16 @@ public class RoamingPetManager
         {
             areas.add(new KaruulmHydraArea());
             areas.add(new AlchemicalMonarchArea());
+            areas.add(VampireArea.zone1());
+            areas.add(VampireArea.zone2());
+            areas.add(VampireArea.zone3());
+            areas.add(VampireArea.zone4());
+            areas.add(SlepeArea.zone1());
+            areas.add(SlepeArea.zone2());
+            areas.add(MorytaniaMiscArea.zone1());
+            areas.add(MorytaniaMiscArea.zone2());
+            areas.add(MorytaniaMiscArea.zone3());
+            areas.add(MorytaniaMiscArea.zone4());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
@@ -148,7 +161,7 @@ public class RoamingPetManager
         int nSpawns = area.getSpawnCount();
         int[] formAssignment = new int[nSpawns];
         for (int i = 0; i < nSpawns; i++)
-            formAssignment[i] = (nForms > 1) ? (i % nForms) : 0;
+            formAssignment[i] = area.getFormAssignment(i, nForms);
         for (int i = nSpawns - 1; i > 0; i--)
         {
             int j = RNG.nextInt(i + 1);
@@ -165,6 +178,8 @@ public class RoamingPetManager
                 WorldPoint startPos;
                 if (area.isStationary())
                 {
+                    configManager.unsetConfiguration(CONFIG_GROUP,
+                            PERSIST_PREFIX + area.getAreaId() + "_" + i);
                     startPos = area.getCenter();
                 }
                 else

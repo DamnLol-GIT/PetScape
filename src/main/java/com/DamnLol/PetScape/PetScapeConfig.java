@@ -104,8 +104,6 @@ public interface PetScapeConfig extends Config
     )
     default boolean truePetScape() { return true; }
 
-    // ─────────────────────────────────────────────────────────────────────
-
     @ConfigSection(
             name = "Misc Settings",
             description = "Misc Settings",

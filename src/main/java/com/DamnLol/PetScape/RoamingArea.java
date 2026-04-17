@@ -61,7 +61,45 @@ public abstract class RoamingArea
         return "<col=ffff00>" + name + "</col>";
     }
 
+    // Menu target — override when each form has a distinct display name
+    public String getMenuTarget(int spawnIndex, int formIndex)
+    {
+        return getMenuTarget(spawnIndex);
+    }
+
+    // Examine text — override when each form has a distinct examine string
+    public String getExamineText(int spawnIndex, int formIndex)
+    {
+        return getExamineText();
+    }
+
+    // When true, spawns never cycle away from their manager-assigned form
+    public boolean isFormFixed()
+    {
+        return false;
+    }
+
+    // Minimum distance for wander targets - Reduce for dense areas
+    public int getWanderMinDist() { return 8; }
+
+    // Minimum tile separation enforced between siblings during wander target selection
+    public int getMinSiblingSeparation() { return 3; }
+
+    // Returns form index to assign spawn i during area activation
+    public int getFormAssignment(int spawnIndex, int nForms)
+    {
+        return nForms > 1 ? spawnIndex % nForms : 0;
+    }
+
     public boolean isStationary()
+    {
+        return false;
+    }
+
+    // When true - pets ignore BLOCK_MOVEMENT_OBJECT flags
+    public boolean isFlying() { return false; }
+    // Use for aquatic pets whose polygon area covers only water tiles
+    public boolean isAquatic()
     {
         return false;
     }
@@ -91,7 +129,7 @@ public abstract class RoamingArea
 
     public int getMenuClickRadius()
     {
-        return 50;
+        return 55;
     }
 
     public int getZOffset()

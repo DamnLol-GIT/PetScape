@@ -63,7 +63,7 @@ public class RoamingPetSpawn
 
     // Sibling spawns after full area spawn list is known
     @Setter
-    private List<RoamingPetSpawn> siblingSpawns = java.util.Collections.emptyList();
+    private List<RoamingPetSpawn> siblingSpawns = Collections.emptyList();
 
     @Getter private final String displayName;
     private final int spawnIndex;
@@ -100,7 +100,12 @@ public class RoamingPetSpawn
     private int idleAnimId = -1;
     private int walkAnimId = -1;
     private int offscreenMoveTick = 0;
+
+    private int entryValidationDelay = 0;
+
+    @Getter
     private int zOffset = 0;
+
     private boolean modelSet = false;
 
     @Getter
@@ -164,9 +169,8 @@ public class RoamingPetSpawn
 
     public boolean isRendered() { return active && runeLiteObject.isActive(); }
 
-    public String getExamineText() { return area.getExamineText(); }
-
-    public String getMenuTarget() { return area.getMenuTarget(spawnIndex); }
+    public String getExamineText() { return area.getExamineText(spawnIndex, formIndex); }
+    public String getMenuTarget()  { return area.getMenuTarget(spawnIndex, formIndex); }
 
     public int getMenuClickRadius() { return area.getMenuClickRadius(); }
 
@@ -181,11 +185,15 @@ public class RoamingPetSpawn
 
             if (inRange && !wasRendered) {
                 placeAt(currentWorld);
-                if (!area.isStationary()
-                        && (!isWalkableInScene(currentWorld)
-                        || !hasMovementClearance(currentWorld))) {
-                    teleportToSafeSpot();
-                }
+                entryValidationDelay = 2; // check clearance after collision data loads
+            }
+
+            // Deferred clearance check - runs 2 ticks after entering render range
+            if (inRange && entryValidationDelay > 0 && --entryValidationDelay == 0
+                    && !area.isStationary()
+                    && (!isWalkableInScene(currentWorld) || !hasMovementClearance(currentWorld)))
+            {
+                teleportToSafeSpot();
             }
 
             if (inRange != runeLiteObject.isActive()) runeLiteObject.setActive(inRange);
@@ -200,7 +208,7 @@ public class RoamingPetSpawn
 
         // Form cycling
         int[] forms = area.getPetNpcIds();
-        if (forms.length > 1 && --formChangeTicks <= 0) {
+        if (!area.isFormFixed() && forms.length > 1 && --formChangeTicks <= 0) {
             cycleForm();
             formChangeTicks = FORM_CHANGE_MIN + RNG.nextInt(FORM_CHANGE_MAX - FORM_CHANGE_MIN + 1);
         }
@@ -259,10 +267,13 @@ public class RoamingPetSpawn
                             currentWorld.getX() + d[0],
                             currentWorld.getY() + d[1],
                             currentWorld.getPlane());
-                    if (area.contains(next)) {
-                        currentWorld = next;
-                        break;
-                    }
+                    if (!area.contains(next)) continue;
+                    // Skip unwalkable tiles
+                    if (!canTravel(new WorldArea(currentWorld, 1, 1), d[0], d[1])) continue;
+                    // Skip tiles occupied by a sibling to prevent offscreen stacking
+                    if (isTooCloseToSibling(next)) continue;
+                    currentWorld = next;
+                    break;
                 }
             }
         }
@@ -364,8 +375,7 @@ public class RoamingPetSpawn
             if (!area.contains(candidate)) continue;
             if (candidate.equals(currentWorld)) continue;
             int dist = currentWorld != null ? chebyshev(currentWorld, candidate) : 10;
-            if (dist < WANDER_MIN_DIST || dist > WANDER_MAX_DIST) continue;
-
+            if (dist < area.getWanderMinDist() || dist > WANDER_MAX_DIST) continue;
             if (!isWalkableInScene(candidate)) continue;
             if (!hasMovementClearance(candidate)) continue;
             if (isTooCloseToSibling(candidate)) continue;
@@ -388,6 +398,32 @@ public class RoamingPetSpawn
                     displayName, currentWorld);
             consecutiveFailedMoves = 0;
             teleportToSafeSpot();
+            return;
+        }
+
+        // Long-range wander failed, try short-range for better pool
+        for (int attempt = 0; attempt < 40; attempt++)
+        {
+            int x = minX + RNG.nextInt(w);
+            int y = minY + RNG.nextInt(h);
+            WorldPoint candidate = new WorldPoint(x, y, area.getPlane());
+
+            if (!area.contains(candidate)) continue;
+            if (candidate.equals(currentWorld)) continue;
+            int dist = currentWorld != null ? chebyshev(currentWorld, candidate) : 4;
+            if (dist < 1 || dist > 7) continue;
+
+            if (!isWalkableInScene(candidate)) continue;
+            if (!hasMovementClearance(candidate)) continue;
+
+            List<WorldPoint> path = bfsPath(currentWorld, candidate);
+            if (path == null || path.isEmpty()) continue;
+
+            consecutiveFailedMoves = 0;
+            activePath = path;
+            pathStep = 0;
+            state = RoamState.MOVING;
+            advancePath();
             return;
         }
 
@@ -537,6 +573,12 @@ public class RoamingPetSpawn
         if (sx < 0 || sy < 0 || sx >= flags.length || sy >= flags[sx].length) return false;
 
         int f = flags[sx][sy];
+        if (area.isAquatic()) return true;
+        if (area.isFlying())
+            return (f & CollisionDataFlag.BLOCK_MOVEMENT_FULL) == 0
+                    && (f & CollisionDataFlag.BLOCK_MOVEMENT_FLOOR) == 0;
+
+
         return (f & CollisionDataFlag.BLOCK_MOVEMENT_FULL) == 0
                 && (f & CollisionDataFlag.BLOCK_MOVEMENT_OBJECT) == 0
                 && (f & CollisionDataFlag.BLOCK_MOVEMENT_FLOOR) == 0;
@@ -545,6 +587,19 @@ public class RoamingPetSpawn
     // Wraps canTravelInDirection - catch NPE
     private boolean canTravel(WorldArea wa, int dx, int dy)
     {
+        // Aquatic pets ignore all directional flags - polygon boundary
+        if (area.isAquatic())
+        {
+            WorldPoint dest = new WorldPoint(wa.getX() + dx, wa.getY() + dy, wa.getPlane());
+            return area.contains(dest) && isWalkableInScene(dest);
+        }
+        // Flying pets ignore object-based directional flags
+        if (area.isFlying())
+        {
+            WorldPoint dest = new WorldPoint(wa.getX() + dx, wa.getY() + dy, wa.getPlane());
+            return isWalkableInScene(dest);
+        }
+
         try { return wa.canTravelInDirection(client.getTopLevelWorldView(), dx, dy); }
         catch (NullPointerException ignored) { return false; }
     }
@@ -594,9 +649,10 @@ public class RoamingPetSpawn
         Queue<WorldPoint> queue = new ArrayDeque<>();
         visited.add(currentWorld);
         queue.add(currentWorld);
-        while (!queue.isEmpty() && visited.size() < WANDER_MIN_DIST)
+        while (!queue.isEmpty() && visited.size() < area.getWanderMinDist())
         {
             WorldPoint cur = queue.poll();
+            if (cur == null) break;
             WorldArea wa = new WorldArea(cur, 1, 1);
             for (int[] d : DIRS)
             {
@@ -609,7 +665,7 @@ public class RoamingPetSpawn
                 queue.add(next);
             }
         }
-        return visited.size() < WANDER_MIN_DIST;
+        return visited.size() < area.getWanderMinDist();
     }
 
     // True if candidate is within MIN_SIBLING_SEPARATION tiles of any sibling position or target
@@ -619,10 +675,10 @@ public class RoamingPetSpawn
         {
             if (other == this) continue;
             if (other.currentWorld != null
-                    && chebyshev(candidate, other.currentWorld) < MIN_SIBLING_SEPARATION)
+                    && chebyshev(candidate, other.currentWorld) < area.getMinSiblingSeparation())
                 return true;
             if (other.targetWorld != null
-                    && chebyshev(candidate, other.targetWorld) < MIN_SIBLING_SEPARATION)
+                    && chebyshev(candidate, other.targetWorld) < area.getMinSiblingSeparation())
                 return true;
         }
         return false;
