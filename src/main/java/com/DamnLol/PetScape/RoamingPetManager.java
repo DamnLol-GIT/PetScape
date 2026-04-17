@@ -78,6 +78,11 @@ public class RoamingPetManager
             areas.add(AbyssalArea.zone1());
             areas.add(AbyssalArea.zone2());
             areas.add(AbyssalArea.zone3());
+            areas.add(FaladorArea.zone1());
+            areas.add(FaladorArea.zone2());
+            areas.add(FaladorArea.zone3());
+            areas.add(FaladorArea.zone4());
+            areas.add(MorytaniaTowerArea.zone1());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
