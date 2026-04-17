@@ -75,14 +75,14 @@ public class MorytaniaMiscArea extends RoamingArea
     public String getMenuTarget(int spawnIndex, int formIndex)
     {
         if (zone >= 2) return "<col=ffff00>Pet Snakeling</col>";
-        return "<col=ffff00>Zilyana Jr.</col>";
+        return "<col=ffff00>Commander Miniana</col>";
     }
 
     @Override
     public String getExamineText(int spawnIndex, int formIndex)
     {
         if (zone >= 2) return "A little serpent of the swamp.";
-        return "A sad little commander.";
+        return "A sad little commander..";
     }
 
     @Override

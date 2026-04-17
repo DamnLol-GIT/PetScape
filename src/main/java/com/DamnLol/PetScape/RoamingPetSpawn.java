@@ -99,9 +99,6 @@ public class RoamingPetSpawn
     private int currentAnimId = -1;
     private int idleAnimId = -1;
     private int walkAnimId = -1;
-    private int offscreenMoveTick = 0;
-
-    private int entryValidationDelay = 0;
 
     @Getter
     private int zOffset = 0;
@@ -185,15 +182,6 @@ public class RoamingPetSpawn
 
             if (inRange && !wasRendered) {
                 placeAt(currentWorld);
-                entryValidationDelay = 2; // check clearance after collision data loads
-            }
-
-            // Deferred clearance check - runs 2 ticks after entering render range
-            if (inRange && entryValidationDelay > 0 && --entryValidationDelay == 0
-                    && !area.isStationary()
-                    && (!isWalkableInScene(currentWorld) || !hasMovementClearance(currentWorld)))
-            {
-                teleportToSafeSpot();
             }
 
             if (inRange != runeLiteObject.isActive()) runeLiteObject.setActive(inRange);
@@ -251,32 +239,6 @@ public class RoamingPetSpawn
                 break;
         }
 
-        // Out-of-range logical movement
-        if (!runeLiteObject.isActive() && active && currentWorld != null) {
-            if (++offscreenMoveTick >= 3) {
-                offscreenMoveTick = 0;
-                int[][] DIRS = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-                for (int k = DIRS.length - 1; k > 0; k--) {
-                    int j = RNG.nextInt(k + 1);
-                    int[] tmp = DIRS[k];
-                    DIRS[k] = DIRS[j];
-                    DIRS[j] = tmp;
-                }
-                for (int[] d : DIRS) {
-                    WorldPoint next = new WorldPoint(
-                            currentWorld.getX() + d[0],
-                            currentWorld.getY() + d[1],
-                            currentWorld.getPlane());
-                    if (!area.contains(next)) continue;
-                    // Skip unwalkable tiles
-                    if (!canTravel(new WorldArea(currentWorld, 1, 1), d[0], d[1])) continue;
-                    // Skip tiles occupied by a sibling to prevent offscreen stacking
-                    if (isTooCloseToSibling(next)) continue;
-                    currentWorld = next;
-                    break;
-                }
-            }
-        }
     }
 
     public void clientTick()

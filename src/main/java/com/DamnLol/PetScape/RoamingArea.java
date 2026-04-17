@@ -207,7 +207,7 @@ public abstract class RoamingArea
         return new WorldPoint((int) (sumX / pts.length), (int) (sumY / pts.length), getPlane());
     }
 
-    // Distance to farthest vertex plus buffer
+    // Distance to the farthest vertex plus buffer
     public int getApproxRadius()
     {
         WorldPoint center = getCenter();

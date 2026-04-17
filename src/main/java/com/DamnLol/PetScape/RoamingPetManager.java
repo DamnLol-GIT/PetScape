@@ -25,11 +25,7 @@
 
 package com.DamnLol.PetScape;
 
-import com.DamnLol.PetScape.Locations.AlchemicalMonarchArea;
-import com.DamnLol.PetScape.Locations.KaruulmHydraArea;
-import com.DamnLol.PetScape.Locations.MorytaniaMiscArea;
-import com.DamnLol.PetScape.Locations.SlepeArea;
-import com.DamnLol.PetScape.Locations.VampireArea;
+import com.DamnLol.PetScape.Locations.*;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.CollisionData;
@@ -38,7 +34,6 @@ import net.runelite.api.Player;
 import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.callback.ClientThread;
-import net.runelite.client.config.ConfigManager;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -52,14 +47,11 @@ public class RoamingPetManager
     // Slightly larger than getApproxRadius() so spawns ready before player arrives
     private static final int ACTIVATION_RADIUS = 60;
 
-    private static final String CONFIG_GROUP = "petscape";
-    private static final String PERSIST_PREFIX = "roaming_pos_";
 
     private static final Random RNG = new Random();
 
     @Inject private Client client;
     @Inject private ClientThread clientThread;
-    @Inject private ConfigManager configManager;
     @Inject private PetScapeConfig config;
 
     private final List<RoamingArea> areas = new ArrayList<>();
@@ -83,16 +75,17 @@ public class RoamingPetManager
             areas.add(MorytaniaMiscArea.zone2());
             areas.add(MorytaniaMiscArea.zone3());
             areas.add(MorytaniaMiscArea.zone4());
+            areas.add(AbyssalArea.zone1());
+            areas.add(AbyssalArea.zone2());
+            areas.add(AbyssalArea.zone3());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
 
-    // Saves positions and despawns all
     public void shutDown()
     {
         clientThread.invoke(() ->
         {
-            saveAllPositions();
             for (List<RoamingPetSpawn> spawns : activeSpawns.values())
                 for (RoamingPetSpawn s : spawns) s.despawn();
             activeSpawns.clear();
@@ -107,7 +100,6 @@ public class RoamingPetManager
         {
             if (!activeSpawns.isEmpty())
             {
-                saveAllPositions();
                 for (List<RoamingPetSpawn> spawns : activeSpawns.values())
                     for (RoamingPetSpawn s : spawns) s.despawn();
                 activeSpawns.clear();
@@ -133,7 +125,6 @@ public class RoamingPetManager
             else if (!inRange && inRangeAreas.contains(id))
             {
                 inRangeAreas.remove(id);
-                saveAreaPositions(area);
                 deactivateArea(id);
             }
         }
@@ -174,37 +165,10 @@ public class RoamingPetManager
         {
             try
             {
-                // Stationary spawns always use their defined center
-                WorldPoint startPos;
-                if (area.isStationary())
-                {
-                    configManager.unsetConfiguration(CONFIG_GROUP,
-                            PERSIST_PREFIX + area.getAreaId() + "_" + i);
-                    startPos = area.getCenter();
-                }
-                else
-                {
-                    startPos = loadSavedPosition(area, i);
-
-                    // Discard the loaded position if too close to an already-placed pet
-                    if (startPos != null)
-                    {
-                        for (RoamingPetSpawn other : spawns)
-                        {
-                            if (other.getCurrentWorld() != null
-                                    && chebyshev(startPos, other.getCurrentWorld()) < 4)
-                            {
-                                startPos = null;
-                                break;
-                            }
-                        }
-                    }
-
-                    if (startPos == null)
-                        startPos = pickRandomStartPos(area, i, spawns);
-                    if (startPos == null)
-                        startPos = area.getCenter();
-                }
+                WorldPoint startPos = area.isStationary()
+                        ? area.getCenter()
+                        : pickRandomStartPos(area, i, spawns);
+                if (startPos == null) startPos = area.getCenter();
 
                 String spawnName = (names != null && i < names.length && !names[i].isEmpty())
                         ? names[i] : area.getAreaId();
@@ -300,74 +264,8 @@ public class RoamingPetManager
         return area.getCenter();
     }
 
-    private void saveAllPositions()
-    {
-        for (RoamingArea area : areas)
-        {
-            if (area.isStationary()) continue;
-            List<RoamingPetSpawn> spawns = activeSpawns.get(area.getAreaId());
-            if (spawns == null) continue;
-            for (int i = 0; i < spawns.size(); i++)
-            {
-                WorldPoint pos = spawns.get(i).getCurrentWorld();
-                if (pos != null) persistPosition(area, i, pos);
-            }
-        }
-    }
-
-    private void saveAreaPositions(RoamingArea area)
-    {
-        if (area.isStationary()) return;
-        List<RoamingPetSpawn> spawns = activeSpawns.get(area.getAreaId());
-        if (spawns == null) return;
-        for (int i = 0; i < spawns.size(); i++)
-        {
-            WorldPoint pos = spawns.get(i).getCurrentWorld();
-            if (pos != null) persistPosition(area, i, pos);
-        }
-    }
-
-    private void persistPosition(RoamingArea area, int spawnIndex, WorldPoint pos)
-    {
-        String key = PERSIST_PREFIX + area.getAreaId() + "_" + spawnIndex;
-        String value = pos.getX() + "," + pos.getY() + "," + pos.getPlane();
-        configManager.setConfiguration(CONFIG_GROUP, key, value);
-    }
-
-    private WorldPoint loadSavedPosition(RoamingArea area, int spawnIndex)
-    {
-        String key = PERSIST_PREFIX + area.getAreaId() + "_" + spawnIndex;
-        String value = configManager.getConfiguration(CONFIG_GROUP, key);
-        if (value == null || value.isEmpty()) return null;
-
-        try
-        {
-            String[] parts = value.split(",");
-            if (parts.length != 3) return null;
-
-            int x = Integer.parseInt(parts[0].trim());
-            int y = Integer.parseInt(parts[1].trim());
-            int plane = Integer.parseInt(parts[2].trim());
-
-            WorldPoint loaded = new WorldPoint(x, y, plane);
-
-            if (!area.contains(loaded))
-            {
-                return null;
-            }
-
-            return loaded;
-        }
-        catch (NumberFormatException e)
-        {
-            return null;
-        }
-    }
-
-    // Saves positions, despawns everything, clears inRangeAreas for re-activation next tick.
     public void onSceneChange()
     {
-        saveAllPositions();
         for (RoamingArea area : new ArrayList<>(areas))
             deactivateArea(area.getAreaId());
         inRangeAreas.clear();

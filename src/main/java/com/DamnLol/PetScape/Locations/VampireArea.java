@@ -98,7 +98,6 @@ public class VampireArea extends RoamingArea
     @Override
     public boolean isFormFixed() { return true; }
 
-    // min distance and sibling separation so pets can always find valid targets
     @Override
     public int getWanderMinDist() { return 5; }
 
@@ -130,7 +129,6 @@ public class VampireArea extends RoamingArea
         return "<col=ffff00>" + formNamesForZone()[formIndex % formNamesForZone().length] + "</col>";
     }
 
-    // Each form has unique examine text
     @Override
     public String getExamineText(int spawnIndex, int formIndex)
     {
@@ -139,7 +137,6 @@ public class VampireArea extends RoamingArea
     }
 
 
-    // Returns the display names matching getPetNpcIds() order for this zone
     private String[] formNamesForZone()
     {
         if (zone == 3)
@@ -147,7 +144,6 @@ public class VampireArea extends RoamingArea
         return FORM_NAMES;
     }
 
-    // Returns the examine text matching getPetNpcIds() order for zone
     private String[] FORM_EXAMINES_FOR_ZONE()
     {
         if (zone == 3)
