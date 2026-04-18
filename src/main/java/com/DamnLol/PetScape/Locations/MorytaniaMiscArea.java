@@ -87,7 +87,7 @@ public class MorytaniaMiscArea extends RoamingArea
     {
         if (zone == 5)
             return formIndex == 0 ? "<col=ffff00>Nid</col>" : "<col=ffff00>Rax</col>";
-        if (zone >= 2) return "<col=ffff00>Pet Snakeling</col>";
+        if (zone >= 2) return "<col=ffff00>Tiny Snakeling</col>";
         return "<col=ffff00>Commander Miniana</col>";
     }
 
