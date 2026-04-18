@@ -47,6 +47,8 @@ public class RoamingPetManager
     // Slightly larger than getApproxRadius() so spawns ready before player arrives
     private static final int ACTIVATION_RADIUS = 60;
 
+    // Ticks before out of range area is despawned
+    private static final int DEACTIVATION_COOLDOWN_TICKS = 50;
 
     private static final Random RNG = new Random();
 
@@ -57,8 +59,9 @@ public class RoamingPetManager
     private final List<RoamingArea> areas = new ArrayList<>();
     private final Map<String, List<RoamingPetSpawn>> activeSpawns = new HashMap<>();
     private final Set<String> inRangeAreas = new HashSet<>();
+    private final Map<String, Integer> cooldownAreas = new HashMap<>();
 
-    // Register new areas on starup
+    // Register new areas on startup
     public void startUp()
     {
         if (areas.isEmpty())
@@ -106,6 +109,7 @@ public class RoamingPetManager
                 for (RoamingPetSpawn s : spawns) s.despawn();
             activeSpawns.clear();
             inRangeAreas.clear();
+            cooldownAreas.clear();
         });
     }
 
@@ -120,6 +124,7 @@ public class RoamingPetManager
                     for (RoamingPetSpawn s : spawns) s.despawn();
                 activeSpawns.clear();
                 inRangeAreas.clear();
+                cooldownAreas.clear();
             }
             return;
         }
@@ -133,15 +138,39 @@ public class RoamingPetManager
             WorldPoint ctr = area.getCenter();
             boolean inRange = chebyshev(playerPos, ctr) <= Math.max(ACTIVATION_RADIUS, area.getApproxRadius());
 
-            if (inRange && !inRangeAreas.contains(id))
+            if (inRange)
             {
-                inRangeAreas.add(id);
-                activateArea(area);
+                // Cancel cooldown if player returned before expiry — keep existing spawns
+                cooldownAreas.remove(id);
+
+                if (!inRangeAreas.contains(id))
+                {
+                    inRangeAreas.add(id);
+                    activateArea(area);
+                }
             }
-            else if (!inRange && inRangeAreas.contains(id))
+            else if (inRangeAreas.contains(id))
             {
+                // Player just left range — start cooldown, keep spawns wandering
                 inRangeAreas.remove(id);
-                deactivateArea(id);
+                cooldownAreas.put(id, DEACTIVATION_COOLDOWN_TICKS);
+            }
+        }
+
+        // Tick down cooldowns and despawn expired areas
+        Iterator<Map.Entry<String, Integer>> it = cooldownAreas.entrySet().iterator();
+        while (it.hasNext())
+        {
+            Map.Entry<String, Integer> entry = it.next();
+            int remaining = entry.getValue() - 1;
+            if (remaining <= 0)
+            {
+                despawnArea(entry.getKey());
+                it.remove();
+            }
+            else
+            {
+                entry.setValue(remaining);
             }
         }
 
@@ -210,7 +239,7 @@ public class RoamingPetManager
             spawn.setSiblingSpawns(spawns);
     }
 
-    private void deactivateArea(String areaId)
+    private void despawnArea(String areaId)
     {
         List<RoamingPetSpawn> spawns = activeSpawns.remove(areaId);
         if (spawns != null)
@@ -219,7 +248,7 @@ public class RoamingPetManager
     }
 
     // Picks valid start tile - inside polygon, walkable, clearance, spread from existing spawns
-    // Falls back to polygon-only if all in-scene attempts fail - spawn BFS-rescues on entry
+    // Out of scene tiles are accepted and BFS-rescued when they enter render range
     private WorldPoint pickRandomStartPos(RoamingArea area, int spawnIndex,
                                           List<RoamingPetSpawn> existing)
     {
@@ -237,20 +266,26 @@ public class RoamingPetManager
 
         for (int minSep : new int[]{8, 4, 1})
         {
-            for (int attempt = 0; attempt < 200; attempt++)
+            for (int attempt = 0; attempt < 600; attempt++)
             {
                 int x = minX + RNG.nextInt(width);
                 int y = minY + RNG.nextInt(height);
                 WorldPoint candidate = new WorldPoint(x, y, area.getPlane());
 
                 if (!area.contains(candidate)) continue;
-                if (LocalPoint.fromWorld(client.getTopLevelWorldView(), candidate) == null) continue;
-                if (!isWalkable(candidate)) continue;
-                if (!hasClearance(candidate, area)) continue;
+
+                // If tile is in scene, validate walkability - otherwise accept it and let BFS rescue on entry
+                boolean inScene = LocalPoint.fromWorld(client.getTopLevelWorldView(), candidate) != null;
+                if (inScene)
+                {
+                    if (!isWalkable(candidate)) continue;
+                    if (!hasClearance(candidate, area)) continue;
+                }
 
                 boolean tooClose = false;
                 for (RoamingPetSpawn other : existing)
-                    if (chebyshev(candidate, other.getCurrentWorld()) < minSep)
+                    if (other.getCurrentWorld() != null
+                            && chebyshev(candidate, other.getCurrentWorld()) < minSep)
                     { tooClose = true; break; }
                 if (tooClose) continue;
 
@@ -258,34 +293,20 @@ public class RoamingPetManager
             }
         }
 
-        // Out-of-scene fallback - spawn BFS-rescues tile when it enters render range
-        for (int attempt = 0; attempt < 400; attempt++)
-        {
-            int x = minX + RNG.nextInt(width);
-            int y = minY + RNG.nextInt(height);
-            WorldPoint candidate = new WorldPoint(x, y, area.getPlane());
-
-            if (!area.contains(candidate)) continue;
-
-            boolean tooClose = false;
-            for (RoamingPetSpawn other : existing)
-                if (other.getCurrentWorld() != null
-                        && chebyshev(candidate, other.getCurrentWorld()) < 4)
-                { tooClose = true; break; }
-            if (tooClose) continue;
-
-            return candidate;
-        }
-
         return area.getCenter();
     }
 
     public void onSceneChange()
     {
-        for (RoamingArea area : new ArrayList<>(areas))
-            deactivateArea(area.getAreaId());
+        // Start cooldown for all active areas
+        for (RoamingArea area : areas)
+        {
+            String id = area.getAreaId();
+            if (activeSpawns.containsKey(id) && !cooldownAreas.containsKey(id))
+                cooldownAreas.put(id, DEACTIVATION_COOLDOWN_TICKS);
+        }
         inRangeAreas.clear();
-        log.debug("[RoamingPetManager] Scene change — all areas reset for re-activation");
+        log.debug("[RoamingPetManager] Scene change — all areas entering cooldown");
     }
 
     private WorldPoint getPlayerPos()
