@@ -89,6 +89,11 @@ public class RoamingPetManager
             areas.add(TemporossArea.zone2());
             areas.add(TemporossArea.zone3());
             areas.add(TemporossArea.zone4());
+            areas.add(DesertNorthArea.zone1());
+            areas.add(DesertNorthArea.zone2());
+            areas.add(DesertNorthArea.zone3());
+            areas.add(DesertNorthArea.zone4());
+            areas.add(DesertNorthArea.zone5());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
