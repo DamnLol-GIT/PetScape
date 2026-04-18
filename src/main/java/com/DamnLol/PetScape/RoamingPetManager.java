@@ -84,6 +84,7 @@ public class RoamingPetManager
             areas.add(FaladorArea.zone2());
             areas.add(FaladorArea.zone3());
             areas.add(FaladorArea.zone4());
+            areas.add(GreatConchArea.zone1());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
