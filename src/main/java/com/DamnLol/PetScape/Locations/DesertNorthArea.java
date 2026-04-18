@@ -111,9 +111,9 @@ public class DesertNorthArea extends RoamingArea
                 // 4 Quetzin, 2 Heron, 2 Phoenix
                 for (int i = 0; i < n; i++)
                 {
-                    if (i < 4)      names[i] = "Quetzin";
+                    if (i < 4) names[i] = "Quetzin";
                     else if (i < 6) names[i] = "Heron";
-                    else            names[i] = "Phoenix";
+                    else names[i] = "Phoenix";
                 }
                 break;
         }
