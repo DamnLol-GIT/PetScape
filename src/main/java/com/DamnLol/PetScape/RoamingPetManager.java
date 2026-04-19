@@ -110,6 +110,9 @@ public class RoamingPetManager
             areas.add(DesertMiscArea.zone6());
             areas.add(DesertMiscArea.zone7());
             areas.add(DesertMiscArea.zone8());
+            areas.add(DesertSouthRoamArea.zone1());
+            areas.add(DesertSouthRoamArea.zone2());
+            areas.add(DesertSouthRoamArea.zone3());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
