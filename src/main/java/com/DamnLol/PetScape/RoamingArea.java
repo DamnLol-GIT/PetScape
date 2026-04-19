@@ -198,6 +198,36 @@ public abstract class RoamingArea
         return true;
     }
 
+    // True if point is inside polygon or within buffer tiles of any edge
+    public boolean isWithinBuffer(WorldPoint pos, int buffer)
+    {
+        if (pos == null) return false;
+        int px = pos.getX(), py = pos.getY();
+        // Inside polygon counts as within buffer - forbidden zones dont affect activation
+        if (getPolygon().contains(px, py)) return true;
+        int[][] pts = getPolygonPoints();
+        for (int i = 0; i < pts.length; i++)
+        {
+            int[] a = pts[i];
+            int[] b = pts[(i + 1) % pts.length];
+            if (chebyshevPointToSegment(px, py, a[0], a[1], b[0], b[1]) <= buffer) return true;
+        }
+        return false;
+    }
+
+    // Chebyshev tile distance from P to closest point on segment AB
+    // Exact for axis-aligned edges, ~1 tile for diagonals - fine at buffer=20
+    private static int chebyshevPointToSegment(int px, int py, int ax, int ay, int bx, int by)
+    {
+        double dx = bx - ax, dy = by - ay;
+        double lenSq = dx * dx + dy * dy;
+        double t = (lenSq == 0) ? 0.0 : ((px - ax) * dx + (py - ay) * dy) / lenSq;
+        if (t < 0) t = 0; else if (t > 1) t = 1;
+        double cx = ax + t * dx;
+        double cy = ay + t * dy;
+        return (int) Math.max(Math.abs(px - cx), Math.abs(py - cy));
+    }
+
     // Proximity activation checks
     public WorldPoint getCenter()
     {

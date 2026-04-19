@@ -164,6 +164,43 @@ public class RoamingPetSpawn
         runeLiteObject.setActive(false);
     }
 
+    public void onScenePreLoad()
+    {
+        if (!active) return;
+        wasRendered = false;
+        runeLiteObject.setActive(false);
+    }
+
+    public void onSceneChange()
+    {
+        if (!active) return;
+
+        activePath = null;
+        pathStep = 0;
+        targetWorld = null;
+        targetLocal = null;
+        lastWorldTile = null;
+        stuckTicks = 0;
+
+        // Re-sync render state against new scene origin
+        Player localPlayer = client.getLocalPlayer();
+        boolean inRange = localPlayer != null && currentWorld != null
+                && chebyshev(currentWorld, localPlayer.getWorldLocation()) <= RENDER_DISTANCE;
+        LocalPoint lp = (inRange && currentWorld != null)
+                ? LocalPoint.fromWorld(client.getTopLevelWorldView(), currentWorld) : null;
+        if (lp != null)
+        {
+            placeAt(currentWorld);
+            runeLiteObject.setActive(true);
+            wasRendered = true;
+        }
+        else
+        {
+            runeLiteObject.setActive(false);
+            wasRendered = false;
+        }
+    }
+
     public boolean isRendered() { return active && runeLiteObject.isActive(); }
 
     public String getExamineText() { return area.getExamineText(spawnIndex, formIndex); }

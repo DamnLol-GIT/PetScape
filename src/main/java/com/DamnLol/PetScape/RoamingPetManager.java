@@ -44,10 +44,8 @@ import java.util.*;
 @Singleton
 public class RoamingPetManager
 {
-    // Slightly larger than getApproxRadius() so spawns ready before player arrives
-    private static final int ACTIVATION_RADIUS = 60;
-
-    // Ticks before out of range area is despawned
+    // Player must be within this many tiles of the polygon edge to activate zones
+    private static final int ACTIVATION_BUFFER = 20;
     private static final int DEACTIVATION_COOLDOWN_TICKS = 50;
 
     private static final Random RNG = new Random();
@@ -151,8 +149,8 @@ public class RoamingPetManager
         for (RoamingArea area : areas)
         {
             String id = area.getAreaId();
-            WorldPoint ctr = area.getCenter();
-            boolean inRange = chebyshev(playerPos, ctr) <= Math.max(ACTIVATION_RADIUS, area.getApproxRadius());
+            // Per-polygon edge buffer - each zone evaluates independently against its own outline
+            boolean inRange = area.isWithinBuffer(playerPos, ACTIVATION_BUFFER);
 
             if (inRange)
             {
@@ -162,7 +160,9 @@ public class RoamingPetManager
                 if (!inRangeAreas.contains(id))
                 {
                     inRangeAreas.add(id);
-                    activateArea(area);
+                    // Only spawn fresh if area has no live spawns
+                    // Re-entry mid-cooldown continues pet paths
+                    if (!activeSpawns.containsKey(id)) activateArea(area);
                 }
             }
             else if (inRangeAreas.contains(id))
@@ -260,7 +260,7 @@ public class RoamingPetManager
         List<RoamingPetSpawn> spawns = activeSpawns.remove(areaId);
         if (spawns != null)
             for (RoamingPetSpawn s : spawns) s.despawn();
-        log.debug("[RoamingPetManager] Deactivated area {}", areaId);
+        log.debug("[RoamingPetManager] Deactivated area {} (cooldown expired)", areaId);
     }
 
     // Picks valid start tile - inside polygon, walkable, clearance, spread from existing spawns
@@ -312,17 +312,21 @@ public class RoamingPetManager
         return area.getCenter();
     }
 
+    public void onScenePreLoad()
+    {
+        // Fired on LOADING - hide every pet before the scene swap so nothing renders at stale LocalPoints
+        for (List<RoamingPetSpawn> spawns : activeSpawns.values())
+            for (RoamingPetSpawn s : spawns) s.onScenePreLoad();
+    }
+
     public void onSceneChange()
     {
-        // Start cooldown for all active areas
-        for (RoamingArea area : areas)
+        // Spawns hold absolute WorldPoints so pathfinding state survives scene reloads
+        int count = 0;
+        for (List<RoamingPetSpawn> spawns : activeSpawns.values())
         {
-            String id = area.getAreaId();
-            if (activeSpawns.containsKey(id) && !cooldownAreas.containsKey(id))
-                cooldownAreas.put(id, DEACTIVATION_COOLDOWN_TICKS);
+            for (RoamingPetSpawn s : spawns) { s.onSceneChange(); count++; }
         }
-        inRangeAreas.clear();
-        log.debug("[RoamingPetManager] Scene change — all areas entering cooldown");
     }
 
     private WorldPoint getPlayerPos()

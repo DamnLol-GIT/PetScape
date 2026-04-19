@@ -569,7 +569,11 @@ public class PetScapePlugin extends Plugin
     @Subscribe
     public void onGameStateChanged(GameStateChanged event)
     {
-        if (event.getGameState() == GameState.LOADING)
+        // Prevents stale LocalPoint rendering and keeps transition smooth
+        GameState state = event.getGameState();
+        if (state == GameState.LOADING)
+            roamingPetManager.onScenePreLoad();
+        else if (state == GameState.LOGGED_IN)
             roamingPetManager.onSceneChange();
     }
 
