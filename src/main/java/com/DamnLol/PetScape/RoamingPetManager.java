@@ -111,6 +111,14 @@ public class RoamingPetManager
             areas.add(DesertSouthRoamArea.zone1());
             areas.add(DesertSouthRoamArea.zone2());
             areas.add(DesertSouthRoamArea.zone3());
+            areas.add(VarrockArea.zone1());
+            areas.add(VarrockArea.zone2());
+            areas.add(VarrockArea.zone3());
+            areas.add(VarrockArea.zone4());
+            areas.add(VarrockArea.zone5());
+            areas.add(VarrockArea.zone6());
+            areas.add(VarrockArea.zone7());
+            areas.add(VarrockArea.zone8());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
