@@ -667,6 +667,11 @@ public class PetScapePlugin extends Plugin
         net.runelite.api.Point mouse = client.getMouseCanvasPosition();
         if (mouse == null) return;
 
+        // Tile under cursor - gates hull checks for far pets
+        Tile selected = client.getSelectedSceneTile();
+        WorldPoint clickWp = (selected != null)
+                ? WorldPoint.fromLocalInstance(client, selected.getLocalLocation()) : null;
+
         // Find the closest rendered spawn to the click position, within that spawn's radius
         RoamingPetSpawn closest = null;
 
@@ -674,6 +679,14 @@ public class PetScapePlugin extends Plugin
         {
             WorldPoint wp = spawn.getCurrentWorld();
             if (wp == null) continue;
+
+            // Reject pets >1 tile from the click
+            if (clickWp != null
+                    && clickWp.getPlane() == wp.getPlane()
+                    && Math.max(Math.abs(clickWp.getX() - wp.getX()),
+                    Math.abs(clickWp.getY() - wp.getY())) > 1)
+                continue;
+
             LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), wp);
             if (lp == null) continue;
 
@@ -682,7 +695,7 @@ public class PetScapePlugin extends Plugin
             if (model == null) continue;
 
             int tileZ = Perspective.getTileHeight(client, lp, client.getPlane());
-            int z     = spawn.getZOffset() == 0 ? tileZ : tileZ - spawn.getZOffset();
+            int z = spawn.getZOffset() == 0 ? tileZ : tileZ - spawn.getZOffset();
             int orientation = spawn.getRuneLiteObject().getOrientation();
 
             java.awt.Shape hull = Perspective.getClickbox(client, client.getTopLevelWorldView(), model, orientation,
