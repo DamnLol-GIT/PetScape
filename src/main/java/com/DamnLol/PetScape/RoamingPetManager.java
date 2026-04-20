@@ -119,6 +119,14 @@ public class RoamingPetManager
             areas.add(VarrockArea.zone6());
             areas.add(VarrockArea.zone7());
             areas.add(VarrockArea.zone8());
+            areas.add(CanifisRoamingArea.zone1());
+            areas.add(CanifisRoamingArea.zone2());
+            areas.add(CanifisRoamingArea.zone3());
+            areas.add(CanifisRoamingArea.zone4());
+            areas.add(CanifisRoamingArea.zone5());
+            areas.add(CanifisRoamingArea.zone6());
+            areas.add(CanifisRoamingArea.zone7());
+            areas.add(CanifisRoamingArea.zone8());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
