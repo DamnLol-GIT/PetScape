@@ -667,30 +667,19 @@ public class PetScapePlugin extends Plugin
         net.runelite.api.Point mouse = client.getMouseCanvasPosition();
         if (mouse == null) return;
 
-        // Tile under cursor - gates hull checks for far pets
-        Tile selected = client.getSelectedSceneTile();
-        WorldPoint clickWp = (selected != null)
-                ? WorldPoint.fromLocalInstance(client, selected.getLocalLocation()) : null;
-
-        // Find the closest rendered spawn to the click position, within that spawn's radius
+        // Find the closest rendered spawn to the click position within spawn radius
         RoamingPetSpawn closest = null;
+        final int mx = mouse.getX(), my = mouse.getY();
 
         for (RoamingPetSpawn spawn : roamingPetManager.getRenderedSpawns())
         {
             WorldPoint wp = spawn.getCurrentWorld();
             if (wp == null) continue;
 
-            // Reject pets >1 tile from the click
-            if (clickWp != null
-                    && clickWp.getPlane() == wp.getPlane()
-                    && Math.max(Math.abs(clickWp.getX() - wp.getX()),
-                    Math.abs(clickWp.getY() - wp.getY())) > 1)
-                continue;
-
-            LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), wp);
+            // Use rendered location so hull lines up with visible model mid-step
+            LocalPoint lp = spawn.getRuneLiteObject().getLocation();
             if (lp == null) continue;
 
-            // Clicking body of models/padding area works at any camera angle for menu
             net.runelite.api.Model model = spawn.getRuneLiteObject().getModel();
             if (model == null) continue;
 
@@ -700,18 +689,9 @@ public class PetScapePlugin extends Plugin
 
             java.awt.Shape hull = Perspective.getClickbox(client, client.getTopLevelWorldView(), model, orientation,
                     lp.getX(), lp.getY(), z);
-            final int pad = 8;
-            boolean hit = hull != null && hull.intersects(mouse.getX() - pad, mouse.getY() - pad, pad * 2, pad * 2);
+            if (hull == null) continue;
 
-            // Fallback click box
-            if (!hit)
-            {
-                net.runelite.api.Point centre = Perspective.localToCanvas(client, lp, client.getPlane(), 80);
-                if (centre != null)
-                    hit = Math.hypot(mouse.getX() - centre.getX(), mouse.getY() - centre.getY()) <= 24;
-            }
-
-            if (hit)
+            if (hull.contains(mx, my))
             {
                 closest = spawn;
                 break;
