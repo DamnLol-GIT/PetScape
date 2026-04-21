@@ -145,6 +145,13 @@ public class RoamingPetManager
             areas.add(MudskipperArea.zone4());
             areas.add(MudskipperArea.zone5());
             areas.add(MudskipperArea.zone6());
+            areas.add(AlKharidArea.zone1());
+            areas.add(AlKharidArea.zone2());
+            areas.add(AlKharidArea.zone3());
+            areas.add(AlKharidArea.zone4());
+            areas.add(AlKharidArea.zone5());
+            areas.add(AlKharidArea.zone6());
+            areas.add(AlKharidArea.zone7());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
