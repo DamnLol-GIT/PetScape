@@ -57,12 +57,6 @@ public class PetScapePlugin extends Plugin
             8558, 8559, 8814, 8815, 9070, 9071
     );
 
-    private static boolean isPohTemplateRegion(int region)
-    {
-        int regionY = region & 0xFF;
-        return regionY == 110 || regionY == 111;
-    }
-
     static final String[] WANDER_LINES = {};
 
     static final Set<Integer> PET_NPC_IDS = new HashSet<>(Arrays.asList(
@@ -350,7 +344,7 @@ public class PetScapePlugin extends Plugin
                         int chunkY = (chunk >> 3) & 0x7FF;
                         int region = ((chunkX / 8) << 8) | (chunkY / 8);
                         debugRegions.add(region);
-                        if (!isPohTemplateRegion(region)) continue;
+                        if (!POH_TEMPLATE_REGIONS.contains(region)) continue;
                         Long key = ((long) cx << 32) | cy;
                         if (validChunks.add(key))
                         {
@@ -865,7 +859,7 @@ public class PetScapePlugin extends Plugin
             for (int[] row : plane) { if (row == null) continue;
                 for (int chunk : row) { if (chunk == 0) continue;
                     int chunkX = (chunk >> 14) & 0x3FF, chunkY = (chunk >> 3) & 0x7FF;
-                    if (isPohTemplateRegion(((chunkX / 8) << 8) | (chunkY / 8))) return true;
+                    if (POH_TEMPLATE_REGIONS.contains(((chunkX / 8) << 8) | (chunkY / 8))) return true;
                 }}}
         return false;
     }

@@ -141,6 +141,43 @@ public class RoamingPetSpawn
         this.runeLiteObject.setWorldView(-1);
     }
 
+    // Converts a template WorldPoint to a LocalPoint in the current scene
+    private LocalPoint worldToLocal(WorldPoint wp)
+    {
+        if (wp == null) return null;
+        if (client.isInInstancedRegion())
+        {
+            for (WorldPoint instanceWp : WorldPoint.toLocalInstance(client.getTopLevelWorldView(), wp))
+            {
+                LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), instanceWp);
+                if (lp != null) return lp;
+            }
+            return null;
+        }
+        return LocalPoint.fromWorld(client.getTopLevelWorldView(), wp);
+    }
+
+    // Returns the players template coord WorldPoint
+    private WorldPoint getPlayerTemplateWp(Player p)
+    {
+        if (p == null) return null;
+        if (client.isInInstancedRegion())
+        {
+            LocalPoint lp = p.getLocalLocation();
+            return lp != null ? WorldPoint.fromLocalInstance(client, lp) : null;
+        }
+        return p.getWorldLocation();
+    }
+
+    // Converts a LocalPoint to a template WorldPoint
+    private WorldPoint localToWorld(LocalPoint lp)
+    {
+        if (lp == null) return null;
+        if (client.isInInstancedRegion())
+            return WorldPoint.fromLocalInstance(client, lp);
+        return WorldPoint.fromLocal(client, lp);
+    }
+
     public void activate()
     {
         if (active) return;
@@ -184,10 +221,11 @@ public class RoamingPetSpawn
 
         // Re-sync render state against new scene origin
         Player localPlayer = client.getLocalPlayer();
-        boolean inRange = localPlayer != null && currentWorld != null
-                && chebyshev(currentWorld, localPlayer.getWorldLocation()) <= RENDER_DISTANCE;
+        WorldPoint playerWp = getPlayerTemplateWp(localPlayer);
+        boolean inRange = playerWp != null && currentWorld != null
+                && chebyshev(currentWorld, playerWp) <= RENDER_DISTANCE;
         LocalPoint lp = (inRange && currentWorld != null)
-                ? LocalPoint.fromWorld(client.getTopLevelWorldView(), currentWorld) : null;
+                ? worldToLocal(currentWorld) : null;
         if (lp != null)
         {
             placeAt(currentWorld);
@@ -213,9 +251,10 @@ public class RoamingPetSpawn
 
         // Render-distance toggle + lazy placement
         Player localPlayer = client.getLocalPlayer();
+        WorldPoint playerWp = getPlayerTemplateWp(localPlayer);
         boolean inRange = false;
-        if (localPlayer != null && currentWorld != null) {
-            inRange = chebyshev(currentWorld, localPlayer.getWorldLocation()) <= RENDER_DISTANCE;
+        if (playerWp != null && currentWorld != null) {
+            inRange = chebyshev(currentWorld, playerWp) <= RENDER_DISTANCE;
 
             if (inRange && !wasRendered) {
                 placeAt(currentWorld);
@@ -227,7 +266,7 @@ public class RoamingPetSpawn
 
         // Recalculate Z every tick to track sloped terrain
         if (runeLiteObject.isActive() && currentWorld != null) {
-            LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), currentWorld);
+            LocalPoint lp = worldToLocal(currentWorld);
             if (lp != null) applyZOffset(lp);
         }
 
@@ -252,7 +291,7 @@ public class RoamingPetSpawn
             }
         } else if (targetWorld != null) {
             LocalPoint objLp = runeLiteObject.getLocation();
-            WorldPoint objTile = (objLp != null) ? WorldPoint.fromLocal(client, objLp) : currentWorld;
+            WorldPoint objTile = (objLp != null) ? localToWorld(objLp) : currentWorld;
             if (objTile != null && objTile.equals(lastWorldTile)) {
                 if (++stuckTicks >= STUCK_TIMEOUT) {
                     log.debug("[RoamingPet] Stuck at {} — relocating", currentWorld);
@@ -286,7 +325,7 @@ public class RoamingPetSpawn
         LocalPoint objLp = runeLiteObject.getLocation();
         if (objLp != null)
         {
-            currentWorld = WorldPoint.fromLocal(client, objLp);
+            currentWorld = localToWorld(objLp);
         }
 
         if (targetLocal == null) return;
@@ -309,7 +348,7 @@ public class RoamingPetSpawn
             if (state == RoamState.MOVING && activePath != null && pathStep < activePath.size())
             {
                 WorldPoint next = activePath.get(pathStep);
-                LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), next);
+                LocalPoint lp = worldToLocal(next);
                 if (lp != null)
                 {
                     targetWorld = next;
@@ -447,7 +486,7 @@ public class RoamingPetSpawn
         }
 
         WorldPoint next = activePath.get(pathStep);
-        LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), next);
+        LocalPoint lp = worldToLocal(next);
         if (lp == null)
         {
             // Waypoint left scene — drop path and replan next tick
@@ -541,7 +580,7 @@ public class RoamingPetSpawn
             if (!hasMovementClearance(candidate)) continue;
             if (isTooCloseToSibling(candidate)) continue;
 
-            LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), candidate);
+            LocalPoint lp = worldToLocal(candidate);
             if (lp == null) continue;
 
             activePath = null;
@@ -558,7 +597,8 @@ public class RoamingPetSpawn
     private boolean isWalkableInScene(WorldPoint pos)
     {
         if (pos.getPlane() != area.getPlane()) return false;
-        if (LocalPoint.fromWorld(client.getTopLevelWorldView(), pos) == null) return false;
+        LocalPoint lp = worldToLocal(pos);
+        if (lp == null) return false;
 
         CollisionData[] maps = client.getTopLevelWorldView().getCollisionMaps();
         if (maps == null) return false;
@@ -566,8 +606,8 @@ public class RoamingPetSpawn
         int plane = pos.getPlane();
         if (plane < 0 || plane >= maps.length || maps[plane] == null) return false;
 
-        int sx = pos.getX() - client.getTopLevelWorldView().getBaseX();
-        int sy = pos.getY() - client.getTopLevelWorldView().getBaseY();
+        int sx = lp.getSceneX();
+        int sy = lp.getSceneY();
         int[][] flags = maps[plane].getFlags();
         if (sx < 0 || sy < 0 || sx >= flags.length || sy >= flags[sx].length) return false;
 
@@ -833,8 +873,8 @@ public class RoamingPetSpawn
             WorldPoint rescued = bfsNearestOpen(safePos);
             if (rescued != null) { safePos = rescued; currentWorld = safePos; }
         }
-        LocalPoint lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), safePos);
-        if (lp == null) lp = LocalPoint.fromWorld(client.getTopLevelWorldView(), area.getCenter());
+        LocalPoint lp = worldToLocal(safePos);
+        if (lp == null) lp = worldToLocal(area.getCenter());
         if (lp == null) return;
         runeLiteObject.setLocation(lp, area.getPlane());
         applyZOffset(lp);
