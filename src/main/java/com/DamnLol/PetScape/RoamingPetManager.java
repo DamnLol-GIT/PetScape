@@ -127,6 +127,18 @@ public class RoamingPetManager
             areas.add(CanifisRoamingArea.zone6());
             areas.add(CanifisRoamingArea.zone7());
             areas.add(CanifisRoamingArea.zone8());
+            areas.add(GhorrockArea.zone1());
+            areas.add(GhorrockArea.zone2());
+            areas.add(GhorrockArea.zone3());
+            areas.add(StranglewoodArea.zone1());
+            areas.add(StranglewoodArea.zone2());
+            areas.add(StranglewoodArea.zone3());
+            areas.add(StranglewoodArea.zone4());
+            areas.add(StranglewoodArea.zone5());
+            areas.add(WhisperRuinsArea.zone1());
+            areas.add(WhisperRuinsArea.zone2());
+            areas.add(WhisperRuinsArea.zone3());
+            areas.add(WhisperRuinsArea.zone4());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
@@ -348,7 +360,13 @@ public class RoamingPetManager
     private WorldPoint getPlayerPos()
     {
         Player local = client.getLocalPlayer();
-        return local != null ? local.getWorldLocation() : null;
+        if (local == null) return null;
+        if (client.isInInstancedRegion())
+        {
+            LocalPoint lp = local.getLocalLocation();
+            return lp != null ? WorldPoint.fromLocalInstance(client, lp) : null;
+        }
+        return local.getWorldLocation();
     }
 
     // Returns rendered spawn at wp, or null - used for right-click menu
