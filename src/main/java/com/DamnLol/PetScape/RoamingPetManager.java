@@ -139,6 +139,12 @@ public class RoamingPetManager
             areas.add(WhisperRuinsArea.zone2());
             areas.add(WhisperRuinsArea.zone3());
             areas.add(WhisperRuinsArea.zone4());
+            areas.add(MudskipperArea.zone1());
+            areas.add(MudskipperArea.zone2());
+            areas.add(MudskipperArea.zone3());
+            areas.add(MudskipperArea.zone4());
+            areas.add(MudskipperArea.zone5());
+            areas.add(MudskipperArea.zone6());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
