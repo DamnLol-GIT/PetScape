@@ -46,7 +46,7 @@ public class PetScapeGhost
     private static final int POH_HALF_SIZE = 24;
     private static final int BASE_Z_OFFSET = 0;
 
-    // Z correction applied on top of tile height.
+    // Z correction applied on top of tile height
     // Note to self - 128 scene units = 1 game tile. Positive = UP, negative = DOWN.
     static final java.util.Map<Integer, Integer> Z_OVERRIDES = new java.util.HashMap<>();
     static
