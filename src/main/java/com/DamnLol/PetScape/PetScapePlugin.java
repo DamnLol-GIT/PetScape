@@ -179,6 +179,7 @@ public class PetScapePlugin extends Plugin
             NpcID.QUETZIN,
             NpcID.RAX,
             NpcID.RAX_13684,
+            NpcID.RED,
             NpcID.RIC,
             NpcID.RIFT_GUARDIAN,
             NpcID.ROCKY,
@@ -265,6 +266,7 @@ public class PetScapePlugin extends Plugin
             NpcID.YAMI,
             NpcID.YOUNGLLEF,
             NpcID.ZEBO,
+            NpcID.ZIGGY,
             NpcID.ZILYANA_JR,
             NpcID.ZILYANA_JR_6646
 

@@ -29,7 +29,7 @@ import net.runelite.api.NpcID;
 import java.util.*;
 
 
-// Recolor format: short[] — first half = find, second half = replace.
+// Recolor format: short[] — first half = find, second half = replace
 
 public class PetGhostData {
     public static final class Entry {
@@ -206,6 +206,7 @@ public class PetGhostData {
         m.put(NpcID.QUETZIN, new Entry(new int[]{52601}, 10952, 10952, -1));
         m.put(NpcID.RAX, new Entry(new int[]{44936}, 8340, 9139, 64));
         m.put(NpcID.RAX_13684, new Entry(new int[]{44936}, 8340, 9139, 64));
+        m.put(NpcID.RED, new Entry(new int[]{37361}, 7315, 7316, 110));
         m.put(NpcID.RIC, new Entry(new int[]{55938}, 11969, 11971, 26));
         m.put(NpcID.RIFT_GUARDIAN, new Entry(new int[]{32204}, 7307, 7306, -1));
         m.put(NpcID.RIFT_GUARDIAN_7338, new Entry(new int[]{32204}, 7307, 7306, -1,
@@ -352,6 +353,7 @@ public class PetGhostData {
         m.put(NpcID.YOUNGLLEF, new Entry(new int[]{38596}, 8417, 8428, 25));
         m.put(NpcID.YOUNGLLEF_8737, new Entry(new int[]{38596}, 8417, 8428, 25));
         m.put(NpcID.ZEBO, new Entry(new int[]{46509}, 2037, 2036, 112));
+        m.put(NpcID.ZIGGY, new Entry(new int[]{14390}, 7315, 7316, 110));
         m.put(NpcID.ZILYANA_JR, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
         m.put(NpcID.ZILYANA_JR_6646, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
 
