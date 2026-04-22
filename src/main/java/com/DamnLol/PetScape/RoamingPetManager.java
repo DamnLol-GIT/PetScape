@@ -165,6 +165,17 @@ public class RoamingPetManager
             areas.add(WildyEdgeArea.zone4());
             areas.add(WildyEdgeArea.zone5());
             areas.add(WildyEdgeArea.zone6());
+            areas.add(VarrockOutskirtsArea.zone1());
+            areas.add(VarrockOutskirtsArea.zone2());
+            areas.add(VarrockOutskirtsArea.zone3());
+            areas.add(VarrockOutskirtsArea.zone4());
+            areas.add(VarrockOutskirtsArea.zone5());
+            areas.add(VarrockOutskirtsArea.zone6());
+            areas.add(VarrockOutskirtsArea.zone7());
+            areas.add(VarrockOutskirtsArea.zone8());
+            areas.add(VarrockOutskirtsArea.zone9());
+            areas.add(VarrockOutskirtsArea.zone10());
+            areas.add(VarrockOutskirtsArea.zone11());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
