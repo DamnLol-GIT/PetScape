@@ -159,6 +159,12 @@ public class RoamingPetManager
             areas.add(DigsiteArea.zone5());
             areas.add(DigsiteArea.zone6());
             areas.add(DigsiteArea.zone7());
+            areas.add(WildyEdgeArea.zone1());
+            areas.add(WildyEdgeArea.zone2());
+            areas.add(WildyEdgeArea.zone3());
+            areas.add(WildyEdgeArea.zone4());
+            areas.add(WildyEdgeArea.zone5());
+            areas.add(WildyEdgeArea.zone6());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
