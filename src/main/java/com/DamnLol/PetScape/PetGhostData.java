@@ -29,7 +29,7 @@ import net.runelite.api.NpcID;
 import java.util.*;
 
 
-// Recolor format: short[] — first half = find, second half = replace
+// Recolor format: short[] — first half = find, second half = replace.
 
 public class PetGhostData {
     public static final class Entry {
@@ -90,6 +90,7 @@ public class PetGhostData {
         m.put(NpcID.BEEF_15633, new Entry(new int[]{60118}, 5852, 5856, 64));
         m.put(NpcID.BLOODHOUND, new Entry(new int[]{31740}, 7269, 7280, -1));
         m.put(NpcID.BLOODHOUND_7232, new Entry(new int[]{31740}, 7269, 7280, -1));
+        m.put(NpcID.BONE_SQUIRREL, new Entry(new int[]{54969}, 11662, 11663, 110));
         m.put(NpcID.BRAN, new Entry(new int[]{55951}, 11970, 11972, 26));
         m.put(NpcID.BROAV, new Entry(new int[]{53343}, 11232, 11234, 120));
         m.put(NpcID.BROAV_13665, new Entry(new int[]{53343}, 11232, 11234, 120));
@@ -114,6 +115,12 @@ public class PetGhostData {
                 (short)16536, (short)16540, (short)27144, (short)2477,
                 (short)7322, (short)7326, (short)10403, (short)2595));
         m.put(NpcID.DAGANNOTH_SUPREME_JR, new Entry(new int[]{9941, 9943}, 2850, 2849, 60));
+        m.put(NpcID.DARK_SQUIRREL, new Entry(new int[]{32206}, 7309, 7310, 110,
+                (short)3816, (short)381, (short)56, (short)3633, (short)329, (short)362,
+                (short)24, (short)12, (short)6, (short)6, (short)824, (short)67312));
+        m.put(NpcID.DARK_SQUIRREL_9638, new Entry(new int[]{32206}, 7309, 7310, 110,
+                (short)38160, (short)38156, (short)36333, (short)29036, (short)2344, (short)30,
+                (short)241, (short)266, (short)82, (short)4, (short)67, (short)312));
         m.put(NpcID.DOM, new Entry(new int[]{56456}, 12401, 12402, -1));
         m.put(NpcID.DOM_14785, new Entry(new int[]{56456}, 12401, 12402, -1));
         m.put(NpcID.ELIDINIS_DAMAGED_GUARDIAN, new Entry(new int[]{46332}, 9420, 9420, 65));
