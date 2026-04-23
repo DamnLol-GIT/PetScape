@@ -37,15 +37,15 @@ public class LumbridgeArea extends RoamingArea
 
     private LumbridgeArea(int zone) { this.zone = zone; }
 
-    public static LumbridgeArea zone1()  { return new LumbridgeArea(1); }
-    public static LumbridgeArea zone2()  { return new LumbridgeArea(2); }
-    public static LumbridgeArea zone3()  { return new LumbridgeArea(3); }
-    public static LumbridgeArea zone4()  { return new LumbridgeArea(4); }
-    public static LumbridgeArea zone5()  { return new LumbridgeArea(5); }
-    public static LumbridgeArea zone6()  { return new LumbridgeArea(6); }
-    public static LumbridgeArea zone7()  { return new LumbridgeArea(7); }
-    public static LumbridgeArea zone8()  { return new LumbridgeArea(8); }
-    public static LumbridgeArea zone9()  { return new LumbridgeArea(9); }
+    public static LumbridgeArea zone1() { return new LumbridgeArea(1); }
+    public static LumbridgeArea zone2() { return new LumbridgeArea(2); }
+    public static LumbridgeArea zone3() { return new LumbridgeArea(3); }
+    public static LumbridgeArea zone4() { return new LumbridgeArea(4); }
+    public static LumbridgeArea zone5() { return new LumbridgeArea(5); }
+    public static LumbridgeArea zone6() { return new LumbridgeArea(6); }
+    public static LumbridgeArea zone7() { return new LumbridgeArea(7); }
+    public static LumbridgeArea zone8() { return new LumbridgeArea(8); }
+    public static LumbridgeArea zone9() { return new LumbridgeArea(9); }
     public static LumbridgeArea zone10() { return new LumbridgeArea(10); }
     public static LumbridgeArea zone11() { return new LumbridgeArea(11); }
     public static LumbridgeArea zone12() { return new LumbridgeArea(12); }
