@@ -190,6 +190,21 @@ public class RoamingPetManager
             areas.add(LumbridgeArea.zone12());
             areas.add(LumbridgeArea.zone13());
             areas.add(LumbridgeArea.zone14());
+            areas.add(LumbSwampRiverArea.zone1());
+            areas.add(LumbSwampRiverArea.zone2());
+            areas.add(LumbSwampRiverArea.zone3());
+            areas.add(LumbSwampRiverArea.zone4());
+            areas.add(LumbSwampRiverArea.zone5());
+            areas.add(LumbSwampRiverArea.zone6());
+            areas.add(LumbSwampRiverArea.zone7());
+            areas.add(LumbSwampRiverArea.zone8());
+            areas.add(LumbSwampRiverArea.zone9());
+            areas.add(LumbSwampRiverArea.zone10());
+            areas.add(LumbSwampRiverArea.zone11());
+            areas.add(LumbSwampRiverArea.zone12());
+            areas.add(LumbSwampRiverArea.zone13());
+            areas.add(LumbSwampRiverArea.zone14());
+            areas.add(LumbSwampRiverArea.zone15());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
