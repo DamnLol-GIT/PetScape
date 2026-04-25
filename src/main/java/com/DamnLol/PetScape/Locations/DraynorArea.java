@@ -89,6 +89,12 @@ public class DraynorArea extends RoamingArea
     public boolean isAquatic() { return zone == 8 || zone == 9; }
 
     @Override
+    public int getWanderMinDist()
+    {
+        return zone == 11 ? 3 : 8;
+    }
+
+    @Override
     public int getFormAssignment(int spawnIndex, int nForms)
     {
         switch (zone)
