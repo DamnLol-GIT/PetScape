@@ -376,10 +376,12 @@ public class RoamingPetSpawn
         if (Math.abs(delta) > 32) delta = Integer.signum(delta) * 32;
         runeLiteObject.setOrientation((curJau + delta + 2048) % 2048);
 
-        // Abandon path if BFS route invalidated - reset walk animation
-        int wdx = Integer.signum(dx);
-        int wdy = Integer.signum(dy);
-        if (currentWorld != null &&
+        // Abandon path if BFS route invalidated - direction from planned tile, not sub-tile delta
+        int wdx = (currentWorld != null && targetWorld != null)
+                ? Integer.signum(targetWorld.getX() - currentWorld.getX()) : 0;
+        int wdy = (currentWorld != null && targetWorld != null)
+                ? Integer.signum(targetWorld.getY() - currentWorld.getY()) : 0;
+        if (currentWorld != null && (wdx != 0 || wdy != 0) &&
                 !canTravel(new WorldArea(currentWorld, 1, 1), wdx, wdy))
         {
             activePath = null;
