@@ -394,7 +394,7 @@ public class DraynorArea extends RoamingArea
     @Override
     public int[][][] getForbiddenZonePoints()
     {
-        if (zone == 3 || zone == 11) return FORBIDDEN_ZONE3;
+        if (zone == 3 || zone == 11) return FORBIDDEN_BANK_AREA;
         if (zone == 6) return FORBIDDEN_ZONE6;
         if (zone == 10) return FORBIDDEN_ZONE10;
         return new int[0][][];
@@ -421,21 +421,29 @@ public class DraynorArea extends RoamingArea
 
     // Zone 3 - Draynor Town
     private static final int[][] ZONE3_DRAYNOR_TOWN = {
-            { 3087, 3256 }, { 3083, 3256 }, { 3081, 3259 }, { 3077, 3257 },
-            { 3076, 3256 }, { 3076, 3255 }, { 3074, 3253 }, { 3074, 3250 },
-            { 3074, 3246 }, { 3075, 3244 }, { 3079, 3243 }, { 3083, 3240 },
-            { 3087, 3239 }, { 3096, 3238 }, { 3101, 3239 }, { 3101, 3243 },
-            { 3101, 3246 }, { 3101, 3249 }, { 3102, 3254 }, { 3102, 3256 },
-            { 3096, 3256 }, { 3095, 3256 }, { 3095, 3251 }, { 3087, 3251 },
-            { 3087, 3256 }
+            { 3086, 3251 }, { 3086, 3255 }, { 3082, 3255 }, { 3081, 3259 },
+            { 3078, 3258 }, { 3076, 3258 }, { 3073, 3258 }, { 3072, 3258 },
+            { 3072, 3256 }, { 3071, 3252 }, { 3071, 3249 }, { 3072, 3247 },
+            { 3080, 3240 }, { 3083, 3237 }, { 3087, 3236 }, { 3088, 3235 },
+            { 3089, 3234 }, { 3093, 3233 }, { 3096, 3233 }, { 3099, 3233 },
+            { 3102, 3233 }, { 3105, 3236 }, { 3106, 3237 }, { 3106, 3239 },
+            { 3106, 3242 }, { 3105, 3249 }, { 3104, 3253 }, { 3102, 3253 },
+            { 3098, 3255 }, { 3096, 3255 }, { 3096, 3252 }, { 3096, 3250 },
+            { 3086, 3250 }, { 3086, 3251 }
     };
 
-    // Zone 3 forbidden Zones
-    private static final int[][][] FORBIDDEN_ZONE3 = {
+    // Zone 3/11 Forbidden Zones
+    private static final int[][][] FORBIDDEN_BANK_AREA = {
             // Bank
             {
                     { 3088, 3247 }, { 3098, 3247 }, { 3098, 3240 }, { 3088, 3240 },
                     { 3088, 3247 }
+            },
+
+            // Tree Area
+            {
+                    { 3087, 3241 }, { 3082, 3241 }, { 3082, 3245 }, { 3083, 3246 },
+                    { 3087, 3246 }, { 3087, 3241 }
             }
     };
 
@@ -474,7 +482,7 @@ public class DraynorArea extends RoamingArea
             { 3111, 3174 }, { 3116, 3174 }
     };
 
-    // Zone 6 forbidden Zones
+    // Zone 6 Forbidden Zones
     private static final int[][][] FORBIDDEN_ZONE6 = {
             // Tower
             {
@@ -540,7 +548,7 @@ public class DraynorArea extends RoamingArea
             { 3107, 3258 }, { 3106, 3260 }, { 3108, 3261 }, { 3115, 3259 }
     };
 
-    // Zone 10 forbidden Zones
+    // Zone 10 Forbidden Zones
     private static final int[][][] FORBIDDEN_ZONE10 = {
             // Jail (Quest Zone)
             {
@@ -551,9 +559,10 @@ public class DraynorArea extends RoamingArea
 
     // Zone 11 - Bank Border
     private static final int[][] ZONE11_BANK_BORDER = {
-            { 3096, 3248 }, { 3093, 3251 }, { 3090, 3254 }, { 3087, 3254 },
-            { 3087, 3251 }, { 3087, 3250 }, { 3085, 3248 }, { 3083, 3246 },
-            { 3083, 3240 }, { 3087, 3236 }, { 3093, 3235 }, { 3099, 3234 },
-            { 3102, 3240 }, { 3098, 3248 }, { 3096, 3248 }
+            { 3083, 3248 }, { 3087, 3251 }, { 3095, 3251 }, { 3100, 3250 },
+            { 3101, 3248 }, { 3103, 3247 }, { 3104, 3245 }, { 3104, 3242 },
+            { 3102, 3240 }, { 3102, 3238 }, { 3100, 3236 }, { 3095, 3235 },
+            { 3091, 3236 }, { 3087, 3238 }, { 3081, 3239 }, { 3079, 3242 },
+            { 3079, 3245 }, { 3083, 3248 }
     };
 }
