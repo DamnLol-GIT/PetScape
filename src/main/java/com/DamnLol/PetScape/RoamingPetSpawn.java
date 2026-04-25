@@ -453,6 +453,7 @@ public class RoamingPetSpawn
 
             if (!isWalkableInScene(candidate)) continue;
             if (!hasMovementClearance(candidate)) continue;
+            if (isTooCloseToSibling(candidate)) continue;
 
             List<WorldPoint> path = bfsPath(currentWorld, candidate);
             if (path == null || path.isEmpty()) continue;
