@@ -61,19 +61,19 @@ public abstract class RoamingArea
         return "<col=ffff00>" + name + "</col>";
     }
 
-    // Menu target — override when each form has a distinct display name
+    // Menu target - override when each form has a distinct display name
     public String getMenuTarget(int spawnIndex, int formIndex)
     {
         return getMenuTarget(spawnIndex);
     }
 
-    // Examine text — override when each form has a distinct examine string
+    // Examine text - override when each form has a distinct examine string
     public String getExamineText(int spawnIndex, int formIndex)
     {
         return getExamineText();
     }
 
-    // When true, spawns never cycle away from their manager-assigned form
+    // True = spawns never cycle away from their assigned form
     public boolean isFormFixed()
     {
         return false;
@@ -98,6 +98,7 @@ public abstract class RoamingArea
 
     // When true - pets ignore BLOCK_MOVEMENT_OBJECT flags
     public boolean isFlying() { return false; }
+
     // Use for aquatic pets whose polygon area covers only water tiles
     public boolean isAquatic()
     {
