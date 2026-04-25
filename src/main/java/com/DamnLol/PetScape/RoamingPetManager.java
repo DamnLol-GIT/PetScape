@@ -223,6 +223,17 @@ public class RoamingPetManager
             areas.add(PortSarimArea.zone8());
             areas.add(PortSarimArea.zone9());
             areas.add(PortSarimArea.zone10());
+            areas.add(DraynorArea.zone1());
+            areas.add(DraynorArea.zone2());
+            areas.add(DraynorArea.zone3());
+            areas.add(DraynorArea.zone4());
+            areas.add(DraynorArea.zone5());
+            areas.add(DraynorArea.zone6());
+            areas.add(DraynorArea.zone7());
+            areas.add(DraynorArea.zone8());
+            areas.add(DraynorArea.zone9());
+            areas.add(DraynorArea.zone10());
+            areas.add(DraynorArea.zone11());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
