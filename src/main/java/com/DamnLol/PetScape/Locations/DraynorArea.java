@@ -131,10 +131,8 @@ public class DraynorArea extends RoamingArea
                 if (spawnIndex < 10) return 1;
                 return 2;
             default:
-                // 2 Giant Squirrel(0), 2 Beaver(1), 2 Rocky(2)
-                if (spawnIndex < 2) return 0;
-                if (spawnIndex < 4) return 1;
-                return 2;
+                // 1 Giant Squirrel(0), 1 Beaver(1), 1 Rocky(2)
+                return spawnIndex;
         }
     }
 
@@ -202,12 +200,9 @@ public class DraynorArea extends RoamingArea
                 }
                 break;
             default:
-                for (int i = 0; i < n; i++)
-                {
-                    if (i < 2) names[i] = "Giant Squirrel";
-                    else if (i < 4) names[i] = "Beaver";
-                    else names[i] = "Rocky";
-                }
+                names[0] = "Giant Squirrel";
+                names[1] = "Beaver";
+                names[2] = "Rocky";
                 break;
         }
         return names;
@@ -360,7 +355,7 @@ public class DraynorArea extends RoamingArea
             case 8: return 6;
             case 9: return 4;
             case 10: return 14;
-            default: return 6;
+            default: return 3;
         }
     }
 
