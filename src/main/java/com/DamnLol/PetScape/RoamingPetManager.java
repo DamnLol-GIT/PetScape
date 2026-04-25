@@ -213,6 +213,16 @@ public class RoamingPetManager
             areas.add(DraynorManorArea.zone6());
             areas.add(DraynorManorArea.zone7());
             areas.add(DraynorManorArea.zone8());
+            areas.add(PortSarimArea.zone1());
+            areas.add(PortSarimArea.zone2());
+            areas.add(PortSarimArea.zone3());
+            areas.add(PortSarimArea.zone4());
+            areas.add(PortSarimArea.zone5());
+            areas.add(PortSarimArea.zone6());
+            areas.add(PortSarimArea.zone7());
+            areas.add(PortSarimArea.zone8());
+            areas.add(PortSarimArea.zone9());
+            areas.add(PortSarimArea.zone10());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
