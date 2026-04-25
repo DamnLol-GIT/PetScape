@@ -399,7 +399,7 @@ public class DraynorArea extends RoamingArea
     @Override
     public int[][][] getForbiddenZonePoints()
     {
-        if (zone == 3) return FORBIDDEN_ZONE3;
+        if (zone == 3 || zone == 11) return FORBIDDEN_ZONE3;
         if (zone == 6) return FORBIDDEN_ZONE6;
         if (zone == 10) return FORBIDDEN_ZONE10;
         return new int[0][][];
