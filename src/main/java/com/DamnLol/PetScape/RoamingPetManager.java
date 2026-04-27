@@ -234,6 +234,31 @@ public class RoamingPetManager
             areas.add(DraynorArea.zone9());
             areas.add(DraynorArea.zone10());
             areas.add(DraynorArea.zone11());
+            areas.add(IceMountainArea.zone1());
+            areas.add(IceMountainArea.zone2());
+            areas.add(IceMountainArea.zone3());
+            areas.add(IceMountainArea.zone4());
+            areas.add(IceMountainArea.zone5());
+            areas.add(IceMountainArea.zone6());
+            areas.add(IceMountainArea.zone7());
+            areas.add(IceMountainArea.zone8());
+            areas.add(IceMountainArea.zone9());
+            areas.add(IceMountainArea.zone10());
+            areas.add(IceMountainArea.zone11());
+            areas.add(IceMountainArea.zone12());
+            areas.add(IceMountainArea.zone13());
+            areas.add(IceMountainArea.zone14());
+            areas.add(IceMountainArea.zone15());
+            areas.add(IceMountainArea.zone16());
+            areas.add(IceMountainArea.zone17());
+            areas.add(IceMountainArea.zone18());
+            areas.add(IceMountainArea.zone19());
+            areas.add(IceMountainArea.zone20());
+            areas.add(FarmingGuildArea.zone1());
+            areas.add(FarmingGuildArea.zone2());
+            areas.add(FarmingGuildArea.zone3());
+            areas.add(FarmingGuildArea.zone4());
+            areas.add(FarmingGuildArea.zone5());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
@@ -361,8 +386,6 @@ public class RoamingPetManager
                         client, clientThread, area, startPos, spawnName, i, formAssignment[i]);
                 spawn.activate();
                 spawns.add(spawn);
-                log.debug("[RoamingPetManager] Activated spawn {}/{} for area {} at {}",
-                        i + 1, area.getSpawnCount(), id, startPos);
             }
             catch (Exception e)
             {
