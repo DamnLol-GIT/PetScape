@@ -909,7 +909,8 @@ public class PetScapePlugin extends Plugin
     private boolean inPoh()
     {
         if (!client.isInInstancedRegion()) return false;
-        // Makes sure pets dont escape POH bounds - allows other PoH if option enabled        if (config.allowOtherPoh()) return true;
+        // Makes sure pets dont escape POH bounds - allows other PoH if option enabled
+        if (config.allowOtherPoh()) return true;
         int[][][] chunks = client.getInstanceTemplateChunks();
         if (chunks == null) return false;
         for (int[][] plane : chunks) { if (plane == null) continue;
