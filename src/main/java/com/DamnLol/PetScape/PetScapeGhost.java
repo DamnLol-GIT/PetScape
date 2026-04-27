@@ -141,10 +141,6 @@ public class PetScapeGhost
     private int idleTicks = 0;
     private int nextWanderTick = 0;
 
-    @Getter private String overheadText;
-    private int overheadTicksLeft;
-    private int dialogIndex;
-
     public PetScapeGhost(NPC realNpc, Client client, ClientThread clientThread,
                          Collection<PetScapeGhost> allGhosts, int totalClones,
                          Set<WorldPoint> pohFloor)
@@ -293,17 +289,6 @@ public class PetScapeGhost
             }
         }
         else if (targetWorld != null) idleTicks = 0;
-
-        if (overheadTicksLeft > 0)
-        {
-            if (--overheadTicksLeft == 0) overheadText = null;
-        }
-        else if (PetScapePlugin.WANDER_LINES.length > 0 && gameTick % 50 == 0)
-        {
-            overheadText = PetScapePlugin.WANDER_LINES[dialogIndex % PetScapePlugin.WANDER_LINES.length];
-            overheadTicksLeft = 5;
-            dialogIndex++;
-        }
     }
 
 
