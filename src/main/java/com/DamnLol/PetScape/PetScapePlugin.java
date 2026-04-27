@@ -57,6 +57,8 @@ public class PetScapePlugin extends Plugin
             8558, 8559, 8814, 8815, 9070, 9071
     );
 
+    static final String[] WANDER_LINES = {};
+
     static final Set<Integer> PET_NPC_IDS = new HashSet<>(Arrays.asList(
             NpcID.ABYSSAL_ORPHAN,
             NpcID.ABYSSAL_PROTECTOR,
@@ -278,6 +280,7 @@ public class PetScapePlugin extends Plugin
     @Inject private OverlayManager overlayManager;
     @Inject private PetScapeOverlay overlay;
     @Inject private PetScapeConfig config;
+    @Inject private RoamingPetManager roamingPetManager;
 
     // Key: npcIndex:slot
     final Map<String, PetScapeGhost> ghosts = new HashMap<>();
@@ -475,6 +478,7 @@ public class PetScapePlugin extends Plugin
     protected void startUp()
     {
         overlayManager.add(overlay);
+        roamingPetManager.startUp();
         clientThread.invoke(this::scanExistingNpcs);
     }
 
@@ -482,6 +486,7 @@ public class PetScapePlugin extends Plugin
     protected void shutDown()
     {
         overlayManager.remove(overlay);
+        roamingPetManager.shutDown();
         clientThread.invoke(() ->
         {
             if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
@@ -579,17 +584,21 @@ public class PetScapePlugin extends Plugin
         {
             sceneStable = false;
             planeLockDelay = 0;
+            roamingPetManager.onScenePreLoad();
         }
         else if (state == GameState.LOGGED_IN)
         {
             sceneStable = true;
             planeLockDelay = 1;
+            roamingPetManager.onSceneChange();
         }
     }
 
     @Subscribe
     public void onGameTick(GameTick event)
     {
+        roamingPetManager.gameTick();
+
         // Pet Family — works anywhere, runs before PoH logic
         if (config.petFamily() != PetFamilyFollower.FamilySize.NONE) handlePetFamily();
         else if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
@@ -687,9 +696,72 @@ public class PetScapePlugin extends Plugin
     @Subscribe
     public void onClientTick(ClientTick event)
     {
+        roamingPetManager.clientTick();
+
         if (config.petFamily() != PetFamilyFollower.FamilySize.NONE && petFamilyFollower != null) petFamilyFollower.clientTick();
         if (!inPoh()) return;
         ghosts.values().forEach(PetScapeGhost::clientTick);
+    }
+
+    @Subscribe
+    public void onMenuOpened(MenuOpened event)
+    {
+        if (!config.truePetScape()) return;
+
+        // Hide right-click menu when in bank/ui
+        boolean isWorldMenu = false;
+        for (MenuEntry e : event.getMenuEntries())
+        {
+            if ("Walk here".equals(e.getOption())) { isWorldMenu = true; break; }
+        }
+        if (!isWorldMenu) return;
+
+        net.runelite.api.Point mouse = client.getMouseCanvasPosition();
+        if (mouse == null) return;
+
+        // Find the closest rendered spawn to the click position within spawn radius
+        RoamingPetSpawn closest = null;
+        final int mx = mouse.getX(), my = mouse.getY();
+
+        for (RoamingPetSpawn spawn : roamingPetManager.getRenderedSpawns())
+        {
+            WorldPoint wp = spawn.getCurrentWorld();
+            if (wp == null) continue;
+
+            // Use rendered location so hull lines up with visible model mid-step
+            LocalPoint lp = spawn.getRuneLiteObject().getLocation();
+            if (lp == null) continue;
+
+            net.runelite.api.Model model = spawn.getRuneLiteObject().getModel();
+            if (model == null) continue;
+
+            int tileZ = Perspective.getTileHeight(client, lp, client.getPlane());
+            int z = spawn.getZOffset() == 0 ? tileZ : tileZ - spawn.getZOffset();
+            int orientation = spawn.getRuneLiteObject().getOrientation();
+
+            java.awt.Shape hull = Perspective.getClickbox(client, client.getTopLevelWorldView(), model, orientation,
+                    lp.getX(), lp.getY(), z);
+            if (hull == null) continue;
+
+            if (hull.contains(mx, my))
+            {
+                closest = spawn;
+                break;
+            }
+        }
+
+        if (closest == null) return;
+        final String examineText = closest.getExamineText();
+        if (examineText == null || examineText.isEmpty()) return;
+        final String menuTarget = closest.getMenuTarget();
+        if (menuTarget == null || menuTarget.isEmpty()) return;
+
+        client.createMenuEntry(1)
+                .setOption("Examine")
+                .setTarget(menuTarget)
+                .setType(MenuAction.RUNELITE)
+                .onClick(e -> client.addChatMessage(
+                        ChatMessageType.GAMEMESSAGE, "", examineText, ""));
     }
 
     // PoH: swaps original pet menus so "Walk here" is the left-click default
@@ -837,7 +909,8 @@ public class PetScapePlugin extends Plugin
     private boolean inPoh()
     {
         if (!client.isInInstancedRegion()) return false;
-        // Makes sure pets dont escape POH bounds - allows other PoH if option enabled        if (config.allowOtherPoh()) return true;
+        // Makes sure pets dont escape POH bounds - allows other PoH if option enabled
+        if (config.allowOtherPoh()) return true;
         int[][][] chunks = client.getInstanceTemplateChunks();
         if (chunks == null) return false;
         for (int[][] plane : chunks) { if (plane == null) continue;
