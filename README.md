@@ -3,6 +3,8 @@
 **Not enough pets in your house? Not enough pets following you? Or maybe just not enough in the world? - We got you!
 <i>Now have up to 10 copies of each pet you already own, or have a small family of pets following you.</i>**
 
-<img width="380" src="https://github.com/user-attachments/assets/90854f31-9238-4bc2-a722-94547ff17a6f" />　<img width="380" src="https://github.com/user-attachments/assets/131672c8-8e64-4f49-9a8c-d9cb7548646d" />
+<img width="380" src="<img width="1087" height="815" alt="image" src="https://github.com/user-attachments/assets/05720290-4716-485a-9bc5-24583abf3b17" />
+" />　<img width="380" src="<img width="970" height="619" alt="image" src="https://github.com/user-attachments/assets/2680826f-0a1a-4da4-8615-b7dcdacf0d98" />
+" />
 
 </div>
