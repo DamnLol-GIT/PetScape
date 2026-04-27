@@ -47,7 +47,7 @@ import java.util.*;
 @PluginDescriptor(
         name = "PetScape",
         description = "Visually multiplies all pets in your Player Owned House",
-        tags = {"pet","poh","pvm","boss","skilling","follower","populate","wildlife","spawn"}
+        tags = {"pet","poh","pvm","boss","skilling","follower","populate","wildlife","spawn","immersion"}
 )
 public class PetScapePlugin extends Plugin
 {
@@ -293,6 +293,11 @@ public class PetScapePlugin extends Plugin
     private boolean wasInPoh = false;
     private boolean pendingFloorRebuild = false;
     private int floorRebuildAttempts = 0;
+    private int pohGroundPlane = Integer.MIN_VALUE;
+    private boolean wasOnGroundPlane = true;
+    private boolean sceneStable = false;
+    private int planeLockDelay = 0;
+    private int lastInstanceHash = 0;
     private static final int MAX_FLOOR_REBUILD_ATTEMPTS = 3;
 
     // All walkable POH tiles — flood-filled on entry, shared with all ghosts
@@ -531,6 +536,11 @@ public class PetScapePlugin extends Plugin
 
         if (!inPoh() || !PET_NPC_IDS.contains(npc.getId()) || isOnPlayerTile(npc)) return;
 
+        // Only create ghosts on ground plane
+        Player local = client.getLocalPlayer();
+        if (pohGroundPlane != Integer.MIN_VALUE && local != null
+                && local.getWorldLocation().getPlane() != pohGroundPlane) return;
+
         // Reattach existing detached ghosts from NPC index if present
         String prefix = npc.getIndex() + ":";
         boolean hadDetached = false;
@@ -571,9 +581,17 @@ public class PetScapePlugin extends Plugin
         // Prevents stale LocalPoint rendering and keeps transition smooth
         GameState state = event.getGameState();
         if (state == GameState.LOADING)
+        {
+            sceneStable = false;
+            planeLockDelay = 0;
             roamingPetManager.onScenePreLoad();
+        }
         else if (state == GameState.LOGGED_IN)
+        {
+            sceneStable = true;
+            planeLockDelay = 1;
             roamingPetManager.onSceneChange();
+        }
     }
 
     @Subscribe
@@ -586,10 +604,10 @@ public class PetScapePlugin extends Plugin
         else if (petFamilyFollower != null) { petFamilyFollower.despawn(); petFamilyFollower = null; }
 
         boolean inPoh = inPoh();
+        Player local = client.getLocalPlayer();
 
         if (client.getTickCount() % 20 == 0)
         {
-            Player local = client.getLocalPlayer();
             log.info("[PetScape] TICK {} | inPoh={} | worldPos={} | ghosts={}",
                     client.getTickCount(), inPoh,
                     local != null ? local.getWorldLocation() : null, ghosts.size());
@@ -602,15 +620,50 @@ public class PetScapePlugin extends Plugin
             wasInPoh = false;
             pendingFloorRebuild = false;
             floorRebuildAttempts = 0;
+            pohGroundPlane = Integer.MIN_VALUE;
+            wasOnGroundPlane = true;
+            lastInstanceHash = 0;
+            planeLockDelay = 0;
             return;
         }
 
+        int instanceHash = computeInstanceHash();
+        if (wasInPoh && instanceHash != lastInstanceHash)
+        {
+            log.info("[PetScape] POH instance changed — clearing ghosts and re-entering");
+            ghosts.values().forEach(PetScapeGhost::despawn);
+            ghosts.clear();
+            pohFloor = Collections.emptySet();
+            wasInPoh = false;
+            pendingFloorRebuild = false;
+            floorRebuildAttempts = 0;
+            pohGroundPlane = Integer.MIN_VALUE;
+            wasOnGroundPlane = true;
+            planeLockDelay = 1;
+        }
+        lastInstanceHash = instanceHash;
+
         if (!wasInPoh)
         {
-            log.info("[PetScape] POH entry detected — scanning NPCs");
+            // Wait for instance load to complete before reading plane
+            if (local == null || !sceneStable) return;
+            if (planeLockDelay > 0) { planeLockDelay--; return; }
+            pohGroundPlane = local.getWorldLocation().getPlane();
+            log.info("[PetScape] POH entry detected on plane {} — scanning NPCs", pohGroundPlane);
             scanExistingNpcs();
         }
         wasInPoh = true;
+
+        // Hide ghosts only on transition off ground plane - restore on transition back
+        int currentPlane = local != null ? local.getWorldLocation().getPlane() : pohGroundPlane;
+        boolean onGround = currentPlane == pohGroundPlane;
+        if (onGround != wasOnGroundPlane)
+        {
+            final boolean hide = !onGround;
+            ghosts.values().forEach(g -> g.setHidden(hide));
+            wasOnGroundPlane = onGround;
+        }
+        if (!onGround) return;
 
         if (pendingFloorRebuild && floorRebuildAttempts < MAX_FLOOR_REBUILD_ATTEMPTS)
         {
@@ -856,8 +909,7 @@ public class PetScapePlugin extends Plugin
     private boolean inPoh()
     {
         if (!client.isInInstancedRegion()) return false;
-        // Makes sure pets don't escape POH bounds — allows other PoH if option enabled
-        if (config.allowOtherPoh()) return true;
+        // Makes sure pets dont escape POH bounds - allows other PoH if option enabled        if (config.allowOtherPoh()) return true;
         int[][][] chunks = client.getInstanceTemplateChunks();
         if (chunks == null) return false;
         for (int[][] plane : chunks) { if (plane == null) continue;
@@ -867,5 +919,18 @@ public class PetScapePlugin extends Plugin
                     if (POH_TEMPLATE_REGIONS.contains(((chunkX / 8) << 8) | (chunkY / 8))) return true;
                 }}}
         return false;
+    }
+
+    // Rolling hash of instance chunks - changes when player moves to a different POH instance
+    private int computeInstanceHash()
+    {
+        int[][][] chunks = client.getInstanceTemplateChunks();
+        if (chunks == null) return 0;
+        int h = 1;
+        for (int[][] plane : chunks) { if (plane == null) continue;
+            for (int[] row : plane) { if (row == null) continue;
+                for (int chunk : row) h = 31 * h + chunk;
+            }}
+        return h;
     }
 }

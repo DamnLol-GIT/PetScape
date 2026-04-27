@@ -36,10 +36,10 @@ public interface PetScapeConfig extends Config
 {
     enum CloneCount
     {
-        X2("x2", 1),
-        X3("x3", 2),
-        X5("x5", 4),
-        X10("x10", 9);
+        X2("2", 1),
+        X3("3", 2),
+        X5("5", 4),
+        X10("10", 9);
 
         private final String label;
         @Getter
@@ -59,20 +59,46 @@ public interface PetScapeConfig extends Config
     String generalSection = "general";
 
     @ConfigItem(
+            keyName = "truePetScape",
+            name = "True PetScape",
+            description = "Unleash the pets",
+            section = generalSection,
+            position = 0
+    )
+    default boolean truePetScape() { return true; }
+
+    @ConfigItem(
+            keyName = "petFamily",
+            name = "Pet Family",
+            description = "Spawn little pet followers",
+            section = generalSection,
+            position = 1
+    )
+    default PetFamilyFollower.FamilySize petFamily() { return PetFamilyFollower.FamilySize.THREE; }
+
+    @ConfigItem(
             keyName = "cloneCount",
             name = "Pet Amount",
             description = "Total Pet Amount (Includes Original)",
             section = generalSection,
-            position = 0
+            position = 2
     )
-    default CloneCount cloneCount() { return CloneCount.X2; }
+    default CloneCount cloneCount() { return CloneCount.X3; }
+
+    @ConfigSection(
+            name = "Misc Settings",
+            description = "Misc Settings",
+            position = 1,
+            closedByDefault = false
+    )
+    String miscSection = "misc";
 
     @ConfigItem(
             keyName = "swapRealPetWalkHere",
             name = "'Walk Here' NPCs",
             description = "Makes 'Walk here' default on left click for original pets",
-            section = generalSection,
-            position = 1
+            section = miscSection,
+            position = 0
     )
     default boolean swapRealPetWalkHere() { return false; }
 
@@ -80,44 +106,17 @@ public interface PetScapeConfig extends Config
             keyName = "allowOtherPoh",
             name = "Active in other PoH",
             description = "Multiply pets in other players houses",
-            section = generalSection,
-            position = 2
+            section = miscSection,
+            position = 1
     )
     default boolean allowOtherPoh() { return true; }
 
     @ConfigItem(
-            keyName = "petFamily",
-            name = "Pet Family",
-            description = "Spawn little pet followers",
-            section = generalSection,
-            position = 3
-    )
-    default PetFamilyFollower.FamilySize petFamily() { return PetFamilyFollower.FamilySize.NONE; }
-
-
-    @ConfigItem(
-            keyName = "truePetScape",
-            name = "True PetScape",
-            description = "Unleash the pets",
-            section = generalSection,
-            position = 4
-    )
-    default boolean truePetScape() { return true; }
-
-    @ConfigSection(
-            name = "Misc Settings",
-            description = "Misc Settings",
-            position = 1
-    )
-    String miscSection = "misc";
-
-
-    @ConfigItem(
             keyName = "disablePetLimit",
             name = "Disable Pet Limit",
-            description = "WARNING: Removing the limit can potentially crash low-end computers with 60+ pets in a PoH.",
+            description = "WARNING: Removing the limit can potentially crash low-end computers with 60+ (original) pets in a PoH.",
             section = miscSection,
-            position = 0
+            position = 2
     )
     default boolean disablePetLimit() { return false; }
 }

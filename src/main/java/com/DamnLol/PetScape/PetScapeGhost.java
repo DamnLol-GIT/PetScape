@@ -348,9 +348,13 @@ public class PetScapeGhost
         int stepX = Math.abs(dx) > MOVE_SPEED ? Integer.signum(dx) * MOVE_SPEED : dx;
         int stepY = Math.abs(dy) > MOVE_SPEED ? Integer.signum(dy) * MOVE_SPEED : dy;
 
-        int wdx = (int) Math.signum(stepX);
-        int wdy = (int) Math.signum(stepY);
-        if (!new WorldArea(ghostWorld, 1, 1).canTravelInDirection(client.getTopLevelWorldView(), wdx, wdy))
+        // Direction from planned tile, not sub-tile delta
+        int wdx = (ghostWorld != null && targetWorld != null)
+                ? Integer.signum(targetWorld.getX() - ghostWorld.getX()) : 0;
+        int wdy = (ghostWorld != null && targetWorld != null)
+                ? Integer.signum(targetWorld.getY() - ghostWorld.getY()) : 0;
+        if (ghostWorld != null && (wdx != 0 || wdy != 0)
+                && !new WorldArea(ghostWorld, 1, 1).canTravelInDirection(client.getTopLevelWorldView(), wdx, wdy))
         {
             abandonTarget();
             return;
@@ -402,6 +406,9 @@ public class PetScapeGhost
     }
 
     public void despawn() { runeLiteObject.setActive(false); }
+
+    // Hide/show without losing state - use when player leaves POH ground plane
+    public void setHidden(boolean hidden) { runeLiteObject.setActive(!hidden); }
 
 
     private void tryPickNewTarget()
