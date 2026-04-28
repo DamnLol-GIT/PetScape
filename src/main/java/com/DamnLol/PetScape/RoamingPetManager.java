@@ -64,8 +64,7 @@ public class RoamingPetManager
     {
         if (areas.isEmpty())
         {
-            areas.add(new KaruulmHydraArea());
-            areas.add(new AlchemicalMonarchArea());
+            areas.add(KaruulmHydraArea.zone());
             areas.add(VampireArea.zone1());
             areas.add(VampireArea.zone2());
             areas.add(VampireArea.zone3());
