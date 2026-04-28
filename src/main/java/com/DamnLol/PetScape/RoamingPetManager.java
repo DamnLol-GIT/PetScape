@@ -254,6 +254,17 @@ public class RoamingPetManager
             areas.add(IceMountainArea.zone18());
             areas.add(IceMountainArea.zone19());
             areas.add(IceMountainArea.zone20());
+            areas.add(RimmingtonArea.zone1());
+            areas.add(RimmingtonArea.zone2());
+            areas.add(RimmingtonArea.zone3());
+            areas.add(RimmingtonArea.zone4());
+            areas.add(RimmingtonArea.zone5());
+            areas.add(RimmingtonArea.zone6());
+            areas.add(RimmingtonArea.zone7());
+            areas.add(RimmingtonArea.zone8());
+            areas.add(RimmingtonArea.zone9());
+            areas.add(RimmingtonArea.zone10());
+            areas.add(RimmingtonArea.zone11());
             areas.add(FarmingGuildArea.zone1());
             areas.add(FarmingGuildArea.zone2());
             areas.add(FarmingGuildArea.zone3());
