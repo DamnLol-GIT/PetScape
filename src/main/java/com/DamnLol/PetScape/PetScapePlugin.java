@@ -110,6 +110,7 @@ public class PetScapePlugin extends Plugin
             NpcID.FISHBOWL_6659,
             NpcID.FISHBOWL_6660,
             NpcID.FLYING_VESPINA,
+            NpcID.FOX_12548,
             NpcID.GENERAL_GRAARDOR_JR,
             NpcID.GIANT_SQUIRREL,
             NpcID.GULL,

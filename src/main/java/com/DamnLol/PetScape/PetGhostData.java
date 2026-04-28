@@ -126,6 +126,7 @@ public class PetGhostData {
         m.put(NpcID.ELIDINIS_DAMAGED_GUARDIAN, new Entry(new int[]{46332}, 9420, 9420, 65));
         m.put(NpcID.ELIDINIS_GUARDIAN, new Entry(new int[]{46332}, 9656, 9652, 65));
         m.put(NpcID.FLYING_VESPINA, new Entry(new int[]{32689}, 8639, 8639, 20));
+        m.put(NpcID.FOX_12548, new Entry(new int[]{49832}, 6561, 6560, -1));
         m.put(NpcID.GENERAL_GRAARDOR_JR, new Entry(new int[]{27660, 27665}, 7017, 7016, 30));
         m.put(NpcID.GIANT_SQUIRREL, new Entry(new int[]{32206}, 7309, 7310, 110));
         m.put(NpcID.GREATISH_GUARDIAN, new Entry(new int[]{44061}, 9379, 9378, 32));
@@ -331,18 +332,18 @@ public class PetGhostData {
         m.put(NpcID.TANGLEROOT_9499, new Entry(new int[]{39572}, 7312, 7313, -1));
         m.put(NpcID.TANGLEROOT_9500, new Entry(new int[]{39574}, 7312, 7313, -1));
         m.put(NpcID.TANGLEROOT_9501, new Entry(new int[]{39575}, 7312, 7313, -1));
-        m.put(NpcID.TEKTINY, new Entry(new int[]{32682}, 7476, 7983, 25));
+        m.put(NpcID.TEKTINY, new Entry(new int[]{32682}, 7476, 7477, 25));
         m.put(NpcID.TINY_TEMPOR, new Entry(new int[]{41812}, 8895, 8895, 24));
         m.put(NpcID.TUMEKENS_DAMAGED_GUARDIAN, new Entry(new int[]{46333}, 9420, 9420, 65));
         m.put(NpcID.TUMEKENS_GUARDIAN, new Entry(new int[]{46337}, 9655, 9651, 65));
         m.put(NpcID.TUMEKENS_GUARDIAN_11812, new Entry(new int[]{46337}, 9655, 9651, 65));
         m.put(NpcID.TZREKJAD, new Entry(new int[]{9319}, 2650, 5805, 20));
         m.put(NpcID.TZREKZUK, new Entry(new int[]{34586}, 7975, 7977, 18));
-        m.put(NpcID.VANGUARD_8198, new Entry(new int[]{32684}, 7430, 7984, 40));
-        m.put(NpcID.VASA_MINIRIO, new Entry(new int[]{32680}, 7416, 7985, 20));
+        m.put(NpcID.VANGUARD_8198, new Entry(new int[]{32684}, 7430, 7429, 40));
+        m.put(NpcID.VASA_MINIRIO, new Entry(new int[]{32680}, 7416, 7411, 20));
         m.put(NpcID.VENENATIS_SPIDERLING, new Entry(new int[]{47393}, 9986, 9987, 58));
         m.put(NpcID.VENENATIS_SPIDERLING_11981, new Entry(new int[]{28294, 28295}, 5326, 5325, 60));
-        m.put(NpcID.VESPINA, new Entry(new int[]{32689}, 7449, 7986, 20));
+        m.put(NpcID.VESPINA, new Entry(new int[]{32689}, 7449, 7448, 20));
         m.put(NpcID.VETION_JR, new Entry(new int[]{47387, 47384}, 9965, 9967, 54));
         m.put(NpcID.VETION_JR_11983, new Entry(new int[]{28299}, 5505, 5497, 45));
         m.put(NpcID.VETION_JR_11984, new Entry(new int[]{28299}, 5505, 5497, 45,
