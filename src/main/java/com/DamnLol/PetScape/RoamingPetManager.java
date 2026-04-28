@@ -259,6 +259,10 @@ public class RoamingPetManager
             areas.add(FarmingGuildArea.zone3());
             areas.add(FarmingGuildArea.zone4());
             areas.add(FarmingGuildArea.zone5());
+            areas.add(XericArea.zone1());
+            areas.add(XericArea.zone2());
+            areas.add(XericArea.zone3());
+            areas.add(XericArea.zone4());
         }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
