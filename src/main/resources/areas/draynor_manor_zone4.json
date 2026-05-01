@@ -1,0 +1,35 @@
+{
+  "id": "draynor_manor_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3097, 3354], [3097, 3364], [3102, 3364], [3102, 3374],
+    [3119, 3374], [3119, 3361], [3126, 3361], [3127, 3354],
+    [3097, 3354]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Stairs (Down)",
+      "polygon": [
+        [3114, 3361], [3118, 3361], [3118, 3357], [3114, 3357],
+        [3114, 3361]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Bone Squirrel",
+      "examine": "Been here longer than the floorboards.",
+      "count": 2,
+      "npcIds": ["BONE_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Posed dramatically beneath the back window.",
+      "count": 1,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

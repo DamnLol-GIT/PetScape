@@ -1,0 +1,24 @@
+{
+  "id": "desert_misc_zone7",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "wanderMinDist": 4,
+  "minSiblingSeparation": 2,
+  "polygon": [
+    [3348, 2830], [3346, 2832], [3342, 2832], [3339, 2831],
+    [3339, 2826], [3340, 2825], [3341, 2824], [3344, 2823],
+    [3345, 2823], [3347, 2822], [3349, 2822], [3350, 2823],
+    [3350, 2824], [3349, 2825], [3347, 2826], [3348, 2828],
+    [3348, 2830]
+  ],
+  "forms": [
+    {
+      "name": "Simon's Princess",
+      "examine": "She only moves when Simon says.",
+      "count": 1,
+      "npcIds": ["KALPHITE_PRINCESS"]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "lumbridge_zone11",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3262, 3208], [3263, 3203], [3264, 3203], [3266, 3204],
+    [3266, 3223], [3266, 3228], [3266, 3233], [3265, 3238],
+    [3265, 3241], [3265, 3246], [3262, 3248], [3263, 3252],
+    [3253, 3254], [3251, 3257], [3251, 3271], [3248, 3276],
+    [3244, 3278], [3242, 3280], [3238, 3282], [3235, 3279],
+    [3233, 3278], [3232, 3277], [3234, 3274], [3237, 3271],
+    [3237, 3268], [3239, 3265], [3240, 3259], [3240, 3255],
+    [3240, 3252], [3242, 3247], [3242, 3240], [3246, 3233],
+    [3250, 3230], [3251, 3226], [3258, 3221], [3263, 3216],
+    [3263, 3208], [3262, 3208]
+  ],
+  "forms": [
+    {
+      "name": "Beef",
+      "examine": "A free-range cow on personal time.",
+      "count": 6,
+      "npcIds": ["BEEF"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "Running errands for no one in particular.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Hanging around the fishing spot, for reasons.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Appraising the newcomers. Harshly.",
+      "count": 4,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}

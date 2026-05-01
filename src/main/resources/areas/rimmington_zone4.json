@@ -1,0 +1,33 @@
+{
+  "id": "rimmington_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2941, 3234], [2921, 3238], [2918, 3234], [2920, 3231],
+    [2921, 3228], [2923, 3226], [2924, 3222], [2926, 3218],
+    [2927, 3217], [2934, 3219], [2937, 3225], [2942, 3231],
+    [2941, 3234]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "A blur of tail and intent.",
+      "count": 2,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Has opinions on the local carpentry.",
+      "count": 4,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Quietly auditing the area.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

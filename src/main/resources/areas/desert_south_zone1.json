@@ -1,0 +1,68 @@
+{
+  "id": "desert_south_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 5,
+  "formFixed": true,
+  "polygon": [
+    [3291, 2747], [3291, 2742], [3292, 2742], [3294, 2740],
+    [3295, 2738], [3293, 2738], [3292, 2738], [3291, 2737],
+    [3288, 2734], [3286, 2732], [3283, 2728], [3286, 2724],
+    [3289, 2721], [3289, 2719], [3291, 2716], [3292, 2713],
+    [3296, 2708], [3299, 2707], [3301, 2706], [3304, 2703],
+    [3306, 2703], [3310, 2700], [3317, 2698], [3320, 2698],
+    [3320, 2698], [3321, 2701], [3320, 2702], [3320, 2703],
+    [3314, 2703], [3313, 2706], [3311, 2708], [3310, 2710],
+    [3312, 2712], [3316, 2714], [3323, 2714], [3326, 2710],
+    [3325, 2696], [3332, 2689], [3334, 2688], [3338, 2684],
+    [3348, 2681], [3362, 2677], [3350, 2684], [3348, 2690],
+    [3348, 2716], [3346, 2720], [3347, 2721], [3350, 2724],
+    [3352, 2722], [3362, 2723], [3367, 2723], [3375, 2734],
+    [3364, 2749], [3359, 2752], [3359, 2757], [3354, 2757],
+    [3336, 2748], [3321, 2746], [3291, 2747]
+  ],
+  "forms": [
+    {
+      "name": "Tumeken's Guardian",
+      "examine": "A tiny guardian of the tombs.",
+      "count": 3,
+      "npcIds": ["TUMEKENS_GUARDIAN"]
+    },
+    {
+      "name": "Tumeken's Damaged Guardian",
+      "examine": "A little worse for wear, but still standing.",
+      "count": 3,
+      "npcIds": ["TUMEKENS_DAMAGED_GUARDIAN"]
+    },
+    {
+      "name": "Elidinis' Guardian",
+      "examine": "Small but sacred.",
+      "count": 3,
+      "npcIds": ["ELIDINIS_GUARDIAN"]
+    },
+    {
+      "name": "Elidinis' Damaged Guardian",
+      "examine": "Small, chipped, and still on duty.",
+      "count": 3,
+      "npcIds": ["ELIDINIS_DAMAGED_GUARDIAN"]
+    },
+    {
+      "name": "Akkhito",
+      "examine": "Tiny hero, full-size determination.",
+      "count": 3,
+      "npcIds": ["AKKHITO"]
+    },
+    {
+      "name": "Babi",
+      "examine": "Sand between the toes, rage in the heart.",
+      "count": 3,
+      "npcIds": ["BABI"]
+    },
+    {
+      "name": "Kephriti",
+      "examine": "Rolling through life one ball at a time.",
+      "count": 3,
+      "npcIds": ["KEPHRITI"]
+    }
+  ]
+}

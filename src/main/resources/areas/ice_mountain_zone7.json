@@ -1,0 +1,23 @@
+{
+  "id": "ice_mountain_zone7",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3046, 3509], [3058, 3509], [3058, 3501], [3046, 3501],
+    [3046, 3509]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Has been here longer than Abbot Langley",
+      "count": 4,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

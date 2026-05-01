@@ -1,0 +1,48 @@
+{
+  "id": "varrock_zone8",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3146, 3466], [3146, 3455], [3149, 3452], [3149, 3447],
+    [3150, 3442], [3161, 3442], [3164, 3440], [3165, 3439],
+    [3165, 3434], [3169, 3427], [3170, 3427], [3169, 3423],
+    [3170, 3420], [3172, 3418], [3174, 3418], [3174, 3425],
+    [3180, 3433], [3180, 3448], [3184, 3448], [3190, 3457],
+    [3186, 3457], [3185, 3458], [3185, 3462], [3187, 3464],
+    [3187, 3467], [3167, 3467], [3146, 3467], [3146, 3466]
+  ],
+  "forms": [
+    {
+      "name": "Bloodhound",
+      "examine": "Stationed at the city gate.",
+      "count": 1,
+      "npcIds": ["BLOODHOUND"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "One leap away from leaving town entirely.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Guards the border, one pebble at a time.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "A city beaver with country dreams.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Baby Chinchompa",
+      "examine": "Every hug is a risk assessment.",
+      "count": 4,
+      "npcIds": ["BABY_CHINCHOMPA"]
+    }
+  ]
+}

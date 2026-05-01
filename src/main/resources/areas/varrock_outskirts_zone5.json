@@ -1,0 +1,30 @@
+{
+  "id": "varrock_outskirts_zone5",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3180, 3381], [3177, 3379], [3176, 3378], [3175, 3376],
+    [3173, 3372], [3172, 3371], [3171, 3369], [3170, 3368],
+    [3170, 3365], [3171, 3363], [3172, 3363], [3174, 3362],
+    [3177, 3362], [3180, 3362], [3183, 3364], [3184, 3367],
+    [3184, 3370], [3185, 3372], [3186, 3374], [3186, 3376],
+    [3186, 3378], [3186, 3379], [3186, 3380], [3183, 3381],
+    [3180, 3381]
+  ],
+  "forms": [
+    {
+      "name": "Rock Golem",
+      "examine": "Mistaken for ore at least once a shift.",
+      "count": 3,
+      "npcIds": [
+        "ROCK_GOLEM", "ROCK_GOLEM_7439", "ROCK_GOLEM_7440", "ROCK_GOLEM_7441",
+        "ROCK_GOLEM_7442", "ROCK_GOLEM_7443", "ROCK_GOLEM_7444", "ROCK_GOLEM_7445",
+        "ROCK_GOLEM_7446", "ROCK_GOLEM_7447", "ROCK_GOLEM_7448", "ROCK_GOLEM_7449",
+        "ROCK_GOLEM_7450", "ROCK_GOLEM_7451", "ROCK_GOLEM_7452", "ROCK_GOLEM_7453",
+        "ROCK_GOLEM_7454", "ROCK_GOLEM_7455", "ROCK_GOLEM_7642"
+      ]
+    }
+  ]
+}

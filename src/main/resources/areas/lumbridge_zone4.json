@@ -1,0 +1,25 @@
+{
+  "id": "lumbridge_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3192, 3240], [3189, 3239], [3187, 3236], [3185, 3233],
+    [3188, 3228], [3191, 3226], [3194, 3225], [3197, 3226],
+    [3199, 3228], [3200, 3230], [3200, 3234], [3200, 3237],
+    [3195, 3240], [3192, 3240]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Would prefer fewer rakes, more respect.",
+      "count": 3,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

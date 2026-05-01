@@ -1,0 +1,51 @@
+{
+  "id": "xeric_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [1241, 3566], [1236, 3570], [1231, 3570], [1228, 3567],
+    [1225, 3566], [1225, 3557], [1225, 3552], [1228, 3549],
+    [1231, 3548], [1239, 3548], [1243, 3552], [1246, 3554],
+    [1244, 3560], [1241, 3564], [1241, 3566]
+  ],
+  "forms": [
+    {
+      "name": "Olmlet",
+      "examine": "Cuddly today. Cataclysmic in a few centuries.",
+      "count": 1,
+      "npcIds": ["OLMLET"]
+    },
+    {
+      "name": "Puppadile",
+      "examine": "Lost the meat tree. Kept the appetite.",
+      "count": 1,
+      "npcIds": ["PUPPADILE"]
+    },
+    {
+      "name": "Tektiny",
+      "examine": "Hammer first, talk later.",
+      "count": 1,
+      "npcIds": ["TEKTINY"]
+    },
+    {
+      "name": "Vanguard",
+      "examine": "Practising formations alone.",
+      "count": 1,
+      "npcIds": ["VANGUARD_8198"]
+    },
+    {
+      "name": "Vasa Minirio",
+      "examine": "Hereditary problem made physical.",
+      "count": 1,
+      "npcIds": ["VASA_MINIRIO"]
+    },
+    {
+      "name": "Vespina",
+      "examine": "Has opinions about prayer abuse.",
+      "count": 1,
+      "npcIds": ["VESPINA"]
+    }
+  ]
+}

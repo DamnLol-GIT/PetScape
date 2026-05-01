@@ -1,0 +1,57 @@
+{
+  "id": "vampire_zone3",
+  "plane": 0,
+  "menuClickRadius": 70,
+  "zOffset": 10,
+  "formFixed": true,
+  "wanderMinDist": 5,
+  "minSiblingSeparation": 2,
+  "polygon": [
+    [3642, 3233], [3642, 3230], [3644, 3230], [3644, 3229],
+    [3644, 3227], [3645, 3226], [3648, 3226], [3648, 3225],
+    [3646, 3223], [3646, 3222], [3648, 3222], [3649, 3221],
+    [3649, 3217], [3648, 3216], [3646, 3216], [3646, 3211],
+    [3644, 3211], [3644, 3209], [3642, 3208], [3642, 3206],
+    [3644, 3204], [3648, 3204], [3648, 3208], [3648, 3210],
+    [3654, 3210], [3654, 3207], [3654, 3204], [3655, 3204],
+    [3655, 3209], [3656, 3210], [3656, 3215], [3670, 3215],
+    [3670, 3204], [3681, 3204], [3683, 3206], [3683, 3208],
+    [3680, 3209], [3678, 3211], [3678, 3212], [3677, 3213],
+    [3673, 3213], [3673, 3226], [3677, 3226], [3679, 3229],
+    [3680, 3230], [3681, 3233], [3680, 3235], [3670, 3235],
+    [3670, 3224], [3668, 3223], [3656, 3223], [3655, 3228],
+    [3655, 3229], [3655, 3235], [3644, 3235], [3642, 3233]
+  ],
+  "forms": [
+    {
+      "name": "Lil' Zik",
+      "examine": "It’s hard to take a vampire spider seriously - they're just too fang-tastic!",
+      "count": 3,
+      "npcIds": ["LIL_ZIK"]
+    },
+    {
+      "name": "Lil' Bloat",
+      "examine": "Smaller size, great smell.",
+      "count": 3,
+      "npcIds": ["LIL_BLOAT"]
+    },
+    {
+      "name": "Lil' Nylo",
+      "examine": "Eight small legs of unparalleled cuteness.",
+      "count": 3,
+      "npcIds": ["LIL_NYLO"]
+    },
+    {
+      "name": "Lil' Sot",
+      "examine": "Has a lot of anger for such a tiny monster.",
+      "count": 3,
+      "npcIds": ["LIL_SOT"]
+    },
+    {
+      "name": "Lil' Xarp",
+      "examine": "The little prince of Yarasa.",
+      "count": 3,
+      "npcIds": ["LIL_XARP"]
+    }
+  ]
+}

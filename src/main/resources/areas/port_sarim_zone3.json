@@ -1,0 +1,36 @@
+{
+  "id": "port_sarim_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3067, 3274], [3067, 3280], [3055, 3280], [3047, 3280],
+    [3043, 3280], [3038, 3280], [3032, 3279], [3026, 3277],
+    [3024, 3272], [3024, 3269], [3026, 3266], [3031, 3266],
+    [3033, 3264], [3034, 3261], [3034, 3257], [3033, 3253],
+    [3035, 3252], [3040, 3254], [3040, 3259], [3044, 3262],
+    [3050, 3262], [3062, 3262], [3066, 3266], [3067, 3273],
+    [3067, 3274]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "The only thing faster than the tide.",
+      "count": 3,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Collects the taxes. Unofficially.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Would audit every hull, given permission.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}

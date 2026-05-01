@@ -1,0 +1,29 @@
+{
+  "id": "ice_mountain_zone10",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3034, 3404], [3037, 3404], [3038, 3405], [3039, 3405],
+    [3040, 3404], [3042, 3404], [3042, 3403], [3046, 3403],
+    [3047, 3402], [3048, 3402], [3048, 3401], [3049, 3401],
+    [3049, 3396], [3046, 3393], [3042, 3393], [3040, 3395],
+    [3038, 3395], [3036, 3394], [3035, 3394], [3034, 3395],
+    [3033, 3395], [3031, 3397], [3031, 3400], [3034, 3403],
+    [3034, 3404]
+  ],
+  "forms": [
+    {
+      "name": "Rift Guardian",
+      "examine": "Wards an empty corner. Ignores the sea shanties.",
+      "count": 6,
+      "npcIds": [
+        "RIFT_GUARDIAN", "RIFT_GUARDIAN_7338", "RIFT_GUARDIAN_7339", "RIFT_GUARDIAN_7340",
+        "RIFT_GUARDIAN_7341", "RIFT_GUARDIAN_7342", "RIFT_GUARDIAN_7343", "RIFT_GUARDIAN_7344",
+        "RIFT_GUARDIAN_7345", "RIFT_GUARDIAN_7346", "RIFT_GUARDIAN_7347", "RIFT_GUARDIAN_7348",
+        "RIFT_GUARDIAN_7349", "RIFT_GUARDIAN_7350", "RIFT_GUARDIAN_8024"
+      ]
+    }
+  ]
+}

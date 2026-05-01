@@ -1,0 +1,25 @@
+{
+  "id": "port_sarim_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3057, 3262], [3060, 3263], [3062, 3264], [3065, 3263],
+    [3066, 3260], [3066, 3257], [3064, 3254], [3063, 3252],
+    [3059, 3251], [3056, 3252], [3056, 3258], [3056, 3262],
+    [3057, 3262]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Considers the sea a very large watering can.",
+      "count": 3,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

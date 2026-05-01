@@ -1,0 +1,37 @@
+{
+  "id": "mudskipper_zone2",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2993, 3169], [2994, 3166], [2998, 3163], [2999, 3161],
+    [3000, 3158], [3002, 3158], [3006, 3158], [3010, 3157],
+    [3012, 3158], [3014, 3157], [3018, 3157], [3019, 3161],
+    [3019, 3164], [3021, 3165], [3025, 3165], [3029, 3166],
+    [3030, 3177], [3026, 3185], [3024, 3187], [3023, 3186],
+    [3021, 3183], [3021, 3179], [3021, 3177], [3017, 3176],
+    [3010, 3176], [3003, 3175], [2999, 3174], [2996, 3172],
+    [2993, 3169]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Knows the fastest route to the beach.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "A woodsman of modest goals and sharp incisors.",
+      "count": 4,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Looks innocent. Isn't.",
+      "count": 4,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

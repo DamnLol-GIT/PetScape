@@ -1,0 +1,27 @@
+{
+  "id": "farming_guild_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [1248, 3745], [1249, 3745], [1251, 3745], [1250, 3738],
+    [1251, 3737], [1252, 3733], [1252, 3731], [1254, 3731],
+    [1255, 3728], [1252, 3728], [1251, 3723], [1247, 3723],
+    [1246, 3727], [1245, 3727], [1245, 3728], [1244, 3728],
+    [1244, 3732], [1245, 3732], [1245, 3738], [1242, 3738],
+    [1242, 3744], [1245, 3744], [1247, 3744], [1248, 3745]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Tending the Guild with quiet authority.",
+      "count": 4,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

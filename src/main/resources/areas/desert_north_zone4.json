@@ -1,0 +1,58 @@
+{
+  "id": "desert_north_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "wanderMinDist": 5,
+  "minSiblingSeparation": 2,
+  "polygon": [
+    [3468, 3054], [3471, 3055], [3472, 3057], [3474, 3057],
+    [3476, 3055], [3478, 3054], [3480, 3053], [3481, 3053],
+    [3484, 3052], [3485, 3052], [3494, 3052], [3495, 3050],
+    [3491, 3050], [3486, 3050], [3484, 3050], [3482, 3049],
+    [3481, 3049], [3478, 3049], [3477, 3050], [3475, 3050],
+    [3470, 3051], [3467, 3050], [3466, 3049], [3468, 3048],
+    [3470, 3048], [3472, 3047], [3474, 3047], [3476, 3046],
+    [3478, 3045], [3482, 3045], [3483, 3044], [3485, 3044],
+    [3489, 3043], [3492, 3041], [3494, 3040], [3495, 3041],
+    [3498, 3042], [3499, 3042], [3499, 3043], [3500, 3044],
+    [3501, 3046], [3500, 3047], [3500, 3048], [3498, 3049],
+    [3497, 3050], [3495, 3050], [3494, 3052], [3497, 3050],
+    [3502, 3050], [3503, 3046], [3502, 3041], [3499, 3040],
+    [3497, 3039], [3495, 3038], [3494, 3038], [3490, 3039],
+    [3489, 3040], [3487, 3041], [3485, 3041], [3483, 3042],
+    [3481, 3042], [3479, 3042], [3478, 3043], [3474, 3043],
+    [3472, 3043], [3468, 3044], [3464, 3046], [3464, 3051],
+    [3468, 3054]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Went looking for nuts, found a desert.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Baby Mole",
+      "displayName": "Desert Mole",
+      "examine": "Sandy paws, zero regrets.",
+      "count": 2,
+      "npcIds": ["BABY_MOLE"]
+    },
+    {
+      "name": "Kalphite Princess",
+      "displayName": "Kalphite Duchess",
+      "examine": "Rules the sand with a tiny iron claw.",
+      "count": 1,
+      "npcIds": ["KALPHITE_PRINCESS"]
+    },
+    {
+      "name": "Baby Chinchompa",
+      "displayName": "Desert Chinchompa",
+      "examine": "The desert's softest hazard.",
+      "count": 2,
+      "npcIds": ["BABY_CHINCHOMPA"]
+    }
+  ]
+}

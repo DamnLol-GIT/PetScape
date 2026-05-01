@@ -1,0 +1,33 @@
+{
+  "id": "farming_guild_zone5",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [1227, 3761], [1235, 3761], [1237, 3759], [1237, 3750],
+    [1235, 3748], [1224, 3748], [1222, 3750], [1222, 3759],
+    [1224, 3761], [1227, 3761]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Redwood",
+      "polygon": [
+        [1225, 3759], [1233, 3759], [1233, 3751], [1225, 3751],
+        [1225, 3759]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Considers the redwood a distant relative.",
+      "count": 4,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

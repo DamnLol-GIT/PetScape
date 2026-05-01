@@ -1,0 +1,35 @@
+{
+  "id": "ice_mountain_zone18",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3069, 3463], [3081, 3464], [3088, 3462], [3091, 3462],
+    [3096, 3462], [3098, 3458], [3098, 3449], [3099, 3443],
+    [3100, 3439], [3102, 3437], [3101, 3433], [3099, 3435],
+    [3094, 3435], [3093, 3430], [3090, 3431], [3089, 3438],
+    [3088, 3439], [3087, 3445], [3084, 3449], [3076, 3451],
+    [3073, 3451], [3072, 3457], [3069, 3463]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Faster than any barbarian coming its way.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Has firm opinions on barbarian carpentry.",
+      "count": 4,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "A thief among brawlers.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

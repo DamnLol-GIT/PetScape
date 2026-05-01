@@ -1,0 +1,34 @@
+{
+  "id": "varrock_outskirts_zone11",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3129, 3506], [3132, 3511], [3136, 3510], [3135, 3496],
+    [3138, 3489], [3134, 3469], [3124, 3467], [3116, 3464],
+    [3108, 3465], [3108, 3480], [3115, 3490], [3123, 3494],
+    [3128, 3500], [3129, 3506]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Rounds the perimeter twice before breakfast.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Judging every plank in the fence.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "displayName": "Ziggy",
+      "examine": "Master of disguise. Currently undisguised.",
+      "count": 2,
+      "npcIds": ["ZIGGY"]
+    }
+  ]
+}

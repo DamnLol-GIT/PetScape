@@ -1,0 +1,54 @@
+{
+  "id": "draynor_zone11",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "wanderMinDist": 3,
+  "polygon": [
+    [3083, 3248], [3087, 3251], [3095, 3251], [3100, 3250],
+    [3101, 3248], [3103, 3247], [3104, 3245], [3104, 3242],
+    [3102, 3240], [3102, 3238], [3100, 3236], [3095, 3235],
+    [3091, 3236], [3087, 3238], [3081, 3239], [3079, 3242],
+    [3079, 3245], [3083, 3248]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Bank",
+      "polygon": [
+        [3088, 3247], [3098, 3247], [3098, 3240], [3088, 3240],
+        [3088, 3247]
+      ]
+    },
+    {
+      "comment": "Tree Area",
+      "polygon": [
+        [3087, 3241], [3082, 3241], [3082, 3245], [3083, 3246],
+        [3087, 3246], [3087, 3241]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "displayName": "Son",
+      "examine": "Has scouted a gap in the banks wall.",
+      "count": 1,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "displayName": "Yui",
+      "examine": "Eyeing the wooden repairs in the banks wall.",
+      "count": 1,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "displayName": "Sid",
+      "examine": "Seems to be communicating with the other animals.",
+      "count": 1,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

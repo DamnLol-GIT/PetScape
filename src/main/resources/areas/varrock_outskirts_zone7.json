@@ -1,0 +1,35 @@
+{
+  "id": "varrock_outskirts_zone7",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3184, 3366], [3187, 3371], [3190, 3375], [3192, 3378],
+    [3198, 3377], [3203, 3377], [3207, 3376], [3210, 3373],
+    [3213, 3369], [3214, 3366], [3215, 3363], [3216, 3361],
+    [3215, 3359], [3212, 3355], [3207, 3352], [3205, 3349],
+    [3202, 3348], [3200, 3351], [3201, 3356], [3200, 3361],
+    [3197, 3364], [3192, 3366], [3184, 3366]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Honour first. Acorns second.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Robs only those who can spare it.",
+      "count": 1,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Beef",
+      "examine": "Single-handedly emptied Cassius' cellar, Slew a Dragon.",
+      "count": 2,
+      "npcIds": ["BEEF"]
+    }
+  ]
+}

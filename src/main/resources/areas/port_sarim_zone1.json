@@ -1,0 +1,21 @@
+{
+  "id": "port_sarim_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3004, 3196], [3005, 3192], [3006, 3186], [3008, 3178],
+    [3017, 3175], [3023, 3176], [3026, 3179], [3026, 3185],
+    [3026, 3188], [3022, 3193], [3018, 3198], [3016, 3200],
+    [3008, 3200], [3004, 3196]
+  ],
+  "forms": [
+    {
+      "name": "Rocky",
+      "examine": "Already planned three ways of escape.",
+      "count": 6,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

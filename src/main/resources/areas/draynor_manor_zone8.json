@@ -1,0 +1,39 @@
+{
+  "id": "draynor_manor_zone8",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3061, 3390], [3066, 3391], [3068, 3390], [3072, 3390],
+    [3075, 3388], [3075, 3386], [3077, 3381], [3075, 3379],
+    [3075, 3375], [3076, 3372], [3075, 3367], [3074, 3362],
+    [3073, 3359], [3073, 3356], [3075, 3354], [3076, 3351],
+    [3077, 3348], [3075, 3345], [3072, 3339], [3070, 3330],
+    [3070, 3328], [3069, 3328], [3066, 3327], [3064, 3327],
+    [3062, 3327], [3062, 3330], [3061, 3332], [3060, 3338],
+    [3061, 3346], [3061, 3351], [3061, 3355], [3061, 3360],
+    [3061, 3362], [3067, 3369], [3066, 3385], [3061, 3390]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "A blur with a tail.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "displayName": "Ziggy",
+      "examine": "Pretending not to be pretending.",
+      "count": 3,
+      "npcIds": ["ZIGGY"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "A quiet renovator with no permission.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}

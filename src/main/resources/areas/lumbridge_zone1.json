@@ -1,0 +1,37 @@
+{
+  "id": "lumbridge_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3201, 3234], [3204, 3237], [3212, 3237], [3215, 3235],
+    [3221, 3235], [3227, 3229], [3227, 3222], [3228, 3221],
+    [3230, 3221], [3230, 3217], [3228, 3217], [3227, 3216],
+    [3227, 3209], [3221, 3203], [3215, 3203], [3213, 3201],
+    [3204, 3201], [3201, 3204], [3201, 3234]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Dining Room (Quest Zone)",
+      "polygon": [
+        [3205, 3227], [3213, 3227], [3213, 3218], [3205, 3218],
+        [3205, 3227]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Bloodhound",
+      "examine": "Suspicious of anyone without a bronze sword.",
+      "count": 4,
+      "npcIds": ["BLOODHOUND"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "Faster than the castle messengers.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    }
+  ]
+}

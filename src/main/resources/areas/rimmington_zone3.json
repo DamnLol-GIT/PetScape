@@ -1,0 +1,33 @@
+{
+  "id": "rimmington_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2981, 3225], [2968, 3225], [2962, 3218], [2972, 3218],
+    [2972, 3203], [2972, 3202], [2944, 3201], [2941, 3196],
+    [2954, 3193], [2967, 3193], [2969, 3190], [2979, 3196],
+    [2985, 3197], [2988, 3222], [2981, 3225]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Scoping out the local trees.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Sizing up the local timber.",
+      "count": 4,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Slips between unfamiliar things unseen.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "ghorrock_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "wanderMinDist": 4,
+  "minSiblingSeparation": 2,
+  "polygon": [
+    [2909, 10316], [2913, 10316], [2914, 10320], [2917, 10320],
+    [2917, 10323], [2915, 10323], [2914, 10324], [2914, 10333],
+    [2915, 10334], [2915, 10336], [2914, 10337], [2906, 10337],
+    [2904, 10336], [2904, 10335], [2905, 10334], [2910, 10334],
+    [2911, 10334], [2911, 10321], [2910, 10320], [2909, 10316]
+  ],
+  "forms": [
+    {
+      "name": "Lil' Muspah",
+      "examine": "Someone dreamed this up. Regretted it.",
+      "count": 2,
+      "npcIds": ["MUPHIN", "MUPHIN_12014"]
+    },
+    {
+      "name": "Lil' Muspah",
+      "examine": "Prefers you keep moving. For your sake.",
+      "count": 1,
+      "npcIds": ["MUPHIN_12015"]
+    },
+    {
+      "name": "Lil' Muspah",
+      "examine": "Glowing faintly. That's never good.",
+      "count": 1,
+      "npcIds": ["MUPHIN_12016"]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "rimmington_zone2",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2939, 3282], [2939, 3277], [2943, 3277], [2943, 3291],
+    [2939, 3291], [2938, 3283], [2939, 3282]
+  ],
+  "forms": [
+    {
+      "name": "Rock Golem",
+      "examine": "Awaits the day someone tries to gem-cut him.",
+      "count": 1,
+      "npcIds": [
+        "ROCK_GOLEM", "ROCK_GOLEM_7439", "ROCK_GOLEM_7440", "ROCK_GOLEM_7441",
+        "ROCK_GOLEM_7442", "ROCK_GOLEM_7443", "ROCK_GOLEM_7444", "ROCK_GOLEM_7445",
+        "ROCK_GOLEM_7446", "ROCK_GOLEM_7447", "ROCK_GOLEM_7448", "ROCK_GOLEM_7449",
+        "ROCK_GOLEM_7450", "ROCK_GOLEM_7451", "ROCK_GOLEM_7452", "ROCK_GOLEM_7453",
+        "ROCK_GOLEM_7454", "ROCK_GOLEM_7455", "ROCK_GOLEM_7642"
+      ]
+    }
+  ]
+}

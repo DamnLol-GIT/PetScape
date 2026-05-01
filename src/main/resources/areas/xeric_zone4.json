@@ -1,0 +1,22 @@
+{
+  "id": "xeric_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "flying": true,
+  "polygon": [
+    [1241, 3566], [1236, 3570], [1231, 3570], [1228, 3567],
+    [1225, 3566], [1225, 3557], [1225, 3552], [1228, 3549],
+    [1231, 3548], [1239, 3548], [1243, 3552], [1246, 3554],
+    [1244, 3560], [1241, 3564], [1241, 3566]
+  ],
+  "forms": [
+    {
+      "name": "Flying Vespina",
+      "examine": "Never got a proper fight. Holds a grudge.",
+      "count": 1,
+      "npcIds": ["FLYING_VESPINA"]
+    }
+  ]
+}

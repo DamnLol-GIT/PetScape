@@ -1,0 +1,35 @@
+{
+  "id": "lumbridge_zone8",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3159, 3287], [3163, 3287], [3168, 3285], [3172, 3284],
+    [3175, 3285], [3179, 3284], [3182, 3283], [3183, 3281],
+    [3183, 3278], [3183, 3270], [3182, 3268], [3180, 3267],
+    [3175, 3265], [3171, 3263], [3168, 3263], [3162, 3263],
+    [3158, 3266], [3157, 3271], [3157, 3271], [3158, 3273],
+    [3158, 3281], [3159, 3283], [3159, 3287]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Couldn't sit still if he tried.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "A quiet professional at work.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Chewing his way through the afternoon.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}

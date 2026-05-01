@@ -1,0 +1,36 @@
+{
+  "id": "farming_guild_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [1242, 3732], [1242, 3735], [1238, 3739], [1235, 3739],
+    [1234, 3734], [1229, 3735], [1227, 3733], [1227, 3728],
+    [1226, 3726], [1226, 3725], [1235, 3725], [1240, 3723],
+    [1242, 3725], [1242, 3728], [1243, 3728], [1243, 3729],
+    [1244, 3729], [1244, 3731], [1242, 3731], [1242, 3732]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Hespori Entrance",
+      "polygon": [
+        [1230, 3731], [1231, 3732], [1233, 3732], [1234, 3731],
+        [1234, 3729], [1233, 3728], [1231, 3728], [1230, 3729],
+        [1230, 3731]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Approves of this season's compost.",
+      "count": 4,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

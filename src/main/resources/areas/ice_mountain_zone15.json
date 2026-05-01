@@ -1,0 +1,36 @@
+{
+  "id": "ice_mountain_zone15",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3026, 3503], [3030, 3503], [3033, 3505], [3034, 3509],
+    [3032, 3511], [3033, 3515], [3035, 3519], [3037, 3518],
+    [3037, 3511], [3038, 3506], [3037, 3503], [3034, 3499],
+    [3029, 3495], [3025, 3491], [3026, 3482], [3029, 3480],
+    [3030, 3478], [3021, 3479], [3018, 3482], [3016, 3482],
+    [3016, 3491], [3021, 3493], [3023, 3496], [3023, 3499],
+    [3026, 3503]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Slips between the trees like it's been here forever.",
+      "count": 3,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Marks the better trees.",
+      "count": 1,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Lifts what isn't watched closely.",
+      "count": 1,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

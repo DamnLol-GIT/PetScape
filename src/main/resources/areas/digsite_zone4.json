@@ -1,0 +1,32 @@
+{
+  "id": "digsite_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3389, 3386], [3384, 3384], [3382, 3380], [3379, 3379],
+    [3377, 3377], [3376, 3375], [3375, 3374], [3371, 3374],
+    [3369, 3376], [3364, 3378], [3363, 3379], [3358, 3383],
+    [3355, 3388], [3355, 3391], [3355, 3392], [3362, 3393],
+    [3365, 3393], [3369, 3393], [3374, 3392], [3385, 3398],
+    [3387, 3405], [3391, 3405], [3394, 3404], [3396, 3401],
+    [3396, 3400], [3394, 3396], [3394, 3395], [3393, 3392],
+    [3392, 3391], [3392, 3389], [3391, 3387], [3389, 3386]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Panning for acorns and coming up empty.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Baby Chinchompa",
+      "displayName": "Volatile Chinchompa",
+      "examine": "Should probably alert someone with a badge.",
+      "count": 2,
+      "npcIds": ["BABY_CHINCHOMPA"]
+    }
+  ]
+}

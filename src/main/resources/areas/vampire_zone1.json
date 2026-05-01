@@ -1,0 +1,58 @@
+{
+  "id": "vampire_zone1",
+  "plane": 0,
+  "menuClickRadius": 70,
+  "zOffset": 10,
+  "formFixed": true,
+  "wanderMinDist": 5,
+  "minSiblingSeparation": 2,
+  "polygon": [
+    [3593, 3397], [3593, 3384], [3592, 3383], [3592, 3369],
+    [3590, 3367], [3590, 3364], [3594, 3364], [3594, 3361],
+    [3590, 3361], [3590, 3356], [3594, 3356], [3594, 3352],
+    [3590, 3352], [3590, 3349], [3588, 3349], [3588, 3342],
+    [3588, 3333], [3594, 3333], [3594, 3314], [3614, 3314],
+    [3614, 3331], [3614, 3332], [3660, 3332], [3660, 3337],
+    [3665, 3337], [3665, 3352], [3668, 3352], [3668, 3382],
+    [3660, 3382], [3660, 3390], [3660, 3391], [3634, 3391],
+    [3634, 3398], [3593, 3397]
+  ],
+  "forms": [
+    {
+      "name": "Lil' Zik",
+      "examine": "It’s hard to take a vampire spider seriously - they're just too fang-tastic!",
+      "count": 4,
+      "npcIds": ["LIL_ZIK"]
+    },
+    {
+      "name": "Lil' Maiden",
+      "examine": "Freed From Her Tiny Constraints",
+      "count": 4,
+      "npcIds": ["LIL_MAIDEN"]
+    },
+    {
+      "name": "Lil' Bloat",
+      "examine": "Smaller size, great smell.",
+      "count": 4,
+      "npcIds": ["LIL_BLOAT"]
+    },
+    {
+      "name": "Lil' Nylo",
+      "examine": "Eight small legs of unparalleled cuteness.",
+      "count": 4,
+      "npcIds": ["LIL_NYLO"]
+    },
+    {
+      "name": "Lil' Sot",
+      "examine": "Has a lot of anger for such a tiny monster.",
+      "count": 4,
+      "npcIds": ["LIL_SOT"]
+    },
+    {
+      "name": "Lil' Xarp",
+      "examine": "The little prince of Yarasa.",
+      "count": 4,
+      "npcIds": ["LIL_XARP"]
+    }
+  ]
+}

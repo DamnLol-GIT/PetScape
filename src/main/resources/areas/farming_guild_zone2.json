@@ -1,0 +1,28 @@
+{
+  "id": "farming_guild_zone2",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [1240, 3757], [1244, 3757], [1245, 3758], [1246, 3758],
+    [1246, 3759], [1250, 3759], [1250, 3758], [1252, 3756],
+    [1253, 3756], [1254, 3757], [1255, 3757], [1256, 3756],
+    [1258, 3755], [1258, 3752], [1251, 3752], [1251, 3748],
+    [1251, 3747], [1249, 3747], [1247, 3747], [1246, 3748],
+    [1246, 3752], [1242, 3752], [1242, 3753], [1240, 3753],
+    [1240, 3757]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Considers the spirit tree a colleague.",
+      "count": 4,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

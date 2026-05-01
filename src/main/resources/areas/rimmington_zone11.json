@@ -1,0 +1,39 @@
+{
+  "id": "rimmington_zone11",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2946, 3290], [2946, 3275], [2929, 3264], [2928, 3260],
+    [2940, 3259], [2948, 3265], [2960, 3263], [2961, 3258],
+    [2971, 3261], [2977, 3275], [2975, 3279], [2962, 3287],
+    [2946, 3290]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Counts the acorns. Recounts the acorns.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Fox",
+      "examine": "Leaves footprints in clever patterns.",
+      "count": 2,
+      "npcIds": ["FOX_12548"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Surveys, measures, judges, repeats.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "A connoisseur of the unattended.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

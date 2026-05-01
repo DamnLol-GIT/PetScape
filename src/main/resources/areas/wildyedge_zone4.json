@@ -1,0 +1,21 @@
+{
+  "id": "wildyedge_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2964, 3521], [2977, 3521], [2979, 3520], [2986, 3520],
+    [2989, 3521], [2991, 3521], [2992, 3518], [2989, 3516],
+    [2986, 3514], [2983, 3514], [2977, 3514], [2973, 3516],
+    [2971, 3516], [2969, 3519], [2964, 3521]
+  ],
+  "forms": [
+    {
+      "name": "Callisto Cub",
+      "examine": "Still waiting for somebody to out claw him.",
+      "count": 1,
+      "npcIds": ["CALLISTO_CUB"]
+    }
+  ]
+}

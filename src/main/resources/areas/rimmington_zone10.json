@@ -1,0 +1,41 @@
+{
+  "id": "rimmington_zone10",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2910, 3315], [2920, 3316], [2921, 3320], [2925, 3323],
+    [2929, 3318], [2932, 3317], [2937, 3311], [2941, 3308],
+    [2954, 3308], [2959, 3306], [2966, 3303], [2967, 3293],
+    [2964, 3288], [2962, 3284], [2955, 3283], [2947, 3290],
+    [2944, 3295], [2936, 3295], [2927, 3295], [2917, 3296],
+    [2913, 3299], [2909, 3304], [2910, 3315]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Burying things he'll never find again.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Fox",
+      "examine": "Slips through the brush like a rumour.",
+      "count": 2,
+      "npcIds": ["FOX_12548"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Considers the nearby water under-performing.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Has a reputation in three towns.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

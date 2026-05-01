@@ -1,0 +1,38 @@
+{
+  "id": "lumbridge_zone14",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3162, 3345], [3159, 3347], [3155, 3347], [3154, 3345],
+    [3153, 3342], [3153, 3339], [3154, 3336], [3155, 3334],
+    [3155, 3331], [3154, 3329], [3154, 3327], [3153, 3325],
+    [3154, 3322], [3154, 3320], [3155, 3316], [3158, 3315],
+    [3160, 3316], [3164, 3319], [3167, 3319], [3171, 3318],
+    [3173, 3317], [3177, 3317], [3184, 3314], [3190, 3311],
+    [3195, 3310], [3201, 3310], [3205, 3311], [3206, 3313],
+    [3205, 3320], [3198, 3332], [3196, 3335], [3186, 3339],
+    [3180, 3343], [3166, 3342], [3162, 3345]
+  ],
+  "forms": [
+    {
+      "name": "Beef",
+      "examine": "Wandered off during milking.",
+      "count": 8,
+      "npcIds": ["BEEF"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "The canopy's fastest commuter.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Looking at the delicious fenceline.",
+      "count": 4,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}

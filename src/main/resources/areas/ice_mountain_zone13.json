@@ -1,0 +1,37 @@
+{
+  "id": "ice_mountain_zone13",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2996, 3458], [3006, 3456], [3007, 3447], [3005, 3443],
+    [3000, 3443], [2995, 3445], [2993, 3452], [2988, 3455],
+    [2987, 3457], [2984, 3460], [2981, 3462], [2981, 3464],
+    [2980, 3466], [2980, 3472], [2983, 3475], [2988, 3481],
+    [2990, 3483], [2990, 3488], [2993, 3489], [2996, 3486],
+    [2995, 3480], [2992, 3476], [2988, 3473], [2987, 3468],
+    [2987, 3463], [2988, 3461], [2988, 3459], [2990, 3457],
+    [2994, 3457], [2995, 3457], [2995, 3460], [2996, 3458]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Could run faster than you, if it wanted to.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Has plans for the wood here.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "A quiet professional.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

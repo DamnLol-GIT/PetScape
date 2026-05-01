@@ -1,0 +1,29 @@
+{
+  "id": "lumb_swamp_river_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3143, 3158], [3146, 3158], [3149, 3157], [3151, 3154],
+    [3153, 3151], [3154, 3149], [3154, 3147], [3154, 3144],
+    [3153, 3143], [3151, 3141], [3148, 3140], [3145, 3139],
+    [3143, 3139], [3140, 3141], [3139, 3144], [3139, 3146],
+    [3141, 3148], [3141, 3150], [3139, 3151], [3140, 3153],
+    [3143, 3155], [3143, 3158]
+  ],
+  "forms": [
+    {
+      "name": "Rock Golem",
+      "examine": "Takes his job for granite.",
+      "count": 4,
+      "npcIds": [
+        "ROCK_GOLEM", "ROCK_GOLEM_7439", "ROCK_GOLEM_7440", "ROCK_GOLEM_7441",
+        "ROCK_GOLEM_7442", "ROCK_GOLEM_7443", "ROCK_GOLEM_7444", "ROCK_GOLEM_7445",
+        "ROCK_GOLEM_7446", "ROCK_GOLEM_7447", "ROCK_GOLEM_7448", "ROCK_GOLEM_7449",
+        "ROCK_GOLEM_7450", "ROCK_GOLEM_7451", "ROCK_GOLEM_7452", "ROCK_GOLEM_7453",
+        "ROCK_GOLEM_7454", "ROCK_GOLEM_7455", "ROCK_GOLEM_7642"
+      ]
+    }
+  ]
+}

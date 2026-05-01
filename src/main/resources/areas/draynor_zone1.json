@@ -1,0 +1,40 @@
+{
+  "id": "draynor_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3127, 3293], [3122, 3301], [3107, 3306], [3093, 3310],
+    [3077, 3312], [3071, 3306], [3072, 3295], [3071, 3288],
+    [3071, 3280], [3081, 3277], [3090, 3280], [3096, 3284],
+    [3103, 3283], [3107, 3282], [3111, 3289], [3117, 3294],
+    [3127, 3293]
+  ],
+  "forms": [
+    {
+      "name": "Bone Squirrel",
+      "examine": "Lost something between the trees. A while ago.",
+      "count": 1,
+      "npcIds": ["BONE_SQUIRREL"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "Already three trees ahead of you.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Drafting a dam in his head. Optimistically.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Quietly auditing every traveller.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

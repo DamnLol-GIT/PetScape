@@ -1,0 +1,22 @@
+{
+  "id": "varrock_outskirts_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "flying": true,
+  "polygon": [
+    [3278, 3424], [3278, 3420], [3274, 3419], [3274, 3411],
+    [3277, 3408], [3286, 3408], [3288, 3410], [3287, 3412],
+    [3288, 3415], [3288, 3417], [3286, 3420], [3285, 3421],
+    [3284, 3422], [3281, 3426], [3278, 3424]
+  ],
+  "forms": [
+    {
+      "name": "Quetzin",
+      "examine": "Waiting on the next flight out.",
+      "count": 4,
+      "npcIds": ["QUETZIN"]
+    }
+  ]
+}

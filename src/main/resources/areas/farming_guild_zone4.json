@@ -1,0 +1,29 @@
+{
+  "id": "farming_guild_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [1255, 3732], [1259, 3732], [1260, 3733], [1262, 3733],
+    [1262, 3735], [1262, 3737], [1260, 3739], [1261, 3740],
+    [1263, 3740], [1263, 3744], [1263, 3746], [1268, 3746],
+    [1268, 3745], [1266, 3743], [1266, 3740], [1266, 3739],
+    [1267, 3731], [1273, 3731], [1272, 3729], [1266, 3728],
+    [1266, 3723], [1265, 3721], [1263, 3722], [1262, 3723],
+    [1262, 3727], [1259, 3727], [1255, 3727], [1255, 3728],
+    [1255, 3732]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "On first-name terms with every herb here.",
+      "count": 4,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

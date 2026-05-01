@@ -1,0 +1,63 @@
+{
+  "id": "wildyedge_zone6",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3071, 3513], [3072, 3515], [3072, 3519], [3075, 3517],
+    [3076, 3514], [3076, 3506], [3084, 3506], [3086, 3511],
+    [3085, 3517], [3090, 3517], [3090, 3506], [3102, 3507],
+    [3102, 3516], [3106, 3516], [3106, 3509], [3111, 3509],
+    [3113, 3510], [3116, 3514], [3119, 3516], [3122, 3516],
+    [3125, 3515], [3126, 3513], [3126, 3510], [3126, 3507],
+    [3125, 3505], [3124, 3504], [3122, 3501], [3119, 3500],
+    [3118, 3498], [3116, 3497], [3112, 3494], [3110, 3493],
+    [3108, 3492], [3106, 3490], [3105, 3487], [3103, 3485],
+    [3101, 3481], [3100, 3478], [3100, 3464], [3082, 3464],
+    [3079, 3467], [3079, 3478], [3077, 3480], [3077, 3486],
+    [3084, 3486], [3083, 3498], [3082, 3502], [3077, 3502],
+    [3076, 3476], [3071, 3480], [3071, 3513]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Bank",
+      "polygon": [
+        [3090, 3500], [3099, 3500], [3099, 3488], [3090, 3488],
+        [3090, 3500]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Chaos Elemental Jr.",
+      "examine": "Spreading small inconveniences.",
+      "count": 3,
+      "npcIds": ["CHAOS_ELEMENTAL_JR"]
+    },
+    {
+      "name": "Callisto Cub",
+      "examine": "Opted out of the whole 'maul or be mauled' life.",
+      "count": 3,
+      "npcIds": ["CALLISTO_CUB"]
+    },
+    {
+      "name": "Venenatis Spiderling",
+      "examine": "Still venomous in theory. Lazy in practice.",
+      "count": 2,
+      "npcIds": ["VENENATIS_SPIDERLING"]
+    },
+    {
+      "name": "Scorpia's Offspring",
+      "examine": "Would rather pinch pockets than players.",
+      "count": 2,
+      "npcIds": ["SCORPIAS_OFFSPRING"]
+    },
+    {
+      "name": "Vet'ion Jr.",
+      "examine": "A skeleton that prefers the scenic route.",
+      "count": 2,
+      "npcIds": ["VETION_JR"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "desert_south_roam_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "flying": true,
+  "polygon": [
+    [3273, 2867], [3270, 2858], [3272, 2848], [3275, 2841],
+    [3284, 2837], [3287, 2837], [3292, 2840], [3297, 2844],
+    [3296, 2850], [3294, 2856], [3292, 2860], [3288, 2865],
+    [3280, 2867], [3273, 2867]
+  ],
+  "forms": [
+    {
+      "name": "Quetzin",
+      "examine": "Oasis or mirage? Either way, it's not sharing.",
+      "count": 6,
+      "npcIds": ["QUETZIN"]
+    }
+  ]
+}

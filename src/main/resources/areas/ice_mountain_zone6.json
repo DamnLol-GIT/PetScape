@@ -1,0 +1,23 @@
+{
+  "id": "ice_mountain_zone6",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "flying": true,
+  "polygon": [
+    [3046, 3509], [3058, 3509], [3058, 3501], [3060, 3501],
+    [3062, 3499], [3062, 3483], [3059, 3481], [3053, 3481],
+    [3053, 3480], [3053, 3472], [3051, 3472], [3051, 3480],
+    [3050, 3481], [3044, 3481], [3042, 3483], [3042, 3499],
+    [3044, 3501], [3046, 3501], [3046, 3509]
+  ],
+  "forms": [
+    {
+      "name": "Phoenix",
+      "examine": "An ancient bird with a saint's patience.",
+      "count": 3,
+      "npcIds": ["PHOENIX_3078", "PHOENIX_3079", "PHOENIX_3080"]
+    }
+  ]
+}

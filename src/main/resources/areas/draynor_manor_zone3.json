@@ -1,0 +1,21 @@
+{
+  "id": "draynor_manor_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3084, 3364], [3087, 3364], [3090, 3361], [3090, 3354],
+    [3092, 3353], [3092, 3350], [3091, 3349], [3089, 3348],
+    [3088, 3348], [3086, 3349], [3086, 3353], [3085, 3354],
+    [3085, 3358], [3084, 3359], [3084, 3364]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Discussing roots with a distant cousin.",
+      "count": 2,
+      "npcIds": ["TANGLEROOT"]
+    }
+  ]
+}

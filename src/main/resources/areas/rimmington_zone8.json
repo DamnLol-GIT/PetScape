@@ -1,0 +1,20 @@
+{
+  "id": "rimmington_zone8",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2949, 3228], [2953, 3229], [2956, 3227], [2957, 3224],
+    [2957, 3221], [2953, 3219], [2953, 3218], [2949, 3220],
+    [2947, 3222], [2947, 3227], [2949, 3228]
+  ],
+  "forms": [
+    {
+      "name": "Fox",
+      "examine": "Pretends not to know which house is yours.",
+      "count": 6,
+      "npcIds": ["FOX_12548"]
+    }
+  ]
+}

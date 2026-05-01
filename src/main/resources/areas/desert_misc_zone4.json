@@ -1,0 +1,28 @@
+{
+  "id": "desert_misc_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "wanderMinDist": 4,
+  "minSiblingSeparation": 2,
+  "polygon": [
+    [3373, 2781], [3373, 2779], [3374, 2779], [3375, 2778],
+    [3374, 2777], [3374, 2774], [3376, 2773], [3378, 2773],
+    [3382, 2774], [3382, 2775], [3382, 2776], [3381, 2778],
+    [3380, 2781], [3379, 2783], [3377, 2783], [3375, 2780],
+    [3373, 2781]
+  ],
+  "forms": [
+    {
+      "name": "Rock Golem",
+      "examine": "A little piece of the desert, come to life.",
+      "count": 2,
+      "npcIds": [
+        "ROCK_GOLEM", "ROCK_GOLEM_7439", "ROCK_GOLEM_7440", "ROCK_GOLEM_7441",
+        "ROCK_GOLEM_7442", "ROCK_GOLEM_7443", "ROCK_GOLEM_7444", "ROCK_GOLEM_7445",
+        "ROCK_GOLEM_7446", "ROCK_GOLEM_7447", "ROCK_GOLEM_7448", "ROCK_GOLEM_7449",
+        "ROCK_GOLEM_7450", "ROCK_GOLEM_7451", "ROCK_GOLEM_7452", "ROCK_GOLEM_7453"
+      ]
+    }
+  ]
+}

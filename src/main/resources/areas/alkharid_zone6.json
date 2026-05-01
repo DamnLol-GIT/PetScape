@@ -1,0 +1,22 @@
+{
+  "id": "alkharid_zone6",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "flying": true,
+  "polygon": [
+    [3317, 3245], [3319, 3248], [3326, 3248], [3326, 3241],
+    [3329, 3239], [3329, 3224], [3324, 3223], [3321, 3224],
+    [3315, 3224], [3316, 3228], [3312, 3229], [3312, 3236],
+    [3312, 3238], [3317, 3238], [3317, 3245]
+  ],
+  "forms": [
+    {
+      "name": "Quetzin",
+      "examine": "Used to be a rich bird. Used to be.",
+      "count": 6,
+      "npcIds": ["QUETZIN"]
+    }
+  ]
+}

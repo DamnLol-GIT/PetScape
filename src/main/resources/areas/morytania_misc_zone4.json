@@ -1,0 +1,22 @@
+{
+  "id": "morytania_misc_zone4",
+  "plane": 0,
+  "zOffset": -40,
+  "aquatic": true,
+  "polygon": [
+    [3661, 3192], [3659, 3190], [3659, 3188], [3660, 3187],
+    [3661, 3187], [3662, 3186], [3665, 3187], [3666, 3188],
+    [3666, 3190], [3664, 3192], [3664, 3193], [3663, 3194],
+    [3663, 3206], [3665, 3207], [3664, 3209], [3661, 3209],
+    [3661, 3207], [3662, 3205], [3662, 3193], [3661, 3192]
+  ],
+  "forms": [
+    {
+      "name": "Pet Snakeling",
+      "displayName": "Tiny Snakeling",
+      "examine": "A little serpent of the swamp.",
+      "count": 2,
+      "npcIds": ["SNAKELING_2127", "SNAKELING_2128", "SNAKELING_2129"]
+    }
+  ]
+}

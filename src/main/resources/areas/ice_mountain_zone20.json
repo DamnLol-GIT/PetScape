@@ -1,0 +1,27 @@
+{
+  "id": "ice_mountain_zone20",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "flying": true,
+  "polygon": [
+    [3099, 3441], [3102, 3436], [3103, 3432], [3110, 3430],
+    [3114, 3432], [3114, 3435], [3114, 3437], [3110, 3441],
+    [3105, 3443], [3101, 3444], [3099, 3441]
+  ],
+  "forms": [
+    {
+      "name": "Heron",
+      "examine": "Stalking the river shallows for fish.",
+      "count": 1,
+      "npcIds": ["HERON"]
+    },
+    {
+      "name": "Great Blue Heron",
+      "examine": "Has caught more fish than you will ever catch.",
+      "count": 1,
+      "npcIds": ["GREAT_BLUE_HERON"]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "draynor_zone2",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3096, 3282], [3086, 3280], [3073, 3275], [3070, 3273],
+    [3069, 3268], [3069, 3262], [3069, 3256], [3066, 3254],
+    [3067, 3250], [3069, 3247], [3075, 3255], [3075, 3257],
+    [3082, 3257], [3082, 3263], [3088, 3264], [3088, 3270],
+    [3095, 3271], [3106, 3271], [3106, 3277], [3111, 3282],
+    [3111, 3288], [3096, 3283], [3096, 3282]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Faster than the wind. Most days.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "A familiar shadow on the road.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Plotting against a nearby fence post.",
+      "count": 1,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}

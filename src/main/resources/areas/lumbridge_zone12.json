@@ -1,0 +1,44 @@
+{
+  "id": "lumbridge_zone12",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3237, 3283], [3241, 3282], [3240, 3285], [3240, 3287],
+    [3241, 3290], [3242, 3292], [3240, 3293], [3240, 3298],
+    [3240, 3299], [3241, 3305], [3258, 3322], [3267, 3322],
+    [3270, 3326], [3271, 3329], [3265, 3330], [3255, 3330],
+    [3252, 3331], [3250, 3331], [3248, 3334], [3239, 3335],
+    [3234, 3331], [3234, 3325], [3233, 3323], [3233, 3320],
+    [3235, 3318], [3235, 3313], [3234, 3312], [3234, 3303],
+    [3237, 3302], [3236, 3299], [3232, 3294], [3237, 3290],
+    [3237, 3283]
+  ],
+  "forms": [
+    {
+      "name": "Beef",
+      "examine": "Wants nothing to do with the milk trade.",
+      "count": 4,
+      "npcIds": ["BEEF"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "Found a shortcut.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Tooth-first, thought-second.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Looking at all the newcomers intently.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

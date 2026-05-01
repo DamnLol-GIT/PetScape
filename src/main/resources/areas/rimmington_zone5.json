@@ -1,0 +1,23 @@
+{
+  "id": "rimmington_zone5",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2938, 3226], [2943, 3226], [2945, 3222], [2944, 3218],
+    [2937, 3217], [2936, 3223], [2938, 3226]
+  ],
+  "forms": [
+    {
+      "name": "Tangleroot",
+      "examine": "Conferring with the local weeds.",
+      "count": 3,
+      "npcIds": [
+        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
+        "TANGLEROOT_9494", "TANGLEROOT_9495", "TANGLEROOT_9496", "TANGLEROOT_9497",
+        "TANGLEROOT_9498", "TANGLEROOT_9499", "TANGLEROOT_9500", "TANGLEROOT_9501"
+      ]
+    }
+  ]
+}

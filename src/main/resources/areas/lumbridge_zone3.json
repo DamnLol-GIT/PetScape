@@ -1,0 +1,20 @@
+{
+  "id": "lumbridge_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3238, 3201], [3238, 3204], [3248, 3204], [3252, 3204],
+    [3252, 3196], [3247, 3196], [3247, 3191], [3238, 3191],
+    [3238, 3201]
+  ],
+  "forms": [
+    {
+      "name": "Bone Squirrel",
+      "examine": "Rattles softly between the headstones.",
+      "count": 3,
+      "npcIds": ["BONE_SQUIRREL"]
+    }
+  ]
+}

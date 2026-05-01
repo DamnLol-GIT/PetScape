@@ -1,0 +1,49 @@
+{
+  "id": "varrock_outskirts_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3263, 3490], [3263, 3493], [3266, 3494], [3268, 3493],
+    [3270, 3492], [3270, 3490], [3270, 3488], [3271, 3486],
+    [3272, 3483], [3274, 3481], [3276, 3479], [3281, 3478],
+    [3282, 3477], [3282, 3476], [3281, 3473], [3279, 3472],
+    [3278, 3471], [3279, 3466], [3279, 3464], [3282, 3464],
+    [3286, 3463], [3288, 3463], [3293, 3460], [3294, 3459],
+    [3295, 3458], [3295, 3457], [3295, 3446], [3295, 3429],
+    [3295, 3405], [3295, 3384], [3296, 3383], [3302, 3383],
+    [3303, 3382], [3303, 3377], [3288, 3376], [3291, 3380],
+    [3291, 3384], [3290, 3385], [3290, 3389], [3290, 3391],
+    [3289, 3392], [3289, 3407], [3287, 3409], [3286, 3409],
+    [3284, 3426], [3279, 3433], [3274, 3437], [3271, 3438],
+    [3271, 3464], [3264, 3472], [3263, 3490]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "examine": "Weaves through the grass like it's nothing.",
+      "count": 8,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Appraising the tree line with quiet judgement.",
+      "count": 2,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Loitering where the guards can't see.",
+      "count": 4,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Rocky",
+      "displayName": "Ziggy",
+      "examine": "No relation to any raccoon. Allegedly.",
+      "count": 2,
+      "npcIds": ["ZIGGY"]
+    }
+  ]
+}

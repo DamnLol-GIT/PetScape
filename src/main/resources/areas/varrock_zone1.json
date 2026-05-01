@@ -1,0 +1,57 @@
+{
+  "id": "varrock_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "formFixed": true,
+  "polygon": [
+    [3142, 3516], [3150, 3516], [3158, 3516], [3161, 3514],
+    [3168, 3514], [3171, 3517], [3181, 3517], [3189, 3517],
+    [3197, 3508], [3197, 3506], [3195, 3504], [3195, 3503],
+    [3189, 3497], [3189, 3492], [3191, 3492], [3191, 3494],
+    [3194, 3495], [3197, 3495], [3198, 3493], [3199, 3491],
+    [3199, 3489], [3198, 3487], [3197, 3486], [3194, 3485],
+    [3192, 3486], [3191, 3487], [3191, 3488], [3189, 3488],
+    [3189, 3481], [3184, 3481], [3181, 3478], [3182, 3476],
+    [3179, 3473], [3176, 3474], [3173, 3471], [3173, 3469],
+    [3153, 3469], [3153, 3472], [3151, 3474], [3147, 3474],
+    [3145, 3476], [3145, 3480], [3143, 3482], [3140, 3482],
+    [3142, 3485], [3142, 3492], [3139, 3495], [3139, 3513],
+    [3142, 3516]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Grand Exchange Hub",
+      "polygon": [
+        [3164, 3494], [3166, 3494], [3168, 3493], [3169, 3491],
+        [3169, 3488], [3167, 3486], [3163, 3486], [3161, 3488],
+        [3161, 3491], [3162, 3493], [3164, 3494]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Bloodhound",
+      "examine": "No merch shall be flipped without due process.",
+      "count": 2,
+      "npcIds": ["BLOODHOUND"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Would like to audit the log stockpile, please.",
+      "count": 4,
+      "npcIds": ["BEAVER"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Taking a five-finger discount on the market price.",
+      "count": 4,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "Faster than the trading clerk, and twice as twitchy.",
+      "count": 6,
+      "npcIds": ["GIANT_SQUIRREL"]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "varrock_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "wanderMinDist": 3,
+  "minSiblingSeparation": 2,
+  "polygon": [
+    [3235, 3467], [3235, 3464], [3235, 3456], [3242, 3456],
+    [3243, 3459], [3243, 3461], [3242, 3464], [3241, 3466],
+    [3235, 3467], [3235, 3464], [3235, 3467]
+  ],
+  "forms": [
+    {
+      "name": "Scurry",
+      "examine": "Swears he used to train four students down there.",
+      "count": 3,
+      "npcIds": ["SCURRY"]
+    }
+  ]
+}

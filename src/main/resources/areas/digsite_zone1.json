@@ -1,0 +1,51 @@
+{
+  "id": "digsite_zone1",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3336, 3445], [3328, 3445], [3328, 3437], [3326, 3427],
+    [3324, 3419], [3324, 3408], [3328, 3399], [3331, 3395],
+    [3340, 3392], [3345, 3394], [3347, 3395], [3354, 3392],
+    [3359, 3388], [3364, 3391], [3370, 3392], [3376, 3390],
+    [3378, 3391], [3380, 3394], [3381, 3399], [3382, 3403],
+    [3383, 3411], [3382, 3414], [3381, 3416], [3380, 3420],
+    [3381, 3423], [3382, 3426], [3382, 3431], [3382, 3432],
+    [3380, 3434], [3380, 3442], [3379, 3444], [3367, 3445],
+    [3349, 3445], [3336, 3445]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "displayName": "Skeletal Squirrel",
+      "examine": "The archaeologists keep trying to catalogue it.",
+      "count": 8,
+      "npcIds": ["BONE_SQUIRREL"]
+    },
+    {
+      "name": "Rock Golem",
+      "examine": "Mined, sifted, and labelled.",
+      "count": 4,
+      "npcIds": [
+        "ROCK_GOLEM", "ROCK_GOLEM_7439", "ROCK_GOLEM_7440", "ROCK_GOLEM_7441",
+        "ROCK_GOLEM_7442", "ROCK_GOLEM_7443", "ROCK_GOLEM_7444", "ROCK_GOLEM_7445",
+        "ROCK_GOLEM_7446", "ROCK_GOLEM_7447", "ROCK_GOLEM_7448", "ROCK_GOLEM_7449",
+        "ROCK_GOLEM_7450", "ROCK_GOLEM_7451", "ROCK_GOLEM_7452", "ROCK_GOLEM_7453",
+        "ROCK_GOLEM_7454", "ROCK_GOLEM_7455", "ROCK_GOLEM_7642"
+      ]
+    },
+    {
+      "name": "Baby Mole Rat",
+      "examine": "Surveying underground. Without permit.",
+      "count": 3,
+      "npcIds": ["BABY_MOLERAT"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Pocketing small artifacts. For safekeeping.",
+      "count": 2,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

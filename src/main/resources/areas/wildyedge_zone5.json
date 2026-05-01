@@ -1,0 +1,21 @@
+{
+  "id": "wildyedge_zone5",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2947, 3521], [2942, 3520], [2940, 3518], [2940, 3516],
+    [2937, 3514], [2936, 3511], [2938, 3511], [2940, 3509],
+    [2941, 3509], [2943, 3512], [2943, 3514], [2944, 3516],
+    [2947, 3519], [2949, 3520], [2949, 3521], [2947, 3521]
+  ],
+  "forms": [
+    {
+      "name": "Chaos Elemental Jr.",
+      "examine": "Still chaotic. Just tastefully so.",
+      "count": 2,
+      "npcIds": ["CHAOS_ELEMENTAL_JR"]
+    }
+  ]
+}

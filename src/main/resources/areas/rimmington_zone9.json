@@ -1,0 +1,25 @@
+{
+  "id": "rimmington_zone9",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2980, 3302], [2972, 3298], [2974, 3290], [2976, 3286],
+    [2987, 3284], [2997, 3289], [2994, 3299], [2986, 3303],
+    [2980, 3302]
+  ],
+  "forms": [
+    {
+      "name": "Rift Guardian",
+      "examine": "Comfortable in the gusts.",
+      "count": 8,
+      "npcIds": [
+        "RIFT_GUARDIAN", "RIFT_GUARDIAN_7338", "RIFT_GUARDIAN_7339", "RIFT_GUARDIAN_7340",
+        "RIFT_GUARDIAN_7341", "RIFT_GUARDIAN_7342", "RIFT_GUARDIAN_7343", "RIFT_GUARDIAN_7344",
+        "RIFT_GUARDIAN_7345", "RIFT_GUARDIAN_7346", "RIFT_GUARDIAN_7347", "RIFT_GUARDIAN_7348",
+        "RIFT_GUARDIAN_7349", "RIFT_GUARDIAN_7350", "RIFT_GUARDIAN_8024"
+      ]
+    }
+  ]
+}

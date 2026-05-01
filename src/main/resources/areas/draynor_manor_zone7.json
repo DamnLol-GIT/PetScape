@@ -1,0 +1,37 @@
+{
+  "id": "draynor_manor_zone7",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3121, 3385], [3127, 3385], [3132, 3381], [3135, 3382],
+    [3138, 3380], [3140, 3377], [3142, 3374], [3144, 3370],
+    [3145, 3362], [3145, 3360], [3146, 3358], [3147, 3355],
+    [3147, 3353], [3148, 3351], [3148, 3343], [3149, 3337],
+    [3150, 3334], [3145, 3335], [3144, 3333], [3141, 3333],
+    [3140, 3334], [3134, 3339], [3129, 3341], [3130, 3347],
+    [3130, 3352], [3130, 3355], [3130, 3364], [3129, 3371],
+    [3128, 3375], [3126, 3379], [3122, 3382], [3121, 3385]
+  ],
+  "forms": [
+    {
+      "name": "Bone Squirrel",
+      "examine": "Creaks softly as he scampers.",
+      "count": 3,
+      "npcIds": ["BONE_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Nothing disappears here without his say-so.",
+      "count": 1,
+      "npcIds": ["ROCKY"]
+    },
+    {
+      "name": "Beaver",
+      "examine": "Patience, teeth, and a plan.",
+      "count": 1,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}

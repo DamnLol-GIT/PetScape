@@ -1,0 +1,47 @@
+{
+  "id": "varrock_zone4",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3234, 3468], [3234, 3464], [3233, 3464], [3234, 3456],
+    [3233, 3455], [3232, 3454], [3219, 3440], [3209, 3440],
+    [3201, 3448], [3191, 3458], [3187, 3458], [3186, 3459],
+    [3186, 3461], [3188, 3463], [3188, 3475], [3191, 3478],
+    [3191, 3488], [3191, 3496], [3197, 3502], [3197, 3503],
+    [3201, 3507], [3227, 3507], [3224, 3504], [3231, 3498],
+    [3234, 3501], [3234, 3491], [3234, 3483], [3234, 3468]
+  ],
+  "forbiddenZones": [
+    {
+      "comment": "Quest - King Room + Garden",
+      "polygon": [
+        [3219, 3471], [3221, 3469], [3225, 3469], [3225, 3470],
+        [3226, 3471], [3234, 3471], [3234, 3491], [3227, 3491],
+        [3227, 3479], [3225, 3479], [3220, 3479], [3220, 3474],
+        [3219, 3473], [3219, 3471]
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "name": "Bloodhound",
+      "examine": "Sworn to serve King, kingdom, and kibble.",
+      "count": 8,
+      "npcIds": ["BLOODHOUND"]
+    },
+    {
+      "name": "Giant Squirrel",
+      "examine": "Scouting the next rooftop with great confidence.",
+      "count": 4,
+      "npcIds": ["GIANT_SQUIRREL"]
+    },
+    {
+      "name": "Rocky",
+      "examine": "Eyeing pockets with great professional interest.",
+      "count": 1,
+      "npcIds": ["ROCKY"]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "wildyedge_zone3",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3071, 3522], [3067, 3520], [3072, 3520], [3072, 3517],
+    [3076, 3514], [3084, 3514], [3091, 3514], [3107, 3514],
+    [3107, 3519], [3112, 3519], [3112, 3516], [3118, 3516],
+    [3130, 3516], [3130, 3520], [3124, 3522], [3120, 3521],
+    [3074, 3521], [3071, 3522]
+  ],
+  "forms": [
+    {
+      "name": "Callisto Cub",
+      "examine": "Grew out of the whole 'maul things' phase.",
+      "count": 2,
+      "npcIds": ["CALLISTO_CUB"]
+    },
+    {
+      "name": "Chaos Elemental Jr.",
+      "examine": "Finds the Wildy predictable. Which is worse.",
+      "count": 1,
+      "npcIds": ["CHAOS_ELEMENTAL_JR"]
+    },
+    {
+      "name": "Scorpia's Offspring",
+      "examine": "A scorpion with better things to do.",
+      "count": 1,
+      "npcIds": ["SCORPIAS_OFFSPRING"]
+    },
+    {
+      "name": "Vet'ion Jr.",
+      "examine": "Too many bones up north. Not worth it.",
+      "count": 1,
+      "npcIds": ["VETION_JR"]
+    },
+    {
+      "name": "Venenatis Spiderling",
+      "examine": "Smaller. Smarter. Spider.",
+      "count": 1,
+      "npcIds": ["VENENATIS_SPIDERLING"]
+    }
+  ]
+}

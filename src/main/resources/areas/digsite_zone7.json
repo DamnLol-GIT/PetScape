@@ -1,0 +1,23 @@
+{
+  "id": "digsite_zone7",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3364, 3501], [3366, 3502], [3367, 3503], [3367, 3504],
+    [3367, 3507], [3367, 3508], [3366, 3509], [3365, 3509],
+    [3364, 3512], [3362, 3512], [3361, 3513], [3358, 3512],
+    [3357, 3511], [3356, 3510], [3355, 3507], [3355, 3506],
+    [3359, 3504], [3364, 3501]
+  ],
+  "forms": [
+    {
+      "name": "Giant Squirrel",
+      "displayName": "Skeletal Squirrel",
+      "examine": "Refuses to end up in a Pot of vinegar",
+      "count": 3,
+      "npcIds": ["BONE_SQUIRREL"]
+    }
+  ]
+}

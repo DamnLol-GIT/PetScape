@@ -1,0 +1,20 @@
+{
+  "id": "port_sarim_zone10",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [2996, 3190], [2998, 3190], [3000, 3190], [3002, 3189],
+    [3002, 3186], [3000, 3185], [2997, 3185], [2995, 3187],
+    [2995, 3189], [2996, 3190]
+  ],
+  "forms": [
+    {
+      "name": "Bone Squirrel",
+      "examine": "Remembers a wedding here once.",
+      "count": 3,
+      "npcIds": ["BONE_SQUIRREL"]
+    }
+  ]
+}

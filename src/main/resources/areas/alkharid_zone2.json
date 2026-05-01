@@ -1,0 +1,26 @@
+{
+  "id": "alkharid_zone2",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "flying": true,
+  "polygon": [
+    [3281, 3179], [3305, 3179], [3305, 3158], [3281, 3158],
+    [3281, 3179]
+  ],
+  "forms": [
+    {
+      "name": "Bloodhound",
+      "examine": "Sniffing for spies. Or scraps.",
+      "count": 2,
+      "npcIds": ["BLOODHOUND"]
+    },
+    {
+      "name": "Quetzin",
+      "examine": "Imported. Expensive. Indifferent.",
+      "count": 4,
+      "npcIds": ["QUETZIN"]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "lumb_swamp_river_zone5",
+  "plane": 0,
+  "menuClickRadius": 60,
+  "zOffset": 10,
+  "formFixed": true,
+  "polygon": [
+    [3248, 3187], [3245, 3186], [3243, 3180], [3242, 3172],
+    [3241, 3161], [3237, 3152], [3238, 3148], [3241, 3150],
+    [3242, 3154], [3244, 3161], [3245, 3165], [3245, 3171],
+    [3246, 3177], [3248, 3187]
+  ],
+  "forms": [
+    {
+      "name": "Beaver",
+      "examine": "Eyeing the bank with construction plans.",
+      "count": 3,
+      "npcIds": ["BEAVER"]
+    }
+  ]
+}
