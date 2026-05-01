@@ -25,6 +25,7 @@
 
 package com.DamnLol.PetScape;
 
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.CollisionData;
@@ -53,6 +54,9 @@ public class RoamingPetManager
     @Inject private ClientThread clientThread;
     @Inject private PetScapeConfig config;
 
+    @Inject
+    private Gson gson;
+
     private final List<RoamingArea> areas = new ArrayList<>();
     private final Map<String, List<RoamingPetSpawn>> activeSpawns = new HashMap<>();
     private final Set<String> inRangeAreas = new HashSet<>();
@@ -63,8 +67,7 @@ public class RoamingPetManager
     {
         if (areas.isEmpty())
         {
-            areas.addAll(AreaLoader.loadAll());
-        }
+            areas.addAll(AreaLoader.loadAll(gson));        }
         log.debug("[RoamingPetManager] Registered {} area(s)", areas.size());
     }
 

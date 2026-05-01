@@ -43,17 +43,16 @@ public final class AreaLoader
 {
     private static final String AREAS_PATH = "/areas/";
     private static final String INDEX_FILE = "index.json";
-    private static final Gson GSON = new Gson();
 
     private AreaLoader() {}
 
-    public static List<RoamingArea> loadAll()
+    public static List<RoamingArea> loadAll(Gson gson)
     {
-        String[] filenames = loadIndex();
+        String[] filenames = loadIndex(gson);
         List<RoamingArea> areas = new ArrayList<>(filenames.length);
         for (String filename : filenames)
         {
-            AreaConfig config = loadConfig(filename);
+            AreaConfig config = loadConfig(gson, filename);
             config.validate(filename);
             areas.add(new JsonRoamingArea(config));
         }
@@ -61,7 +60,7 @@ public final class AreaLoader
         return areas;
     }
 
-    private static String[] loadIndex()
+    private static String[] loadIndex(Gson gson)
     {
         String path = AREAS_PATH + INDEX_FILE;
         try (InputStream in = AreaLoader.class.getResourceAsStream(path))
@@ -69,7 +68,7 @@ public final class AreaLoader
             if (in == null) throw new IllegalStateException("AreaLoader: missing " + path);
             try (BufferedReader r = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8)))
             {
-                String[] entries = GSON.fromJson(r, String[].class);
+                String[] entries = gson.fromJson(r, String[].class);
                 if (entries == null || entries.length == 0) throw new IllegalStateException("AreaLoader: empty index");
                 return entries;
             }
@@ -78,7 +77,7 @@ public final class AreaLoader
         catch (JsonSyntaxException e) { throw new IllegalStateException("AreaLoader: bad JSON in " + path + " - " + e.getMessage(), e); }
     }
 
-    private static AreaConfig loadConfig(String filename)
+    private static AreaConfig loadConfig(Gson gson, String filename)
     {
         String path = AREAS_PATH + filename;
         try (InputStream in = AreaLoader.class.getResourceAsStream(path))
@@ -86,7 +85,7 @@ public final class AreaLoader
             if (in == null) throw new IllegalStateException("AreaLoader: missing " + path);
             try (BufferedReader r = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8)))
             {
-                AreaConfig c = GSON.fromJson(r, AreaConfig.class);
+                AreaConfig c = gson.fromJson(r, AreaConfig.class);
                 if (c == null) throw new IllegalStateException("AreaLoader: " + filename + " parsed to null");
                 return c;
             }
