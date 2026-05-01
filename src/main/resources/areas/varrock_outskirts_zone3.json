@@ -16,7 +16,7 @@
       "name": "Quetzin",
       "examine": "Waiting on the next flight out.",
       "count": 4,
-      "npcIds": ["QUETZIN"]
+      "npcIds": [12768]
     }
   ]
 }

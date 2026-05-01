@@ -23,19 +23,19 @@
       "name": "Giant Squirrel",
       "examine": "Found a shortcut you haven't.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "A woodsman without the axe.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Patiently waiting for travellers to pass.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

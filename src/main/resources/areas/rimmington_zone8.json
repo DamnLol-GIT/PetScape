@@ -14,7 +14,7 @@
       "name": "Fox",
       "examine": "Pretends not to know which house is yours.",
       "count": 6,
-      "npcIds": ["FOX_12548"]
+      "npcIds": [12548]
     }
   ]
 }

@@ -18,7 +18,7 @@
       "name": "Great Blue Heron",
       "examine": "The river's most successful loiterer.",
       "count": 2,
-      "npcIds": ["GREAT_BLUE_HERON"]
+      "npcIds": [6817]
     }
   ]
 }

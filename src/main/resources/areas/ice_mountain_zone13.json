@@ -19,19 +19,19 @@
       "name": "Giant Squirrel",
       "examine": "Could run faster than you, if it wanted to.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Has plans for the wood here.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "A quiet professional.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

@@ -25,13 +25,13 @@
       "name": "Herbi",
       "examine": "Mushroom first, manners later.",
       "count": 6,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     },
     {
       "name": "Giant Squirrel",
       "examine": "The only thing moving fast in this swamp.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

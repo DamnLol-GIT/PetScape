@@ -18,19 +18,19 @@
       "name": "Giant Squirrel",
       "examine": "Slips between the trees like it's been here forever.",
       "count": 3,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Marks the better trees.",
       "count": 1,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Lifts what isn't watched closely.",
       "count": 1,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

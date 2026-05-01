@@ -33,31 +33,31 @@
       "name": "Chaos Elemental Jr.",
       "examine": "Spreading small inconveniences.",
       "count": 3,
-      "npcIds": ["CHAOS_ELEMENTAL_JR"]
+      "npcIds": [2055]
     },
     {
       "name": "Callisto Cub",
       "examine": "Opted out of the whole 'maul or be mauled' life.",
       "count": 3,
-      "npcIds": ["CALLISTO_CUB"]
+      "npcIds": [497]
     },
     {
       "name": "Venenatis Spiderling",
       "examine": "Still venomous in theory. Lazy in practice.",
       "count": 2,
-      "npcIds": ["VENENATIS_SPIDERLING"]
+      "npcIds": [495]
     },
     {
       "name": "Scorpia's Offspring",
       "examine": "Would rather pinch pockets than players.",
       "count": 2,
-      "npcIds": ["SCORPIAS_OFFSPRING"]
+      "npcIds": [5547]
     },
     {
       "name": "Vet'ion Jr.",
       "examine": "A skeleton that prefers the scenic route.",
       "count": 2,
-      "npcIds": ["VETION_JR"]
+      "npcIds": [5536]
     }
   ]
 }

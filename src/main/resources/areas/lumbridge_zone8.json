@@ -17,19 +17,19 @@
       "name": "Giant Squirrel",
       "examine": "Couldn't sit still if he tried.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "A quiet professional at work.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "Chewing his way through the afternoon.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

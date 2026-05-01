@@ -23,19 +23,19 @@
       "name": "Giant Squirrel",
       "examine": "Couldn't stand still if it tried.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Drafting plans in the underbrush.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Slips between trunks unseen.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

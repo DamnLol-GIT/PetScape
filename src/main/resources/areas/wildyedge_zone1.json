@@ -15,31 +15,31 @@
       "name": "Callisto Cub",
       "examine": "Bear-ly interested in the Wilderness anymore.",
       "count": 2,
-      "npcIds": ["CALLISTO_CUB", "CALLISTO_CUB_11982"]
+      "npcIds": [497, 11982]
     },
     {
       "name": "Vet'ion Jr.",
       "examine": "Skeletons have better conversation down here.",
       "count": 2,
-      "npcIds": ["VETION_JR", "VETION_JR_11983"]
+      "npcIds": [5536, 11983]
     },
     {
       "name": "Venenatis Spiderling",
       "examine": "A spider that reads the room.",
       "count": 2,
-      "npcIds": ["VENENATIS_SPIDERLING", "VENENATIS_SPIDERLING_11981"]
+      "npcIds": [495, 11981]
     },
     {
       "name": "Scorpia's Offspring",
       "examine": "Too good for the Wildy. Too sharp for you.",
       "count": 2,
-      "npcIds": ["SCORPIAS_OFFSPRING"]
+      "npcIds": [5547]
     },
     {
       "name": "Chaos Elemental Jr.",
       "examine": "Junior chaos. Senior judgement.",
       "count": 2,
-      "npcIds": ["CHAOS_ELEMENTAL_JR"]
+      "npcIds": [2055]
     }
   ]
 }

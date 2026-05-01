@@ -26,7 +26,7 @@
       "name": "Phoenix",
       "examine": "A phoenix who chose the colder rebirth.",
       "count": 1,
-      "npcIds": ["PHOENIX_3078"]
+      "npcIds": [3078]
     }
   ]
 }

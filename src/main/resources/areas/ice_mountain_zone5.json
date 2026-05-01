@@ -16,7 +16,7 @@
       "name": "Lil' Creator",
       "examine": "Trying out a more peaceful career.",
       "count": 4,
-      "npcIds": ["LIL_CREATOR"]
+      "npcIds": [2833]
     }
   ]
 }

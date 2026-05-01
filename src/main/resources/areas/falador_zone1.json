@@ -19,13 +19,13 @@
       "name": "Baby Mole",
       "examine": "A cute mole you would want.",
       "count": 12,
-      "npcIds": ["BABY_MOLE"]
+      "npcIds": [5780]
     },
     {
       "name": "Baby Mole Rat",
       "examine": "It's inside out!",
       "count": 6,
-      "npcIds": ["BABY_MOLERAT"]
+      "npcIds": [10650]
     }
   ]
 }

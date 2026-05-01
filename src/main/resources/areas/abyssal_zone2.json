@@ -67,7 +67,7 @@
       "name": "Abyssal Orphan",
       "examine": "Isn't it cute? It seems to want some more..",
       "count": 18,
-      "npcIds": ["ABYSSAL_ORPHAN"]
+      "npcIds": [5883]
     }
   ]
 }

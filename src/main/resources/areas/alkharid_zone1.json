@@ -45,21 +45,21 @@
       "name": "Giant Squirrel",
       "examine": "Running laps around the caravan routes.",
       "count": 12,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Baby Chinchompa",
       "displayName": "Desert Chinchompa",
       "examine": "A desert wanderer of questionable stability.",
       "count": 12,
-      "npcIds": ["BABY_CHINCHOMPA_6759"]
+      "npcIds": [6759]
     },
     {
       "name": "Rocky",
       "displayName": "Ziggy",
       "examine": "Blends in better than he should.",
       "count": 6,
-      "npcIds": ["ZIGGY"]
+      "npcIds": [9851]
     }
   ]
 }

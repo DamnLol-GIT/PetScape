@@ -16,28 +16,28 @@
       "examine": "Rooted in the routine.",
       "count": 6,
       "npcIds": [
-        "TANGLEROOT", "TANGLEROOT_7352", "TANGLEROOT_9492", "TANGLEROOT_9493",
-        "TANGLEROOT_9494", "TANGLEROOT_9495"
+        7335, 7352, 9492, 9493,
+        9494, 9495
       ]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Darts between branches with a schedule to keep.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Redirecting the farm's irrigation.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "displayName": "Ziggy",
       "examine": "Didn't that used to be a bush?",
       "count": 1,
-      "npcIds": ["ZIGGY"]
+      "npcIds": [9851]
     }
   ]
 }

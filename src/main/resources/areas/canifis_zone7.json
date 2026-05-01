@@ -24,7 +24,7 @@
       "name": "Herbi",
       "examine": "Foraging with the grim focus of a scholar.",
       "count": 8,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     }
   ]
 }

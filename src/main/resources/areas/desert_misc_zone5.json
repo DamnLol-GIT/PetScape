@@ -31,13 +31,13 @@
       "name": "Beaver",
       "examine": "Somehow found wood out here.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Absolutely certain there are acorns here somewhere.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

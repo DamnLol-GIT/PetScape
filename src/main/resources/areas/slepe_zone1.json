@@ -28,13 +28,13 @@
       "name": "Little Nightmare",
       "examine": "She just needs a little hug..",
       "count": 16,
-      "npcIds": ["LITTLE_NIGHTMARE"]
+      "npcIds": [9398]
     },
     {
       "name": "Little Parasite",
       "examine": "It's so cute!",
       "count": 24,
-      "npcIds": ["LITTLE_PARASITE"]
+      "npcIds": [8183]
     }
   ]
 }

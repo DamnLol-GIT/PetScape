@@ -20,13 +20,13 @@
       "name": "Rocky",
       "examine": "Waiting for a crate to be set down.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Outruns every seagull here.",
       "count": 2,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

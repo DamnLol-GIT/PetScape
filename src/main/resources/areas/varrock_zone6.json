@@ -20,7 +20,7 @@
       "name": "Tangleroot",
       "examine": "Supervising the crops with quiet authority.",
       "count": 4,
-      "npcIds": ["TANGLEROOT"]
+      "npcIds": [7335]
     }
   ]
 }

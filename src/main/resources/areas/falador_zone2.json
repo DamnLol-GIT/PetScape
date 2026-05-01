@@ -22,7 +22,7 @@
       "name": "Bloodhound",
       "examine": "Pawsitive to keep the castle safe.",
       "count": 12,
-      "npcIds": ["BLOODHOUND"]
+      "npcIds": [6296]
     }
   ]
 }

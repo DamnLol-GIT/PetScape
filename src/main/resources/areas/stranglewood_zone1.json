@@ -20,7 +20,7 @@
       "name": "Butch",
       "examine": "Half the size. Twice the grudge.",
       "count": 12,
-      "npcIds": ["BUTCH"]
+      "npcIds": [12154]
     }
   ]
 }

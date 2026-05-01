@@ -31,19 +31,19 @@
       "name": "Giant Squirrel",
       "examine": "Outpaces anything wearing armour.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "A patient surveyor of the local timber.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Quietly auditing every traveller.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

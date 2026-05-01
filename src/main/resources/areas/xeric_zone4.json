@@ -16,7 +16,7 @@
       "name": "Flying Vespina",
       "examine": "Never got a proper fight. Holds a grudge.",
       "count": 1,
-      "npcIds": ["FLYING_VESPINA"]
+      "npcIds": [9512]
     }
   ]
 }

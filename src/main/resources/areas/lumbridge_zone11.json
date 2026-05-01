@@ -21,25 +21,25 @@
       "name": "Beef",
       "examine": "A free-range cow on personal time.",
       "count": 6,
-      "npcIds": ["BEEF"]
+      "npcIds": [15631]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Running errands for no one in particular.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "Hanging around the fishing spot, for reasons.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "Appraising the newcomers. Harshly.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

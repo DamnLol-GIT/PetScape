@@ -22,7 +22,7 @@
       "name": "Butch",
       "examine": "Axe him no questions.",
       "count": 6,
-      "npcIds": ["BUTCH"]
+      "npcIds": [12154]
     }
   ]
 }

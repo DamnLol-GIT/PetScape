@@ -15,19 +15,19 @@
       "name": "Giant Squirrel",
       "examine": "Scoping out the local trees.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Sizing up the local timber.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Slips between unfamiliar things unseen.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

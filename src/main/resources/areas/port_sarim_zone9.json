@@ -14,7 +14,7 @@
       "name": "Scurry",
       "examine": "Reigning champion of the pits.",
       "count": 2,
-      "npcIds": ["SCURRY"]
+      "npcIds": [7219]
     }
   ]
 }

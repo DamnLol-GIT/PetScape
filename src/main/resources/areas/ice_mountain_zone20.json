@@ -15,13 +15,13 @@
       "name": "Heron",
       "examine": "Stalking the river shallows for fish.",
       "count": 1,
-      "npcIds": ["HERON"]
+      "npcIds": [6715]
     },
     {
       "name": "Great Blue Heron",
       "examine": "Has caught more fish than you will ever catch.",
       "count": 1,
-      "npcIds": ["GREAT_BLUE_HERON"]
+      "npcIds": [6817]
     }
   ]
 }

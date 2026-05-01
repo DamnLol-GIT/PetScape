@@ -16,31 +16,31 @@
       "name": "Callisto Cub",
       "examine": "Grew out of the whole 'maul things' phase.",
       "count": 2,
-      "npcIds": ["CALLISTO_CUB"]
+      "npcIds": [497]
     },
     {
       "name": "Chaos Elemental Jr.",
       "examine": "Finds the Wildy predictable. Which is worse.",
       "count": 1,
-      "npcIds": ["CHAOS_ELEMENTAL_JR"]
+      "npcIds": [2055]
     },
     {
       "name": "Scorpia's Offspring",
       "examine": "A scorpion with better things to do.",
       "count": 1,
-      "npcIds": ["SCORPIAS_OFFSPRING"]
+      "npcIds": [5547]
     },
     {
       "name": "Vet'ion Jr.",
       "examine": "Too many bones up north. Not worth it.",
       "count": 1,
-      "npcIds": ["VETION_JR"]
+      "npcIds": [5536]
     },
     {
       "name": "Venenatis Spiderling",
       "examine": "Smaller. Smarter. Spider.",
       "count": 1,
-      "npcIds": ["VENENATIS_SPIDERLING"]
+      "npcIds": [495]
     }
   ]
 }

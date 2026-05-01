@@ -16,7 +16,7 @@
       "displayName": "Desert Chinchompa",
       "examine": "Short fuse, shorter odds.",
       "count": 4,
-      "npcIds": ["BABY_CHINCHOMPA_6759"]
+      "npcIds": [6759]
     }
   ]
 }

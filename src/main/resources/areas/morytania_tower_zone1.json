@@ -42,13 +42,13 @@
       "name": "Midnight",
       "examine": "A little Gargoyle up past its bedtime.",
       "count": 4,
-      "npcIds": ["MIDNIGHT"]
+      "npcIds": [7890]
     },
     {
       "name": "Noon",
       "examine": "A little ray of sunshine.",
       "count": 8,
-      "npcIds": ["NOON"]
+      "npcIds": [7891]
     }
   ]
 }

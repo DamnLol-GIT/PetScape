@@ -16,19 +16,19 @@
       "name": "Giant Squirrel",
       "examine": "Knows every shortcut on this side of town.",
       "count": 5,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "A professional opinion on every plank in sight.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Watching the road for unsuspecting travellers.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

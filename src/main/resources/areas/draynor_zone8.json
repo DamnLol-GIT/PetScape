@@ -25,13 +25,13 @@
       "name": "Soup",
       "examine": "First name basis with several chefs.",
       "count": 3,
-      "npcIds": ["SOUP"]
+      "npcIds": [14930]
     },
     {
       "name": "Beaver",
       "examine": "Treats the river as a long-term commitment.",
       "count": 3,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

@@ -35,19 +35,19 @@
       "name": "Beaver",
       "examine": "Has opinions on the boat construction.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "The locals know to keep an eye on him.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Too fast for the sailors to catch",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

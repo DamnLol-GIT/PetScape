@@ -24,7 +24,7 @@
       "name": "Wisp",
       "examine": "Shh. She's concentrating.",
       "count": 16,
-      "npcIds": ["WISP"]
+      "npcIds": [12153]
     }
   ]
 }

@@ -18,10 +18,10 @@
       "examine": "A little piece of the desert, come to life.",
       "count": 2,
       "npcIds": [
-        "ROCK_GOLEM", "ROCK_GOLEM_7439", "ROCK_GOLEM_7440", "ROCK_GOLEM_7441",
-        "ROCK_GOLEM_7442", "ROCK_GOLEM_7443", "ROCK_GOLEM_7444", "ROCK_GOLEM_7445",
-        "ROCK_GOLEM_7446", "ROCK_GOLEM_7447", "ROCK_GOLEM_7448", "ROCK_GOLEM_7449",
-        "ROCK_GOLEM_7450", "ROCK_GOLEM_7451", "ROCK_GOLEM_7452", "ROCK_GOLEM_7453"
+        2182, 7439, 7440, 7441,
+        7442, 7443, 7444, 7445,
+        7446, 7447, 7448, 7449,
+        7450, 7451, 7452, 7453
       ]
     }
   ]

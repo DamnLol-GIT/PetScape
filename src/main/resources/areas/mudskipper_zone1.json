@@ -22,13 +22,13 @@
       "name": "Bran",
       "examine": "A tiny tantrum in royal form.",
       "count": 4,
-      "npcIds": ["BRAN"]
+      "npcIds": [10476]
     },
     {
       "name": "Ric",
       "examine": "The coolest guy in the room. Technically.",
       "count": 4,
-      "npcIds": ["RIC"]
+      "npcIds": [12592]
     }
   ]
 }

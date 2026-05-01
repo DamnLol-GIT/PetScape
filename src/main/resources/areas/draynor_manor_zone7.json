@@ -19,19 +19,19 @@
       "name": "Bone Squirrel",
       "examine": "Creaks softly as he scampers.",
       "count": 3,
-      "npcIds": ["BONE_SQUIRREL"]
+      "npcIds": [14032]
     },
     {
       "name": "Rocky",
       "examine": "Nothing disappears here without his say-so.",
       "count": 1,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "Patience, teeth, and a plan.",
       "count": 1,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

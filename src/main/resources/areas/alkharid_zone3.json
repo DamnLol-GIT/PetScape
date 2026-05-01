@@ -29,26 +29,26 @@
       "name": "Beef",
       "examine": "Pretty sure the grass was greener back there.",
       "count": 1,
-      "npcIds": ["BEEF"]
+      "npcIds": [15631]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Sand slows him down. Not by much.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "displayName": "Ziggy",
       "examine": "Watching the market from a polite distance.",
       "count": 4,
-      "npcIds": ["ZIGGY"]
+      "npcIds": [9851]
     },
     {
       "name": "Beaver",
       "examine": "Looking very hard for trees. Finding cacti.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

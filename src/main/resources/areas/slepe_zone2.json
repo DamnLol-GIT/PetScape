@@ -20,7 +20,7 @@
       "name": "Little Parasite",
       "examine": "It's so cute!",
       "count": 8,
-      "npcIds": ["LITTLE_PARASITE"]
+      "npcIds": [8183]
     }
   ]
 }

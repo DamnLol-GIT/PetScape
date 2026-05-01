@@ -17,19 +17,19 @@
       "name": "Giant Squirrel",
       "examine": "Pacing the mountain edge like clockwork.",
       "count": 3,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Surveys the timber here.",
       "count": 1,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Watching the crowd come and go. Picking favourites.",
       "count": 1,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

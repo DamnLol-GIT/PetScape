@@ -18,7 +18,7 @@
       "name": "Heron",
       "examine": "People kept trying to catch him saying they were 'Dry'.",
       "count": 2,
-      "npcIds": ["HERON"]
+      "npcIds": [6715]
     }
   ]
 }

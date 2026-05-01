@@ -25,7 +25,7 @@
       "name": "Ric",
       "examine": "King of the north face. Self-appointed.",
       "count": 6,
-      "npcIds": ["RIC"]
+      "npcIds": [12592]
     }
   ]
 }

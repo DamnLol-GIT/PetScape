@@ -21,19 +21,19 @@
       "name": "Beaver",
       "examine": "Found the ideal log for a new project.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Faster than the wind.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "Makes no noise. Leaves no witnesses.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

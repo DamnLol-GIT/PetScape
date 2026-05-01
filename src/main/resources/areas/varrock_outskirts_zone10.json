@@ -24,7 +24,7 @@
       "name": "Cat",
       "examine": "Just one more, she said.",
       "count": 6,
-      "npcIds": ["CAT_6665"]
+      "npcIds": [6665]
     }
   ]
 }

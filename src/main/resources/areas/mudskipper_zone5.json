@@ -26,7 +26,7 @@
       "name": "Ric",
       "examine": "Ice to meet you.",
       "count": 10,
-      "npcIds": ["RIC"]
+      "npcIds": [12592]
     }
   ]
 }

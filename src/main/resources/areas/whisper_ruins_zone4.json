@@ -19,7 +19,7 @@
       "name": "Wisp",
       "examine": "Flickers when you're not looking.",
       "count": 6,
-      "npcIds": ["WISP"]
+      "npcIds": [12153]
     }
   ]
 }

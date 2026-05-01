@@ -21,7 +21,7 @@
       "name": "Zebo",
       "examine": "Snap.",
       "count": 2,
-      "npcIds": ["ZEBO"]
+      "npcIds": [11843]
     }
   ]
 }

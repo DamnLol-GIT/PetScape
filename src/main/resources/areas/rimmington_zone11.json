@@ -15,25 +15,25 @@
       "name": "Giant Squirrel",
       "examine": "Counts the acorns. Recounts the acorns.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Fox",
       "examine": "Leaves footprints in clever patterns.",
       "count": 2,
-      "npcIds": ["FOX_12548"]
+      "npcIds": [12548]
     },
     {
       "name": "Beaver",
       "examine": "Surveys, measures, judges, repeats.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "A connoisseur of the unattended.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

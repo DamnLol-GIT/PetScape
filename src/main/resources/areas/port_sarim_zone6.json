@@ -36,7 +36,7 @@
       "name": "Heron",
       "examine": "Already out-fished the sailors.",
       "count": 2,
-      "npcIds": ["HERON"]
+      "npcIds": [6715]
     }
   ]
 }

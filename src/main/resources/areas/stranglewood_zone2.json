@@ -20,7 +20,7 @@
       "name": "Butch",
       "examine": "Strangler's little helper.",
       "count": 24,
-      "npcIds": ["BUTCH"]
+      "npcIds": [12154]
     }
   ]
 }

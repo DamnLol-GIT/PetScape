@@ -17,19 +17,19 @@
       "name": "Giant Squirrel",
       "examine": "Honour first. Acorns second.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "Robs only those who can spare it.",
       "count": 1,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beef",
       "examine": "Single-handedly emptied Cassius' cellar, Slew a Dragon.",
       "count": 2,
-      "npcIds": ["BEEF"]
+      "npcIds": [15631]
     }
   ]
 }

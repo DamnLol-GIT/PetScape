@@ -20,7 +20,7 @@
       "name": "Smoke Devil",
       "examine": "A tiny swirl of smoke and mischief.",
       "count": 12,
-      "npcIds": ["SMOKE_DEVIL_6655"]
+      "npcIds": [6655]
     }
   ]
 }

@@ -20,7 +20,7 @@
       "displayName": "Commander Miniana",
       "examine": "A sad little commander..",
       "count": 3,
-      "npcIds": ["ZILYANA_JR"]
+      "npcIds": [6633]
     }
   ]
 }

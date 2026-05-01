@@ -18,19 +18,19 @@
       "name": "Lil' Muspah",
       "examine": "Someone dreamed this up. Regretted it.",
       "count": 2,
-      "npcIds": ["MUPHIN", "MUPHIN_12014"]
+      "npcIds": [12005, 12014]
     },
     {
       "name": "Lil' Muspah",
       "examine": "Prefers you keep moving. For your sake.",
       "count": 1,
-      "npcIds": ["MUPHIN_12015"]
+      "npcIds": [12015]
     },
     {
       "name": "Lil' Muspah",
       "examine": "Glowing faintly. That's never good.",
       "count": 1,
-      "npcIds": ["MUPHIN_12016"]
+      "npcIds": [12016]
     }
   ]
 }

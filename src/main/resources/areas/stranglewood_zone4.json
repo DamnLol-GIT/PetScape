@@ -16,7 +16,7 @@
       "name": "Butch",
       "examine": "The ritual's little intern.",
       "count": 6,
-      "npcIds": ["BUTCH"]
+      "npcIds": [12154]
     }
   ]
 }

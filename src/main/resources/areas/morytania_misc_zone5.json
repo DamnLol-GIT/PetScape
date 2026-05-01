@@ -22,13 +22,13 @@
       "name": "Nid",
       "examine": "A tiny warden of the web.",
       "count": 6,
-      "npcIds": ["NID"]
+      "npcIds": [13681]
     },
     {
       "name": "Rax",
       "examine": "A small and skittery menace.",
       "count": 12,
-      "npcIds": ["RAX"]
+      "npcIds": [13682]
     }
   ]
 }

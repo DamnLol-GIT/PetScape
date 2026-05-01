@@ -17,7 +17,7 @@
       "displayName": "Skeletal Squirrel",
       "examine": "Refuses to end up in a Pot of vinegar",
       "count": 3,
-      "npcIds": ["BONE_SQUIRREL"]
+      "npcIds": [14032]
     }
   ]
 }

@@ -14,7 +14,7 @@
       "name": "Bone Squirrel",
       "examine": "Rattles softly between the headstones.",
       "count": 3,
-      "npcIds": ["BONE_SQUIRREL"]
+      "npcIds": [14032]
     }
   ]
 }

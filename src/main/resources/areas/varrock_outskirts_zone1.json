@@ -24,26 +24,26 @@
       "name": "Giant Squirrel",
       "examine": "Weaves through the grass like it's nothing.",
       "count": 8,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Appraising the tree line with quiet judgement.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Loitering where the guards can't see.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Rocky",
       "displayName": "Ziggy",
       "examine": "No relation to any raccoon. Allegedly.",
       "count": 2,
-      "npcIds": ["ZIGGY"]
+      "npcIds": [9851]
     }
   ]
 }

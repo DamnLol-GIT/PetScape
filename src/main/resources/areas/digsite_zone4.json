@@ -19,14 +19,14 @@
       "name": "Giant Squirrel",
       "examine": "Panning for acorns and coming up empty.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Baby Chinchompa",
       "displayName": "Volatile Chinchompa",
       "examine": "Should probably alert someone with a badge.",
       "count": 2,
-      "npcIds": ["BABY_CHINCHOMPA"]
+      "npcIds": [6718]
     }
   ]
 }

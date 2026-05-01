@@ -27,19 +27,19 @@
       "name": "Giant Squirrel",
       "examine": "Treats gravity as a suggestion.",
       "count": 8,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Eyeing the woods with a long-term plan.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Keeping tabs on every traveller.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

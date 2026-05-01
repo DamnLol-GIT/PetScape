@@ -30,7 +30,7 @@
       "name": "Herbi",
       "examine": "Keeping the mushroom population in check, one bite at a time.",
       "count": 6,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     }
   ]
 }

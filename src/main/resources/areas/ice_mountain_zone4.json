@@ -26,7 +26,7 @@
       "name": "Phoenix",
       "examine": "A blue flame above a white peak.",
       "count": 1,
-      "npcIds": ["PHOENIX_3078"]
+      "npcIds": [3078]
     }
   ]
 }

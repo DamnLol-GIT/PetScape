@@ -36,37 +36,37 @@
       "name": "Lil' Zik",
       "examine": "It’s hard to take a vampire spider seriously - they're just too fang-tastic!",
       "count": 6,
-      "npcIds": ["LIL_ZIK"]
+      "npcIds": [8336]
     },
     {
       "name": "Lil' Maiden",
       "examine": "Freed From Her Tiny Constraints",
       "count": 6,
-      "npcIds": ["LIL_MAIDEN"]
+      "npcIds": [10761]
     },
     {
       "name": "Lil' Bloat",
       "examine": "Smaller size, great smell.",
       "count": 6,
-      "npcIds": ["LIL_BLOAT"]
+      "npcIds": [10762]
     },
     {
       "name": "Lil' Nylo",
       "examine": "Eight small legs of unparalleled cuteness.",
       "count": 6,
-      "npcIds": ["LIL_NYLO"]
+      "npcIds": [10763]
     },
     {
       "name": "Lil' Sot",
       "examine": "Has a lot of anger for such a tiny monster.",
       "count": 6,
-      "npcIds": ["LIL_SOT"]
+      "npcIds": [10764]
     },
     {
       "name": "Lil' Xarp",
       "examine": "The little prince of Yarasa.",
       "count": 6,
-      "npcIds": ["LIL_XARP"]
+      "npcIds": [10765]
     }
   ]
 }

@@ -15,7 +15,7 @@
       "name": "Beaver",
       "examine": "Eyeing the bank with construction plans.",
       "count": 3,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

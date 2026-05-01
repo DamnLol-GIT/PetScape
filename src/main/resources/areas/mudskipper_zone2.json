@@ -19,19 +19,19 @@
       "name": "Giant Squirrel",
       "examine": "Knows the fastest route to the beach.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "A woodsman of modest goals and sharp incisors.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Looks innocent. Isn't.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

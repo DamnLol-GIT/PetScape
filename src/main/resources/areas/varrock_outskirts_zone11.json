@@ -15,20 +15,20 @@
       "name": "Giant Squirrel",
       "examine": "Rounds the perimeter twice before breakfast.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Judging every plank in the fence.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "displayName": "Ziggy",
       "examine": "Master of disguise. Currently undisguised.",
       "count": 2,
-      "npcIds": ["ZIGGY"]
+      "npcIds": [9851]
     }
   ]
 }

@@ -29,13 +29,13 @@
       "name": "Giant Squirrel",
       "examine": "Drawn to the tower, repelled by the wizards.",
       "count": 2,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Banned from the tower. The wizards know why.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

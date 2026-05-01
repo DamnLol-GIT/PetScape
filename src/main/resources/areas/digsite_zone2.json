@@ -27,19 +27,19 @@
       "name": "Giant Squirrel",
       "examine": "Acrobatics with no audience.",
       "count": 12,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "Suspiciously good at vanishing between trees.",
       "count": 6,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "Sizing up trees the diggers haven't touched.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

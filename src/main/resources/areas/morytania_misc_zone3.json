@@ -18,7 +18,7 @@
       "displayName": "Tiny Snakeling",
       "examine": "A little serpent of the swamp.",
       "count": 2,
-      "npcIds": ["SNAKELING_2127", "SNAKELING_2128", "SNAKELING_2129"]
+      "npcIds": [2127, 2128, 2129]
     }
   ]
 }

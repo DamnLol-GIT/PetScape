@@ -25,13 +25,13 @@
       "name": "Bloodhound",
       "examine": "Suspicious of anyone without a bronze sword.",
       "count": 4,
-      "npcIds": ["BLOODHOUND"]
+      "npcIds": [6296]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Faster than the castle messengers.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

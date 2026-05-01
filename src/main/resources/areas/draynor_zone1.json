@@ -16,25 +16,25 @@
       "name": "Bone Squirrel",
       "examine": "Lost something between the trees. A while ago.",
       "count": 1,
-      "npcIds": ["BONE_SQUIRREL"]
+      "npcIds": [14032]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Already three trees ahead of you.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Drafting a dam in his head. Optimistically.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Quietly auditing every traveller.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

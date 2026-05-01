@@ -15,7 +15,7 @@
       "name": "Chaos Elemental Jr.",
       "examine": "Still chaotic. Just tastefully so.",
       "count": 2,
-      "npcIds": ["CHAOS_ELEMENTAL_JR"]
+      "npcIds": [2055]
     }
   ]
 }

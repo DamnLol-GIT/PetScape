@@ -19,7 +19,7 @@
       "name": "Wisp",
       "examine": "Not one for small talk. Just small whispers.",
       "count": 6,
-      "npcIds": ["WISP"]
+      "npcIds": [12153]
     }
   ]
 }

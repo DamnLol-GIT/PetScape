@@ -36,19 +36,19 @@
       "name": "Giant Squirrel",
       "examine": "Darting between the fence posts with practised ease.",
       "count": 8,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Has plans for every log in sight.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Keeps one paw on someone else's coin pouch.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

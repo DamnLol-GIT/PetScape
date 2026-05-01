@@ -18,19 +18,19 @@
       "name": "Giant Squirrel",
       "examine": "The only thing faster than the tide.",
       "count": 3,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "Collects the taxes. Unofficially.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "Would audit every hull, given permission.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

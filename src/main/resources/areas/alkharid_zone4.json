@@ -27,20 +27,20 @@
       "displayName": "Kalphite Scout",
       "examine": "The hive's tiniest informant.",
       "count": 1,
-      "npcIds": ["KALPHITE_PRINCESS"]
+      "npcIds": [6637]
     },
     {
       "name": "Baby Chinchompa",
       "displayName": "Desert Chinchompa",
       "examine": "Glittering quietly. Ticking quietly.",
       "count": 4,
-      "npcIds": ["BABY_CHINCHOMPA_6759"]
+      "npcIds": [6759]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Outpacing the heat, barely.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

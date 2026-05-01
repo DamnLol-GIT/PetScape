@@ -26,43 +26,43 @@
       "name": "Tumeken's Guardian",
       "examine": "A tiny guardian of the tombs.",
       "count": 3,
-      "npcIds": ["TUMEKENS_GUARDIAN"]
+      "npcIds": [11652]
     },
     {
       "name": "Tumeken's Damaged Guardian",
       "examine": "A little worse for wear, but still standing.",
       "count": 3,
-      "npcIds": ["TUMEKENS_DAMAGED_GUARDIAN"]
+      "npcIds": [11844]
     },
     {
       "name": "Elidinis' Guardian",
       "examine": "Small but sacred.",
       "count": 3,
-      "npcIds": ["ELIDINIS_GUARDIAN"]
+      "npcIds": [11653]
     },
     {
       "name": "Elidinis' Damaged Guardian",
       "examine": "Small, chipped, and still on duty.",
       "count": 3,
-      "npcIds": ["ELIDINIS_DAMAGED_GUARDIAN"]
+      "npcIds": [11845]
     },
     {
       "name": "Akkhito",
       "examine": "Tiny hero, full-size determination.",
       "count": 3,
-      "npcIds": ["AKKHITO"]
+      "npcIds": [11840]
     },
     {
       "name": "Babi",
       "examine": "Sand between the toes, rage in the heart.",
       "count": 3,
-      "npcIds": ["BABI"]
+      "npcIds": [11841]
     },
     {
       "name": "Kephriti",
       "examine": "Rolling through life one ball at a time.",
       "count": 3,
-      "npcIds": ["KEPHRITI"]
+      "npcIds": [11842]
     }
   ]
 }

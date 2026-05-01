@@ -20,13 +20,13 @@
       "name": "Giant Squirrel",
       "examine": "Has seen every student cry at least once.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "The yard's unappointed inspector.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

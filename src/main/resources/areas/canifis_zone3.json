@@ -19,7 +19,7 @@
       "name": "Herbi",
       "examine": "Has seen things. Under logs, mostly.",
       "count": 1,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     }
   ]
 }

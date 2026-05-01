@@ -21,13 +21,13 @@
       "name": "Bone Squirrel",
       "examine": "Outlasted the gardeners. And the gardens.",
       "count": 8,
-      "npcIds": ["BONE_SQUIRREL"]
+      "npcIds": [14032]
     },
     {
       "name": "Rocky",
       "examine": "Casing the manor, Carefully.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

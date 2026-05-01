@@ -17,25 +17,25 @@
       "name": "Giant Squirrel",
       "examine": "Burying things he'll never find again.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Fox",
       "examine": "Slips through the brush like a rumour.",
       "count": 2,
-      "npcIds": ["FOX_12548"]
+      "npcIds": [12548]
     },
     {
       "name": "Beaver",
       "examine": "Considers the nearby water under-performing.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Has a reputation in three towns.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

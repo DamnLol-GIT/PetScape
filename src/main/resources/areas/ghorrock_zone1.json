@@ -16,7 +16,7 @@
       "name": "Baron",
       "examine": "Looks hungry. Always looks hungry.",
       "count": 3,
-      "npcIds": ["BARON"]
+      "npcIds": [12155]
     }
   ]
 }

@@ -18,7 +18,7 @@
       "name": "Beef",
       "examine": "Has noticed how everyone keeps looking at his hide.",
       "count": 6,
-      "npcIds": ["BEEF"]
+      "npcIds": [15631]
     }
   ]
 }

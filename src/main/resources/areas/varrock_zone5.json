@@ -21,13 +21,13 @@
       "name": "Quetzin",
       "examine": "Tropical by birth, dignified by choice.",
       "count": 4,
-      "npcIds": ["QUETZIN"]
+      "npcIds": [12768]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Takes the scenic route at alarming speeds.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

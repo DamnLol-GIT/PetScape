@@ -26,19 +26,19 @@
       "name": "Giant Squirrel",
       "examine": "Launching itself between branches with reckless faith.",
       "count": 12,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Eyeing the taller trees with long-term plans.",
       "count": 6,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Any missing belongings?",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

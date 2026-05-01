@@ -15,7 +15,7 @@
       "name": "Rocky",
       "examine": "Already planned three ways of escape.",
       "count": 6,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

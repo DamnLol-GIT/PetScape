@@ -33,25 +33,25 @@
       "name": "Bloodhound",
       "examine": "No merch shall be flipped without due process.",
       "count": 2,
-      "npcIds": ["BLOODHOUND"]
+      "npcIds": [6296]
     },
     {
       "name": "Beaver",
       "examine": "Would like to audit the log stockpile, please.",
       "count": 4,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Taking a five-finger discount on the market price.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Faster than the trading clerk, and twice as twitchy.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

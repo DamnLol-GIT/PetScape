@@ -23,7 +23,7 @@
       "name": "Heron",
       "examine": "Has a higher fishing level than you.",
       "count": 3,
-      "npcIds": ["HERON"]
+      "npcIds": [6715]
     }
   ]
 }

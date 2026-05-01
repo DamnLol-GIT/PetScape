@@ -23,19 +23,19 @@
       "name": "Rocky",
       "examine": "A scoundrel in a town of scoundrels.",
       "count": 6,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Treats the whole port as an agility course.",
       "count": 8,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Every plank gets a second look.",
       "count": 6,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

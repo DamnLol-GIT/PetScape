@@ -25,7 +25,7 @@
       "name": "Lil' Viathan",
       "examine": "A tiny terror from the depths of the cuteness.",
       "count": 4,
-      "npcIds": ["LILVIATHAN"]
+      "npcIds": [12156]
     }
   ]
 }

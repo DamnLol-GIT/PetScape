@@ -16,7 +16,7 @@
       "name": "Scurry",
       "examine": "Swears he used to train four students down there.",
       "count": 3,
-      "npcIds": ["SCURRY"]
+      "npcIds": [7219]
     }
   ]
 }

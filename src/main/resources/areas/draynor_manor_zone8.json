@@ -20,20 +20,20 @@
       "name": "Giant Squirrel",
       "examine": "A blur with a tail.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "displayName": "Ziggy",
       "examine": "Pretending not to be pretending.",
       "count": 3,
-      "npcIds": ["ZIGGY"]
+      "npcIds": [9851]
     },
     {
       "name": "Beaver",
       "examine": "A quiet renovator with no permission.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

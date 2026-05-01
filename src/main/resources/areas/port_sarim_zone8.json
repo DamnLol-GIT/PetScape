@@ -21,13 +21,13 @@
       "name": "Heron",
       "examine": "Outlasts the tides. Outwaits the fishermen.",
       "count": 6,
-      "npcIds": ["HERON"]
+      "npcIds": [6715]
     },
     {
       "name": "Great Blue Heron",
       "examine": "The docks most distinguished fisherman.",
       "count": 2,
-      "npcIds": ["GREAT_BLUE_HERON"]
+      "npcIds": [6817]
     }
   ]
 }

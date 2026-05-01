@@ -17,37 +17,37 @@
       "name": "Olmlet",
       "examine": "Cuddly today. Cataclysmic in a few centuries.",
       "count": 1,
-      "npcIds": ["OLMLET"]
+      "npcIds": [7519]
     },
     {
       "name": "Puppadile",
       "examine": "Lost the meat tree. Kept the appetite.",
       "count": 1,
-      "npcIds": ["PUPPADILE"]
+      "npcIds": [8196]
     },
     {
       "name": "Tektiny",
       "examine": "Hammer first, talk later.",
       "count": 1,
-      "npcIds": ["TEKTINY"]
+      "npcIds": [8197]
     },
     {
       "name": "Vanguard",
       "examine": "Practising formations alone.",
       "count": 1,
-      "npcIds": ["VANGUARD_8198"]
+      "npcIds": [8198]
     },
     {
       "name": "Vasa Minirio",
       "examine": "Hereditary problem made physical.",
       "count": 1,
-      "npcIds": ["VASA_MINIRIO"]
+      "npcIds": [8199]
     },
     {
       "name": "Vespina",
       "examine": "Has opinions about prayer abuse.",
       "count": 1,
-      "npcIds": ["VESPINA"]
+      "npcIds": [8200]
     }
   ]
 }

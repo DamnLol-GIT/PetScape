@@ -36,13 +36,13 @@
       "name": "Rocky",
       "examine": "The town's quietest professional.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Giant Squirrel",
       "examine": "A regular at the seed stall.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

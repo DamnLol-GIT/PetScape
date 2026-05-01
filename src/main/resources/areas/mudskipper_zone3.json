@@ -27,7 +27,7 @@
       "name": "Baby Chinchompa",
       "examine": "Rare, radiant, and mildly unstable.",
       "count": 6,
-      "npcIds": ["BABY_CHINCHOMPA"]
+      "npcIds": [6718]
     }
   ]
 }

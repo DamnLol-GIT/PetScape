@@ -26,19 +26,19 @@
       "name": "Bone Squirrel",
       "examine": "Refuses to be buried. Again.",
       "count": 6,
-      "npcIds": ["BONE_SQUIRREL"]
+      "npcIds": [14032]
     },
     {
       "name": "Rocky",
       "examine": "Haunting the grounds, professionally.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "Every fencepost is a candidate.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

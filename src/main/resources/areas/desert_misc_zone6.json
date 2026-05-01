@@ -31,7 +31,7 @@
       "name": "Great Blue Heron",
       "examine": "Arrived looking important, achieved nothing.",
       "count": 4,
-      "npcIds": ["GREAT_BLUE_HERON"]
+      "npcIds": [6817]
     }
   ]
 }

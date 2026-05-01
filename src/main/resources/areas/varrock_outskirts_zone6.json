@@ -35,19 +35,19 @@
       "name": "Giant Squirrel",
       "examine": "Vaults the wagon ruts without breaking stride.",
       "count": 8,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Chewing on its next big project.",
       "count": 6,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Suspiciously interested in the cartloads.",
       "count": 6,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

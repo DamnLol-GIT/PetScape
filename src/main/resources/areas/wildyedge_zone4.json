@@ -15,7 +15,7 @@
       "name": "Callisto Cub",
       "examine": "Still waiting for somebody to out claw him.",
       "count": 1,
-      "npcIds": ["CALLISTO_CUB"]
+      "npcIds": [497]
     }
   ]
 }

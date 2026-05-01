@@ -31,19 +31,19 @@
       "displayName": "Kalphite Baroness",
       "examine": "She didn't climb the ranks to walk.",
       "count": 1,
-      "npcIds": ["KALPHITE_PRINCESS_6653"]
+      "npcIds": [6653]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Lost, but committed.",
       "count": 2,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Baby Chinchompa",
       "examine": "Do not squeeze.",
       "count": 2,
-      "npcIds": ["BABY_CHINCHOMPA"]
+      "npcIds": [6718]
     }
   ]
 }

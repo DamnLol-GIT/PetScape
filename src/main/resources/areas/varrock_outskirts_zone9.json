@@ -23,20 +23,20 @@
       "name": "Giant Squirrel",
       "examine": "Pretends the walls aren't there.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Takes the long route past every woodpile.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "displayName": "Ziggy",
       "examine": "Definitely a tanuki. Not a raccoon.",
       "count": 2,
-      "npcIds": ["ZIGGY"]
+      "npcIds": [9851]
     }
   ]
 }

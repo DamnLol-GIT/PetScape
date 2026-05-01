@@ -16,7 +16,7 @@
       "name": "Quetzin",
       "examine": "Used to be a rich bird. Used to be.",
       "count": 6,
-      "npcIds": ["QUETZIN"]
+      "npcIds": [12768]
     }
   ]
 }

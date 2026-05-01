@@ -34,21 +34,21 @@
       "displayName": "Son",
       "examine": "Has scouted a gap in the banks wall.",
       "count": 1,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "displayName": "Yui",
       "examine": "Eyeing the wooden repairs in the banks wall.",
       "count": 1,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "displayName": "Sid",
       "examine": "Seems to be communicating with the other animals.",
       "count": 1,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

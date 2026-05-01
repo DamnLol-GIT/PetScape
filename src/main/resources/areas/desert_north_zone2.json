@@ -38,14 +38,14 @@
       "displayName": "Kalphite Countess",
       "examine": "A lesser title, an equal amount of sand.",
       "count": 12,
-      "npcIds": ["KALPHITE_PRINCESS"]
+      "npcIds": [6637]
     },
     {
       "name": "Kalphite Princess",
       "displayName": "Kalphite Countess",
       "examine": "Too royal to walk, too small to matter.",
       "count": 12,
-      "npcIds": ["KALPHITE_PRINCESS_6653"]
+      "npcIds": [6653]
     }
   ]
 }

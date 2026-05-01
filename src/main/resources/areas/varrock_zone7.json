@@ -16,7 +16,7 @@
       "name": "Tangleroot",
       "examine": "Rooted in conversation. Literally.",
       "count": 2,
-      "npcIds": ["TANGLEROOT"]
+      "npcIds": [7335]
     }
   ]
 }

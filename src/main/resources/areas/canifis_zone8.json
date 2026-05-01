@@ -20,7 +20,7 @@
       "name": "Herbi",
       "examine": "Nose down, standards lower.",
       "count": 1,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     }
   ]
 }

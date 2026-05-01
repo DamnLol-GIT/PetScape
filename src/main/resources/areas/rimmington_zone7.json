@@ -20,13 +20,13 @@
       "name": "Soup",
       "examine": "Stuck between the menu and the food chain.",
       "count": 2,
-      "npcIds": ["SOUP"]
+      "npcIds": [14930]
     },
     {
       "name": "Beaver",
       "examine": "Wedged between dinner and being dinner.",
       "count": 1,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

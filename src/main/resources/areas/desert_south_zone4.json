@@ -41,13 +41,13 @@
       "name": "Rocky",
       "examine": "Just browsing the pyramid. Professionally.",
       "count": 12,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Still searching. Still optimistic. Still wrong.",
       "count": 12,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

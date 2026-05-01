@@ -28,7 +28,7 @@
       "name": "Heron",
       "examine": "Already caught more than you have.",
       "count": 6,
-      "npcIds": ["HERON"]
+      "npcIds": [6715]
     }
   ]
 }

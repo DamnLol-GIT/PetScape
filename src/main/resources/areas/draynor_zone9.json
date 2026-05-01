@@ -24,13 +24,13 @@
       "name": "Soup",
       "examine": "Hopes nobody's hungry.",
       "count": 3,
-      "npcIds": ["SOUP"]
+      "npcIds": [14930]
     },
     {
       "name": "Beaver",
       "examine": "Paddling laps around the wizards' courtyard.",
       "count": 1,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

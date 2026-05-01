@@ -31,28 +31,28 @@
       "name": "Giant Squirrel",
       "examine": "Went looking for nuts, found a desert.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Baby Mole",
       "displayName": "Desert Mole",
       "examine": "Sandy paws, zero regrets.",
       "count": 2,
-      "npcIds": ["BABY_MOLE"]
+      "npcIds": [5780]
     },
     {
       "name": "Kalphite Princess",
       "displayName": "Kalphite Duchess",
       "examine": "Rules the sand with a tiny iron claw.",
       "count": 1,
-      "npcIds": ["KALPHITE_PRINCESS"]
+      "npcIds": [6637]
     },
     {
       "name": "Baby Chinchompa",
       "displayName": "Desert Chinchompa",
       "examine": "The desert's softest hazard.",
       "count": 2,
-      "npcIds": ["BABY_CHINCHOMPA"]
+      "npcIds": [6718]
     }
   ]
 }

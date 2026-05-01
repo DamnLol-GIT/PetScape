@@ -59,7 +59,7 @@
       "name": "Herbi",
       "examine": "Muddy, moody, and mushroom-minded.",
       "count": 24,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     }
   ]
 }

@@ -21,7 +21,7 @@
       "name": "Tiny Tempor",
       "examine": "Just a little splash of trouble.",
       "count": 6,
-      "npcIds": ["TINY_TEMPOR"]
+      "npcIds": [10562]
     }
   ]
 }

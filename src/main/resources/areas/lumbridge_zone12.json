@@ -20,25 +20,25 @@
       "name": "Beef",
       "examine": "Wants nothing to do with the milk trade.",
       "count": 4,
-      "npcIds": ["BEEF"]
+      "npcIds": [15631]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Found a shortcut.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Tooth-first, thought-second.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Looking at all the newcomers intently.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

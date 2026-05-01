@@ -51,7 +51,7 @@
       "name": "Soup",
       "examine": "Noice",
       "count": 4,
-      "npcIds": ["SOUP"]
+      "npcIds": [14930]
     }
   ]
 }

@@ -30,21 +30,21 @@
       "name": "Quetzin",
       "examine": "The most colourful thing in the desert.",
       "count": 4,
-      "npcIds": ["QUETZIN"]
+      "npcIds": [12768]
     },
     {
       "name": "Heron",
       "displayName": "Great Blue Heron",
       "examine": "Great name, small bird, dry feet.",
       "count": 2,
-      "npcIds": ["GREAT_BLUE_HERON"]
+      "npcIds": [6817]
     },
     {
       "name": "Phoenix",
       "displayName": "Desert Phoenix",
       "examine": "Ashes to ashes, dunes to dunes.",
       "count": 2,
-      "npcIds": ["PHOENIX"]
+      "npcIds": [3077]
     }
   ]
 }

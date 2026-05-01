@@ -24,7 +24,7 @@
       "name": "Soup",
       "examine": "Paddling along. Unaware of the menu.",
       "count": 4,
-      "npcIds": ["SOUP"]
+      "npcIds": [14930]
     }
   ]
 }

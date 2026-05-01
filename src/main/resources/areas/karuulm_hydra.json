@@ -57,7 +57,7 @@
       "name": "Ikkle Hydra",
       "examine": "It looks around 5'11. It's so tiny.",
       "count": 25,
-      "npcIds": ["IKKLE_HYDRA", "IKKLE_HYDRA_8493", "IKKLE_HYDRA_8494", "IKKLE_HYDRA_8495"]
+      "npcIds": [8492, 8493, 8494, 8495]
     }
   ]
 }

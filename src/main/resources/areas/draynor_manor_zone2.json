@@ -21,13 +21,13 @@
       "name": "Bone Squirrel",
       "examine": "The manor's liveliest resident. Still dead.",
       "count": 8,
-      "npcIds": ["BONE_SQUIRREL"]
+      "npcIds": [14032]
     },
     {
       "name": "Rocky",
       "examine": "Pilfers quietly. Leaves the ghosts alone.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

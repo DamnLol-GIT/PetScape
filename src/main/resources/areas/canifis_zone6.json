@@ -41,7 +41,7 @@
       "name": "Herbi",
       "examine": "A boar of simple tastes: fungus and more fungus.",
       "count": 24,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     }
   ]
 }

@@ -18,31 +18,31 @@
       "name": "Bloodhound",
       "examine": "Stationed at the city gate.",
       "count": 1,
-      "npcIds": ["BLOODHOUND"]
+      "npcIds": [6296]
     },
     {
       "name": "Giant Squirrel",
       "examine": "One leap away from leaving town entirely.",
       "count": 6,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "Guards the border, one pebble at a time.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "A city beaver with country dreams.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Baby Chinchompa",
       "examine": "Every hug is a risk assessment.",
       "count": 4,
-      "npcIds": ["BABY_CHINCHOMPA"]
+      "npcIds": [6718]
     }
   ]
 }

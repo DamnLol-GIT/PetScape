@@ -59,41 +59,41 @@
       "displayName": "Kalphite Viscountess",
       "examine": "A viscountess requires no introduction. Or shoes.",
       "count": 6,
-      "npcIds": ["KALPHITE_PRINCESS"]
+      "npcIds": [6637]
     },
     {
       "name": "Kalphite Princess",
       "displayName": "Kalphite Viscountess",
       "examine": "Promoted herself. Nobody objected.",
       "count": 6,
-      "npcIds": ["KALPHITE_PRINCESS_6653"]
+      "npcIds": [6653]
     },
     {
       "name": "Baby Mole Rat",
       "displayName": "Desert Mole",
       "examine": "Surfaces occasionally. Judges immediately.",
       "count": 6,
-      "npcIds": ["BABY_MOLERAT"]
+      "npcIds": [10650]
     },
     {
       "name": "Quetzin",
       "examine": "Took a very wrong turn at the rainforest.",
       "count": 6,
-      "npcIds": ["QUETZIN"]
+      "npcIds": [12768]
     },
     {
       "name": "Baby Chinchompa",
       "displayName": "Desert Chinchompa",
       "examine": "The softest thing in the desert. Also the most explosive.",
       "count": 6,
-      "npcIds": ["BABY_CHINCHOMPA_6759"]
+      "npcIds": [6759]
     },
     {
       "name": "Soup",
       "displayName": "Dusty",
       "examine": "Where Sandy goes, Dusty follows. Or was it the other way around?",
       "count": 1,
-      "npcIds": ["SOUP"]
+      "npcIds": [14930]
     }
   ]
 }

@@ -15,7 +15,7 @@
       "name": "Tangleroot",
       "examine": "Discussing roots with a distant cousin.",
       "count": 2,
-      "npcIds": ["TANGLEROOT"]
+      "npcIds": [7335]
     }
   ]
 }

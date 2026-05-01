@@ -40,25 +40,25 @@
       "name": "Bloodhound",
       "examine": "Sniffing out tutorial-island escapees.",
       "count": 2,
-      "npcIds": ["BLOODHOUND"]
+      "npcIds": [6296]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Already circled the castle four times.",
       "count": 8,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Thinks the castle could use more timber.",
       "count": 2,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Takes the occasional coin from unattended pockets.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

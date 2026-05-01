@@ -64,19 +64,19 @@
       "name": "Rocky",
       "examine": "Get robbed mate.",
       "count": 4,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Baby Mole",
       "examine": "An impressively small mole.",
       "count": 12,
-      "npcIds": ["BABY_MOLE"]
+      "npcIds": [5780]
     },
     {
       "name": "Giant Squirrel",
       "examine": "It just wants to be helpful.",
       "count": 12,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     }
   ]
 }

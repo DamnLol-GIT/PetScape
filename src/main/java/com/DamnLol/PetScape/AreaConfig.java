@@ -57,7 +57,7 @@ public class AreaConfig
         public String displayName;
         public String examine;
         public int count;
-        public String[] npcIds;
+        public int[] npcIds;
     }
 
     // Throws on missing or malformed required fields
@@ -80,10 +80,6 @@ public class AreaConfig
             if (f.name == null || f.name.isEmpty()) throw new IllegalStateException(fp + "missing 'name'");
             if (f.count <= 0) throw new IllegalStateException(fp + "count " + f.count + " <= 0");
             if (f.npcIds == null || f.npcIds.length == 0) throw new IllegalStateException(fp + "npcIds empty");
-            for (int j = 0; j < f.npcIds.length; j++)
-            {
-                if (f.npcIds[j] == null || f.npcIds[j].isEmpty()) throw new IllegalStateException(fp + "npcIds[" + j + "] empty");
-            }
         }
 
         if (forbiddenZones == null) return;

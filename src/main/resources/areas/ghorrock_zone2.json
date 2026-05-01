@@ -21,7 +21,7 @@
       "name": "Baron",
       "examine": "A small noble with a sizeable appetite.",
       "count": 8,
-      "npcIds": ["BARON"]
+      "npcIds": [12155]
     }
   ]
 }

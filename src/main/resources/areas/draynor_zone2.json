@@ -17,19 +17,19 @@
       "name": "Giant Squirrel",
       "examine": "Faster than the wind. Most days.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "A familiar shadow on the road.",
       "count": 2,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     },
     {
       "name": "Beaver",
       "examine": "Plotting against a nearby fence post.",
       "count": 1,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

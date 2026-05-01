@@ -62,31 +62,31 @@
       "name": "Bloodhound",
       "examine": "Hasn't lost a scent since the third age.",
       "count": 6,
-      "npcIds": ["BLOODHOUND"]
+      "npcIds": [6296]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Never takes the stairs when a wall will do.",
       "count": 12,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Baby Chinchompa",
       "examine": "Fluffy, fierce, and a little unstable.",
       "count": 8,
-      "npcIds": ["BABY_CHINCHOMPA"]
+      "npcIds": [6718]
     },
     {
       "name": "Beaver",
       "examine": "Inspecting every fencepost in town.",
       "count": 6,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     },
     {
       "name": "Rocky",
       "examine": "Suspiciously innocent. Check your coin pouch.",
       "count": 6,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

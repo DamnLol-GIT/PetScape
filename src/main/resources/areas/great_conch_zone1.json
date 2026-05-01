@@ -196,25 +196,25 @@
       "name": "Gull",
       "examine": "Half eagle, half lion, all tiny.",
       "count": 18,
-      "npcIds": ["GULL"]
+      "npcIds": [281]
     },
     {
       "name": "Gulliver",
       "examine": "IThe legend, downsized.",
       "count": 9,
-      "npcIds": ["GULLIVER_15060"]
+      "npcIds": [15060]
     },
     {
       "name": "Giant Squirrel",
       "examine": "It's been hoarding coconuts.",
       "count": 18,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Beaver",
       "examine": "Shore-ly the hardest worker here.",
       "count": 9,
-      "npcIds": ["BEAVER"]
+      "npcIds": [12169]
     }
   ]
 }

@@ -19,10 +19,10 @@
       "examine": "Wards an empty corner. Ignores the sea shanties.",
       "count": 6,
       "npcIds": [
-        "RIFT_GUARDIAN", "RIFT_GUARDIAN_7338", "RIFT_GUARDIAN_7339", "RIFT_GUARDIAN_7340",
-        "RIFT_GUARDIAN_7341", "RIFT_GUARDIAN_7342", "RIFT_GUARDIAN_7343", "RIFT_GUARDIAN_7344",
-        "RIFT_GUARDIAN_7345", "RIFT_GUARDIAN_7346", "RIFT_GUARDIAN_7347", "RIFT_GUARDIAN_7348",
-        "RIFT_GUARDIAN_7349", "RIFT_GUARDIAN_7350", "RIFT_GUARDIAN_8024"
+        7337, 7338, 7339, 7340,
+        7341, 7342, 7343, 7344,
+        7345, 7346, 7347, 7348,
+        7349, 7350, 8024
       ]
     }
   ]

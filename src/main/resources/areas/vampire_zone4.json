@@ -24,7 +24,7 @@
       "name": "Lil' Maiden",
       "examine": "Freed From Her Tiny Constraints",
       "count": 4,
-      "npcIds": ["LIL_MAIDEN"]
+      "npcIds": [10761]
     }
   ]
 }

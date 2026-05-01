@@ -19,7 +19,7 @@
       "displayName": "Snap",
       "examine": "Swim, little turtle, swim!",
       "count": 1,
-      "npcIds": ["SOUP"]
+      "npcIds": [14930]
     }
   ]
 }

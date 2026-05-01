@@ -25,7 +25,7 @@
       "name": "Ric",
       "examine": "Surveys his frosty domain.",
       "count": 6,
-      "npcIds": ["RIC"]
+      "npcIds": [12592]
     }
   ]
 }

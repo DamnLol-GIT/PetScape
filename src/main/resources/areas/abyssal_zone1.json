@@ -51,7 +51,7 @@
       "name": "Abyssal Protector",
       "examine": "A tiny protector of the rift.",
       "count": 13,
-      "npcIds": ["ABYSSAL_PROTECTOR"]
+      "npcIds": [11402]
     }
   ]
 }

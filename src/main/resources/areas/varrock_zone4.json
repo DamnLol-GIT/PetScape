@@ -29,19 +29,19 @@
       "name": "Bloodhound",
       "examine": "Sworn to serve King, kingdom, and kibble.",
       "count": 8,
-      "npcIds": ["BLOODHOUND"]
+      "npcIds": [6296]
     },
     {
       "name": "Giant Squirrel",
       "examine": "Scouting the next rooftop with great confidence.",
       "count": 4,
-      "npcIds": ["GIANT_SQUIRREL"]
+      "npcIds": [7334]
     },
     {
       "name": "Rocky",
       "examine": "Eyeing pockets with great professional interest.",
       "count": 1,
-      "npcIds": ["ROCKY"]
+      "npcIds": [7336]
     }
   ]
 }

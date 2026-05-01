@@ -25,10 +25,6 @@
 
 package com.DamnLol.PetScape;
 
-import net.runelite.api.NpcID;
-
-import java.lang.reflect.Field;
-
 // RoamingArea backed by JSON config - flattens forms[].npcIds into the legacy contract
 public class JsonRoamingArea extends RoamingArea
 {
@@ -58,9 +54,9 @@ public class JsonRoamingArea extends RoamingArea
         for (int formIdx = 0; formIdx < config.forms.length; formIdx++)
         {
             AreaConfig.Form form = config.forms[formIdx];
-            for (String name : form.npcIds)
+            for (int id : form.npcIds)
             {
-                flatNpcIds[flatIdx] = resolveNpcId(name, config.id);
+                flatNpcIds[flatIdx] = id;
                 flatToLogicalForm[flatIdx] = formIdx;
                 flatIdx++;
             }
@@ -82,23 +78,6 @@ public class JsonRoamingArea extends RoamingArea
                 spawnToFlatForm[spawnIdx++] = flatOffset + (i % form.npcIds.length);
             }
             flatOffset += form.npcIds.length;
-        }
-    }
-
-    // Reflection lookup against NpcID - (Change to gameval in future)
-    private static int resolveNpcId(String name, String areaId)
-    {
-        try
-        {
-            return NpcID.class.getField(name).getInt(null);
-        }
-        catch (NoSuchFieldException e)
-        {
-            throw new IllegalStateException("Area '" + areaId + "': unknown NpcID '" + name + "'");
-        }
-        catch (IllegalAccessException e)
-        {
-            throw new IllegalStateException("Area '" + areaId + "': can't access NpcID '" + name + "'", e);
         }
     }
 

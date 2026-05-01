@@ -21,7 +21,7 @@
       "name": "Zebo",
       "examine": "What's a crocodile's favourite meal?",
       "count": 2,
-      "npcIds": ["ZEBO"]
+      "npcIds": [11843]
     }
   ]
 }

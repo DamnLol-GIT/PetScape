@@ -20,7 +20,7 @@
       "name": "Herbi",
       "examine": "Dodging werewolves with great success.",
       "count": 1,
-      "npcIds": ["HERBI"]
+      "npcIds": [7759]
     }
   ]
 }
