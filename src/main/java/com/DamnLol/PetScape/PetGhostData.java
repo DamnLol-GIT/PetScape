@@ -135,7 +135,9 @@ public class PetGhostData {
         m.put(NpcID.GULLIVER_15060, new Entry(new int[]{59398}, 12548, 12550, 30));
         m.put(NpcID.GULL_14931, new Entry(new int[]{59398}, 12548, 12550, 30));
         m.put(NpcID.GULL_15059, new Entry(new int[]{59403}, 12586, 12587, 72));
-        m.put(NpcID.HELLPUPPY, new Entry(new int[]{29240}, 6561, 6560, -1));
+        m.put(NpcID.HELLCAT, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
+        m.put(NpcID.HELLCAT_6668, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
+        m.put(NpcID.HELLKITTEN, new Entry(new int[]{13406, 13410}, 317, 2662, 40, (short)16, (short)35, (short)914, (short)914));        m.put(NpcID.HELLPUPPY, new Entry(new int[]{29240}, 6561, 6560, -1));
         m.put(NpcID.HERBI, new Entry(new int[]{33890}, 7694, 7695, 110,
                 (short)19992, (short)20364, (short)19988, (short)20422,
                 (short)6049, (short)6040, (short)4781, (short)4038));
@@ -163,6 +165,8 @@ public class PetGhostData {
         m.put(NpcID.KREEARRA_JR_6643, new Entry(new int[]{28019, 28021, 28020}, 7166, 7167, 30));
         m.put(NpcID.KRIL_TSUTSAROTH_JR, new Entry(new int[]{27683, 27681, 27692, 27682, 27690}, 6935, 4070, 20));
         m.put(NpcID.KRIL_TSUTSAROTH_JR_6647, new Entry(new int[]{27683, 27681, 27692, 27682, 27690}, 6935, 4070, 20));
+        m.put(NpcID.LAZY_HELLCAT, new Entry(new int[]{13411, 13407}, 317, 314, 70, (short)16, (short)914));
+        m.put(NpcID.LAZY_HELLCAT_6689, new Entry(new int[]{13411, 13407}, 317, 314, 70, (short)16, (short)914));
         m.put(NpcID.LILVIATHAN, new Entry(new int[]{49285, 49284}, 10277, 10292, 20));
         m.put(NpcID.LIL_BLOAT, new Entry(new int[]{35404}, 8080, 9031, 25));
         m.put(NpcID.LIL_CREATOR, new Entry(new int[]{41240}, 8842, 8846, 24));
@@ -190,8 +194,12 @@ public class PetGhostData {
         m.put(NpcID.NID_13683, new Entry(new int[]{54289}, 11473, 11474, 25));
         m.put(NpcID.NOON, new Entry(new int[]{34183}, 7768, 7768, 34));
         m.put(NpcID.OLMLET, new Entry(new int[]{32697}, 7396, 7395, 64));
+        m.put(NpcID.OVERGROWN_HELLCAT, new Entry(new int[]{13409, 13405}, 317, 314, 80, (short)16, (short)914));
+        m.put(NpcID.OVERGROWN_HELLCAT_6682, new Entry(new int[]{13409, 13405}, 317, 314, 80, (short)16, (short)914));
         m.put(NpcID.PENANCE_PET, new Entry(
                 new int[]{20717, 20715, 20714, 20709, 20713, 20712, 20711, 20710, 20716}, 5410, 5409, 29));
+        m.put(NpcID.PHEASANT, new Entry(new int[]{49907}, 2370, 2369, 30));
+        m.put(NpcID.PHEASANT_12547, new Entry(new int[]{49907}, 2370, 2369, 30));
         m.put(NpcID.PHOENIX, new Entry(new int[]{26852}, 6809, 6808, 80));
         m.put(NpcID.PHOENIX_3078, new Entry(new int[]{39146}, 6809, 6808, 80,
                 (short)4894, (short)4647, (short)5669, (short)6053, (short)5066, (short)5053,
