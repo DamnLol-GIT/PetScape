@@ -25,7 +25,7 @@
 
 package com.DamnLol.PetScape;
 
-import net.runelite.api.NpcID;
+import net.runelite.api.gameval.NpcID;
 import java.util.*;
 
 
@@ -56,322 +56,322 @@ public class PetGhostData {
 
     static {
         Map<Integer, Entry> m = new HashMap<>();
-        m.put(NpcID.ABYSSAL_ORPHAN, new Entry(new int[]{29631}, 7125, 7124, -1));
-        m.put(NpcID.ABYSSAL_PROTECTOR, new Entry(new int[]{44070}, 2185, 2184, 80));
-        m.put(NpcID.AKKHITO, new Entry(new int[]{46360, 46356, 46357}, 9760, 9421, 58));
-        m.put(NpcID.ARCHIBALD, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.ARCHIBALD_15586, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.ARCHIBALD_15588, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.ARCHIBALD_15591, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.ARCHIBALD_15593, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.ARCHIBALD_15595, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.ARCHIBALD_15597, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.ARCHIBALD_15599, new Entry(new int[]{55852}, 7269, 6577, -1));
-        m.put(NpcID.BABI, new Entry(new int[]{46352, 46350}, 9741, 9739, 36));
-        m.put(NpcID.BABY_CHINCHOMPA, new Entry(new int[]{19371}, 5182, 5181, -1,
+        m.put(NpcID.POH_ABYSSALSIRE_PET, new Entry(new int[]{29631}, 7125, 7124, -1));
+        m.put(NpcID.POH_ABYSSAL_PET, new Entry(new int[]{44070}, 2185, 2184, 80));
+        m.put(NpcID.POH_WARDEN_PET_AKKHA, new Entry(new int[]{46360, 46356, 46357}, 9760, 9421, 58));
+        m.put(NpcID.XMAS24_YORKIE_FINAL, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_EASTER26_EGG, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_EASTER26_EGG_02, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_EASTER26_EGG_03, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_EASTER26_EGG_04, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_EASTER26_EGG_05, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_EASTER26_EGG_06, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_EASTER26_EGG_07, new Entry(new int[]{55852}, 7269, 6577, -1));
+        m.put(NpcID.POH_WARDEN_PET_BABA, new Entry(new int[]{46352, 46350}, 9741, 9739, 36));
+        m.put(NpcID.POH_SKILLPET_HUNTER_RED, new Entry(new int[]{19371}, 5182, 5181, -1,
                 (short)5169, (short)7343, (short)7335, (short)7339, (short)7343, (short)5165,
                 (short)3988, (short)3988, (short)3982, (short)3986, (short)5014, (short)3988));
-        m.put(NpcID.BABY_CHINCHOMPA_6756, new Entry(new int[]{19371}, 5182, 5181, -1,
+        m.put(NpcID.SKILLPET_HUNTER_RED, new Entry(new int[]{19371}, 5182, 5181, -1,
                 (short)5169, (short)7343, (short)7335, (short)7339, (short)7343, (short)5165,
                 (short)3988, (short)3988, (short)3982, (short)3986, (short)5014, (short)3988));
-        m.put(NpcID.BABY_CHINCHOMPA_6758, new Entry(new int[]{19371}, 5182, 5181, -1,
+        m.put(NpcID.SKILLPET_HUNTER_BLACK, new Entry(new int[]{19371}, 5182, 5181, -1,
                 (short)5169, (short)7343, (short)7335, (short)7339, (short)7343, (short)5165,
                 (short)20, (short)33, (short)12, (short)37, (short)45, (short)49));
-        m.put(NpcID.BABY_CHINCHOMPA_6759, new Entry(new int[]{29757}, 5182, 5181, -1));
-        m.put(NpcID.BABY_MOLE, new Entry(new int[]{42012}, 3309, 3313, 90));
-        m.put(NpcID.BABY_MOLERAT, new Entry(new int[]{42012}, 3309, 3313, 90,
+        m.put(NpcID.SKILLPET_HUNTER_GOLD, new Entry(new int[]{29757}, 5182, 5181, -1));
+        m.put(NpcID.MOLE_BABY_01, new Entry(new int[]{42012}, 3309, 3313, 90));
+        m.put(NpcID.POH_MOLE_PET_NAKED, new Entry(new int[]{42012}, 3309, 3313, 90,
                 (short)5388, (short)5392, (short)5268, (short)5272, (short)5276, (short)4558,
                 (short)317, (short)322, (short)326, (short)328, (short)332, (short)63706));
-        m.put(NpcID.BABY_MOLE_6651, new Entry(new int[]{42012}, 3309, 3313, 90));
-        m.put(NpcID.BARON, new Entry(new int[]{49195}, 10217, 10218, -1,
+        m.put(NpcID.POH_MOLE_PET, new Entry(new int[]{42012}, 3309, 3313, 90));
+        m.put(NpcID.POH_DUKE_SUCELLUS_PET, new Entry(new int[]{49195}, 10217, 10218, -1,
                 (short)937, (short)790, (short)33988, (short)39207));
-        m.put(NpcID.BEAVER, new Entry(new int[]{29754}, 7177, 7178, -1));
-        m.put(NpcID.BEEF, new Entry(new int[]{60118}, 5852, 5856, 64));
-        m.put(NpcID.BEEF_15633, new Entry(new int[]{60118}, 5852, 5856, 64));
-        m.put(NpcID.BLOODHOUND, new Entry(new int[]{31740}, 7269, 7280, -1));
-        m.put(NpcID.BLOODHOUND_7232, new Entry(new int[]{31740}, 7269, 7280, -1));
-        m.put(NpcID.BONE_SQUIRREL, new Entry(new int[]{54969}, 11662, 11663, 110));
-        m.put(NpcID.BRAN, new Entry(new int[]{55951}, 11970, 11972, 26));
-        m.put(NpcID.BROAV, new Entry(new int[]{53343}, 11232, 11234, 120));
-        m.put(NpcID.BROAV_13665, new Entry(new int[]{53343}, 11232, 11234, 120));
-        m.put(NpcID.BUTCH, new Entry(new int[]{49298}, 10337, 10339, 60));
-        m.put(NpcID.CALLISTO_CUB, new Entry(new int[]{47396}, 10011, 10010, 16));
-        m.put(NpcID.CALLISTO_CUB_11982, new Entry(new int[]{28298}, 4919, 4923, 35));
-        m.put(NpcID.CALLISTO_CUB_11986, new Entry(new int[]{28298}, 4919, 4923, 35));
-        m.put(NpcID.CALLISTO_CUB_5558, new Entry(new int[]{47396}, 10011, 10010, 16));
-        m.put(NpcID.CAT_6665, new Entry(new int[]{3010, 3006}, 317, 314, 60,
+        m.put(NpcID.POH_SKILLPETWC, new Entry(new int[]{29754}, 7177, 7178, -1));
+        m.put(NpcID.COWBOSS_PET, new Entry(new int[]{60118}, 5852, 5856, 64));
+        m.put(NpcID.POH_COWBOSS_PET, new Entry(new int[]{60118}, 5852, 5856, 64));
+        m.put(NpcID.POH_BLOODHOUNDPET, new Entry(new int[]{31740}, 7269, 7280, -1));
+        m.put(NpcID.BLOODHOUNDPET, new Entry(new int[]{31740}, 7269, 7280, -1));
+        m.put(NpcID.POH_SKILLPET_AGILITY_BONE, new Entry(new int[]{54969}, 11662, 11663, 110));
+        m.put(NpcID.POH_RTBRANDA_PET, new Entry(new int[]{55951}, 11970, 11972, 26));
+        m.put(NpcID.WGS_BROAV, new Entry(new int[]{53343}, 11232, 11234, 120));
+        m.put(NpcID.POH_BROAV, new Entry(new int[]{53343}, 11232, 11234, 120));
+        m.put(NpcID.POH_VARDORVIS_PET, new Entry(new int[]{49298}, 10337, 10339, 60));
+        m.put(NpcID.POH_CALLISTO_PET, new Entry(new int[]{47396}, 10011, 10010, 16));
+        m.put(NpcID.POH_CALLISTO_PET_LEGACY, new Entry(new int[]{28298}, 4919, 4923, 35));
+        m.put(NpcID.CALLISTOPET_LEGACY, new Entry(new int[]{28298}, 4919, 4923, 35));
+        m.put(NpcID.CALLISTOPET, new Entry(new int[]{47396}, 10011, 10010, 16));
+        m.put(NpcID.POH_GROWNCAT_BLACK, new Entry(new int[]{3010, 3006}, 317, 314, 60,
                 (short)61, (short)16, (short)127, (short)12, (short)12, (short)33));
-        m.put(NpcID.CHAOS_ELEMENTAL_JR, new Entry(new int[]{28256}, 3144, 3145, -1));
-        m.put(NpcID.CHAOS_ELEMENTAL_JR_5907, new Entry(new int[]{28256}, 3144, 3145, -1));
-        m.put(NpcID.CHOMPY_CHICK, new Entry(new int[]{26861}, 6764, 6765, 83));
-        m.put(NpcID.CORPOREAL_CRITTER, new Entry(new int[]{11056}, 1678, 7974, 64));
-        m.put(NpcID.CORPOREAL_CRITTER_8010, new Entry(new int[]{11056}, 1678, 7974, 64));
-        m.put(NpcID.CORRUPTED_YOUNGLLEF, new Entry(new int[]{38597}, 8417, 8428, 25));
-        m.put(NpcID.CORRUPTED_YOUNGLLEF_8738, new Entry(new int[]{38597}, 8417, 8428, 25));
-        m.put(NpcID.DAGANNOTH_PRIME_JR, new Entry(new int[]{9940, 9943, 9942}, 2850, 2849, 60,
+        m.put(NpcID.CHAOS_ELEMENTAL_PET, new Entry(new int[]{28256}, 3144, 3145, -1));
+        m.put(NpcID.POH_CHAOS_ELEMENTAL_PET, new Entry(new int[]{28256}, 3144, 3145, -1));
+        m.put(NpcID.POH_CHOMPYBIRD_PET, new Entry(new int[]{26861}, 6764, 6765, 83));
+        m.put(NpcID.POH_CORPPET, new Entry(new int[]{11056}, 1678, 7974, 64));
+        m.put(NpcID.CORP_PET, new Entry(new int[]{11056}, 1678, 7974, 64));
+        m.put(NpcID.POH_GAUNTLET_PET_CORRUPT, new Entry(new int[]{38597}, 8417, 8428, 25));
+        m.put(NpcID.GAUNTLET_PET_CORRUPT, new Entry(new int[]{38597}, 8417, 8428, 25));
+        m.put(NpcID.POH_PRIME_PET, new Entry(new int[]{9940, 9943, 9942}, 2850, 2849, 60,
                 (short)11930, (short)27144, (short)16536, (short)16540,
                 (short)5931, (short)1688, (short)21530, (short)21534));
-        m.put(NpcID.DAGANNOTH_REX_JR, new Entry(new int[]{9941}, 2850, 2849, 60,
+        m.put(NpcID.REX_PET, new Entry(new int[]{9941}, 2850, 2849, 60,
                 (short)16536, (short)16540, (short)27144, (short)2477,
                 (short)7322, (short)7326, (short)10403, (short)2595));
-        m.put(NpcID.DAGANNOTH_SUPREME_JR, new Entry(new int[]{9941, 9943}, 2850, 2849, 60));
-        m.put(NpcID.DARK_SQUIRREL, new Entry(new int[]{32206}, 7309, 7310, 110,
+        m.put(NpcID.POH_SUPREME_PET, new Entry(new int[]{9941, 9943}, 2850, 2849, 60));
+        m.put(NpcID.SKILLPET_AGILITY_DARK, new Entry(new int[]{32206}, 7309, 7310, 110,
                 (short)3816, (short)381, (short)56, (short)3633, (short)329, (short)362,
                 (short)24, (short)12, (short)6, (short)6, (short)824, (short)67312));
-        m.put(NpcID.DARK_SQUIRREL_9638, new Entry(new int[]{32206}, 7309, 7310, 110,
+        m.put(NpcID.POH_SKILLPET_AGILITY_DARK, new Entry(new int[]{32206}, 7309, 7310, 110,
                 (short)38160, (short)38156, (short)36333, (short)29036, (short)2344, (short)30,
                 (short)241, (short)266, (short)82, (short)4, (short)67, (short)312));
-        m.put(NpcID.DOM, new Entry(new int[]{56456}, 12401, 12402, -1));
-        m.put(NpcID.DOM_14785, new Entry(new int[]{56456}, 12401, 12402, -1));
-        m.put(NpcID.ELIDINIS_DAMAGED_GUARDIAN, new Entry(new int[]{46332}, 9420, 9420, 65));
-        m.put(NpcID.ELIDINIS_GUARDIAN, new Entry(new int[]{46332}, 9656, 9652, 65));
-        m.put(NpcID.FLYING_VESPINA, new Entry(new int[]{32689}, 8639, 8639, 20));
-        m.put(NpcID.FOX_12548, new Entry(new int[]{49832}, 6561, 6560, -1));
-        m.put(NpcID.GENERAL_GRAARDOR_JR, new Entry(new int[]{27660, 27665}, 7017, 7016, 30));
-        m.put(NpcID.GIANT_SQUIRREL, new Entry(new int[]{32206}, 7309, 7310, 110));
-        m.put(NpcID.GREATISH_GUARDIAN, new Entry(new int[]{44061}, 9379, 9378, 32));
-        m.put(NpcID.GREAT_BLUE_HERON, new Entry(new int[]{41628}, 6772, 6774, -1));
-        m.put(NpcID.GULL, new Entry(new int[]{59403}, 12586, 12587, 72));
-        m.put(NpcID.GULLIVER_15060, new Entry(new int[]{59398}, 12548, 12550, 30));
-        m.put(NpcID.GULL_14931, new Entry(new int[]{59398}, 12548, 12550, 30));
-        m.put(NpcID.GULL_15059, new Entry(new int[]{59403}, 12586, 12587, 72));
-        m.put(NpcID.HELLCAT, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
-        m.put(NpcID.HELLCAT_6668, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
-        m.put(NpcID.HELLKITTEN, new Entry(new int[]{13406, 13410}, 317, 2662, 40, (short)16, (short)35, (short)914, (short)914));        m.put(NpcID.HELLPUPPY, new Entry(new int[]{29240}, 6561, 6560, -1));
-        m.put(NpcID.HERBI, new Entry(new int[]{33890}, 7694, 7695, 110,
+        m.put(NpcID.POH_DOM_PET, new Entry(new int[]{56456}, 12401, 12402, -1));
+        m.put(NpcID.DOM_PET, new Entry(new int[]{56456}, 12401, 12402, -1));
+        m.put(NpcID.POH_WARDEN_PET_ELIDINIS_DESTROYED, new Entry(new int[]{46332}, 9420, 9420, 65));
+        m.put(NpcID.POH_WARDEN_PET_ELIDINIS, new Entry(new int[]{46332}, 9656, 9652, 65));
+        m.put(NpcID.POH_VESPULA_FLYING_PET, new Entry(new int[]{32689}, 8639, 8639, 20));
+        m.put(NpcID.POH_SKILLPET_WC_FOX, new Entry(new int[]{49832}, 6561, 6560, -1));
+        m.put(NpcID.BANDOS_PET, new Entry(new int[]{27660, 27665}, 7017, 7016, 30));
+        m.put(NpcID.POH_SKILLPET_AGILITY, new Entry(new int[]{32206}, 7309, 7310, 110));
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_GOTR, new Entry(new int[]{44061}, 9379, 9378, 32));
+        m.put(NpcID.POH_SKILLPET_FISH_TEMPOROSS, new Entry(new int[]{41628}, 6772, 6774, -1));
+        m.put(NpcID.SEABIRD1, new Entry(new int[]{59403}, 12586, 12587, 72));
+        m.put(NpcID.POH_GRYPHONBOSS_PET_ADULT, new Entry(new int[]{59398}, 12548, 12550, 30));
+        m.put(NpcID.GRYPHONBOSS_PET, new Entry(new int[]{59398}, 12548, 12550, 30));
+        m.put(NpcID.POH_GRYPHONBOSS_PET, new Entry(new int[]{59403}, 12586, 12587, 72));
+        m.put(NpcID.GROWNCAT_HELL, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
+        m.put(NpcID.POH_GROWNCAT_HELL, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
+        m.put(NpcID.KITTENPET_HELL, new Entry(new int[]{13406, 13410}, 317, 2662, 40, (short)16, (short)35, (short)914, (short)914));        m.put(NpcID.POH_HELLPET, new Entry(new int[]{29240}, 6561, 6560, -1));
+        m.put(NpcID.POH_HERBIBOAR_PET, new Entry(new int[]{33890}, 7694, 7695, 110,
                 (short)19992, (short)20364, (short)19988, (short)20422,
                 (short)6049, (short)6040, (short)4781, (short)4038));
-        m.put(NpcID.HERON, new Entry(new int[]{29756}, 6772, 6774, -1));
-        m.put(NpcID.HUBERTE, new Entry(new int[]{54453}, 11732, 11733, 100));
-        m.put(NpcID.IKKLE_HYDRA, new Entry(new int[]{36185}, 8233, 8296, 20));
-        m.put(NpcID.IKKLE_HYDRA_8493, new Entry(new int[]{36192}, 8298, 8297, 20));
-        m.put(NpcID.IKKLE_HYDRA_8494, new Entry(new int[]{36188}, 8247, 8299, 20));
-        m.put(NpcID.IKKLE_HYDRA_8495, new Entry(new int[]{36191}, 8254, 8300, 20));
-        m.put(NpcID.IKKLE_HYDRA_8517, new Entry(new int[]{36185}, 8233, 8296, 20));
-        m.put(NpcID.IKKLE_HYDRA_8518, new Entry(new int[]{36192}, 8298, 8297, 20));
-        m.put(NpcID.IKKLE_HYDRA_8519, new Entry(new int[]{36188}, 8247, 8299, 20));
-        m.put(NpcID.IKKLE_HYDRA_8520, new Entry(new int[]{36191}, 8254, 8300, 20));
-        m.put(NpcID.JALNIBREK, new Entry(new int[]{33005}, 7573, 7572, -1));
-        m.put(NpcID.JALREKJAD, new Entry(new int[]{33012}, 7589, 8857, 20));
-        m.put(NpcID.KALPHITE_PRINCESS, new Entry(new int[]{24597, 24598}, 6239, 6238, 45));
-        m.put(NpcID.KALPHITE_PRINCESS_6638, new Entry(new int[]{24602, 24605, 24606}, 6236, 6236, 45));
-        m.put(NpcID.KALPHITE_PRINCESS_6653, new Entry(new int[]{24602, 24605, 24606}, 6236, 6236, 45));
-        m.put(NpcID.KALPHITE_PRINCESS_6654, new Entry(new int[]{24597, 24598}, 6239, 6238, 45));
-        m.put(NpcID.KEPHRITI, new Entry(new int[]{46417}, 9572, 9419, 38));
-        m.put(NpcID.KRAKEN, new Entry(new int[]{28231}, 3989, 3989, 15));
-        m.put(NpcID.KRAKEN_6640, new Entry(new int[]{28231}, 3989, 3989, 15));
-        m.put(NpcID.KRAKEN_6656, new Entry(new int[]{28231}, 3989, 3989, 15));
-        m.put(NpcID.KREEARRA_JR, new Entry(new int[]{28019, 28021, 28020}, 7166, 7167, 30));
-        m.put(NpcID.KREEARRA_JR_6643, new Entry(new int[]{28019, 28021, 28020}, 7166, 7167, 30));
-        m.put(NpcID.KRIL_TSUTSAROTH_JR, new Entry(new int[]{27683, 27681, 27692, 27682, 27690}, 6935, 4070, 20));
-        m.put(NpcID.KRIL_TSUTSAROTH_JR_6647, new Entry(new int[]{27683, 27681, 27692, 27682, 27690}, 6935, 4070, 20));
-        m.put(NpcID.LAZY_HELLCAT, new Entry(new int[]{13411, 13407}, 317, 314, 70, (short)16, (short)914));
-        m.put(NpcID.LAZY_HELLCAT_6689, new Entry(new int[]{13411, 13407}, 317, 314, 70, (short)16, (short)914));
-        m.put(NpcID.LILVIATHAN, new Entry(new int[]{49285, 49284}, 10277, 10292, 20));
-        m.put(NpcID.LIL_BLOAT, new Entry(new int[]{35404}, 8080, 9031, 25));
-        m.put(NpcID.LIL_CREATOR, new Entry(new int[]{41240}, 8842, 8846, 24));
-        m.put(NpcID.LIL_DESTRUCTOR, new Entry(new int[]{41242}, 3079, 8847, 24));
-        m.put(NpcID.LIL_MAIDEN, new Entry(new int[]{42280}, 8090, 8090, 30));
-        m.put(NpcID.LIL_NYLO, new Entry(new int[]{35183}, 8002, 8003, 35));
-        m.put(NpcID.LIL_SOT, new Entry(new int[]{35403}, 8137, 9032, 30));
-        m.put(NpcID.LIL_XARP, new Entry(new int[]{35383}, 9033, 9033, 20));
-        m.put(NpcID.LIL_ZIK, new Entry(new int[]{35381}, 8120, 8122, 20));
-        m.put(NpcID.LITTLE_NIGHTMARE, new Entry(new int[]{39196}, 8593, 8634, 30));
-        m.put(NpcID.LITTLE_PARASITE, new Entry(new int[]{39210}, 8553, 8553, 40));
-        m.put(NpcID.MAYOR_OF_CATHERBY, new Entry(new int[]{9811}, -1, -1, -1,
+        m.put(NpcID.POH_SKILLPET_FISH, new Entry(new int[]{29756}, 6772, 6774, -1));
+        m.put(NpcID.POH_HUEY_PET, new Entry(new int[]{54453}, 11732, 11733, 100));
+        m.put(NpcID.HYDRA_PET, new Entry(new int[]{36185}, 8233, 8296, 20));
+        m.put(NpcID.HYDRA_PET_ELECTRIC, new Entry(new int[]{36192}, 8298, 8297, 20));
+        m.put(NpcID.HYDRA_PET_FIRE, new Entry(new int[]{36188}, 8247, 8299, 20));
+        m.put(NpcID.HYDRA_PET_EXTINGUISHED, new Entry(new int[]{36191}, 8254, 8300, 20));
+        m.put(NpcID.POH_HYDRA_PET, new Entry(new int[]{36185}, 8233, 8296, 20));
+        m.put(NpcID.POH_HYDRA_PET_ELECTRIC, new Entry(new int[]{36192}, 8298, 8297, 20));
+        m.put(NpcID.POH_HYDRA_PET_FIRE, new Entry(new int[]{36188}, 8247, 8299, 20));
+        m.put(NpcID.POH_HYDRA_PET_EXTINGUISHED, new Entry(new int[]{36191}, 8254, 8300, 20));
+        m.put(NpcID.POH_INFERNO_PET, new Entry(new int[]{33005}, 7573, 7572, -1));
+        m.put(NpcID.POH_JADPET_INFERNO, new Entry(new int[]{33012}, 7589, 8857, 20));
+        m.put(NpcID.KQ_PET_FLYING, new Entry(new int[]{24597, 24598}, 6239, 6238, 45));
+        m.put(NpcID.KQ_PET_WALKING, new Entry(new int[]{24602, 24605, 24606}, 6236, 6236, 45));
+        m.put(NpcID.POH_KQ_PET_FLYING, new Entry(new int[]{24602, 24605, 24606}, 6236, 6236, 45));
+        m.put(NpcID.POH_KQ_PET_WALKING, new Entry(new int[]{24597, 24598}, 6239, 6238, 45));
+        m.put(NpcID.POH_WARDEN_PET_KEPHRI, new Entry(new int[]{46417}, 9572, 9419, 38));
+        m.put(NpcID.SLAYER_KRAKEN_BOSS, new Entry(new int[]{28231}, 3989, 3989, 15));
+        m.put(NpcID.KRAKEN_PET, new Entry(new int[]{28231}, 3989, 3989, 15));
+        m.put(NpcID.POH_KRAKEN_PET, new Entry(new int[]{28231}, 3989, 3989, 15));
+        m.put(NpcID.ARMADYL_PET, new Entry(new int[]{28019, 28021, 28020}, 7166, 7167, 30));
+        m.put(NpcID.POH_ARMADYL_PET, new Entry(new int[]{28019, 28021, 28020}, 7166, 7167, 30));
+        m.put(NpcID.ZAMORAK_PET, new Entry(new int[]{27683, 27681, 27692, 27682, 27690}, 6935, 4070, 20));
+        m.put(NpcID.POH_ZAMORAK_PET, new Entry(new int[]{27683, 27681, 27692, 27682, 27690}, 6935, 4070, 20));
+        m.put(NpcID.LAZYCAT_HELL, new Entry(new int[]{13411, 13407}, 317, 314, 70, (short)16, (short)914));
+        m.put(NpcID.POH_LAZYCAT_HELL, new Entry(new int[]{13411, 13407}, 317, 314, 70, (short)16, (short)914));
+        m.put(NpcID.POH_LEVIATHAN_PET, new Entry(new int[]{49285, 49284}, 10277, 10292, 20));
+        m.put(NpcID.POH_VERZIK_PET_BLOAT, new Entry(new int[]{35404}, 8080, 9031, 25));
+        m.put(NpcID.POH_SOULWARS_PET_BLUE, new Entry(new int[]{41240}, 8842, 8846, 24));
+        m.put(NpcID.POH_SOULWARS_PET_RED, new Entry(new int[]{41242}, 3079, 8847, 24));
+        m.put(NpcID.POH_VERZIK_PET_MAIDEN, new Entry(new int[]{42280}, 8090, 8090, 30));
+        m.put(NpcID.POH_VERZIK_PET_NYLOCAS, new Entry(new int[]{35183}, 8002, 8003, 35));
+        m.put(NpcID.POH_VERZIK_PET_SOTETSEG, new Entry(new int[]{35403}, 8137, 9032, 30));
+        m.put(NpcID.POH_VERZIK_PET_XARPUS, new Entry(new int[]{35383}, 9033, 9033, 20));
+        m.put(NpcID.POH_VERZIK_PET, new Entry(new int[]{35381}, 8120, 8122, 20));
+        m.put(NpcID.POH_NIGHTMARE_PET, new Entry(new int[]{39196}, 8593, 8634, 30));
+        m.put(NpcID.POH_NIGHTMARE_PET_PARASITE, new Entry(new int[]{39210}, 8553, 8553, 40));
+        m.put(NpcID.POH_FISHBOWL_MAYOR_OF_CATHERBY, new Entry(new int[]{9811}, -1, -1, -1,
                 (short)-23598, (short)-27727, (short)-30142,
                 (short)-23206, (short)10169, (short)10950));
-        m.put(NpcID.MIDNIGHT, new Entry(new int[]{34187}, 7807, 7806, 34));
-        m.put(NpcID.MOXI, new Entry(new int[]{54438, 54437}, 11528, 11529, 32));
-        m.put(NpcID.MUPHIN, new Entry(new int[]{47149}, 9913, 9915, 25));
-        m.put(NpcID.MUPHIN_12006, new Entry(new int[]{47147}, 9913, 9915, 25));
-        m.put(NpcID.MUPHIN_12007, new Entry(new int[]{47156}, 9913, 9915, 25));
-        m.put(NpcID.MUPHIN_12014, new Entry(new int[]{47149}, 9913, 9915, 25));
-        m.put(NpcID.MUPHIN_12015, new Entry(new int[]{47147}, 9913, 9915, 25));
-        m.put(NpcID.MUPHIN_12016, new Entry(new int[]{47156}, 9913, 9915, 25));
-        m.put(NpcID.NEXLING, new Entry(new int[]{43209}, 9177, 9176, 48));
-        m.put(NpcID.NID, new Entry(new int[]{54289}, 11473, 11474, 25));
-        m.put(NpcID.NID_13683, new Entry(new int[]{54289}, 11473, 11474, 25));
-        m.put(NpcID.NOON, new Entry(new int[]{34183}, 7768, 7768, 34));
-        m.put(NpcID.OLMLET, new Entry(new int[]{32697}, 7396, 7395, 64));
-        m.put(NpcID.OVERGROWN_HELLCAT, new Entry(new int[]{13409, 13405}, 317, 314, 80, (short)16, (short)914));
-        m.put(NpcID.OVERGROWN_HELLCAT_6682, new Entry(new int[]{13409, 13405}, 317, 314, 80, (short)16, (short)914));
-        m.put(NpcID.PENANCE_PET, new Entry(
+        m.put(NpcID.POH_DUSK_PET, new Entry(new int[]{34187}, 7807, 7806, 34));
+        m.put(NpcID.POH_AMOXLIATL_PET, new Entry(new int[]{54438, 54437}, 11528, 11529, 32));
+        m.put(NpcID.POH_MUSPAH_PET, new Entry(new int[]{47149}, 9913, 9915, 25));
+        m.put(NpcID.POH_MUSPAH_PET_MELEE, new Entry(new int[]{47147}, 9913, 9915, 25));
+        m.put(NpcID.POH_MUSPAH_PET_SHIELDED, new Entry(new int[]{47156}, 9913, 9915, 25));
+        m.put(NpcID.MUSPAH_PET, new Entry(new int[]{47149}, 9913, 9915, 25));
+        m.put(NpcID.MUSPAH_PET_MELEE, new Entry(new int[]{47147}, 9913, 9915, 25));
+        m.put(NpcID.MUSPAH_PET_SHIELDED, new Entry(new int[]{47156}, 9913, 9915, 25));
+        m.put(NpcID.POH_NEX_PET, new Entry(new int[]{43209}, 9177, 9176, 48));
+        m.put(NpcID.POH_ARAXXOR_PET, new Entry(new int[]{54289}, 11473, 11474, 25));
+        m.put(NpcID.ARAXXOR_PET, new Entry(new int[]{54289}, 11473, 11474, 25));
+        m.put(NpcID.POH_DAWN_PET, new Entry(new int[]{34183}, 7768, 7768, 34));
+        m.put(NpcID.POH_OLM_PET, new Entry(new int[]{32697}, 7396, 7395, 64));
+        m.put(NpcID.OVERGROWNCAT_HELL, new Entry(new int[]{13409, 13405}, 317, 314, 80, (short)16, (short)914));
+        m.put(NpcID.POH_OVERGROWNCAT_HELL, new Entry(new int[]{13409, 13405}, 317, 314, 80, (short)16, (short)914));
+        m.put(NpcID.POH_PENANCE_PET, new Entry(
                 new int[]{20717, 20715, 20714, 20709, 20713, 20712, 20711, 20710, 20716}, 5410, 5409, 29));
-        m.put(NpcID.PHEASANT, new Entry(new int[]{49907}, 2370, 2369, 30));
-        m.put(NpcID.PHEASANT_12547, new Entry(new int[]{49907}, 2370, 2369, 30));
-        m.put(NpcID.PHOENIX, new Entry(new int[]{26852}, 6809, 6808, 80));
-        m.put(NpcID.PHOENIX_3078, new Entry(new int[]{39146}, 6809, 6808, 80,
+        m.put(NpcID.MACRO_PHEASANT_MODEL_1, new Entry(new int[]{49907}, 2370, 2369, 30));
+        m.put(NpcID.POH_SKILLPET_WC_PHEASANT, new Entry(new int[]{49907}, 2370, 2369, 30));
+        m.put(NpcID.POH_PHOENIX_PET_GREEN, new Entry(new int[]{26852}, 6809, 6808, 80));
+        m.put(NpcID.POH_PHOENIX_PET_BLUE, new Entry(new int[]{39146}, 6809, 6808, 80,
                 (short)4894, (short)4647, (short)5669, (short)6053, (short)5066, (short)5053,
                 (short)43943, (short)41907, (short)39855, (short)38715, (short)39855, (short)38860));
-        m.put(NpcID.PHOENIX_3079, new Entry(new int[]{39149}, 6809, 6808, 80,
+        m.put(NpcID.POH_PHOENIX_PET_WHITE, new Entry(new int[]{39149}, 6809, 6808, 80,
                 (short)4894, (short)4647, (short)5669, (short)6053, (short)5066, (short)5053,
                 (short)20, (short)33, (short)49, (short)20, (short)74, (short)86));
-        m.put(NpcID.PHOENIX_3080, new Entry(new int[]{39147}, 6809, 6808, 80,
+        m.put(NpcID.POH_PHOENIX_PET_PURPLE, new Entry(new int[]{39147}, 6809, 6808, 80,
                 (short)4894, (short)4647, (short)5669, (short)6053, (short)5066, (short)5053,
                 (short)48819, (short)48844, (short)48844, (short)50006, (short)48844, (short)50904));
-        m.put(NpcID.PHOENIX_3081, new Entry(new int[]{39148}, 6809, 6808, 80));
-        m.put(NpcID.PHOENIX_3082, new Entry(new int[]{26852}, 6809, 6808, 80));
-        m.put(NpcID.PHOENIX_3083, new Entry(new int[]{26852}, 6809, 6808, 80));
-        m.put(NpcID.PHOENIX_3084, new Entry(new int[]{26852}, 6809, 6808, 80));
-        m.put(NpcID.PHOENIX_7368, new Entry(new int[]{26852}, 6809, 6808, 80));
-        m.put(NpcID.PHOENIX_7370, new Entry(new int[]{26852}, 6809, 6808, 80));
-        m.put(NpcID.PRINCE_BLACK_DRAGON, new Entry(new int[]{17414, 17415, 17429, 17422, 17423}, 90, 4635, 40));
-        m.put(NpcID.PRINCE_BLACK_DRAGON_6652, new Entry(new int[]{17414, 17415, 17429, 17422, 17423}, 90, 4635, 40));
-        m.put(NpcID.PUPPADILE, new Entry(new int[]{32681}, 7417, 7982, 45));
-        m.put(NpcID.QUETZIN, new Entry(new int[]{52601}, 10952, 10952, -1));
-        m.put(NpcID.RAX, new Entry(new int[]{44936}, 8340, 9139, 64));
-        m.put(NpcID.RAX_13684, new Entry(new int[]{44936}, 8340, 9139, 64));
-        m.put(NpcID.RED, new Entry(new int[]{37361}, 7315, 7316, 110));
-        m.put(NpcID.RIC, new Entry(new int[]{55938}, 11969, 11971, 26));
-        m.put(NpcID.RIFT_GUARDIAN, new Entry(new int[]{32204}, 7307, 7306, -1));
-        m.put(NpcID.RIFT_GUARDIAN_7338, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.PHOENIX_PET_GREEN, new Entry(new int[]{39148}, 6809, 6808, 80));
+        m.put(NpcID.PHOENIX_PET_BLUE, new Entry(new int[]{26852}, 6809, 6808, 80));
+        m.put(NpcID.PHOENIX_PET_WHITE, new Entry(new int[]{26852}, 6809, 6808, 80));
+        m.put(NpcID.PHOENIX_PET_PURPLE, new Entry(new int[]{26852}, 6809, 6808, 80));
+        m.put(NpcID.POH_PHOENIX_PET, new Entry(new int[]{26852}, 6809, 6808, 80));
+        m.put(NpcID.PHOENIX_PET, new Entry(new int[]{26852}, 6809, 6808, 80));
+        m.put(NpcID.KBD_PET, new Entry(new int[]{17414, 17415, 17429, 17422, 17423}, 90, 4635, 40));
+        m.put(NpcID.POH_KBD_PET, new Entry(new int[]{17414, 17415, 17429, 17422, 17423}, 90, 4635, 40));
+        m.put(NpcID.POH_DOGADILE_PET, new Entry(new int[]{32681}, 7417, 7982, 45));
+        m.put(NpcID.POH_QUETZAL_PET, new Entry(new int[]{52601}, 10952, 10952, -1));
+        m.put(NpcID.POH_ARAXXOR_PET_CUTE, new Entry(new int[]{44936}, 8340, 9139, 64));
+        m.put(NpcID.ARAXXOR_PET_CUTE, new Entry(new int[]{44936}, 8340, 9139, 64));
+        m.put(NpcID.POH_SKILLPET_THIEVING_PANDA, new Entry(new int[]{37361}, 7315, 7316, 110));
+        m.put(NpcID.POH_RTELDRIC_PET, new Entry(new int[]{55938}, 11969, 11971, 26));
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_FIRE, new Entry(new int[]{32204}, 7307, 7306, -1));
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_AIR, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)103, (short)127, (short)74));
-        m.put(NpcID.RIFT_GUARDIAN_7339, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_MIND, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)0, (short)5056, (short)5551));
-        m.put(NpcID.RIFT_GUARDIAN_7340, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_WATER, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)39849, (short)38866, (short)38086));
-        m.put(NpcID.RIFT_GUARDIAN_7341, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_EARTH, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)6036, (short)6942, (short)6319));
-        m.put(NpcID.RIFT_GUARDIAN_7342, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_BODY, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)43961, (short)0, (short)43313));
-        m.put(NpcID.RIFT_GUARDIAN_7343, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_COSMIC, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)10469, (short)11200, (short)10425));
-        m.put(NpcID.RIFT_GUARDIAN_7344, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_CHAOS, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)7104, (short)127, (short)5551));
-        m.put(NpcID.RIFT_GUARDIAN_7345, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_NATURE, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)22430, (short)22461, (short)21698));
-        m.put(NpcID.RIFT_GUARDIAN_7346, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_LAW, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)43945, (short)43968, (short)43313));
-        m.put(NpcID.RIFT_GUARDIAN_7347, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_DEATH, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)10469, (short)11200, (short)10425));
-        m.put(NpcID.RIFT_GUARDIAN_7348, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_SOUL, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)43484, (short)46040, (short)45361));
-        m.put(NpcID.RIFT_GUARDIAN_7349, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_ASTRAL, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)54503, (short)54742, (short)54449));
-        m.put(NpcID.RIFT_GUARDIAN_7350, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_BLOOD, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)920, (short)910, (short)57));
-        m.put(NpcID.RIFT_GUARDIAN_8024, new Entry(new int[]{32204}, 7307, 7306, -1,
+        m.put(NpcID.POH_SKILLPET_RUNECRAFTING_WRATH, new Entry(new int[]{32204}, 7307, 7306, -1,
                 (short)939, (short)960, (short)60595, (short)4, (short)962, (short)43059));
-        m.put(NpcID.ROCKY, new Entry(new int[]{32203}, 7315, 7316, 110));
-        m.put(NpcID.ROCK_GOLEM, new Entry(new int[]{29755}, 7180, 7181, -1));
-        m.put(NpcID.ROCK_GOLEM_7439, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_THIEVING, new Entry(new int[]{32203}, 7315, 7316, 110));
+        m.put(NpcID.POH_SKILLPET_MINING_AMETHYST, new Entry(new int[]{29755}, 7180, 7181, -1));
+        m.put(NpcID.POH_SKILLPET_MINING_DEFAULT, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)66, (short)61, (short)49, (short)53, (short)53, (short)49));
-        m.put(NpcID.ROCK_GOLEM_7440, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_TIN, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)4044, (short)3912, (short)3906, (short)3901, (short)3897, (short)4021));
-        m.put(NpcID.ROCK_GOLEM_7441, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_COPPER, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)2337, (short)2332, (short)2328, (short)2452, (short)3346, (short)3470));
-        m.put(NpcID.ROCK_GOLEM_7442, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_IRON, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)43235, (short)43233, (short)43486, (short)43482, (short)43862, (short)43730));
-        m.put(NpcID.ROCK_GOLEM_7443, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_BLURITE, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)43105, (short)43100, (short)43096, (short)43092, (short)43088, (short)43084));
-        m.put(NpcID.ROCK_GOLEM_7444, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_SILVER, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)10388, (short)10512, (short)10508, (short)10378, (short)8, (short)4));
-        m.put(NpcID.ROCK_GOLEM_7445, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_COAL, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)8134, (short)8128, (short)7104, (short)7101, (short)7099, (short)7097));
-        m.put(NpcID.ROCK_GOLEM_7446, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_GOLD, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)43181, (short)43177, (short)43173, (short)43297, (short)43292, (short)43288));
-        m.put(NpcID.ROCK_GOLEM_7447, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_MITHRIL, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)4550, (short)4548, (short)4544, (short)4539, (short)4535, (short)2487));
-        m.put(NpcID.ROCK_GOLEM_7448, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_GRANITE, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)21675, (short)21671, (short)21667, (short)21662, (short)21658, (short)21782));
-        m.put(NpcID.ROCK_GOLEM_7449, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_ADAMANTITE, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)36145, (short)36141, (short)36137, (short)36133, (short)36257, (short)36252));
-        m.put(NpcID.ROCK_GOLEM_7450, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.POH_SKILLPET_MINING_RUNITE, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)63830, (short)62800, (short)63692, (short)60624, (short)63675, (short)63663));
-        m.put(NpcID.ROCK_GOLEM_7451, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.SKILLPET_MINING_DEFAULT, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)805, (short)929, (short)798, (short)796, (short)790, (short)912));
-        m.put(NpcID.ROCK_GOLEM_7452, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.SKILLPET_MINING_TIN, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)50999, (short)50995, (short)50993, (short)49967, (short)50087, (short)51098));
-        m.put(NpcID.ROCK_GOLEM_7453, new Entry(new int[]{29755}, 7180, 7181, -1,
+        m.put(NpcID.SKILLPET_MINING_COPPER, new Entry(new int[]{29755}, 7180, 7181, -1,
                 (short)6823, (short)6697, (short)6819, (short)6814, (short)6682, (short)5656,
                 (short)31531, (short)31655, (short)31651, (short)31518, (short)31640, (short)30612));
-        m.put(NpcID.ROCK_GOLEM_7737, new Entry(new int[]{29755}, 7180, 7181, -1));
-        m.put(NpcID.ROCK_GOLEM_7738, new Entry(new int[]{29755}, 7180, 7181, -1));
-        m.put(NpcID.ROCK_GOLEM_7740, new Entry(new int[]{29755}, 7180, 7181, -1));
-        m.put(NpcID.ROCK_GOLEM_7741, new Entry(new int[]{29755}, 7180, 7181, -1));
-        m.put(NpcID.SCORPIAS_OFFSPRING, new Entry(new int[]{29193}, 6258, 6257, 280,
+        m.put(NpcID.POH_SKILLPET_MINING_ELEMENTAL, new Entry(new int[]{29755}, 7180, 7181, -1));
+        m.put(NpcID.POH_SKILLPET_MINING_DAEYALT, new Entry(new int[]{29755}, 7180, 7181, -1));
+        m.put(NpcID.SKILLPET_MINING_ELEMENTAL, new Entry(new int[]{29755}, 7180, 7181, -1));
+        m.put(NpcID.SKILLPET_MINING_DAEYALT, new Entry(new int[]{29755}, 7180, 7181, -1));
+        m.put(NpcID.POH_SCORPIA_PET, new Entry(new int[]{29193}, 6258, 6257, 280,
                 (short)142, (short)4525, (short)4636, (short)4884, (short)4645,
                 (short)28, (short)16, (short)16, (short)16, (short)16));
-        m.put(NpcID.SCURRY, new Entry(new int[]{50146}, 10687, 10715, 28));
-        m.put(NpcID.SKOTOS, new Entry(new int[]{31653}, 6935, 4070, 20));
-        m.put(NpcID.SKOTOS_7671, new Entry(new int[]{31653}, 6935, 4070, 20));
-        m.put(NpcID.SMOKE_DEVIL_6655, new Entry(new int[]{36012}, 1829, 1828, 35));
-        m.put(NpcID.SMOKE_DEVIL_8482, new Entry(new int[]{28442}, 1829, 1828, 60));
-        m.put(NpcID.SMOLCANO, new Entry(new int[]{38592}, 8429, 8447, 30));
-        m.put(NpcID.SMOLCANO_8739, new Entry(new int[]{38592}, 8429, 8447, 30));
-        m.put(NpcID.SMOL_HEREDIT, new Entry(new int[]{52580, 52582, 52578}, 10874, 10880, 50));
-        m.put(NpcID.SNAKELING_2127, new Entry(new int[]{10413}, 1721, 2405, -1));
-        m.put(NpcID.SNAKELING_2128, new Entry(new int[]{10416}, 1721, 2405, -1));
-        m.put(NpcID.SNAKELING_2129, new Entry(new int[]{10414}, 1721, 2405, -1));
-        m.put(NpcID.SOUP, new Entry(new int[]{59482}, 13498, 13499, 100));
-        m.put(NpcID.SOUP_15058, new Entry(new int[]{59482}, 13498, 13499, 100));
-        m.put(NpcID.SPOOKY_CHAIR, new Entry(new int[]{11470}, 3220, 3220, -1, (short)4886, (short)5908, (short)8070, (short)8844));
-        m.put(NpcID.SRARACHA, new Entry(new int[]{37292}, 8320, 8319, 48));
-        m.put(NpcID.SRARACHA_11157, new Entry(new int[]{37291}, 8320, 8319, 48,
+        m.put(NpcID.POH_SCURRIUS_PET, new Entry(new int[]{50146}, 10687, 10715, 28));
+        m.put(NpcID.POH_SKOTIZO_PET, new Entry(new int[]{31653}, 6935, 4070, 20));
+        m.put(NpcID.SKOTIZO_PET, new Entry(new int[]{31653}, 6935, 4070, 20));
+        m.put(NpcID.POH_SMOKE_PET, new Entry(new int[]{36012}, 1829, 1828, 35));
+        m.put(NpcID.POH_SMOKE_PET_OLD, new Entry(new int[]{28442}, 1829, 1828, 60));
+        m.put(NpcID.POH_ZALCANO_PET, new Entry(new int[]{38592}, 8429, 8447, 30));
+        m.put(NpcID.ZALCANO_PET, new Entry(new int[]{38592}, 8429, 8447, 30));
+        m.put(NpcID.POH_SOLHEREDIT_PET, new Entry(new int[]{52580, 52582, 52578}, 10874, 10880, 50));
+        m.put(NpcID.POH_SNAKE_PET_GREEN, new Entry(new int[]{10413}, 1721, 2405, -1));
+        m.put(NpcID.POH_SNAKE_PET_ORANGE, new Entry(new int[]{10416}, 1721, 2405, -1));
+        m.put(NpcID.POH_SNAKE_PET_BLUE, new Entry(new int[]{10414}, 1721, 2405, -1));
+        m.put(NpcID.SKILLPET_SAILING, new Entry(new int[]{59482}, 13498, 13499, 100));
+        m.put(NpcID.POH_SKILLPET_SAILING, new Entry(new int[]{59482}, 13498, 13499, 100));
+        m.put(NpcID.POH_HW_CHAIR, new Entry(new int[]{11470}, 3220, 3220, -1, (short)4886, (short)5908, (short)8070, (short)8844));
+        m.put(NpcID.POH_MENAGERIE_SARACHNISPET, new Entry(new int[]{37292}, 8320, 8319, 48));
+        m.put(NpcID.POH_MENAGERIE_SARACHNISPET_ORANGE, new Entry(new int[]{37291}, 8320, 8319, 48,
                 (short)229, (short)348, (short)412, (short)555, (short)670,
                 (short)36069, (short)35041, (short)3505, (short)5945, (short)4007));
-        m.put(NpcID.SRARACHA_11158, new Entry(new int[]{37290}, 8320, 8319, 48,
+        m.put(NpcID.POH_MENAGERIE_SARACHNISPET_BLUE, new Entry(new int[]{37290}, 8320, 8319, 48,
                 (short)229, (short)348, (short)412, (short)555, (short)670,
                 (short)36069, (short)35041, (short)39219, (short)39611, (short)39719));
-        m.put(NpcID.TANGLEROOT, new Entry(new int[]{32202}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_7352, new Entry(new int[]{32202}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9492, new Entry(new int[]{39573}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9493, new Entry(new int[]{39571}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9494, new Entry(new int[]{39572}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9495, new Entry(new int[]{39574}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9496, new Entry(new int[]{39575}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9497, new Entry(new int[]{39573}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9498, new Entry(new int[]{39571}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9499, new Entry(new int[]{39572}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9500, new Entry(new int[]{39574}, 7312, 7313, -1));
-        m.put(NpcID.TANGLEROOT_9501, new Entry(new int[]{39575}, 7312, 7313, -1));
-        m.put(NpcID.TEKTINY, new Entry(new int[]{32682}, 7476, 7477, 25));
-        m.put(NpcID.TINY_TEMPOR, new Entry(new int[]{41812}, 8895, 8895, 24));
-        m.put(NpcID.TUMEKENS_DAMAGED_GUARDIAN, new Entry(new int[]{46333}, 9420, 9420, 65));
-        m.put(NpcID.TUMEKENS_GUARDIAN, new Entry(new int[]{46337}, 9655, 9651, 65));
-        m.put(NpcID.TUMEKENS_GUARDIAN_11812, new Entry(new int[]{46337}, 9655, 9651, 65));
-        m.put(NpcID.TZREKJAD, new Entry(new int[]{9319}, 2650, 5805, 20));
-        m.put(NpcID.TZREKZUK, new Entry(new int[]{34586}, 7975, 7977, 18));
-        m.put(NpcID.VANGUARD_8198, new Entry(new int[]{32684}, 7430, 7429, 40));
-        m.put(NpcID.VASA_MINIRIO, new Entry(new int[]{32680}, 7416, 7411, 20));
-        m.put(NpcID.VENENATIS_SPIDERLING, new Entry(new int[]{47393}, 9986, 9987, 58));
-        m.put(NpcID.VENENATIS_SPIDERLING_11981, new Entry(new int[]{28294, 28295}, 5326, 5325, 60));
-        m.put(NpcID.VESPINA, new Entry(new int[]{32689}, 7449, 7448, 20));
-        m.put(NpcID.VETION_JR, new Entry(new int[]{47387, 47384}, 9965, 9967, 54));
-        m.put(NpcID.VETION_JR_11983, new Entry(new int[]{28299}, 5505, 5497, 45));
-        m.put(NpcID.VETION_JR_11984, new Entry(new int[]{28299}, 5505, 5497, 45,
+        m.put(NpcID.POH_SKILLPET_FARMING, new Entry(new int[]{32202}, 7312, 7313, -1));
+        m.put(NpcID.SKILLPET_FARMING, new Entry(new int[]{32202}, 7312, 7313, -1));
+        m.put(NpcID.POH_SKILLPET_FARMING_CRYSTAL, new Entry(new int[]{39573}, 7312, 7313, -1));
+        m.put(NpcID.POH_SKILLPET_FARMING_DRAGON, new Entry(new int[]{39571}, 7312, 7313, -1));
+        m.put(NpcID.POH_SKILLPET_FARMING_HERB, new Entry(new int[]{39572}, 7312, 7313, -1));
+        m.put(NpcID.POH_SKILLPET_FARMING_LILY, new Entry(new int[]{39574}, 7312, 7313, -1));
+        m.put(NpcID.POH_SKILLPET_FARMING_REDWOOD, new Entry(new int[]{39575}, 7312, 7313, -1));
+        m.put(NpcID.SKILLPET_FARMING_CRYSTAL, new Entry(new int[]{39573}, 7312, 7313, -1));
+        m.put(NpcID.SKILLPET_FARMING_DRAGON, new Entry(new int[]{39571}, 7312, 7313, -1));
+        m.put(NpcID.SKILLPET_FARMING_HERB, new Entry(new int[]{39572}, 7312, 7313, -1));
+        m.put(NpcID.SKILLPET_FARMING_LILY, new Entry(new int[]{39574}, 7312, 7313, -1));
+        m.put(NpcID.SKILLPET_FARMING_REDWOOD, new Entry(new int[]{39575}, 7312, 7313, -1));
+        m.put(NpcID.POH_TEKTON_PET, new Entry(new int[]{32682}, 7476, 7477, 25));
+        m.put(NpcID.POH_TEMPOROSS_PET, new Entry(new int[]{41812}, 8895, 8895, 24));
+        m.put(NpcID.POH_WARDEN_PET_TUMEKEN_DESTROYED, new Entry(new int[]{46333}, 9420, 9420, 65));
+        m.put(NpcID.POH_WARDEN_PET_TUMEKEN, new Entry(new int[]{46337}, 9655, 9651, 65));
+        m.put(NpcID.WARDEN_PET_TUMEKEN, new Entry(new int[]{46337}, 9655, 9651, 65));
+        m.put(NpcID.POH_JADPET, new Entry(new int[]{9319}, 2650, 5805, 20));
+        m.put(NpcID.POH_ZUK_PET, new Entry(new int[]{34586}, 7975, 7977, 18));
+        m.put(NpcID.POH_VANGUARD_PET, new Entry(new int[]{32684}, 7430, 7429, 40));
+        m.put(NpcID.POH_VASA_PET, new Entry(new int[]{32680}, 7416, 7411, 20));
+        m.put(NpcID.POH_VENENATIS_PET, new Entry(new int[]{47393}, 9986, 9987, 58));
+        m.put(NpcID.POH_VENENATIS_PET_LEGACY, new Entry(new int[]{28294, 28295}, 5326, 5325, 60));
+        m.put(NpcID.POH_VESPULA_PET, new Entry(new int[]{32689}, 7449, 7448, 20));
+        m.put(NpcID.POH_VETION_PET, new Entry(new int[]{47387, 47384}, 9965, 9967, 54));
+        m.put(NpcID.POH_VETION_PET_LEGACY, new Entry(new int[]{28299}, 5505, 5497, 45));
+        m.put(NpcID.POH_VETION_PET_2_LEGACY, new Entry(new int[]{28299}, 5505, 5497, 45,
                 (short)55184, (short)54926, (short)54693, (short)55190, (short)54571, (short)54804,
                 (short)4019, (short)4007, (short)4007, (short)3879, (short)4023, (short)2966));
-        m.put(NpcID.VETION_JR_5537, new Entry(new int[]{47383, 47385, 47388, 47389}, 9965, 9967, 54,
+        m.put(NpcID.POH_VETION_PET_2, new Entry(new int[]{47383, 47385, 47388, 47389}, 9965, 9967, 54,
                 (short)55184, (short)54926, (short)54693, (short)55190, (short)54571, (short)54804,
                 (short)4019, (short)4007, (short)4007, (short)3879, (short)4023, (short)2966));
-        m.put(NpcID.VETION_JR_5559, new Entry(new int[]{28299}, 5505, 5497, 45));
-        m.put(NpcID.VORKI, new Entry(new int[]{35023}, 7948, 7959, 16));
-        m.put(NpcID.WILY_HELLCAT, new Entry(new int[]{13412, 13408}, 317, 314, 70, (short)8, (short)914));
-        m.put(NpcID.WILY_HELLCAT_6696, new Entry(new int[]{13412, 13408}, 317, 314, 70, (short)8, (short)914));
-        m.put(NpcID.WISP, new Entry(new int[]{49222, 49218, 49221, 49224}, 10230, 10233, 40));
-        m.put(NpcID.YAMI, new Entry(new int[]{10339}, 12140, 12143, 30));
-        m.put(NpcID.YOUNGLLEF, new Entry(new int[]{38596}, 8417, 8428, 25));
-        m.put(NpcID.YOUNGLLEF_8737, new Entry(new int[]{38596}, 8417, 8428, 25));
-        m.put(NpcID.ZEBO, new Entry(new int[]{46509}, 2037, 2036, 112));
-        m.put(NpcID.ZIGGY, new Entry(new int[]{14390}, 7315, 7316, 110));
-        m.put(NpcID.ZILYANA_JR, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
-        m.put(NpcID.ZILYANA_JR_6646, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
+        m.put(NpcID.VETIONPET, new Entry(new int[]{28299}, 5505, 5497, 45));
+        m.put(NpcID.POH_VORKATH_PET, new Entry(new int[]{35023}, 7948, 7959, 16));
+        m.put(NpcID.WILEYCAT_HELL, new Entry(new int[]{13412, 13408}, 317, 314, 70, (short)8, (short)914));
+        m.put(NpcID.POH_WILEYCAT_HELL, new Entry(new int[]{13412, 13408}, 317, 314, 70, (short)8, (short)914));
+        m.put(NpcID.POH_WHISPERER_PET, new Entry(new int[]{49222, 49218, 49221, 49224}, 10230, 10233, 40));
+        m.put(NpcID.POH_YAMA_PET, new Entry(new int[]{10339}, 12140, 12143, 30));
+        m.put(NpcID.POH_GAUNTLET_PET, new Entry(new int[]{38596}, 8417, 8428, 25));
+        m.put(NpcID.GAUNTLET_PET, new Entry(new int[]{38596}, 8417, 8428, 25));
+        m.put(NpcID.POH_WARDEN_PET_ZEBAK, new Entry(new int[]{46509}, 2037, 2036, 112));
+        m.put(NpcID.POH_SKILLPET_THIEVING_TANUKI, new Entry(new int[]{14390}, 7315, 7316, 110));
+        m.put(NpcID.SARADOMIN_PET, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
+        m.put(NpcID.POH_SARADOMIN_PET, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
 
         LOOKUP = Collections.unmodifiableMap(m);
     }
