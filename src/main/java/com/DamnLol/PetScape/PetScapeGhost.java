@@ -52,91 +52,50 @@ public class PetScapeGhost
     static final java.util.Map<Integer, Integer> Z_OVERRIDES = new java.util.HashMap<>();
     static
     {
-        // Corporeal Critter Corppet
         Z_OVERRIDES.put(NpcID.POH_CORPPET, 25);
-        // Corrupted Youngllef Corrupt
         Z_OVERRIDES.put(NpcID.POH_GAUNTLET_PET_CORRUPT, 18);
-        // Corrupted Youngllef Corrupt
         Z_OVERRIDES.put(NpcID.GAUNTLET_PET_CORRUPT, 18);
-        // Flying Vespina
         Z_OVERRIDES.put(NpcID.POH_VESPULA_FLYING_PET, -150);
-        // Ikkle Hydra
         Z_OVERRIDES.put(NpcID.HYDRA_PET, 20);
-        // Ikkle Hydra Electric
         Z_OVERRIDES.put(NpcID.HYDRA_PET_ELECTRIC, 20);
-        // Ikkle Hydra Fire
         Z_OVERRIDES.put(NpcID.HYDRA_PET_FIRE, 20);
-        // Ikkle Hydra Extinguished
         Z_OVERRIDES.put(NpcID.HYDRA_PET_EXTINGUISHED, 20);
-        // Ikkle Hydra
         Z_OVERRIDES.put(NpcID.POH_HYDRA_PET, 20);
-        // Ikkle Hydra Electric
         Z_OVERRIDES.put(NpcID.POH_HYDRA_PET_ELECTRIC, 20);
-        // Ikkle Hydra Fire
         Z_OVERRIDES.put(NpcID.POH_HYDRA_PET_FIRE, 20);
-        // Ikkle Hydra Extinguished
         Z_OVERRIDES.put(NpcID.POH_HYDRA_PET_EXTINGUISHED, 20);
-        // Kalphite Princess Flying
         Z_OVERRIDES.put(NpcID.KQ_PET_FLYING, 25);
-        // Kalphite Princess Walking
         Z_OVERRIDES.put(NpcID.KQ_PET_WALKING, -150);
-        // Kreearra Jr
         Z_OVERRIDES.put(NpcID.ARMADYL_PET, -200);
-        // Kril Tsutsaroth Jr
         Z_OVERRIDES.put(NpcID.ZAMORAK_PET, 50);
-        // Phoenix Green
         Z_OVERRIDES.put(NpcID.POH_PHOENIX_PET_GREEN, -180);
-        // Phoenix Blue
         Z_OVERRIDES.put(NpcID.POH_PHOENIX_PET_BLUE, -180);
-        // Phoenix White
         Z_OVERRIDES.put(NpcID.POH_PHOENIX_PET_WHITE, -180);
-        // Phoenix Purple
         Z_OVERRIDES.put(NpcID.POH_PHOENIX_PET_PURPLE, -180);
-        // Phoenix
         Z_OVERRIDES.put(NpcID.POH_PHOENIX_PET, -180);
-        // Prince Black Dragon
         Z_OVERRIDES.put(NpcID.KBD_PET, 25);
-        // Skotos
         Z_OVERRIDES.put(NpcID.POH_SKOTIZO_PET, 50);
-        // Skotos
         Z_OVERRIDES.put(NpcID.SKOTIZO_PET, 50);
-        // Tumekens Guardian Tumeken
         Z_OVERRIDES.put(NpcID.POH_WARDEN_PET_TUMEKEN, 20);
-        // Tumekens Guardian Tumeken
         Z_OVERRIDES.put(NpcID.WARDEN_PET_TUMEKEN, 20);
-        // Vanguard
         Z_OVERRIDES.put(NpcID.POH_VANGUARD_PET, 30);
-        // Vespina
         Z_OVERRIDES.put(NpcID.POH_VESPULA_PET, -150);
-        // Vetion Jr
         Z_OVERRIDES.put(NpcID.POH_VETION_PET, 8);
-        // Vetion Jr Legacy
         Z_OVERRIDES.put(NpcID.POH_VETION_PET_LEGACY, 8);
-        // Vetion Jr
         Z_OVERRIDES.put(NpcID.POH_VETION_PET_2_LEGACY, 8);
-        // Vetion Jr
         Z_OVERRIDES.put(NpcID.POH_VETION_PET_2, 8);
-        // Vetion Jr Vetionpet
         Z_OVERRIDES.put(NpcID.VETIONPET, 8);
-        // Vorki
         Z_OVERRIDES.put(NpcID.POH_VORKATH_PET, 15);
-        // Youngllef Gauntlet
         Z_OVERRIDES.put(NpcID.POH_GAUNTLET_PET, 18);
-        // Youngllef Gauntlet
         Z_OVERRIDES.put(NpcID.GAUNTLET_PET, 18);
     }
 
     // Pets that never wander
     private static final Set<Integer> STATIONARY_PET_IDS = new HashSet<>(Arrays.asList(
-            // Mayor Of Catherby
             NpcID.POH_FISHBOWL_MAYOR_OF_CATHERBY,
-            // Pet Rock Dagannoth Dungeon Pressure
             NpcID.DAGANNOTH_DUNGEON_PRESSURE_PET_ROCK,
-            // Pet Rock
             NpcID.POH_ROCK,
-            // Fishbowl Greenfish
             NpcID.POH_FISHBOWL_GREENFISH,
-            // Fishbowl Spinefish
             NpcID.POH_FISHBOWL_SPINEFISH
     ));
 
