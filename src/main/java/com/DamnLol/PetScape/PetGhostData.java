@@ -137,7 +137,8 @@ public class PetGhostData {
         m.put(NpcID.POH_GRYPHONBOSS_PET, new Entry(new int[]{59403}, 12586, 12587, 72));
         m.put(NpcID.GROWNCAT_HELL, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
         m.put(NpcID.POH_GROWNCAT_HELL, new Entry(new int[]{13409, 13405}, 317, 314, 60, (short)16, (short)914));
-        m.put(NpcID.KITTENPET_HELL, new Entry(new int[]{13406, 13410}, 317, 2662, 40, (short)16, (short)35, (short)914, (short)914));        m.put(NpcID.POH_HELLPET, new Entry(new int[]{29240}, 6561, 6560, -1));
+        m.put(NpcID.KITTENPET_HELL, new Entry(new int[]{13406, 13410}, 317, 2662, 40, (short)16, (short)35, (short)914, (short)914));
+        m.put(NpcID.POH_HELLPET, new Entry(new int[]{29240}, 6561, 6560, -1));
         m.put(NpcID.POH_HERBIBOAR_PET, new Entry(new int[]{33890}, 7694, 7695, 110,
                 (short)19992, (short)20364, (short)19988, (short)20422,
                 (short)6049, (short)6040, (short)4781, (short)4038));
