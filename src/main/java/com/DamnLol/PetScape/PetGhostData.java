@@ -373,7 +373,8 @@ public class PetGhostData {
         m.put(NpcID.POH_SKILLPET_THIEVING_TANUKI, new Entry(new int[]{14390}, 7315, 7316, 110));
         m.put(NpcID.SARADOMIN_PET, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
         m.put(NpcID.POH_SARADOMIN_PET, new Entry(new int[]{27989, 27937, 27985, 27968, 27990}, 6966, 6965, 60));
-
+        m.put(NpcID.MAGGOT_KING_PET, new Entry(new int[]{61513}, 13926, 13935, 25));
+        m.put(NpcID.POH_MAGGOT_KING_PET, new Entry(new int[]{61513}, 13926, 13935, 25));
         LOOKUP = Collections.unmodifiableMap(m);
     }
 

@@ -278,7 +278,9 @@ public class PetScapePlugin extends Plugin
             NpcID.POH_WARDEN_PET_ZEBAK,
             NpcID.POH_SKILLPET_THIEVING_TANUKI,
             NpcID.SARADOMIN_PET,
-            NpcID.POH_SARADOMIN_PET
+            NpcID.POH_SARADOMIN_PET,
+            NpcID.MAGGOT_KING_PET,
+            NpcID.POH_MAGGOT_KING_PET
 
     ));
 
