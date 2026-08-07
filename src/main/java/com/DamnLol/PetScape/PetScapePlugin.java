@@ -280,8 +280,9 @@ public class PetScapePlugin extends Plugin
             NpcID.SARADOMIN_PET,
             NpcID.POH_SARADOMIN_PET,
             NpcID.MAGGOT_KING_PET,
-            NpcID.POH_MAGGOT_KING_PET
-
+            NpcID.POH_MAGGOT_KING_PET,
+            NpcID.MAD_ANGEL_PET,
+            NpcID.POH_MAD_ANGEL_PET
     ));
 
     @Inject private Client client;
